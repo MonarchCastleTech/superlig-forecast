@@ -28,3 +28,14 @@ def test_total_points_match_draw_and_decisive_counts() -> None:
 
 def test_half_width_decreases_with_more_simulations() -> None:
     assert SeasonSimulator.half_width(5_000, 10_000) > SeasonSimulator.half_width(50_000, 100_000)
+
+
+def test_checkpoint_simulation_records_prefix_sizes() -> None:
+    simulator = SeasonSimulator(("A", "B", "C", "D"), LeagueRules.default())
+
+    results = simulator.simulate_checkpoints(
+        fixtures(), checkpoints=(100, 500), seed=9, chunk_size=100
+    )
+
+    assert list(results) == [100, 500]
+    assert sum(results[500].champion_counts.values()) == 500

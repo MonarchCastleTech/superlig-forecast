@@ -22,6 +22,65 @@ def test_tff_dry_run_lists_all_competition_families() -> None:
     assert result.stdout.splitlines() == ["TR1", "TR2", "TR3", "TR4", "TRC"]
 
 
+def test_transfermarkt_dry_run_reports_pinned_kaggle_archive_url() -> None:
+    result = CliRunner().invoke(
+        app,
+        ["fetch-data", "--source", "transfermarkt", "--season", "2026-27", "--dry-run"],
+    )
+    assert result.exit_code == 0
+    assert result.stdout.strip() == (
+        "https://www.kaggle.com/api/v1/datasets/download/"
+        "davidcariboo/player-scores?datasetVersionNumber=673"
+    )
+
+
+def test_odds_dry_run_reports_pinned_kaggle_archive_url() -> None:
+    result = CliRunner().invoke(
+        app,
+        ["fetch-data", "--source", "odds", "--season", "2026-27", "--dry-run"],
+    )
+    assert result.exit_code == 0
+    assert result.stdout.strip() == (
+        "https://www.kaggle.com/api/v1/datasets/download/"
+        "ronaldoaf/football-matches-with-odds-from-oddsportal?datasetVersionNumber=4"
+    )
+
+
+def test_historical_results_dry_run_reports_pinned_archive_url() -> None:
+    result = CliRunner().invoke(
+        app,
+        [
+            "fetch-data",
+            "--source",
+            "historical-results",
+            "--season",
+            "2026-27",
+            "--dry-run",
+        ],
+    )
+    assert result.exit_code == 0
+    assert result.stdout.strip() == (
+        "https://www.kaggle.com/api/v1/datasets/download/"
+        "ycliffd/football-soccer-league-odds-and-results?datasetVersionNumber=4"
+    )
+
+
+def test_current_transfermarkt_dry_run_reports_season_page() -> None:
+    result = CliRunner().invoke(
+        app,
+        [
+            "fetch-data",
+            "--source",
+            "transfermarkt-current",
+            "--season",
+            "2026-27",
+            "--dry-run",
+        ],
+    )
+    assert result.exit_code == 0
+    assert result.stdout.strip().endswith("wettbewerb/TR1/plus/?saison_id=2026")
+
+
 def test_demo_forecast_records_seed_and_simulation_count(tmp_path: Path) -> None:
     output = tmp_path / "forecast"
     result = CliRunner().invoke(

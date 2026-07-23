@@ -2,7 +2,7 @@ from datetime import UTC, datetime
 
 import httpx
 
-from superlig_forecast.data.fetch import FetchRequest, Fetcher
+from superlig_forecast.data.fetch import FetchRequest, Fetcher, system_ssl_context
 
 
 def test_fetcher_retries_retryable_status() -> None:
@@ -31,3 +31,9 @@ def test_fetcher_retries_retryable_status() -> None:
     assert result.content == b"fixture"
     assert result.content_type == "text/html; charset=utf-8"
     assert result.fetched_at == datetime(2026, 7, 23, tzinfo=UTC)
+
+
+def test_system_ssl_context_uses_native_certificate_store() -> None:
+    context = system_ssl_context()
+
+    assert context.__class__.__module__.startswith("truststore")

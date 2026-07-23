@@ -12,6 +12,5 @@ dist/
 build/
 *.egg-info/
 .env
-data/raw/
-data/cache/
-artifacts/
+/data/
+/artifacts/

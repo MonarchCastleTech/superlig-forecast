@@ -2,10 +2,18 @@
 
 from collections.abc import Callable, Mapping
 from datetime import UTC, datetime
+import ssl
 
 import httpx
+import truststore
 from pydantic import BaseModel, ConfigDict, Field
 from tenacity import Retrying, retry_if_exception_type, stop_after_attempt, wait_exponential
+
+
+def system_ssl_context() -> ssl.SSLContext:
+    """Return a TLS context backed by the operating system certificate store."""
+
+    return truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
 
 
 class FetchRequest(BaseModel):
@@ -53,6 +61,7 @@ class Fetcher:
             timeout=timeout,
             follow_redirects=True,
             headers={"User-Agent": "superlig-forecast/0.1"},
+            verify=system_ssl_context(),
         )
         self._now = now or (lambda: datetime.now(UTC))
         self._retryer = Retrying(

@@ -38,51 +38,74 @@ class SeasonSimulator:
         seed: int,
         chunk_size: int = 100_000,
     ) -> SimulationResult:
+        return self.simulate_checkpoints(
+            fixtures,
+            checkpoints=(n,),
+            seed=seed,
+            chunk_size=chunk_size,
+        )[n]
+
+    def simulate_checkpoints(
+        self,
+        fixtures: list[FixtureForecast],
+        *,
+        checkpoints: tuple[int, ...],
+        seed: int,
+        chunk_size: int = 100_000,
+    ) -> dict[int, SimulationResult]:
+        """Run once and snapshot cumulative Monte Carlo convergence."""
+
+        if not checkpoints or any(value <= 0 for value in checkpoints):
+            raise ValueError("checkpoints must contain positive simulation counts")
+        ordered = tuple(sorted(set(checkpoints)))
         rng = np.random.default_rng(seed)
         champions = np.zeros(len(self.team_ids), dtype=np.int64)
         total_draws = total_decisive = total_points = 0
         completed = 0
-        while completed < n:
-            size = min(chunk_size, n - completed)
-            points = np.zeros((size, len(self.team_ids)), dtype=np.int16)
-            goals_for = np.zeros_like(points)
-            goals_against = np.zeros_like(points)
-            for fixture in fixtures:
-                side = fixture.score_matrix.shape[0]
-                flat = rng.choice(
-                    fixture.score_matrix.size, size=size, p=fixture.score_matrix.ravel()
+        results: dict[int, SimulationResult] = {}
+        for checkpoint in ordered:
+            while completed < checkpoint:
+                size = min(chunk_size, checkpoint - completed)
+                points = np.zeros((size, len(self.team_ids)), dtype=np.int16)
+                goals_for = np.zeros_like(points)
+                goals_against = np.zeros_like(points)
+                for fixture in fixtures:
+                    side = fixture.score_matrix.shape[0]
+                    flat = rng.choice(
+                        fixture.score_matrix.size, size=size, p=fixture.score_matrix.ravel()
+                    )
+                    home_goals, away_goals = flat // side, flat % side
+                    draw = home_goals == away_goals
+                    home_win = home_goals > away_goals
+                    away_win = home_goals < away_goals
+                    points[:, fixture.home_index] += (
+                        home_win * self.rules.win_points + draw * self.rules.draw_points
+                    )
+                    points[:, fixture.away_index] += (
+                        away_win * self.rules.win_points + draw * self.rules.draw_points
+                    )
+                    goals_for[:, fixture.home_index] += home_goals
+                    goals_against[:, fixture.home_index] += away_goals
+                    goals_for[:, fixture.away_index] += away_goals
+                    goals_against[:, fixture.away_index] += home_goals
+                    total_draws += int(draw.sum())
+                    total_decisive += int((~draw).sum())
+                goal_difference = goals_for - goals_against
+                ranking_score = (
+                    points.astype(np.int64) * 1_000_000 + goal_difference * 1_000 + goals_for
                 )
-                home_goals, away_goals = flat // side, flat % side
-                draw = home_goals == away_goals
-                home_win = home_goals > away_goals
-                away_win = home_goals < away_goals
-                points[:, fixture.home_index] += (
-                    home_win * self.rules.win_points + draw * self.rules.draw_points
-                )
-                points[:, fixture.away_index] += (
-                    away_win * self.rules.win_points + draw * self.rules.draw_points
-                )
-                goals_for[:, fixture.home_index] += home_goals
-                goals_against[:, fixture.home_index] += away_goals
-                goals_for[:, fixture.away_index] += away_goals
-                goals_against[:, fixture.away_index] += home_goals
-                total_draws += int(draw.sum())
-                total_decisive += int((~draw).sum())
-            goal_difference = goals_for - goals_against
-            ranking_score = (
-                points.astype(np.int64) * 1_000_000 + goal_difference * 1_000 + goals_for
+                winner = np.argmax(ranking_score, axis=1)
+                champions += np.bincount(winner, minlength=len(self.team_ids))
+                total_points += int(points.sum())
+                completed += size
+            results[checkpoint] = SimulationResult(
+                dict(zip(self.team_ids, champions.tolist(), strict=True)),
+                checkpoint,
+                total_draws,
+                total_decisive,
+                total_points,
             )
-            winner = np.argmax(ranking_score, axis=1)
-            champions += np.bincount(winner, minlength=len(self.team_ids))
-            total_points += int(points.sum())
-            completed += size
-        return SimulationResult(
-            dict(zip(self.team_ids, champions.tolist(), strict=True)),
-            n,
-            total_draws,
-            total_decisive,
-            total_points,
-        )
+        return results
 
     @staticmethod
     def half_width(champion_count: int, n: int) -> float:
