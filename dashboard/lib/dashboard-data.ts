@@ -22,6 +22,25 @@ export type FixtureRow = {
   away_win_probability: number;
 };
 
+export type PositionRow = {
+  club: string;
+  position: number;
+  count: number;
+  probability: number;
+};
+
+export type ExpectedStanding = {
+  club: string;
+  expected_position: number;
+  median_position: number;
+  most_likely_position: number;
+  expected_points: number;
+  expected_goal_difference: number;
+  top_four_probability: number;
+  position_17_probability: number | null;
+  relegation_probability: number;
+};
+
 export type BacktestFold = {
   season: number;
   match_count: number;
@@ -51,6 +70,8 @@ export type DashboardPayload = {
   championship: ChampionshipRow[];
   convergence: ConvergenceRow[];
   fixtures: FixtureRow[];
+  positions: PositionRow[];
+  expected_standings: ExpectedStanding[];
   backtest: {
     method: string;
     start_season: number;
@@ -61,6 +82,36 @@ export type DashboardPayload = {
     market_match_count: number;
     aggregate: Record<string, number | null>;
     folds: BacktestFold[];
+    acceptance: {
+      passed: boolean;
+      checks: Record<string, boolean>;
+    };
+  };
+  position_backtest: {
+    method: string;
+    start_season: number;
+    end_season: number;
+    fold_count: number;
+    simulations_per_fold: number;
+    aggregate: Record<string, number>;
+    folds: Array<{
+      season: number;
+      team_count: number;
+      match_count: number;
+      simulations: number;
+      scores: Record<string, number>;
+      teams: Array<{
+        team: string;
+        actual_position: number;
+        expected_position: number;
+        median_position: number;
+        most_likely_position: number;
+        actual_position_probability: number;
+        expected_points: number;
+        expected_goal_difference: number;
+        position_probabilities: number[];
+      }>;
+    }>;
     acceptance: {
       passed: boolean;
       checks: Record<string, boolean>;
@@ -99,7 +150,10 @@ export function validateDashboardPayload(value: unknown): DashboardPayload {
     !Array.isArray(value.championship) ||
     !Array.isArray(value.convergence) ||
     !Array.isArray(value.fixtures) ||
-    !isRecord(value.backtest)
+    !Array.isArray(value.positions) ||
+    !Array.isArray(value.expected_standings) ||
+    !isRecord(value.backtest) ||
+    !isRecord(value.position_backtest)
   ) {
     throw new Error("Dashboard sections are incomplete");
   }
@@ -117,6 +171,18 @@ export function validateDashboardPayload(value: unknown): DashboardPayload {
             row.home_win_probability,
             row.draw_probability,
             row.away_win_probability,
+          ]
+        : [NaN],
+    ),
+    ...value.positions.map((row) =>
+      isRecord(row) ? row.probability : NaN,
+    ),
+    ...value.expected_standings.flatMap((row) =>
+      isRecord(row)
+        ? [
+            row.top_four_probability,
+            row.position_17_probability ?? 0,
+            row.relegation_probability,
           ]
         : [NaN],
     ),
@@ -184,6 +250,26 @@ export function formatProbability(
   return `${(value * 100).toFixed(digits)}%`;
 }
 
+export function positionDistribution(
+  payload: DashboardPayload,
+  club: string,
+): PositionRow[] {
+  return payload.positions
+    .filter((row) => row.club === club)
+    .sort((left, right) => left.position - right.position);
+}
+
+export function leaderAtPosition(
+  payload: DashboardPayload,
+  position: number,
+): PositionRow | null {
+  return (
+    payload.positions
+      .filter((row) => row.position === position)
+      .sort((left, right) => right.probability - left.probability)[0] ?? null
+  );
+}
+
 export function formatInteger(value: number): string {
   return new Intl.NumberFormat("en-US").format(value);
 }
@@ -199,4 +285,3 @@ export function formatCurrency(value: number | null): string {
     maximumFractionDigits: 1,
   }).format(value);
 }
-

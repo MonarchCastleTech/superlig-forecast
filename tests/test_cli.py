@@ -100,6 +100,8 @@ def test_demo_forecast_records_seed_and_simulation_count(tmp_path: Path) -> None
     manifest = json.loads(Path(result.stdout.strip()).read_text(encoding="utf-8"))
     assert manifest["seed"] == 42
     assert manifest["n_simulations"] == 1000
+    assert (output / "position-probabilities.csv").exists()
+    assert (output / "expected-standings.csv").exists()
 
 
 def test_cli_exposes_complete_engine_command_surface() -> None:
@@ -110,6 +112,7 @@ def test_cli_exposes_complete_engine_command_surface() -> None:
         "build-snapshots",
         "train-model",
         "backtest",
+        "backtest-positions",
         "forecast-match",
         "forecast-season",
         "export-dashboard-data",

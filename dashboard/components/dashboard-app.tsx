@@ -7,6 +7,7 @@ import { ChampionshipRace } from "@/components/championship-race";
 import { ConvergenceChart } from "@/components/convergence-chart";
 import { FixtureExplorer } from "@/components/fixture-explorer";
 import { Methodology } from "@/components/methodology";
+import { StandingsPanel } from "@/components/standings-panel";
 import {
   formatInteger,
   rankAtCheckpoint,
@@ -55,6 +56,7 @@ export function DashboardApp({ data }: DashboardAppProps) {
         </a>
         <nav aria-label="Dashboard sections">
           <a href="#race">Race</a>
+          <a href="#standings">Table</a>
           <a href="#fixtures">Fixtures</a>
           <a href="#validation">Validation</a>
           <a href="#methodology">Method</a>
@@ -137,6 +139,7 @@ export function DashboardApp({ data }: DashboardAppProps) {
         />
       </section>
 
+      <StandingsPanel data={data} />
       <FixtureExplorer fixtures={data.fixtures} />
       <BacktestPanel backtest={data.backtest} />
       <Methodology data={data} />
@@ -156,4 +159,3 @@ export function DashboardApp({ data }: DashboardAppProps) {
     </main>
   );
 }
-

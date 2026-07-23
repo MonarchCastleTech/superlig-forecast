@@ -3,6 +3,7 @@
 from dataclasses import asdict
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import cast
 
 import orjson
 import polars as pl
@@ -13,6 +14,7 @@ from superlig_forecast.backtest.walk_forward import (
     load_backtest_matches,
     run_walk_forward,
 )
+from superlig_forecast.backtest.positions import run_position_backtest
 from superlig_forecast.data.fetch import FetchRequest, Fetcher
 from superlig_forecast.data.historical_results import extract_historical_results_archive
 from superlig_forecast.data.oddsportal_archive import extract_oddsportal_archive
@@ -35,7 +37,11 @@ from superlig_forecast.reporting.charts import (
 from superlig_forecast.reporting.dashboard import build_dashboard_payload
 from superlig_forecast.reporting.report import build_report
 from superlig_forecast.simulation.rules import LeagueRules
-from superlig_forecast.simulation.season import FixtureForecast, SeasonSimulator
+from superlig_forecast.simulation.season import (
+    FixtureForecast,
+    SeasonSimulator,
+    SimulationResult,
+)
 
 app = typer.Typer(add_completion=False, no_args_is_help=True)
 TRANSFERMARKT_DATABASE_URL = (
@@ -56,6 +62,70 @@ HISTORICAL_RESULTS_KAGGLE_URL = (
 TRANSFERMARKT_CURRENT_URL = (
     "https://www.transfermarkt.com.tr/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026"
 )
+
+
+def _write_position_outputs(
+    result: SimulationResult,
+    team_ids: tuple[str, ...],
+    output: Path,
+) -> tuple[Path, Path]:
+    """Write long-form positions and marginal expected standings."""
+
+    position_counts = result.position_counts
+    point_sums = result.point_sums
+    goal_difference_sums = result.goal_difference_sums
+    simulations = result.n_simulations
+    probability_rows: list[dict[str, object]] = []
+    standings_rows: list[dict[str, object]] = []
+    for team in team_ids:
+        counts = tuple(int(value) for value in position_counts[team])
+        probabilities = tuple(value / simulations for value in counts)
+        for position, (count, probability) in enumerate(
+            zip(counts, probabilities, strict=True),
+            start=1,
+        ):
+            probability_rows.append(
+                {
+                    "club": team,
+                    "position": position,
+                    "count": count,
+                    "probability": probability,
+                }
+            )
+        cumulative = 0.0
+        median_position = len(team_ids)
+        for position, probability in enumerate(probabilities, start=1):
+            cumulative += probability
+            if cumulative >= 0.5:
+                median_position = position
+                break
+        standings_rows.append(
+            {
+                "club": team,
+                "expected_position": sum(
+                    position * probability
+                    for position, probability in enumerate(probabilities, start=1)
+                ),
+                "median_position": median_position,
+                "most_likely_position": max(
+                    range(1, len(team_ids) + 1),
+                    key=lambda position: probabilities[position - 1],
+                ),
+                "expected_points": point_sums[team] / simulations,
+                "expected_goal_difference": goal_difference_sums[team] / simulations,
+                "top_four_probability": sum(probabilities[:4]),
+                "position_17_probability": (
+                    probabilities[16] if len(probabilities) >= 17 else None
+                ),
+                "relegation_probability": sum(probabilities[-3:]),
+            }
+        )
+    standings_rows.sort(key=lambda row: cast(float, row["expected_position"]))
+    position_path = output / "position-probabilities.csv"
+    standings_path = output / "expected-standings.csv"
+    pl.DataFrame(probability_rows).write_csv(position_path)
+    pl.DataFrame(standings_rows).write_csv(standings_path)
+    return position_path, standings_path
 
 
 def _version_callback(value: bool) -> None:
@@ -374,6 +444,51 @@ def forecast_match(home_xg: float = 1.5, away_xg: float = 1.1) -> None:
     )
 
 
+@app.command("backtest-positions")
+def backtest_positions(
+    output: Path = typer.Option(
+        Path("artifacts/backtest-positions-20-seasons.json"),
+        "--output",
+    ),
+    warehouse: Path = typer.Option(Path("data/model.duckdb"), "--warehouse"),
+    start_season: int = typer.Option(2006, "--start-season"),
+    end_season: int = typer.Option(2025, "--end-season"),
+    simulations: int = typer.Option(20_000, "--simulations", min=1),
+    seed: int = typer.Option(202627, "--seed"),
+) -> None:
+    """Score preseason full-table distributions against actual standings."""
+
+    report = run_position_backtest(
+        load_backtest_matches(warehouse),
+        start_season=start_season,
+        end_season=end_season,
+        simulations=simulations,
+        seed=seed,
+    )
+    scores = report.aggregate
+    checks = {
+        "exact_requested_fold_count": report.fold_count == end_season - start_season + 1,
+        "position_log_loss_beats_uniform": (scores.position_log_loss < scores.uniform_log_loss),
+        "position_brier_beats_uniform": (scores.position_brier < scores.uniform_brier),
+        "expected_position_mae_beats_uniform": (
+            scores.mean_absolute_position_error < scores.uniform_mean_absolute_position_error
+        ),
+    }
+    payload = {
+        "method": "strict-preseason-expanding-window-position-distribution",
+        "start_season": start_season,
+        "end_season": end_season,
+        "fold_count": report.fold_count,
+        "simulations_per_fold": report.simulations_per_fold,
+        "aggregate": asdict(scores),
+        "folds": [asdict(fold) for fold in report.folds],
+        "acceptance": {"passed": all(checks.values()), "checks": checks},
+    }
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_bytes(orjson.dumps(payload, option=orjson.OPT_INDENT_2))
+    typer.echo(str(output.resolve()))
+
+
 @app.command("forecast-season")
 def forecast_season(
     simulations: int = typer.Option(5_000_000, "--simulations", min=1),
@@ -400,12 +515,15 @@ def forecast_season(
         result = SeasonSimulator(teams, LeagueRules.default()).simulate(
             fixtures, n=simulations, seed=seed
         )
+        position_path, standings_path = _write_position_outputs(result, teams, output)
         manifest_path.write_bytes(
             orjson.dumps(
                 {
                     "seed": seed,
                     "n_simulations": simulations,
                     "champion_counts": result.champion_counts,
+                    "position_probabilities_csv": str(position_path.resolve()),
+                    "expected_standings_csv": str(standings_path.resolve()),
                     "model_version": __version__,
                     "demo": True,
                 },
@@ -478,6 +596,11 @@ def forecast_season(
     pl.DataFrame([asdict(item) for item in prepared.expectations]).write_csv(
         output / "fixture-expectations.csv"
     )
+    position_path, standings_path = _write_position_outputs(
+        final,
+        prepared.team_ids,
+        output,
+    )
     alignment: dict[str, object] | None = None
     if tff_page is not None:
         tff_matches = TffAdapter().parse_matches(
@@ -510,6 +633,8 @@ def forecast_season(
                 "fixture_count": len(prepared.fixtures),
                 "value_coefficient": value_coefficient,
                 "probabilities": probabilities,
+                "position_probabilities_csv": str(position_path.resolve()),
+                "expected_standings_csv": str(standings_path.resolve()),
                 "team_source_alignment": alignment,
                 "convergence_csv": str(convergence_csv.resolve()),
                 "convergence_chart": str(convergence_chart.resolve()),
@@ -538,6 +663,10 @@ def export_dashboard_data(
         Path("artifacts/backtest-20-seasons.json"),
         "--backtest",
     ),
+    position_backtest: Path = typer.Option(
+        Path("artifacts/backtest-positions-20-seasons.json"),
+        "--position-backtest",
+    ),
     output: Path = typer.Option(
         Path("dashboard/public/data/dashboard.json"),
         "--output",
@@ -545,7 +674,7 @@ def export_dashboard_data(
 ) -> None:
     """Build the versioned static data contract used by the dashboard."""
 
-    payload = build_dashboard_payload(forecast, backtest)
+    payload = build_dashboard_payload(forecast, backtest, position_backtest)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_bytes(
         orjson.dumps(

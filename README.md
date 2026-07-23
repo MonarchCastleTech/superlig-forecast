@@ -68,6 +68,11 @@ uv run superlig backtest `
   --warehouse data/model.duckdb --start-season 2006 --end-season 2025 `
   --market-weight 0.9 --output artifacts/backtest-20-seasons.json
 
+uv run superlig backtest-positions `
+  --warehouse data/model.duckdb --start-season 2006 --end-season 2025 `
+  --simulations 20000 --seed 202627 `
+  --output artifacts/backtest-positions-20-seasons.json
+
 uv run superlig forecast-season `
   --warehouse data/model.duckdb `
   --squad-page <current-transfermarkt-league.html> `
@@ -88,6 +93,7 @@ Refresh the dashboard data after a new forecast or backtest:
 uv run superlig export-dashboard-data `
   --forecast artifacts/forecast-2026-27-5m `
   --backtest artifacts/backtest-20-seasons.json `
+  --position-backtest artifacts/backtest-positions-20-seasons.json `
   --output dashboard/public/data/dashboard.json
 ```
 
@@ -101,8 +107,9 @@ npm run dev
 
 Open `http://localhost:3000`. The dashboard includes selectable Monte Carlo
 checkpoints, club visibility controls, the championship ranking with confidence
-intervals, all 306 fixture forecasts, fold-level backtest history, and model
-methodology notes.
+intervals, all 306 fixture forecasts, an expected 1st–18th table, exact-position
+probabilities, a full club-by-position heatmap, fold-level backtest history, and
+model methodology notes.
 
 ## Verified backtest
 
@@ -110,7 +117,9 @@ The checked-in engine contract uses 20 strict expanding-window test folds:
 2006-07 through 2025-26. Training rows always predate the test season. Proper
 scores include multiclass log loss and Brier score for naïve, structural,
 market-only, and hybrid forecasts. The generated acceptance section is the
-machine-readable quality gate.
+machine-readable quality gate. A separate table backtest simulates every target
+season and scores the probability assigned to every club's actual finishing
+position, expected-rank error, and rank correlation against uniform baselines.
 
 ## Known modeling boundary
 

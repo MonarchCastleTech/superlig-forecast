@@ -32,6 +32,10 @@ test("server-renders the forecast research dashboard", async () => {
   assert.match(html, /<title>Süper Lig Forecast Lab<\/title>/i);
   assert.match(html, /Championship race/i);
   assert.match(html, /Monte Carlo convergence/i);
+  assert.match(html, /Possible standings/i);
+  assert.match(html, /Position probability/i);
+  assert.match(html, /17th/i);
+  assert.match(html, /Table backtest/i);
   assert.match(html, /Fixture explorer/i);
   assert.match(html, /Twenty-season validation/i);
   assert.match(html, /Forecast quality only/i);
@@ -44,4 +48,3 @@ test("removes the disposable starter preview", async () => {
     access(new URL("../app/_sites-preview", import.meta.url)),
   );
 });
-

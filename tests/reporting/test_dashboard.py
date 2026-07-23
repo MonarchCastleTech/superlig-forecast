@@ -14,7 +14,7 @@ def _write_csv(path: Path, rows: list[dict[str, object]]) -> None:
         writer.writerows(rows)
 
 
-def _artifact_set(tmp_path: Path) -> tuple[Path, Path]:
+def _artifact_set(tmp_path: Path) -> tuple[Path, Path, Path]:
     forecast = tmp_path / "forecast"
     forecast.mkdir()
     (forecast / "manifest.json").write_text(
@@ -97,6 +97,42 @@ def _artifact_set(tmp_path: Path) -> tuple[Path, Path]:
             }
         ],
     )
+    _write_csv(
+        forecast / "position-probabilities.csv",
+        [
+            {"club": "Galatasaray SK", "position": 1, "count": 30_000, "probability": 0.6},
+            {"club": "Galatasaray SK", "position": 2, "count": 20_000, "probability": 0.4},
+            {"club": "Fenerbahçe SK", "position": 1, "count": 20_000, "probability": 0.4},
+            {"club": "Fenerbahçe SK", "position": 2, "count": 30_000, "probability": 0.6},
+        ],
+    )
+    _write_csv(
+        forecast / "expected-standings.csv",
+        [
+            {
+                "club": "Galatasaray SK",
+                "expected_position": 1.4,
+                "median_position": 1,
+                "most_likely_position": 1,
+                "expected_points": 78.2,
+                "expected_goal_difference": 42.1,
+                "top_four_probability": 1.0,
+                "position_17_probability": "",
+                "relegation_probability": 0.0,
+            },
+            {
+                "club": "Fenerbahçe SK",
+                "expected_position": 1.6,
+                "median_position": 2,
+                "most_likely_position": 2,
+                "expected_points": 76.4,
+                "expected_goal_difference": 39.7,
+                "top_four_probability": 1.0,
+                "position_17_probability": "",
+                "relegation_probability": 0.0,
+            },
+        ],
+    )
     backtest = tmp_path / "backtest.json"
     backtest.write_text(
         json.dumps(
@@ -131,13 +167,38 @@ def _artifact_set(tmp_path: Path) -> tuple[Path, Path]:
         ),
         encoding="utf-8",
     )
-    return forecast, backtest
+    position_backtest = tmp_path / "position-backtest.json"
+    position_backtest.write_text(
+        json.dumps(
+            {
+                "method": "strict-preseason-expanding-window-position-distribution",
+                "start_season": 2006,
+                "end_season": 2025,
+                "fold_count": 20,
+                "simulations_per_fold": 20_000,
+                "aggregate": {
+                    "position_log_loss": 2.64,
+                    "uniform_log_loss": 2.91,
+                    "position_brier": 0.917,
+                    "uniform_brier": 0.946,
+                    "mean_absolute_position_error": 3.31,
+                    "uniform_mean_absolute_position_error": 4.61,
+                    "rank_correlation": 0.65,
+                    "mean_actual_position_probability": 0.094,
+                },
+                "folds": [],
+                "acceptance": {"passed": True, "checks": {"position_log_loss": True}},
+            }
+        ),
+        encoding="utf-8",
+    )
+    return forecast, backtest, position_backtest
 
 
 def test_build_dashboard_payload_normalizes_artifacts(tmp_path: Path) -> None:
-    forecast, backtest = _artifact_set(tmp_path)
+    forecast, backtest, position_backtest = _artifact_set(tmp_path)
 
-    payload = build_dashboard_payload(forecast, backtest)
+    payload = build_dashboard_payload(forecast, backtest, position_backtest)
 
     assert payload["schema_version"] == 1
     assert payload["meta"]["season"] == "2026-27"
@@ -150,15 +211,28 @@ def test_build_dashboard_payload_normalizes_artifacts(tmp_path: Path) -> None:
     assert payload["championship"][0]["champion_probability"] == pytest.approx(0.6)
     assert payload["convergence"][0]["simulation_count"] == 10_000
     assert payload["fixtures"][0]["home_expected_goals"] == pytest.approx(1.6)
+    gala_first = next(
+        row
+        for row in payload["positions"]
+        if row["club"] == "Galatasaray SK" and row["position"] == 1
+    )
+    assert gala_first == {
+        "club": "Galatasaray SK",
+        "position": 1,
+        "count": 30_000,
+        "probability": pytest.approx(0.6),
+    }
+    assert payload["expected_standings"][0]["expected_position"] == pytest.approx(1.4)
     assert payload["backtest"]["aggregate"]["hybrid_log_loss"] == pytest.approx(1.0017)
     assert payload["backtest"]["folds"][0]["season"] == 2025
+    assert payload["position_backtest"]["aggregate"]["position_log_loss"] == pytest.approx(2.64)
 
 
 def test_build_dashboard_payload_rejects_invalid_probability(tmp_path: Path) -> None:
-    forecast, backtest = _artifact_set(tmp_path)
+    forecast, backtest, position_backtest = _artifact_set(tmp_path)
     championship = forecast / "champion-probabilities.csv"
     text = championship.read_text(encoding="utf-8").replace("0.6,0.004", "1.6,0.004")
     championship.write_text(text, encoding="utf-8")
 
     with pytest.raises(ValueError, match="champion_probability"):
-        build_dashboard_payload(forecast, backtest)
+        build_dashboard_payload(forecast, backtest, position_backtest)

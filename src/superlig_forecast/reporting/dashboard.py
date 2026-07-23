@@ -73,11 +73,13 @@ def _load_json(path: Path) -> dict[str, Any]:
 def build_dashboard_payload(
     forecast_dir: Path,
     backtest_path: Path,
+    position_backtest_path: Path,
 ) -> dict[str, Any]:
     """Normalize engine artifacts into the versioned web dashboard contract."""
 
     manifest = _load_json(forecast_dir / "manifest.json")
     backtest = _load_json(backtest_path)
+    position_backtest = _load_json(position_backtest_path)
 
     championship = [
         {
@@ -121,6 +123,45 @@ def build_dashboard_payload(
         }
         for row in _rows(forecast_dir / "fixture-expectations.csv")
     ]
+    positions = [
+        {
+            "club": row["club"],
+            "position": _number(row, "position", integer=True),
+            "count": _number(row, "count", integer=True),
+            "probability": _probability(row, "probability"),
+        }
+        for row in _rows(forecast_dir / "position-probabilities.csv")
+    ]
+    positions.sort(key=lambda row: (str(row["club"]), int(row["position"])))
+    expected_standings = [
+        {
+            "club": row["club"],
+            "expected_position": _number(row, "expected_position"),
+            "median_position": _number(row, "median_position", integer=True),
+            "most_likely_position": _number(
+                row,
+                "most_likely_position",
+                integer=True,
+            ),
+            "expected_points": _number(row, "expected_points"),
+            "expected_goal_difference": _number(
+                row,
+                "expected_goal_difference",
+            ),
+            "top_four_probability": _probability(row, "top_four_probability"),
+            "position_17_probability": _number(
+                row,
+                "position_17_probability",
+                nullable=True,
+            ),
+            "relegation_probability": _probability(
+                row,
+                "relegation_probability",
+            ),
+        }
+        for row in _rows(forecast_dir / "expected-standings.csv")
+    ]
+    expected_standings.sort(key=lambda row: cast(float, row["expected_position"]))
 
     return {
         "schema_version": 1,
@@ -138,6 +179,8 @@ def build_dashboard_payload(
         "championship": championship,
         "convergence": convergence,
         "fixtures": fixtures,
+        "positions": positions,
+        "expected_standings": expected_standings,
         "backtest": {
             key: backtest[key]
             for key in (
@@ -148,6 +191,19 @@ def build_dashboard_payload(
                 "fold_count",
                 "match_count",
                 "market_match_count",
+                "aggregate",
+                "folds",
+                "acceptance",
+            )
+        },
+        "position_backtest": {
+            key: position_backtest[key]
+            for key in (
+                "method",
+                "start_season",
+                "end_season",
+                "fold_count",
+                "simulations_per_fold",
                 "aggregate",
                 "folds",
                 "acceptance",

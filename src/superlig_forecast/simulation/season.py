@@ -19,6 +19,9 @@ class FixtureForecast:
 @dataclass(frozen=True)
 class SimulationResult:
     champion_counts: dict[str, int]
+    position_counts: dict[str, tuple[int, ...]]
+    point_sums: dict[str, int]
+    goal_difference_sums: dict[str, int]
     n_simulations: int
     draw_count: int
     decisive_count: int
@@ -59,7 +62,10 @@ class SeasonSimulator:
             raise ValueError("checkpoints must contain positive simulation counts")
         ordered = tuple(sorted(set(checkpoints)))
         rng = np.random.default_rng(seed)
-        champions = np.zeros(len(self.team_ids), dtype=np.int64)
+        team_count = len(self.team_ids)
+        position_counts = np.zeros((team_count, team_count), dtype=np.int64)
+        point_sums = np.zeros(team_count, dtype=np.int64)
+        goal_difference_sums = np.zeros(team_count, dtype=np.int64)
         total_draws = total_decisive = total_points = 0
         completed = 0
         results: dict[int, SimulationResult] = {}
@@ -94,12 +100,36 @@ class SeasonSimulator:
                 ranking_score = (
                     points.astype(np.int64) * 1_000_000 + goal_difference * 1_000 + goals_for
                 )
-                winner = np.argmax(ranking_score, axis=1)
-                champions += np.bincount(winner, minlength=len(self.team_ids))
+                order = np.argsort(-ranking_score, axis=1, kind="stable")
+                for position in range(team_count):
+                    position_counts[:, position] += np.bincount(
+                        order[:, position],
+                        minlength=team_count,
+                    )
+                point_sums += points.sum(axis=0, dtype=np.int64)
+                goal_difference_sums += goal_difference.sum(axis=0, dtype=np.int64)
                 total_points += int(points.sum())
                 completed += size
             results[checkpoint] = SimulationResult(
-                dict(zip(self.team_ids, champions.tolist(), strict=True)),
+                dict(
+                    zip(
+                        self.team_ids,
+                        position_counts[:, 0].tolist(),
+                        strict=True,
+                    )
+                ),
+                {
+                    team: tuple(int(value) for value in position_counts[index])
+                    for index, team in enumerate(self.team_ids)
+                },
+                dict(zip(self.team_ids, point_sums.tolist(), strict=True)),
+                dict(
+                    zip(
+                        self.team_ids,
+                        goal_difference_sums.tolist(),
+                        strict=True,
+                    )
+                ),
                 checkpoint,
                 total_draws,
                 total_decisive,

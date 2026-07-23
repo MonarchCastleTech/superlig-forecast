@@ -15,6 +15,10 @@
   convergence, CSV, JSON, Parquet, and PNG outputs.
 - [x] Interactive championship, convergence, fixture, validation, and
   methodology dashboard on the stable artifact contract.
+- [x] Full 1st–18th position distributions, expected standings, exact-place
+  probabilities, and club-by-position heatmap.
+- [x] Strict 20-season preseason table backtest with position log loss, Brier
+  score, expected-rank error, and uniform-baseline acceptance gates.
 
 ## Next research work
 
