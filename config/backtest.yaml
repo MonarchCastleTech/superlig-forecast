@@ -1,0 +1,7 @@
+warmup: 2000-01:2005-06
+scored: 2006-07:2025-26
+market_coverage_threshold: 0.80
+calibration_ece_threshold: 0.03
+market_metric_tolerance: 0.005
+bootstrap_seed: 202627
+
