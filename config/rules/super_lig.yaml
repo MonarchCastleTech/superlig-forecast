@@ -1,0 +1,13 @@
+default:
+  win_points: 3
+  draw_points: 1
+  loss_points: 0
+  tie_breakers: [points, head_to_head, goal_difference, goals_for]
+2026-27:
+  win_points: 3
+  draw_points: 1
+  loss_points: 0
+  tie_breakers: [points, head_to_head, goal_difference, goals_for]
+  source_url: https://www.tff.org/default.aspx?pageID=198
+  retrieved_at: 2026-07-23
+
