@@ -13,6 +13,8 @@
 - [x] Five-million-run-capable deterministic Monte Carlo engine.
 - [x] Match probability, expected-goal, title probability, confidence interval,
   convergence, CSV, JSON, Parquet, and PNG outputs.
+- [x] Interactive championship, convergence, fixture, validation, and
+  methodology dashboard on the stable artifact contract.
 
 ## Next research work
 
@@ -25,4 +27,3 @@
   difference and goals scored.
 - [ ] Add sequential in-season updates after each completed match so the
   probability timeline reflects observed 2026-27 results.
-- [ ] Build the deferred interactive dashboard on the stable artifact contracts.

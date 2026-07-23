@@ -24,10 +24,16 @@ uv sync
 uv run pytest
 uv run ruff check src tests
 uv run mypy src
+
+cd dashboard
+npm ci
+npm test
+npm run lint
 ```
 
-The interactive dashboard is intentionally deferred. Engine outputs are JSON,
-CSV, Parquet, and PNG files.
+Engine outputs are JSON, CSV, Parquet, and PNG files. The interactive dashboard
+uses a versioned static JSON export so it remains independent of DuckDB and the
+raw source snapshots at runtime.
 
 ## Reproducible runbook
 
@@ -73,6 +79,30 @@ uv run superlig export-results --output artifacts/report
 ```
 
 Use `forecast-season --demo` only for a four-team smoke test.
+
+## Interactive dashboard
+
+Refresh the dashboard data after a new forecast or backtest:
+
+```powershell
+uv run superlig export-dashboard-data `
+  --forecast artifacts/forecast-2026-27-5m `
+  --backtest artifacts/backtest-20-seasons.json `
+  --output dashboard/public/data/dashboard.json
+```
+
+Run the local dashboard:
+
+```powershell
+cd dashboard
+npm ci
+npm run dev
+```
+
+Open `http://localhost:3000`. The dashboard includes selectable Monte Carlo
+checkpoints, club visibility controls, the championship ranking with confidence
+intervals, all 306 fixture forecasts, fold-level backtest history, and model
+methodology notes.
 
 ## Verified backtest
 
