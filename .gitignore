@@ -1,0 +1,16 @@
+.superpowers/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+.env
+data/raw/
+data/cache/
+artifacts/
+
