@@ -1,0 +1,3937 @@
+{
+  "backtest": {
+    "acceptance": {
+      "checks": {
+        "exact_requested_fold_count": true,
+        "hybrid_beats_naive_brier": true,
+        "hybrid_beats_naive_log_loss": true,
+        "hybrid_within_market_log_loss_tolerance": true
+      },
+      "passed": true
+    },
+    "aggregate": {
+      "hybrid_accuracy": 0.5140593444151002,
+      "hybrid_brier": 0.5981495129441596,
+      "hybrid_log_loss": 1.0017701370872156,
+      "market_brier": 0.5929287820192489,
+      "market_log_loss": 0.9939522652234796,
+      "market_subset_hybrid_brier": 0.5930886107456383,
+      "market_subset_hybrid_log_loss": 0.9943520239701876,
+      "naive_brier": 0.6436626859384176,
+      "naive_log_loss": 1.06559312507665,
+      "structural_brier": 0.6114226726618958,
+      "structural_log_loss": 1.0208457031742775
+    },
+    "end_season": 2025,
+    "fold_count": 20,
+    "folds": [
+      {
+        "market_match_count": 0,
+        "match_count": 306,
+        "scores": {
+          "hybrid_accuracy": 0.4934640522875817,
+          "hybrid_brier": 0.6234042677068454,
+          "hybrid_log_loss": 1.0363635037521657,
+          "market_brier": null,
+          "market_log_loss": null,
+          "market_subset_hybrid_brier": null,
+          "market_subset_hybrid_log_loss": null,
+          "naive_brier": 0.642025562696734,
+          "naive_log_loss": 1.065212817814523,
+          "structural_brier": 0.6234042677068454,
+          "structural_log_loss": 1.0363635037521657
+        },
+        "season": 2006
+      },
+      {
+        "market_match_count": 0,
+        "match_count": 306,
+        "scores": {
+          "hybrid_accuracy": 0.5555555555555556,
+          "hybrid_brier": 0.5901059335949936,
+          "hybrid_log_loss": 0.9899774410318681,
+          "market_brier": null,
+          "market_log_loss": null,
+          "market_subset_hybrid_brier": null,
+          "market_subset_hybrid_log_loss": null,
+          "naive_brier": 0.6299506104305997,
+          "naive_log_loss": 1.0458431324917292,
+          "structural_brier": 0.5901059335949936,
+          "structural_log_loss": 0.9899774410318681
+        },
+        "season": 2007
+      },
+      {
+        "market_match_count": 306,
+        "match_count": 306,
+        "scores": {
+          "hybrid_accuracy": 0.5490196078431373,
+          "hybrid_brier": 0.5767678180777224,
+          "hybrid_log_loss": 0.9748538305032203,
+          "market_brier": 0.5760422288528985,
+          "market_log_loss": 0.9743604633785018,
+          "market_subset_hybrid_brier": 0.5767678180777224,
+          "market_subset_hybrid_log_loss": 0.9748538305032203,
+          "naive_brier": 0.6331868122983569,
+          "naive_log_loss": 1.050477498480514,
+          "structural_brier": 0.6081214824039831,
+          "structural_log_loss": 1.0167976484338206
+        },
+        "season": 2008
+      },
+      {
+        "market_match_count": 272,
+        "match_count": 272,
+        "scores": {
+          "hybrid_accuracy": 0.48161764705882354,
+          "hybrid_brier": 0.5996846651358677,
+          "hybrid_log_loss": 1.0045017512780503,
+          "market_brier": 0.5991114256627462,
+          "market_log_loss": 1.0035610540313051,
+          "market_subset_hybrid_brier": 0.5996846651358677,
+          "market_subset_hybrid_log_loss": 1.0045017512780503,
+          "naive_brier": 0.6541955112332852,
+          "naive_log_loss": 1.0814376255822349,
+          "structural_brier": 0.6211964456460658,
+          "structural_log_loss": 1.0342701715804599
+        },
+        "season": 2009
+      },
+      {
+        "market_match_count": 304,
+        "match_count": 304,
+        "scores": {
+          "hybrid_accuracy": 0.5164473684210527,
+          "hybrid_brier": 0.58342018273018,
+          "hybrid_log_loss": 0.9811877306334995,
+          "market_brier": 0.5827721452712241,
+          "market_log_loss": 0.9796719699939721,
+          "market_subset_hybrid_brier": 0.58342018273018,
+          "market_subset_hybrid_log_loss": 0.9811877306334995,
+          "naive_brier": 0.6494309106185059,
+          "naive_log_loss": 1.0730615776262205,
+          "structural_brier": 0.605956864166272,
+          "structural_log_loss": 1.0146671774731388
+        },
+        "season": 2010
+      },
+      {
+        "market_match_count": 330,
+        "match_count": 330,
+        "scores": {
+          "hybrid_accuracy": 0.5515151515151515,
+          "hybrid_brier": 0.5829956878599214,
+          "hybrid_log_loss": 0.979294087654946,
+          "market_brier": 0.5826937918411312,
+          "market_log_loss": 0.9782035169260246,
+          "market_subset_hybrid_brier": 0.5829956878599214,
+          "market_subset_hybrid_log_loss": 0.979294087654946,
+          "naive_brier": 0.6347117407871017,
+          "naive_log_loss": 1.0530970674084987,
+          "structural_brier": 0.6079835151874969,
+          "structural_log_loss": 1.0148383616238221
+        },
+        "season": 2011
+      },
+      {
+        "market_match_count": 306,
+        "match_count": 306,
+        "scores": {
+          "hybrid_accuracy": 0.5032679738562091,
+          "hybrid_brier": 0.6186055023242139,
+          "hybrid_log_loss": 1.030874814029948,
+          "market_brier": 0.6197910505277358,
+          "market_log_loss": 1.0320097300242734,
+          "market_subset_hybrid_brier": 0.6186055023242139,
+          "market_subset_hybrid_log_loss": 1.030874814029948,
+          "naive_brier": 0.6468181254128226,
+          "naive_log_loss": 1.070635784776198,
+          "structural_brier": 0.6287026344795396,
+          "structural_log_loss": 1.049887693115083
+        },
+        "season": 2012
+      },
+      {
+        "market_match_count": 304,
+        "match_count": 304,
+        "scores": {
+          "hybrid_accuracy": 0.5,
+          "hybrid_brier": 0.6018213881230455,
+          "hybrid_log_loss": 1.0054665279943213,
+          "market_brier": 0.6016003084155823,
+          "market_log_loss": 1.005176015844385,
+          "market_subset_hybrid_brier": 0.6018213881230455,
+          "market_subset_hybrid_log_loss": 1.0054665279943213,
+          "naive_brier": 0.6365601027531718,
+          "naive_log_loss": 1.0562399885192513,
+          "structural_brier": 0.6197521641225526,
+          "structural_log_loss": 1.030911630426902
+        },
+        "season": 2013
+      },
+      {
+        "market_match_count": 306,
+        "match_count": 306,
+        "scores": {
+          "hybrid_accuracy": 0.5163398692810458,
+          "hybrid_brier": 0.5986134398404871,
+          "hybrid_log_loss": 1.0006787701123914,
+          "market_brier": 0.5993624383280333,
+          "market_log_loss": 1.001541552620706,
+          "market_subset_hybrid_brier": 0.5986134398404871,
+          "market_subset_hybrid_log_loss": 1.0006787701123914,
+          "naive_brier": 0.6557199911547329,
+          "naive_log_loss": 1.0824938504015804,
+          "structural_brier": 0.6097679648817887,
+          "structural_log_loss": 1.0184444348408834
+        },
+        "season": 2014
+      },
+      {
+        "market_match_count": 305,
+        "match_count": 305,
+        "scores": {
+          "hybrid_accuracy": 0.5409836065573771,
+          "hybrid_brier": 0.5876094509418149,
+          "hybrid_log_loss": 0.9864536746399765,
+          "market_brier": 0.5863478906774984,
+          "market_log_loss": 0.9843394921534093,
+          "market_subset_hybrid_brier": 0.5876094509418149,
+          "market_subset_hybrid_log_loss": 0.9864536746399765,
+          "naive_brier": 0.6377718241615703,
+          "naive_log_loss": 1.05746724213993,
+          "structural_brier": 0.6178658935151493,
+          "structural_log_loss": 1.0298933004501436
+        },
+        "season": 2015
+      },
+      {
+        "market_match_count": 305,
+        "match_count": 305,
+        "scores": {
+          "hybrid_accuracy": 0.5377049180327869,
+          "hybrid_brier": 0.5789366334264355,
+          "hybrid_log_loss": 0.972293910425787,
+          "market_brier": 0.578644791428171,
+          "market_log_loss": 0.9713046023427948,
+          "market_subset_hybrid_brier": 0.5789366334264355,
+          "market_subset_hybrid_log_loss": 0.972293910425787,
+          "naive_brier": 0.644977683653721,
+          "naive_log_loss": 1.0661172428556618,
+          "structural_brier": 0.6046139983787624,
+          "structural_log_loss": 1.011473569279682
+        },
+        "season": 2016
+      },
+      {
+        "market_match_count": 306,
+        "match_count": 306,
+        "scores": {
+          "hybrid_accuracy": 0.5784313725490197,
+          "hybrid_brier": 0.543230024113723,
+          "hybrid_log_loss": 0.9208932720488439,
+          "market_brier": 0.5425334555267162,
+          "market_log_loss": 0.9191482056987678,
+          "market_subset_hybrid_brier": 0.543230024113723,
+          "market_subset_hybrid_log_loss": 0.9208932720488439,
+          "naive_brier": 0.6247605811854003,
+          "naive_log_loss": 1.0387431700350025,
+          "structural_brier": 0.5753261645036887,
+          "structural_log_loss": 0.9690047313813499
+        },
+        "season": 2017
+      },
+      {
+        "market_match_count": 304,
+        "match_count": 305,
+        "scores": {
+          "hybrid_accuracy": 0.4885245901639344,
+          "hybrid_brier": 0.6103994789514913,
+          "hybrid_log_loss": 1.0194801040436074,
+          "market_brier": 0.611932510254391,
+          "market_log_loss": 1.0216885815050547,
+          "market_subset_hybrid_brier": 0.611937165459794,
+          "market_subset_hybrid_log_loss": 1.0216304771636746,
+          "naive_brier": 0.6493712331173686,
+          "naive_log_loss": 1.0745660446668002,
+          "structural_brier": 0.6249284640722966,
+          "structural_log_loss": 1.0389034195105087
+        },
+        "season": 2018
+      },
+      {
+        "market_match_count": 306,
+        "match_count": 306,
+        "scores": {
+          "hybrid_accuracy": 0.49019607843137253,
+          "hybrid_brier": 0.607502812284617,
+          "hybrid_log_loss": 1.0148653898328117,
+          "market_brier": 0.607385459526322,
+          "market_log_loss": 1.0149986765361376,
+          "market_subset_hybrid_brier": 0.607502812284617,
+          "market_subset_hybrid_log_loss": 1.0148653898328117,
+          "naive_brier": 0.6521555179842867,
+          "naive_log_loss": 1.0774421008600774,
+          "structural_brier": 0.6301784968147921,
+          "structural_log_loss": 1.0459889939759324
+        },
+        "season": 2019
+      },
+      {
+        "market_match_count": 420,
+        "match_count": 420,
+        "scores": {
+          "hybrid_accuracy": 0.4642857142857143,
+          "hybrid_brier": 0.6131359669606024,
+          "hybrid_log_loss": 1.0246648281851958,
+          "market_brier": 0.6136667717932011,
+          "market_log_loss": 1.025850608803683,
+          "market_subset_hybrid_brier": 0.6131359669606024,
+          "market_subset_hybrid_log_loss": 1.0246648281851958,
+          "naive_brier": 0.6630324002644865,
+          "naive_log_loss": 1.0926707000869873,
+          "structural_brier": 0.6243061482868695,
+          "structural_log_loss": 1.037978566362477
+        },
+        "season": 2020
+      },
+      {
+        "market_match_count": 0,
+        "match_count": 380,
+        "scores": {
+          "hybrid_accuracy": 0.4710526315789474,
+          "hybrid_brier": 0.6321154480797869,
+          "hybrid_log_loss": 1.0493578834905168,
+          "market_brier": null,
+          "market_log_loss": null,
+          "market_subset_hybrid_brier": null,
+          "market_subset_hybrid_log_loss": null,
+          "naive_brier": 0.6371672115478989,
+          "naive_log_loss": 1.056120829482355,
+          "structural_brier": 0.6321154480797869,
+          "structural_log_loss": 1.0493578834905168
+        },
+        "season": 2021
+      },
+      {
+        "market_match_count": 0,
+        "match_count": 342,
+        "scores": {
+          "hybrid_accuracy": 0.5029239766081871,
+          "hybrid_brier": 0.6102010588193396,
+          "hybrid_log_loss": 1.0192232636315184,
+          "market_brier": null,
+          "market_log_loss": null,
+          "market_subset_hybrid_brier": null,
+          "market_subset_hybrid_log_loss": null,
+          "naive_brier": 0.6435219040117109,
+          "naive_log_loss": 1.0639036294427915,
+          "structural_brier": 0.6102010588193396,
+          "structural_log_loss": 1.0192232636315184
+        },
+        "season": 2022
+      },
+      {
+        "market_match_count": 0,
+        "match_count": 380,
+        "scores": {
+          "hybrid_accuracy": 0.5236842105263158,
+          "hybrid_brier": 0.5935835368941121,
+          "hybrid_log_loss": 1.0016657533423767,
+          "market_brier": null,
+          "market_log_loss": null,
+          "market_subset_hybrid_brier": null,
+          "market_subset_hybrid_log_loss": null,
+          "naive_brier": 0.6446920264281615,
+          "naive_log_loss": 1.0671683569208255,
+          "structural_brier": 0.5935835368941121,
+          "structural_log_loss": 1.0016657533423767
+        },
+        "season": 2023
+      },
+      {
+        "market_match_count": 0,
+        "match_count": 342,
+        "scores": {
+          "hybrid_accuracy": 0.543859649122807,
+          "hybrid_brier": 0.5922987420257106,
+          "hybrid_log_loss": 0.9945017562041143,
+          "market_brier": null,
+          "market_log_loss": null,
+          "market_subset_hybrid_brier": null,
+          "market_subset_hybrid_log_loss": null,
+          "naive_brier": 0.6313212082696316,
+          "naive_log_loss": 1.0479453670745253,
+          "structural_brier": 0.5922987420257106,
+          "structural_log_loss": 0.9945017562041143
+        },
+        "season": 2024
+      },
+      {
+        "market_match_count": 0,
+        "match_count": 306,
+        "scores": {
+          "hybrid_accuracy": 0.49019607843137253,
+          "hybrid_brier": 0.6063653728298868,
+          "hybrid_log_loss": 1.0094614124709735,
+          "market_brier": null,
+          "market_log_loss": null,
+          "market_subset_hybrid_brier": null,
+          "market_subset_hybrid_log_loss": null,
+          "naive_brier": 0.65932429844079,
+          "naive_log_loss": 1.088048215013917,
+          "structural_brier": 0.6063653728298868,
+          "structural_log_loss": 1.0094614124709735
+        },
+        "season": 2025
+      }
+    ],
+    "market_match_count": 4074,
+    "market_weight": 0.9,
+    "match_count": 6437,
+    "method": "strict-expanding-window",
+    "start_season": 2006
+  },
+  "championship": [
+    {
+      "champion_count": 2757208,
+      "champion_probability": 0.5514416,
+      "ci95_half_width": 0.0004359436227977908,
+      "club": "Galatasaray SK",
+      "squad_value_eur": 323300000
+    },
+    {
+      "champion_count": 2131701,
+      "champion_probability": 0.4263402,
+      "ci95_half_width": 0.0004334873416402811,
+      "club": "Fenerbahçe SK",
+      "squad_value_eur": 333150000
+    },
+    {
+      "champion_count": 69320,
+      "champion_probability": 0.013864,
+      "ci95_half_width": 0.00010249053279065964,
+      "club": "Beşiktaş JK",
+      "squad_value_eur": 202800000
+    },
+    {
+      "champion_count": 39388,
+      "champion_probability": 0.0078776,
+      "ci95_half_width": 0.0000774908918460883,
+      "club": "Trabzonspor",
+      "squad_value_eur": 136000000
+    },
+    {
+      "champion_count": 1044,
+      "champion_probability": 0.0002088,
+      "ci95_half_width": 0.00001266458523659181,
+      "club": "Göztepe",
+      "squad_value_eur": 66750000
+    },
+    {
+      "champion_count": 525,
+      "champion_probability": 0.000105,
+      "ci95_half_width": 8.981376802695675e-6,
+      "club": "Samsunspor",
+      "squad_value_eur": 52750000
+    },
+    {
+      "champion_count": 520,
+      "champion_probability": 0.000104,
+      "ci95_half_width": 8.938510493973814e-6,
+      "club": "İstanbul Başakşehir FK",
+      "squad_value_eur": 77450000
+    },
+    {
+      "champion_count": 61,
+      "champion_probability": 0.0000122,
+      "ci95_half_width": 3.0615991970294217e-6,
+      "club": "Alanyaspor",
+      "squad_value_eur": 32830000
+    },
+    {
+      "champion_count": 55,
+      "champion_probability": 0.000011,
+      "ci95_half_width": 2.907133817573591e-6,
+      "club": "Konyaspor",
+      "squad_value_eur": 27480000
+    },
+    {
+      "champion_count": 49,
+      "champion_probability": 9.8e-6,
+      "ci95_half_width": 2.743986554367058e-6,
+      "club": "Amed SK",
+      "squad_value_eur": 14950000
+    },
+    {
+      "champion_count": 43,
+      "champion_probability": 8.6e-6,
+      "ci95_half_width": 2.570504848284243e-6,
+      "club": "Çorum FK",
+      "squad_value_eur": 16380000
+    },
+    {
+      "champion_count": 33,
+      "champion_probability": 6.6e-6,
+      "ci95_half_width": 2.2518611262644066e-6,
+      "club": "Erzurumspor FK",
+      "squad_value_eur": 11550000
+    },
+    {
+      "champion_count": 25,
+      "champion_probability": 5e-6,
+      "ci95_half_width": 1.959995099993875e-6,
+      "club": "Çaykur Rizespor",
+      "squad_value_eur": 46850000
+    },
+    {
+      "champion_count": 21,
+      "champion_probability": 4.2e-6,
+      "ci95_half_width": 1.796365900042416e-6,
+      "club": "Kasımpaşa",
+      "squad_value_eur": 25730000
+    },
+    {
+      "champion_count": 4,
+      "champion_probability": 8e-7,
+      "ci95_half_width": 7.839996863999373e-7,
+      "club": "Gençlerbirliği SK",
+      "squad_value_eur": 14550000
+    },
+    {
+      "champion_count": 2,
+      "champion_probability": 4e-7,
+      "ci95_half_width": 5.543716055758988e-7,
+      "club": "Gaziantep FK",
+      "squad_value_eur": 17980000
+    },
+    {
+      "champion_count": 1,
+      "champion_probability": 2e-7,
+      "ci95_half_width": 3.9199996079999803e-7,
+      "club": "Kocaelispor",
+      "squad_value_eur": 20150000
+    },
+    {
+      "champion_count": 0,
+      "champion_probability": 0.0,
+      "ci95_half_width": 0.0,
+      "club": "Eyüpspor",
+      "squad_value_eur": 10180000
+    }
+  ],
+  "convergence": [
+    {
+      "champion_probability": 0.0,
+      "club": "Alanyaspor",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Amed SK",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0154,
+      "club": "Beşiktaş JK",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Erzurumspor FK",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Eyüpspor",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.4299,
+      "club": "Fenerbahçe SK",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.5456,
+      "club": "Galatasaray SK",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Gaziantep FK",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Gençlerbirliği SK",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0002,
+      "club": "Göztepe",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Kasımpaşa",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Kocaelispor",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Konyaspor",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Samsunspor",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0088,
+      "club": "Trabzonspor",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Çaykur Rizespor",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Çorum FK",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.0001,
+      "club": "İstanbul Başakşehir FK",
+      "simulation_count": 10000
+    },
+    {
+      "champion_probability": 0.00002,
+      "club": "Alanyaspor",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Amed SK",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.01414,
+      "club": "Beşiktaş JK",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Erzurumspor FK",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Eyüpspor",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.42416,
+      "club": "Fenerbahçe SK",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.55346,
+      "club": "Galatasaray SK",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Gaziantep FK",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Gençlerbirliği SK",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.00012,
+      "club": "Göztepe",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Kasımpaşa",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Kocaelispor",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Konyaspor",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.0001,
+      "club": "Samsunspor",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.00788,
+      "club": "Trabzonspor",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.00002,
+      "club": "Çaykur Rizespor",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.00002,
+      "club": "Çorum FK",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.00008,
+      "club": "İstanbul Başakşehir FK",
+      "simulation_count": 50000
+    },
+    {
+      "champion_probability": 0.00002,
+      "club": "Alanyaspor",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.00001,
+      "club": "Amed SK",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.01392,
+      "club": "Beşiktaş JK",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Erzurumspor FK",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Eyüpspor",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.42651,
+      "club": "Fenerbahçe SK",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.55119,
+      "club": "Galatasaray SK",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Gaziantep FK",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Gençlerbirliği SK",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.0001,
+      "club": "Göztepe",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.00001,
+      "club": "Kasımpaşa",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Kocaelispor",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.00001,
+      "club": "Konyaspor",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.00011,
+      "club": "Samsunspor",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.00801,
+      "club": "Trabzonspor",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.00001,
+      "club": "Çaykur Rizespor",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.00001,
+      "club": "Çorum FK",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.00009,
+      "club": "İstanbul Başakşehir FK",
+      "simulation_count": 100000
+    },
+    {
+      "champion_probability": 0.000018,
+      "club": "Alanyaspor",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.00001,
+      "club": "Amed SK",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.013854,
+      "club": "Beşiktaş JK",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 4e-6,
+      "club": "Erzurumspor FK",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Eyüpspor",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.426522,
+      "club": "Fenerbahçe SK",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.551192,
+      "club": "Galatasaray SK",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Gaziantep FK",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 2e-6,
+      "club": "Gençlerbirliği SK",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.000182,
+      "club": "Göztepe",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 6e-6,
+      "club": "Kasımpaşa",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Kocaelispor",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.000018,
+      "club": "Konyaspor",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.000116,
+      "club": "Samsunspor",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.007952,
+      "club": "Trabzonspor",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 2e-6,
+      "club": "Çaykur Rizespor",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.000012,
+      "club": "Çorum FK",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.00011,
+      "club": "İstanbul Başakşehir FK",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.000013,
+      "club": "Alanyaspor",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.00001,
+      "club": "Amed SK",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.013835,
+      "club": "Beşiktaş JK",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 5e-6,
+      "club": "Erzurumspor FK",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Eyüpspor",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.426375,
+      "club": "Fenerbahçe SK",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.551427,
+      "club": "Galatasaray SK",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Gaziantep FK",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 1e-6,
+      "club": "Gençlerbirliği SK",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.000196,
+      "club": "Göztepe",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 6e-6,
+      "club": "Kasımpaşa",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Kocaelispor",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.000014,
+      "club": "Konyaspor",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.000108,
+      "club": "Samsunspor",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.007891,
+      "club": "Trabzonspor",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 3e-6,
+      "club": "Çaykur Rizespor",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.000011,
+      "club": "Çorum FK",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.000105,
+      "club": "İstanbul Başakşehir FK",
+      "simulation_count": 1000000
+    },
+    {
+      "champion_probability": 0.0000115,
+      "club": "Alanyaspor",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.00001,
+      "club": "Amed SK",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.013909,
+      "club": "Beşiktaş JK",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 6.5e-6,
+      "club": "Erzurumspor FK",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Eyüpspor",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.4264755,
+      "club": "Fenerbahçe SK",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.551241,
+      "club": "Galatasaray SK",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Gaziantep FK",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 1e-6,
+      "club": "Gençlerbirliği SK",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.0002025,
+      "club": "Göztepe",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 4.5e-6,
+      "club": "Kasımpaşa",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 5e-7,
+      "club": "Kocaelispor",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.000014,
+      "club": "Konyaspor",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.0001055,
+      "club": "Samsunspor",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.007897,
+      "club": "Trabzonspor",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 2.5e-6,
+      "club": "Çaykur Rizespor",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.00001,
+      "club": "Çorum FK",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.000109,
+      "club": "İstanbul Başakşehir FK",
+      "simulation_count": 2000000
+    },
+    {
+      "champion_probability": 0.0000122,
+      "club": "Alanyaspor",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 9.8e-6,
+      "club": "Amed SK",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 0.013864,
+      "club": "Beşiktaş JK",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 6.6e-6,
+      "club": "Erzurumspor FK",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Eyüpspor",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 0.4263402,
+      "club": "Fenerbahçe SK",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 0.5514416,
+      "club": "Galatasaray SK",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 4e-7,
+      "club": "Gaziantep FK",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 8e-7,
+      "club": "Gençlerbirliği SK",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 0.0002088,
+      "club": "Göztepe",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 4.2e-6,
+      "club": "Kasımpaşa",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 2e-7,
+      "club": "Kocaelispor",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 0.000011,
+      "club": "Konyaspor",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 0.000105,
+      "club": "Samsunspor",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 0.0078776,
+      "club": "Trabzonspor",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 5e-6,
+      "club": "Çaykur Rizespor",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 8.6e-6,
+      "club": "Çorum FK",
+      "simulation_count": 5000000
+    },
+    {
+      "champion_probability": 0.000104,
+      "club": "İstanbul Başakşehir FK",
+      "simulation_count": 5000000
+    }
+  ],
+  "fixtures": [
+    {
+      "away_expected_goals": 1.1809075980924826,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.2773103320315484,
+      "draw_probability": 0.26001116607486635,
+      "home_expected_goals": 1.5905785966184778,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.46267850189358506
+    },
+    {
+      "away_expected_goals": 1.618596665761968,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.49749013667688735,
+      "draw_probability": 0.2594954812856185,
+      "home_expected_goals": 1.0610878081946067,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.24301438203749431
+    },
+    {
+      "away_expected_goals": 1.1668366690914582,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.27064663773176867,
+      "draw_probability": 0.2586859473840588,
+      "home_expected_goals": 1.6097594460864622,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.4706674148841726
+    },
+    {
+      "away_expected_goals": 0.908149629667223,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.2153911791102297,
+      "draw_probability": 0.26824382568813854,
+      "home_expected_goals": 1.54584361338194,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.5163649952016318
+    },
+    {
+      "away_expected_goals": 2.3754423870594015,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.6920925962725641,
+      "draw_probability": 0.18288555179526217,
+      "home_expected_goals": 0.9232628776205116,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.12502185193217352
+    },
+    {
+      "away_expected_goals": 2.1613036597663084,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.6725725958217679,
+      "draw_probability": 0.19914283970879906,
+      "home_expected_goals": 0.8375340609426867,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.12828456446943318
+    },
+    {
+      "away_expected_goals": 1.1177009993217502,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.22211870110747686,
+      "draw_probability": 0.23739285252185158,
+      "home_expected_goals": 1.8539208906169056,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.5404884463706716
+    },
+    {
+      "away_expected_goals": 0.8010965074440493,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.20382051145809235,
+      "draw_probability": 0.2825889320293039,
+      "home_expected_goals": 1.4318189657320892,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.5135905565126038
+    },
+    {
+      "away_expected_goals": 1.1869231916045138,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.30599481426207165,
+      "draw_probability": 0.27263622617210465,
+      "home_expected_goals": 1.4346874302294739,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.4213689595658237
+    },
+    {
+      "away_expected_goals": 1.2866483771077393,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.2941590036913344,
+      "draw_probability": 0.2531781019708034,
+      "home_expected_goals": 1.6451624276289256,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.452662894337862
+    },
+    {
+      "away_expected_goals": 0.7717557943388397,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.18701632113430963,
+      "draw_probability": 0.27418233888226534,
+      "home_expected_goals": 1.4969977223659579,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.538801339983425
+    },
+    {
+      "away_expected_goals": 1.2047011062685191,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.2762015585182988,
+      "draw_probability": 0.2559943382789188,
+      "home_expected_goals": 1.6328114864206826,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.46780410320278243
+    },
+    {
+      "away_expected_goals": 1.2249769770874581,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.31167334462437507,
+      "draw_probability": 0.26930821365575813,
+      "home_expected_goals": 1.457761909594485,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.41901844171986685
+    },
+    {
+      "away_expected_goals": 1.5989071986849202,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.44613187009536237,
+      "draw_probability": 0.257232951353471,
+      "home_expected_goals": 1.2644997048201139,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.29663517855116645
+    },
+    {
+      "away_expected_goals": 1.163476710060005,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.2427224714016225,
+      "draw_probability": 0.2436850058790557,
+      "home_expected_goals": 1.7837919797933122,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.5135925227193217
+    },
+    {
+      "away_expected_goals": 1.1859882085064797,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.27971580842736643,
+      "draw_probability": 0.26046220114142404,
+      "home_expected_goals": 1.5837647766122591,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.45982199043120975
+    },
+    {
+      "away_expected_goals": 1.2788144352427286,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.3234737082990359,
+      "draw_probability": 0.2662918751025879,
+      "home_expected_goals": 1.468802899267803,
+      "home_team": "Alanyaspor",
+      "home_win_probability": 0.41023441659837623
+    },
+    {
+      "away_expected_goals": 1.170691217924816,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.29077735993782905,
+      "draw_probability": 0.2681647791828077,
+      "home_expected_goals": 1.4964622453455216,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.44105786087936333
+    },
+    {
+      "away_expected_goals": 1.70930562551101,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.5235517788061193,
+      "draw_probability": 0.2507816834682794,
+      "home_expected_goals": 1.0453363741824653,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.22566653772560116
+    },
+    {
+      "away_expected_goals": 1.232228216404758,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.29087855378024213,
+      "draw_probability": 0.2591199637136375,
+      "home_expected_goals": 1.5858631959414398,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.4500014825061203
+    },
+    {
+      "away_expected_goals": 0.9590439073746418,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.231877514758873,
+      "draw_probability": 0.2703661676042143,
+      "home_expected_goals": 1.5228961688055056,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.4977563176369126
+    },
+    {
+      "away_expected_goals": 2.5085662915081377,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.7179116099848193,
+      "draw_probability": 0.17020460214784153,
+      "home_expected_goals": 0.9095574008631799,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.1118837878673391
+    },
+    {
+      "away_expected_goals": 2.2824268591563843,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.6980966675730202,
+      "draw_probability": 0.18633061122598038,
+      "home_expected_goals": 0.8251011949800614,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.11557272120099918
+    },
+    {
+      "away_expected_goals": 1.180338898622755,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.24036477244548957,
+      "draw_probability": 0.23996567514473954,
+      "home_expected_goals": 1.8264001592064034,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.5196695524097709
+    },
+    {
+      "away_expected_goals": 0.8459913428196256,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.21907596888361236,
+      "draw_probability": 0.2847668407223389,
+      "home_expected_goals": 1.4105641725077331,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.4961571903940487
+    },
+    {
+      "away_expected_goals": 1.2534404224192544,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.3272933874679342,
+      "draw_probability": 0.2713739940920001,
+      "home_expected_goals": 1.4133900557701835,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.40133261844006574
+    },
+    {
+      "away_expected_goals": 1.3587543799922155,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.3159240645689042,
+      "draw_probability": 0.25288004346355736,
+      "home_expected_goals": 1.6207406340526314,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.43119589196753855
+    },
+    {
+      "away_expected_goals": 0.8150063253485623,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.20140405635258013,
+      "draw_probability": 0.277060456750617,
+      "home_expected_goals": 1.4747753759606277,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.5215354868968028
+    },
+    {
+      "away_expected_goals": 1.2722146422034855,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.29687434903905985,
+      "draw_probability": 0.25629170827920295,
+      "home_expected_goals": 1.608573037741886,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.44683394268173726
+    },
+    {
+      "away_expected_goals": 1.2936268079307833,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.33339198276804144,
+      "draw_probability": 0.2679140466158,
+      "home_expected_goals": 1.4361220035027742,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.3986939706161584
+    },
+    {
+      "away_expected_goals": 1.6885127266066566,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.4722223982327999,
+      "draw_probability": 0.25072347956097535,
+      "home_expected_goals": 1.2457287006628472,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.27705412220622483
+    },
+    {
+      "away_expected_goals": 1.228679959451414,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.26204235835480566,
+      "draw_probability": 0.24545033279406717,
+      "home_expected_goals": 1.7573122846690157,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.4925073088511272
+    },
+    {
+      "away_expected_goals": 1.2524530412494834,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.3003473616110091,
+      "draw_probability": 0.2605187868323651,
+      "home_expected_goals": 1.5602544071810929,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.43913385155662576
+    },
+    {
+      "away_expected_goals": 1.350481410460621,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.34585422640984775,
+      "draw_probability": 0.2645159651133555,
+      "home_expected_goals": 1.4469990939974147,
+      "home_team": "Amed SK",
+      "home_win_probability": 0.3896298084767966
+    },
+    {
+      "away_expected_goals": 0.9358596349556898,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.1719384964567447,
+      "draw_probability": 0.2268654108433028,
+      "home_expected_goals": 1.9307269128494056,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.6011960926999524
+    },
+    {
+      "away_expected_goals": 0.9969315786637026,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.17444907949132543,
+      "draw_probability": 0.21947525364518117,
+      "home_expected_goals": 2.021691840063286,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.6060756668634933
+    },
+    {
+      "away_expected_goals": 0.9850527885831618,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.1692088484980347,
+      "draw_probability": 0.2167489301068465,
+      "home_expected_goals": 2.046071500985008,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.6140422213951187
+    },
+    {
+      "away_expected_goals": 0.7666671341851238,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.1326004246463764,
+      "draw_probability": 0.21677502473584023,
+      "home_expected_goals": 1.9648318076405253,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.6506245506177835
+    },
+    {
+      "away_expected_goals": 2.005367340155213,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.561404799880954,
+      "draw_probability": 0.22455884992769573,
+      "home_expected_goals": 1.1735056852185566,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.21403635019135012
+    },
+    {
+      "away_expected_goals": 1.8245897248717007,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.5462420939618335,
+      "draw_probability": 0.23974597620302462,
+      "home_expected_goals": 1.0645407780430753,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.21401192983514183
+    },
+    {
+      "away_expected_goals": 0.9435720656956652,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.13024881566583676,
+      "draw_probability": 0.1856612372677042,
+      "home_expected_goals": 2.3564108964192747,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.684089947066459
+    },
+    {
+      "away_expected_goals": 0.676292037682045,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.12739075056350752,
+      "draw_probability": 0.22977167085096337,
+      "home_expected_goals": 1.8199017172885752,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.642837578585529
+    },
+    {
+      "away_expected_goals": 1.0020099905108577,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.19984143485611464,
+      "draw_probability": 0.23917262164207448,
+      "home_expected_goals": 1.8235476554900587,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.5609859435018111
+    },
+    {
+      "away_expected_goals": 1.0861987846018202,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.18493325079481535,
+      "draw_probability": 0.2153523404548145,
+      "home_expected_goals": 2.091070169425835,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.5997144087503703
+    },
+    {
+      "away_expected_goals": 0.6515223745158972,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.1145949981325934,
+      "draw_probability": 0.21809381936567182,
+      "home_expected_goals": 1.9027466397037927,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.6673111825017348
+    },
+    {
+      "away_expected_goals": 1.0170182473465017,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.17250381592185823,
+      "draw_probability": 0.2149062440918065,
+      "home_expected_goals": 2.0753716072102413,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.6125899399863353
+    },
+    {
+      "away_expected_goals": 1.0341352986187242,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.20330549267385756,
+      "draw_probability": 0.23670259788447476,
+      "home_expected_goals": 1.8528762826607796,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.5599919094416678
+    },
+    {
+      "away_expected_goals": 1.3498101632138721,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.31613364240651354,
+      "draw_probability": 0.25407661172585366,
+      "home_expected_goals": 1.6072319471871115,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.42978974586763274
+    },
+    {
+      "away_expected_goals": 0.9822162844681213,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.14555223763193542,
+      "draw_probability": 0.19564352886437728,
+      "home_expected_goals": 2.2672741212445033,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.6588042335036872
+    },
+    {
+      "away_expected_goals": 1.0012206703494388,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.17634949055025576,
+      "draw_probability": 0.22043672465559971,
+      "home_expected_goals": 2.0130311901994458,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.6032137847941443
+    },
+    {
+      "away_expected_goals": 1.0795853086251561,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.2117132603080964,
+      "draw_probability": 0.23588938475692306,
+      "home_expected_goals": 1.8669098417544487,
+      "home_team": "Beşiktaş JK",
+      "home_win_probability": 0.5523973549349807
+    },
+    {
+      "away_expected_goals": 1.1848086290808857,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.2975500373686127,
+      "draw_probability": 0.2691624360533067,
+      "home_expected_goals": 1.4786313718368886,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.43328752657808034
+    },
+    {
+      "away_expected_goals": 1.2621263840061971,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.30486944738975785,
+      "draw_probability": 0.26111472659291973,
+      "home_expected_goals": 1.5482961153177783,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.4340158260173223
+    },
+    {
+      "away_expected_goals": 1.729918208861124,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.5315028827700632,
+      "draw_probability": 0.2487444262899745,
+      "home_expected_goals": 1.0328808239539216,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.21975269093996228
+    },
+    {
+      "away_expected_goals": 0.9706090553400731,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.2376682355635812,
+      "draw_probability": 0.27215121323468755,
+      "home_expected_goals": 1.5047503258099928,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.49018055120173126
+    },
+    {
+      "away_expected_goals": 2.538817190470422,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.725224950510247,
+      "draw_probability": 0.16693342127474955,
+      "home_expected_goals": 0.8987197048143314,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.1078416282150034
+    },
+    {
+      "away_expected_goals": 2.3099507338647682,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.705312758484909,
+      "draw_probability": 0.18306351748030383,
+      "home_expected_goals": 0.8152698243021367,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.11162372403478725
+    },
+    {
+      "away_expected_goals": 1.1945726515374626,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.2468625822847637,
+      "draw_probability": 0.24177897115444766,
+      "home_expected_goals": 1.804637959514264,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.5113584465607888
+    },
+    {
+      "away_expected_goals": 0.8561931854901726,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.2244181623309562,
+      "draw_probability": 0.2866540920213164,
+      "home_expected_goals": 1.39375680472146,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.48892774564772745
+    },
+    {
+      "away_expected_goals": 1.2685557094667625,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.3344353321980815,
+      "draw_probability": 0.27184271666124493,
+      "home_expected_goals": 1.3965490165918253,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.39372195114067365
+    },
+    {
+      "away_expected_goals": 1.3751396521705301,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.32335091624655105,
+      "draw_probability": 0.25362113595930985,
+      "home_expected_goals": 1.6014289398712513,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.42302794779413916
+    },
+    {
+      "away_expected_goals": 0.8248345184823065,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.20651091253615056,
+      "draw_probability": 0.27921440416017385,
+      "home_expected_goals": 1.45720290912146,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.5142746833036755
+    },
+    {
+      "away_expected_goals": 1.2875563283012044,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.3039769302726705,
+      "draw_probability": 0.2572738817824629,
+      "home_expected_goals": 1.58940632474623,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.4387491879448667
+    },
+    {
+      "away_expected_goals": 1.3092267041719505,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.340670065095405,
+      "draw_probability": 0.26831943331540126,
+      "home_expected_goals": 1.4190101051791986,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.39101050158919387
+    },
+    {
+      "away_expected_goals": 1.7088745675761459,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.480449471858318,
+      "draw_probability": 0.2493437100749823,
+      "home_expected_goals": 1.2308854054466258,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.27020681806669955
+    },
+    {
+      "away_expected_goals": 1.2434966591081742,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.26883233528064987,
+      "draw_probability": 0.2469575979694801,
+      "home_expected_goals": 1.7363732912793994,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.4842100667498701
+    },
+    {
+      "away_expected_goals": 1.267556421428871,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.30740560946017537,
+      "draw_probability": 0.26142893845182275,
+      "home_expected_goals": 1.541663427647687,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.43116545208800183
+    },
+    {
+      "away_expected_goals": 1.3667669185759865,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.3533255434750111,
+      "draw_probability": 0.26476895707593234,
+      "home_expected_goals": 1.4297575913183964,
+      "home_team": "Erzurumspor FK",
+      "home_win_probability": 0.38190549944905644
+    },
+    {
+      "away_expected_goals": 1.1964258213160357,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.3236243630422994,
+      "draw_probability": 0.27858000352021955,
+      "home_expected_goals": 1.3535521319095485,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.39779563343748103
+    },
+    {
+      "away_expected_goals": 1.2745016862011425,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.3320189858533483,
+      "draw_probability": 0.27010665366279063,
+      "home_expected_goals": 1.41732384935955,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.3978743604838608
+    },
+    {
+      "away_expected_goals": 1.7468802666062777,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.5568547824005736,
+      "draw_probability": 0.24635270842691942,
+      "home_expected_goals": 0.9455081691757483,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.19679250917250707
+    },
+    {
+      "away_expected_goals": 1.2593155507514338,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.32486423268193465,
+      "draw_probability": 0.269592482052063,
+      "home_expected_goals": 1.4344154130582856,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.4055432852660025
+    },
+    {
+      "away_expected_goals": 2.563710600788069,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.7457270706206462,
+      "draw_probability": 0.16003723923634486,
+      "home_expected_goals": 0.822695903529598,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.094235690143009
+    },
+    {
+      "away_expected_goals": 2.332600080831333,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.7253461377149862,
+      "draw_probability": 0.1765075639586503,
+      "home_expected_goals": 0.7463051506845825,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.09814629832636348
+    },
+    {
+      "away_expected_goals": 1.2062855811964315,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.2734492277049812,
+      "draw_probability": 0.2543886235493747,
+      "home_expected_goals": 1.6519814227875633,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.4721621487456441
+    },
+    {
+      "away_expected_goals": 0.8645882634649008,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.24573010720069602,
+      "draw_probability": 0.30077711633276344,
+      "home_expected_goals": 1.2758572084471365,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.4534927764665405
+    },
+    {
+      "away_expected_goals": 1.2809940519772358,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.3610988570006968,
+      "draw_probability": 0.27901989987334125,
+      "home_expected_goals": 1.2784132236933037,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.35988124312596204
+    },
+    {
+      "away_expected_goals": 1.3886230631597252,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.35185382392556086,
+      "draw_probability": 0.261523241004862,
+      "home_expected_goals": 1.4659621031654235,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.386622935069577
+    },
+    {
+      "away_expected_goals": 0.8329221209256056,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.22730151736382573,
+      "draw_probability": 0.2945492849555797,
+      "home_expected_goals": 1.3339363291175514,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.4781491976805946
+    },
+    {
+      "away_expected_goals": 1.300180974182677,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.3315194941488621,
+      "draw_probability": 0.2663305478341739,
+      "home_expected_goals": 1.4549564957885253,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.40214995801696385
+    },
+    {
+      "away_expected_goals": 1.3220638307158012,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.3678178548649893,
+      "draw_probability": 0.2751449550919347,
+      "home_expected_goals": 1.2989743012691701,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.3570371900430759
+    },
+    {
+      "away_expected_goals": 1.7256302898675098,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.5082667441416796,
+      "draw_probability": 0.24900260596136145,
+      "home_expected_goals": 1.1267633004491786,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.24273064989695892
+    },
+    {
+      "away_expected_goals": 1.255689294592128,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.2960779125559728,
+      "draw_probability": 0.25819464394876157,
+      "home_expected_goals": 1.589491346502619,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.4457274434952656
+    },
+    {
+      "away_expected_goals": 1.2799849657989955,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.3345965899022627,
+      "draw_probability": 0.27026561300573726,
+      "home_expected_goals": 1.4112522288683729,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.39513779709200003
+    },
+    {
+      "away_expected_goals": 1.3801682338973127,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.3810311524614046,
+      "draw_probability": 0.27087609786737116,
+      "home_expected_goals": 1.30881264438393,
+      "home_team": "Eyüpspor",
+      "home_win_probability": 0.3480927496712241
+    },
+    {
+      "away_expected_goals": 0.8873455311297739,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.09823147033309759,
+      "draw_probability": 0.15690424312291107,
+      "home_expected_goals": 2.648406619518873,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7448642865439914
+    },
+    {
+      "away_expected_goals": 0.9452515613746619,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.09824120056261888,
+      "draw_probability": 0.15033743951145712,
+      "home_expected_goals": 2.7731845535570705,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7514213599259241
+    },
+    {
+      "away_expected_goals": 1.2955975793692045,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.2632615831890388,
+      "draw_probability": 0.23752016203644097,
+      "home_expected_goals": 1.8500137785764714,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.49921825477452025
+    },
+    {
+      "away_expected_goals": 0.9339885568604266,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.09442556338534083,
+      "draw_probability": 0.14704219796473886,
+      "home_expected_goals": 2.8066264944846067,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7585322386499205
+    },
+    {
+      "away_expected_goals": 0.7269238141844321,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.07255527305939655,
+      "draw_probability": 0.1420588050014385,
+      "home_expected_goals": 2.6951888073682655,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7853859219391652
+    },
+    {
+      "away_expected_goals": 1.7300046695430604,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.4361106521284604,
+      "draw_probability": 0.24287576073588457,
+      "home_expected_goals": 1.4602463064837163,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.3210135871356551
+    },
+    {
+      "away_expected_goals": 0.8946581565445764,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.06597278429024106,
+      "draw_probability": 0.11427397355846473,
+      "home_expected_goals": 3.2323236263242476,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.8197532421512943
+    },
+    {
+      "away_expected_goals": 0.6412336796684519,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.07143731332389157,
+      "draw_probability": 0.1530559077687789,
+      "home_expected_goals": 2.496386062090786,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7755067789073296
+    },
+    {
+      "away_expected_goals": 0.9500667130165243,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.11908978630280467,
+      "draw_probability": 0.17308627433833682,
+      "home_expected_goals": 2.501387249365332,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7078239393588586
+    },
+    {
+      "away_expected_goals": 1.029891237354896,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.10383535853549605,
+      "draw_probability": 0.14798357188131053,
+      "home_expected_goals": 2.868351832529612,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7481810695831934
+    },
+    {
+      "away_expected_goals": 0.6177480530882313,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.062336212971444364,
+      "draw_probability": 0.14085129269164265,
+      "home_expected_goals": 2.610025665629634,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.796812494336913
+    },
+    {
+      "away_expected_goals": 0.9642969556039046,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.09604735418693858,
+      "draw_probability": 0.1457914688272239,
+      "home_expected_goals": 2.8468178829005844,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7581611769858376
+    },
+    {
+      "away_expected_goals": 0.9805266746613408,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.12083873313943674,
+      "draw_probability": 0.17126427261346963,
+      "home_expected_goals": 2.5416177603834367,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7078969942470936
+    },
+    {
+      "away_expected_goals": 1.2798372442445283,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.21064336921744825,
+      "draw_probability": 0.20983108907290535,
+      "home_expected_goals": 2.2046637977147028,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.5795255417096462
+    },
+    {
+      "away_expected_goals": 0.9312990945131895,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.07623539761579975,
+      "draw_probability": 0.12474830595640087,
+      "home_expected_goals": 3.1100533954364247,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7990162964277995
+    },
+    {
+      "away_expected_goals": 0.9493183104872297,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.09963350579050895,
+      "draw_probability": 0.15151583472958988,
+      "home_expected_goals": 2.761304612237518,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7488506594799011
+    },
+    {
+      "away_expected_goals": 1.0236205978979387,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.12632881911914845,
+      "draw_probability": 0.17187289572048728,
+      "home_expected_goals": 2.560867800641191,
+      "home_team": "Fenerbahçe SK",
+      "home_win_probability": 0.7017982851603646
+    },
+    {
+      "away_expected_goals": 0.7249313457204993,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.07306107828863334,
+      "draw_probability": 0.1431136849557119,
+      "home_expected_goals": 2.680870509583779,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.7838252367556549
+    },
+    {
+      "away_expected_goals": 0.7722386177561316,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.07254132043143548,
+      "draw_probability": 0.13625560673616427,
+      "home_expected_goals": 2.8071779584265713,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.7912030728324001
+    },
+    {
+      "away_expected_goals": 1.0584594881866582,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.20618561191280987,
+      "draw_probability": 0.23510506438158396,
+      "home_expected_goals": 1.8726910530869763,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.5587093237056062
+    },
+    {
+      "away_expected_goals": 0.7630371232616868,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.0696034229770778,
+      "draw_probability": 0.13294029088465262,
+      "home_expected_goals": 2.8410298271521377,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.7974562861382695
+    },
+    {
+      "away_expected_goals": 0.5938722181674337,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.05396276870248195,
+      "draw_probability": 0.12879164828269826,
+      "home_expected_goals": 2.7282261485762644,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.8172455830148198
+    },
+    {
+      "away_expected_goals": 1.5533885534356737,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.3610654062639398,
+      "draw_probability": 0.2453019379646465,
+      "home_expected_goals": 1.6294467971590967,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.3936326557714139
+    },
+    {
+      "away_expected_goals": 0.7309055138396009,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.04757529667306295,
+      "draw_probability": 0.100563062197983,
+      "home_expected_goals": 3.271945109704413,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.851861641128954
+    },
+    {
+      "away_expected_goals": 0.5238662708218162,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.05376740324802819,
+      "draw_probability": 0.1402788904523605,
+      "home_expected_goals": 2.526986500136059,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.8059537062996114
+    },
+    {
+      "away_expected_goals": 0.7761724341074002,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.0892655184580983,
+      "draw_probability": 0.15973736934249344,
+      "home_expected_goals": 2.5320489914387245,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.7509971121994082
+    },
+    {
+      "away_expected_goals": 0.8413863759372954,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.07623560414788887,
+      "draw_probability": 0.1336464797827705,
+      "home_expected_goals": 2.9035117879052064,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.7901179160693408
+    },
+    {
+      "away_expected_goals": 0.5046793066859722,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.04669063630929876,
+      "draw_probability": 0.12825570400941358,
+      "home_expected_goals": 2.642019085994583,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.8250536596812876
+    },
+    {
+      "away_expected_goals": 0.7877980619455934,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.07062723874690635,
+      "draw_probability": 0.1315828354001393,
+      "home_expected_goals": 2.8817138773842728,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.7977899258529542
+    },
+    {
+      "away_expected_goals": 0.8010571945655472,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.0903680719850071,
+      "draw_probability": 0.15780964309554957,
+      "home_expected_goals": 2.5727726438337317,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.7518222849194434
+    },
+    {
+      "away_expected_goals": 1.0455838263952577,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.16117939731833625,
+      "draw_probability": 0.20139345883321244,
+      "home_expected_goals": 2.2316883348955114,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.6374271438484513
+    },
+    {
+      "away_expected_goals": 0.7608399233094145,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.05529318824812629,
+      "draw_probability": 0.11065688159181727,
+      "home_expected_goals": 3.1481761031737197,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.8340499301600565
+    },
+    {
+      "away_expected_goals": 0.7755610145040227,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.07361505014901236,
+      "draw_probability": 0.13744581444784162,
+      "home_expected_goals": 2.79515239403459,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.7889391354031462
+    },
+    {
+      "away_expected_goals": 0.8362634751725028,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.09437120942984326,
+      "draw_probability": 0.15843496596983733,
+      "home_expected_goals": 2.592258649062298,
+      "home_team": "Galatasaray SK",
+      "home_win_probability": 0.7471938246003192
+    },
+    {
+      "away_expected_goals": 1.2264026362410225,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.34857334335742807,
+      "draw_probability": 0.2831946066943943,
+      "home_expected_goals": 1.2676080153117768,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.3682320499481777
+    },
+    {
+      "away_expected_goals": 1.3064347158032705,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.3579468304192258,
+      "draw_probability": 0.27437055529795884,
+      "home_expected_goals": 1.3273305322980835,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.36768261428281535
+    },
+    {
+      "away_expected_goals": 1.7906488860352423,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.5820991042663067,
+      "draw_probability": 0.2405645355772579,
+      "home_expected_goals": 0.8854729016599372,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.1773363601564355
+    },
+    {
+      "away_expected_goals": 1.2908680870846179,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.3506539857962439,
+      "draw_probability": 0.27424994187765894,
+      "home_expected_goals": 1.3433368630687825,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.375096072326097
+    },
+    {
+      "away_expected_goals": 1.0046833513964981,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.28300174413801266,
+      "draw_probability": 0.29343060575680296,
+      "home_expected_goals": 1.2899993942845736,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.4235676501051845
+    },
+    {
+      "away_expected_goals": 2.627945154098291,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.7666568509267826,
+      "draw_probability": 0.1509124886487739,
+      "home_expected_goals": 0.7704586302169646,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.08243066042444346
+    },
+    {
+      "away_expected_goals": 2.391044089370179,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.746069151284825,
+      "draw_probability": 0.167486361319691,
+      "home_expected_goals": 0.6989183265085045,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.08644448739548402
+    },
+    {
+      "away_expected_goals": 0.8862507868729085,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.2660920562303136,
+      "draw_probability": 0.30954014389323287,
+      "home_expected_goals": 1.1948463496114339,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.4243677998764535
+    },
+    {
+      "away_expected_goals": 1.3130897497898188,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.38673645398068673,
+      "draw_probability": 0.28161380667911895,
+      "home_expected_goals": 1.1972400700577457,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.33164973934019415
+    },
+    {
+      "away_expected_goals": 1.4234154387698734,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.3790480850223723,
+      "draw_probability": 0.2648345597436318,
+      "home_expected_goals": 1.3728804885366466,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.356117355233996
+    },
+    {
+      "away_expected_goals": 0.8537912394460083,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.24710006076884677,
+      "draw_probability": 0.30444603543051013,
+      "home_expected_goals": 1.2492377226132372,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.4484539038006431
+    },
+    {
+      "away_expected_goals": 1.3327574062001604,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.3577903318886358,
+      "draw_probability": 0.270667717755156,
+      "home_expected_goals": 1.3625736848344139,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.37154195035620796
+    },
+    {
+      "away_expected_goals": 1.3551885443974183,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.39390317279626935,
+      "draw_probability": 0.2774378144382225,
+      "home_expected_goals": 1.2164956170914947,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.32865901276550835
+    },
+    {
+      "away_expected_goals": 1.768866484629179,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.5354286108529882,
+      "draw_probability": 0.24502465628813,
+      "home_expected_goals": 1.0552191949884768,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.21954673285888188
+    },
+    {
+      "away_expected_goals": 1.2871509739680138,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.32194975031383466,
+      "draw_probability": 0.2645498630213765,
+      "home_expected_goals": 1.488566213000558,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.413500386664789
+    },
+    {
+      "away_expected_goals": 1.3120553806487156,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.36057182210366695,
+      "draw_probability": 0.27438850957378524,
+      "home_expected_goals": 1.3216444308032784,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.365039668322548
+    },
+    {
+      "away_expected_goals": 1.414748771174063,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.40765410940832625,
+      "draw_probability": 0.2725404019007375,
+      "home_expected_goals": 1.225709272255307,
+      "home_team": "Gaziantep FK",
+      "home_win_probability": 0.31980548869093633
+    },
+    {
+      "away_expected_goals": 1.2865853904617384,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.34133428976647057,
+      "draw_probability": 0.2717137087729921,
+      "home_expected_goals": 1.3851488470142768,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.3869520014605374
+    },
+    {
+      "away_expected_goals": 1.3705448514823548,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.3502870779731538,
+      "draw_probability": 0.26333280316708413,
+      "home_expected_goals": 1.450409222891615,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.3863801188597623
+    },
+    {
+      "away_expected_goals": 1.8785206653508555,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.581870101426038,
+      "draw_probability": 0.23300929695652578,
+      "home_expected_goals": 0.967579688658705,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.18512060161743615
+    },
+    {
+      "away_expected_goals": 1.3542143279688483,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.34280884673571554,
+      "draw_probability": 0.26302751570205385,
+      "home_expected_goals": 1.4678997644029903,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.3941636375622306
+    },
+    {
+      "away_expected_goals": 1.0539857659706113,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.2753065490805291,
+      "draw_probability": 0.27974734130723994,
+      "home_expected_goals": 1.4096164997843648,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.44494610961223136
+    },
+    {
+      "away_expected_goals": 2.756905230211121,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.7702111662113199,
+      "draw_probability": 0.14508245100322145,
+      "home_expected_goals": 0.8419005484552275,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.08470638278545846
+    },
+    {
+      "away_expected_goals": 2.508378816570798,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.7500692837275349,
+      "draw_probability": 0.16102135826414538,
+      "home_expected_goals": 0.7637265640690118,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.0889093580083196
+    },
+    {
+      "away_expected_goals": 1.2971881564582328,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.2890812287538771,
+      "draw_probability": 0.24955657115373991,
+      "home_expected_goals": 1.6905445376788115,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.46136220009238293
+    },
+    {
+      "away_expected_goals": 1.3775264652257524,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.3804583587306114,
+      "draw_probability": 0.27107632096331874,
+      "home_expected_goals": 1.3082559297575085,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.3484653203060698
+    },
+    {
+      "away_expected_goals": 1.4932661215505518,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.3712131491051448,
+      "draw_probability": 0.2545285796272919,
+      "home_expected_goals": 1.5001828663233963,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.3742582712675634
+    },
+    {
+      "away_expected_goals": 0.8956889872173861,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.23978552708655182,
+      "draw_probability": 0.28919917839592335,
+      "home_expected_goals": 1.3650751417021194,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.4710152945175248
+    },
+    {
+      "away_expected_goals": 1.3981592644830376,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.34984716676692923,
+      "draw_probability": 0.25971079544978737,
+      "home_expected_goals": 1.4889203489741047,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.39044203778328335
+    },
+    {
+      "away_expected_goals": 1.4216911567370174,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.38753209194504573,
+      "draw_probability": 0.2671538887300922,
+      "home_expected_goals": 1.3292969759249755,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.34531401932486216
+    },
+    {
+      "away_expected_goals": 1.8556693450828952,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.532683994007475,
+      "draw_probability": 0.23739840528991124,
+      "home_expected_goals": 1.1530659585850938,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.22991760070261377
+    },
+    {
+      "away_expected_goals": 1.3503148064828419,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.3128417727597906,
+      "draw_probability": 0.25274472115757096,
+      "home_expected_goals": 1.6265957210242132,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.4344135060826384
+    },
+    {
+      "away_expected_goals": 1.3764413369114765,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.3529798751139791,
+      "draw_probability": 0.2634162565053506,
+      "home_expected_goals": 1.4441958692094057,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.3836038683806703
+    },
+    {
+      "away_expected_goals": 1.4841741581257712,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.40136266887095623,
+      "draw_probability": 0.26265296389120385,
+      "home_expected_goals": 1.3393649809176724,
+      "home_team": "Gençlerbirliği SK",
+      "home_win_probability": 0.33598436723784
+    },
+    {
+      "away_expected_goals": 0.8805748916584372,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.1990807231027545,
+      "draw_probability": 0.2606128695343099,
+      "home_expected_goals": 1.6124750981164613,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.5403064073629356
+    },
+    {
+      "away_expected_goals": 0.9380390862933513,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.20280828217806657,
+      "draw_probability": 0.25253768891019374,
+      "home_expected_goals": 1.688445800631758,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.5446540289117396
+    },
+    {
+      "away_expected_goals": 1.2857118879422393,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.3946765022406673,
+      "draw_probability": 0.2876876247542641,
+      "home_expected_goals": 1.1263758091908223,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.31763587300506835
+    },
+    {
+      "away_expected_goals": 0.9268620209541664,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.1974021541163199,
+      "draw_probability": 0.2502290595953609,
+      "home_expected_goals": 1.7088068345382998,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.5523687862883191
+    },
+    {
+      "away_expected_goals": 0.7213772273179772,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.1565055580107932,
+      "draw_probability": 0.25453738119559555,
+      "home_expected_goals": 1.6409583047308047,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.5889570607936112
+    },
+    {
+      "away_expected_goals": 1.8869027601304267,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.5807188492033095,
+      "draw_probability": 0.23241892522602747,
+      "home_expected_goals": 0.9800706056976223,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.18686222557066298
+    },
+    {
+      "away_expected_goals": 1.7168043574996876,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.5637679649627672,
+      "draw_probability": 0.2488542175715154,
+      "home_expected_goals": 0.8890669540575626,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.1873778174657177
+    },
+    {
+      "away_expected_goals": 0.8878317201502424,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.15750950208897374,
+      "draw_probability": 0.2214508188085109,
+      "home_expected_goals": 1.9679913643503126,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.6210396791025153
+    },
+    {
+      "away_expected_goals": 0.6363409271728306,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.1492652676575723,
+      "draw_probability": 0.2690757080590128,
+      "home_expected_goals": 1.5199177991549044,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.5816590242834148
+    },
+    {
+      "away_expected_goals": 1.0220329431299389,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.2148777808890589,
+      "draw_probability": 0.24707065583783827,
+      "home_expected_goals": 1.7463881371173098,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.5380515632731029
+    },
+    {
+      "away_expected_goals": 0.6130345010334243,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.13590577401003498,
+      "draw_probability": 0.2583001719976296,
+      "home_expected_goals": 1.5891069597300689,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.6057940539923354
+    },
+    {
+      "away_expected_goals": 0.956939160020724,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.20128701572773747,
+      "draw_probability": 0.24792154805010835,
+      "home_expected_goals": 1.7332772510150813,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.5507914362221543
+    },
+    {
+      "away_expected_goals": 0.9730450427904866,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.23173056979247492,
+      "draw_probability": 0.2675914473536794,
+      "home_expected_goals": 1.5474569944600673,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.5006779828538457
+    },
+    {
+      "away_expected_goals": 1.270071807603701,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.34537305988521255,
+      "draw_probability": 0.27548624663384186,
+      "home_expected_goals": 1.342303499520645,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.37914069348094537
+    },
+    {
+      "away_expected_goals": 0.9241930797898122,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.17373031782036896,
+      "draw_probability": 0.2304203839950943,
+      "home_expected_goals": 1.893547470012297,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.5958492981845367
+    },
+    {
+      "away_expected_goals": 0.9420748052253459,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.20476484431446512,
+      "draw_probability": 0.25334641549665876,
+      "home_expected_goals": 1.6812127309801115,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.5418887401888762
+    },
+    {
+      "away_expected_goals": 1.015810150016405,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.24082160614203463,
+      "draw_probability": 0.2658831711335129,
+      "home_expected_goals": 1.5591773286129127,
+      "home_team": "Göztepe",
+      "home_win_probability": 0.4932952227244526
+    },
+    {
+      "away_expected_goals": 1.37455187738888,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.35671771264368946,
+      "draw_probability": 0.2648009183278289,
+      "home_expected_goals": 1.422520216973263,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.3784813690284816
+    },
+    {
+      "away_expected_goals": 1.4642518192862686,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.3661429014961903,
+      "draw_probability": 0.25651409920978635,
+      "home_expected_goals": 1.489541320339081,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.3773429992940235
+    },
+    {
+      "away_expected_goals": 2.0069589833793593,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.603715285316818,
+      "draw_probability": 0.2208200423335812,
+      "home_expected_goals": 0.9936850264262729,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.17546467234960067
+    },
+    {
+      "away_expected_goals": 1.4468047443228433,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.35837063833151417,
+      "draw_probability": 0.2563819395610723,
+      "home_expected_goals": 1.507503757343142,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.3852474221074135
+    },
+    {
+      "away_expected_goals": 1.1260489386064925,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.28774610619312285,
+      "draw_probability": 0.2738160059585534,
+      "home_expected_goals": 1.4476480079701344,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.43843788784832366
+    },
+    {
+      "away_expected_goals": 2.9454005059158295,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.7910151429149144,
+      "draw_probability": 0.13208804365232088,
+      "home_expected_goals": 0.8646150581144695,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.07689681343276468
+    },
+    {
+      "away_expected_goals": 2.679881830682442,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.7712263262007054,
+      "draw_probability": 0.14747487724040004,
+      "home_expected_goals": 0.784331936578147,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.08129879655889477
+    },
+    {
+      "away_expected_goals": 1.3858795762839888,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.3025074990878318,
+      "draw_probability": 0.2443615166657297,
+      "home_expected_goals": 1.7361554952924425,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.45313098424643844
+    },
+    {
+      "away_expected_goals": 0.9933097393425028,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.2707890162721089,
+      "draw_probability": 0.2887299701048673,
+      "home_expected_goals": 1.3408664728906097,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.44048101362302394
+    },
+    {
+      "away_expected_goals": 1.4717107803076954,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.39733705289875054,
+      "draw_probability": 0.2632724681043558,
+      "home_expected_goals": 1.343552725807544,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.3393904789968938
+    },
+    {
+      "away_expected_goals": 0.9569290838086945,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.2505006849900332,
+      "draw_probability": 0.28345870640509824,
+      "home_expected_goals": 1.4019049223082463,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.46604060860486857
+    },
+    {
+      "away_expected_goals": 1.4937542864481708,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.3657421095877147,
+      "draw_probability": 0.253027099423938,
+      "home_expected_goals": 1.529091478106482,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.3812307909883472
+    },
+    {
+      "away_expected_goals": 1.5188951025308188,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.40471601849888916,
+      "draw_probability": 0.259318407275491,
+      "home_expected_goals": 1.365161460221905,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.33596557422561985
+    },
+    {
+      "away_expected_goals": 1.98254527138791,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.5539938108376055,
+      "draw_probability": 0.2266312147272958,
+      "home_expected_goals": 1.1841757231553647,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.2193749744350988
+    },
+    {
+      "away_expected_goals": 1.4426386045397819,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.3272979415266303,
+      "draw_probability": 0.24703886867608912,
+      "home_expected_goals": 1.6704813370683875,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.42566318979728063
+    },
+    {
+      "away_expected_goals": 1.4705514595407614,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.3689403501300289,
+      "draw_probability": 0.256534966850723,
+      "home_expected_goals": 1.483160330132,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.37452468301924813
+    },
+    {
+      "away_expected_goals": 1.5856501951197224,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.41908701265863996,
+      "draw_probability": 0.25463361309492183,
+      "home_expected_goals": 1.3755011003822895,
+      "home_team": "Kasımpaşa",
+      "home_win_probability": 0.32627937424643805
+    },
+    {
+      "away_expected_goals": 0.8242777224724551,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.27811725337152493,
+      "draw_probability": 0.3341132146305634,
+      "home_expected_goals": 1.027607931401429,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.38776953199791153
+    },
+    {
+      "away_expected_goals": 0.8780680995614191,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.28571364077172123,
+      "draw_probability": 0.32410072586669286,
+      "home_expected_goals": 1.076023002462092,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.390185633361586
+    },
+    {
+      "away_expected_goals": 1.2035133828910776,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.4699673415992777,
+      "draw_probability": 0.3156327686268696,
+      "home_expected_goals": 0.717823621968017,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.21439988977385255
+    },
+    {
+      "away_expected_goals": 0.86760560960289,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.2799945993006898,
+      "draw_probability": 0.323287182680634,
+      "home_expected_goals": 1.0889988059075755,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.39671821801867624
+    },
+    {
+      "away_expected_goals": 0.6752579293480466,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.2266883321068932,
+      "draw_probability": 0.34196601679725247,
+      "home_expected_goals": 1.0457598824379661,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.43134565109585454
+    },
+    {
+      "away_expected_goals": 1.7662687459984827,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.6447178204933789,
+      "draw_probability": 0.23416557796535764,
+      "home_expected_goals": 0.6245853526201491,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.12111660154126361
+    },
+    {
+      "away_expected_goals": 1.607045123743474,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.6233184371116223,
+      "draw_probability": 0.25381369343415094,
+      "home_expected_goals": 0.5665899923686608,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.12286786945422672
+    },
+    {
+      "away_expected_goals": 0.8310706053019132,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.23967499060946515,
+      "draw_probability": 0.3046931234194859,
+      "home_expected_goals": 1.2541734984299513,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.4556318859710489
+    },
+    {
+      "away_expected_goals": 0.5956581945894114,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.21286242727752602,
+      "draw_probability": 0.3606057350080649,
+      "home_expected_goals": 0.9686224533415879,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.426531837714409
+    },
+    {
+      "away_expected_goals": 0.8825410157924395,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.30819023701863674,
+      "draw_probability": 0.3360821717657646,
+      "home_expected_goals": 0.970562963409744,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.3557275912155987
+    },
+    {
+      "away_expected_goals": 0.956692036799224,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.30251018202605023,
+      "draw_probability": 0.3143794264028104,
+      "home_expected_goals": 1.1129488468401134,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.38311039157113924
+    },
+    {
+      "away_expected_goals": 0.8957598482975427,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.2856695120875696,
+      "draw_probability": 0.319520371941214,
+      "home_expected_goals": 1.1045934616548858,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.3948101159712165
+    },
+    {
+      "away_expected_goals": 0.9108360451021841,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.3139964383435427,
+      "draw_probability": 0.3316986922941889,
+      "home_expected_goals": 0.9861727991131629,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.35430486936226835
+    },
+    {
+      "away_expected_goals": 1.1888732087016263,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.4301642554294816,
+      "draw_probability": 0.31181926152135087,
+      "home_expected_goals": 0.8554313329034027,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.2580164830491676
+    },
+    {
+      "away_expected_goals": 0.8651072999585809,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.25774057510762166,
+      "draw_probability": 0.309161721676562,
+      "home_expected_goals": 1.2067314409646832,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.4330977032158162
+    },
+    {
+      "away_expected_goals": 0.881845805741002,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.28777524800374615,
+      "draw_probability": 0.32437043397092774,
+      "home_expected_goals": 1.071413467870771,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.38785431802532633
+    },
+    {
+      "away_expected_goals": 0.9508670810985446,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.3250583824878905,
+      "draw_probability": 0.32722118782159754,
+      "home_expected_goals": 0.9936420049000974,
+      "home_team": "Kocaelispor",
+      "home_win_probability": 0.3477204296905122
+    },
+    {
+      "away_expected_goals": 0.9994139687918232,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.27645380204583603,
+      "draw_probability": 0.29079727118884907,
+      "home_expected_goals": 1.3182959940602004,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.4327489267653149
+    },
+    {
+      "away_expected_goals": 1.0646333151160672,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.28328507771311484,
+      "draw_probability": 0.28213533534921775,
+      "home_expected_goals": 1.3804066417897949,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.43457958693766746
+    },
+    {
+      "away_expected_goals": 1.4592267311087481,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.4904091223236733,
+      "draw_probability": 0.2778961684872171,
+      "home_expected_goals": 0.9208804023064241,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.23169470918910967
+    },
+    {
+      "away_expected_goals": 1.0519478350553737,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.27694377868908604,
+      "draw_probability": 0.28102004440982764,
+      "home_expected_goals": 1.3970530194394544,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.44203617690108643
+    },
+    {
+      "away_expected_goals": 0.8187315861256116,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.22213017997175222,
+      "draw_probability": 0.29390674970948594,
+      "home_expected_goals": 1.3415827395246975,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.4839630703187616
+    },
+    {
+      "away_expected_goals": 2.1415520634191214,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.677532658290825,
+      "draw_probability": 0.19928160453146238,
+      "home_expected_goals": 0.8012670427571548,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.12318573717771276
+    },
+    {
+      "away_expected_goals": 1.9484978198008778,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.657347728335804,
+      "draw_probability": 0.21668367833478241,
+      "home_expected_goals": 0.726866049190136,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.12596859332941354
+    },
+    {
+      "away_expected_goals": 1.0076501515771141,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.23119236534694262,
+      "draw_probability": 0.2609146582105737,
+      "home_expected_goals": 1.60895206071623,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.5078929764424838
+    },
+    {
+      "away_expected_goals": 0.722219106580148,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.20966141416380807,
+      "draw_probability": 0.3097635773681277,
+      "home_expected_goals": 1.2426247997672888,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.4805750084680642
+    },
+    {
+      "away_expected_goals": 1.0700566024871108,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.30976283243121483,
+      "draw_probability": 0.2943550976729529,
+      "home_expected_goals": 1.2451142381718707,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.3958820698958322
+    },
+    {
+      "away_expected_goals": 1.159962667122787,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.30018453153638325,
+      "draw_probability": 0.274266993803309,
+      "home_expected_goals": 1.4277780090528414,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.4255484746603077
+    },
+    {
+      "away_expected_goals": 0.6957673327821591,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.19360327273666872,
+      "draw_probability": 0.3020066379070784,
+      "home_expected_goals": 1.2991911264815257,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.5043900893562528
+    },
+    {
+      "away_expected_goals": 1.1043635439081534,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.31550818096641864,
+      "draw_probability": 0.29065231657184626,
+      "home_expected_goals": 1.265139758846561,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.3938395024617354
+    },
+    {
+      "away_expected_goals": 1.4414759243216924,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.4433670954620973,
+      "draw_probability": 0.2753311417461005,
+      "home_expected_goals": 1.0974143590174368,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.2813017627918023
+    },
+    {
+      "away_expected_goals": 1.048918703624525,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.25098269920010763,
+      "draw_probability": 0.26648969093555036,
+      "home_expected_goals": 1.548089671087588,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.4825276098643421
+    },
+    {
+      "away_expected_goals": 1.0692136795041056,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.28557269358441284,
+      "draw_probability": 0.2825117003755541,
+      "home_expected_goals": 1.374493169539797,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.431915606040033
+    },
+    {
+      "away_expected_goals": 1.1529000692432874,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.3270701071718467,
+      "draw_probability": 0.2870925977645192,
+      "home_expected_goals": 1.2747218414354897,
+      "home_team": "Konyaspor",
+      "home_win_probability": 0.38583729506363407
+    },
+    {
+      "away_expected_goals": 0.9355401800063627,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.2256713578710787,
+      "draw_probability": 0.27051264012935666,
+      "home_expected_goals": 1.5238495876636127,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.5038160019995643
+    },
+    {
+      "away_expected_goals": 0.9965912768544899,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.23042088061954275,
+      "draw_probability": 0.2623549072633271,
+      "home_expected_goals": 1.5956447576092934,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.5072242121171302
+    },
+    {
+      "away_expected_goals": 1.3659657372428995,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.4306932104603611,
+      "draw_probability": 0.2834965354682626,
+      "home_expected_goals": 1.0644674850449898,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.2858102540713762
+    },
+    {
+      "away_expected_goals": 0.9847165415895875,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.2246068099349932,
+      "draw_probability": 0.2604292178296346,
+      "home_expected_goals": 1.6148867001106886,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.5149639722353723
+    },
+    {
+      "away_expected_goals": 0.766405432962682,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.1786005049462494,
+      "draw_probability": 0.2671525721627794,
+      "home_expected_goals": 1.5507672887216353,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.5542469228909712
+    },
+    {
+      "away_expected_goals": 2.0046828095930396,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.619468872236624,
+      "draw_probability": 0.21896790093656265,
+      "home_expected_goals": 0.9262035674957642,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.16156322682681343
+    },
+    {
+      "away_expected_goals": 1.8239669026061278,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.6011843307520088,
+      "draw_probability": 0.2356550929647233,
+      "home_expected_goals": 0.8402016954733211,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.16316057628326802
+    },
+    {
+      "away_expected_goals": 0.9432499781141791,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.18198576493429658,
+      "draw_probability": 0.23441347583285593,
+      "home_expected_goals": 1.8598258246554187,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.5836007592328476
+    },
+    {
+      "away_expected_goals": 0.6760611859276169,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.16966574562628847,
+      "draw_probability": 0.28191448439960626,
+      "home_expected_goals": 1.4363794605140032,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.5484197699741051
+    },
+    {
+      "away_expected_goals": 1.0016679551897607,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.2563376886563213,
+      "draw_probability": 0.2783607134873141,
+      "home_expected_goals": 1.4392570613740743,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.4653015978563644
+    },
+    {
+      "away_expected_goals": 1.0858280115021657,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.24423578794471396,
+      "draw_probability": 0.2562265447347438,
+      "home_expected_goals": 1.6504024438922709,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.4995376673205421
+    },
+    {
+      "away_expected_goals": 0.651299977866483,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.15519270367284155,
+      "draw_probability": 0.2720551867616615,
+      "home_expected_goals": 1.5017658183786378,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.5727521095654968
+    },
+    {
+      "away_expected_goals": 1.0166710889687542,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.22910743653219928,
+      "draw_probability": 0.2579204328442215,
+      "home_expected_goals": 1.6380121636305023,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.5129721306235793
+    },
+    {
+      "away_expected_goals": 1.3493494065777438,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.3813262541820598,
+      "draw_probability": 0.27509424402074223,
+      "home_expected_goals": 1.268527270066545,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.34357950179719793
+    },
+    {
+      "away_expected_goals": 0.9818810057129926,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.1996765324610238,
+      "draw_probability": 0.24236264806089972,
+      "home_expected_goals": 1.78947354583662,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.5579608194780765
+    },
+    {
+      "away_expected_goals": 1.0008789044621573,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.23252269965303135,
+      "draw_probability": 0.2630242019079582,
+      "home_expected_goals": 1.5888092348659786,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.5044530984390104
+    },
+    {
+      "away_expected_goals": 1.0792167930303176,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.271040607952969,
+      "draw_probability": 0.27293555975492,
+      "home_expected_goals": 1.473481191788077,
+      "home_team": "Samsunspor",
+      "home_win_probability": 0.45602383229211096
+    },
+    {
+      "away_expected_goals": 0.9367902436331106,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.16099384723989507,
+      "draw_probability": 0.2167543469902751,
+      "home_expected_goals": 2.030069904599441,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.6222518057698299
+    },
+    {
+      "away_expected_goals": 0.9979229166200011,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.16307918957684203,
+      "draw_probability": 0.2095108789204472,
+      "home_expected_goals": 2.125715311457341,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.6274099315027106
+    },
+    {
+      "away_expected_goals": 1.3677909331243843,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.355863108181552,
+      "draw_probability": 0.2654160478515342,
+      "home_expected_goals": 1.4180818259941765,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.37872084396691374
+    },
+    {
+      "away_expected_goals": 0.9860323143993558,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.15799066551198263,
+      "draw_probability": 0.2066515101759334,
+      "home_expected_goals": 2.1513493954865965,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.6353578243120842
+    },
+    {
+      "away_expected_goals": 0.767429499673619,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.12339748958530611,
+      "draw_probability": 0.20554986576733744,
+      "home_expected_goals": 2.0659296215040985,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.6710526446473564
+    },
+    {
+      "away_expected_goals": 2.0073614557025223,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.5481791197015315,
+      "draw_probability": 0.22501572476826898,
+      "home_expected_goals": 1.2338868633279128,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.22680515553019948
+    },
+    {
+      "away_expected_goals": 1.8264040771177816,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.5337721171743994,
+      "draw_probability": 0.23989577688847136,
+      "home_expected_goals": 1.1193153114205765,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.22633210593712938
+    },
+    {
+      "away_expected_goals": 0.9445103435306202,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.12009729799109672,
+      "draw_probability": 0.1748566940592484,
+      "home_expected_goals": 2.477656892776779,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.7050460079496548
+    },
+    {
+      "away_expected_goals": 0.6769645351541337,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.11888558852493053,
+      "draw_probability": 0.21819810471511616,
+      "home_expected_goals": 1.9135423456359855,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.6629163067599535
+    },
+    {
+      "away_expected_goals": 1.0030063783848533,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.18816582233745016,
+      "draw_probability": 0.22985007400037383,
+      "home_expected_goals": 1.9173758807504562,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.581984103662176
+    },
+    {
+      "away_expected_goals": 1.0872788889001557,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.17286665365024723,
+      "draw_probability": 0.2057444252196914,
+      "home_expected_goals": 2.198663410711024,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.6213889211300616
+    },
+    {
+      "away_expected_goals": 0.6521702413034065,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.10651123131776347,
+      "draw_probability": 0.20627521621763406,
+      "home_expected_goals": 2.000649943621349,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.6872135524646024
+    },
+    {
+      "away_expected_goals": 1.0180295592684232,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.16103888098425573,
+      "draw_probability": 0.20492741124585218,
+      "home_expected_goals": 2.1821570998043596,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.634033707769892
+    },
+    {
+      "away_expected_goals": 1.035163631550903,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.19138258288336246,
+      "draw_probability": 0.227504718423323,
+      "home_expected_goals": 1.948213573521118,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.5811126986933143
+    },
+    {
+      "away_expected_goals": 0.9831929896953675,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.13480641609066168,
+      "draw_probability": 0.18510807375691707,
+      "home_expected_goals": 2.383933703095699,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.6800855101524212
+    },
+    {
+      "away_expected_goals": 1.0022162733320212,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.1649260228997676,
+      "draw_probability": 0.2105215508207791,
+      "home_expected_goals": 2.116609039345088,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.6245524262794535
+    },
+    {
+      "away_expected_goals": 1.0806588365546625,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.1994222414848709,
+      "draw_probability": 0.22696103503561033,
+      "home_expected_goals": 1.9629692107792271,
+      "home_team": "Trabzonspor",
+      "home_win_probability": 0.5736167234795188
+    },
+    {
+      "away_expected_goals": 1.1280142817422325,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.2706153386657638,
+      "draw_probability": 0.2646443744747601,
+      "home_expected_goals": 1.55092134472106,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.46474028685947627
+    },
+    {
+      "away_expected_goals": 1.2016257744738934,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.2768996998631513,
+      "draw_probability": 0.2567826813864996,
+      "home_expected_goals": 1.6239919826751343,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.4663176187503494
+    },
+    {
+      "away_expected_goals": 1.6469937827470633,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.49927311127949575,
+      "draw_probability": 0.25656999243733436,
+      "home_expected_goals": 1.0833781474778044,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.24415689628316983
+    },
+    {
+      "away_expected_goals": 1.187307981120938,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.2701784486024736,
+      "draw_probability": 0.25543405529796165,
+      "home_expected_goals": 1.6435757654716139,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.47438749609956465
+    },
+    {
+      "away_expected_goals": 0.9240824632255394,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.21474344911556675,
+      "draw_probability": 0.26455347311872873,
+      "home_expected_goals": 1.5783172487916945,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.5207030777657045
+    },
+    {
+      "away_expected_goals": 2.4171178191071525,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.6950484250385386,
+      "draw_probability": 0.1801233515228937,
+      "home_expected_goals": 0.9426579197940318,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.1248282234385677
+    },
+    {
+      "away_expected_goals": 2.199222181511073,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.6756129698242802,
+      "draw_probability": 0.1962114184196951,
+      "home_expected_goals": 0.855128192394834,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.1281756117560246
+    },
+    {
+      "away_expected_goals": 1.1373102612852026,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.22117937872479443,
+      "draw_probability": 0.23402506358180644,
+      "home_expected_goals": 1.8928663250445903,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.5447955576933992
+    },
+    {
+      "away_expected_goals": 0.8151511707949901,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.203268792952932,
+      "draw_probability": 0.27867979825815464,
+      "home_expected_goals": 1.4618972780939932,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.5180514087889133
+    },
+    {
+      "away_expected_goals": 1.2077469072572637,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.30594142700217436,
+      "draw_probability": 0.26943108554455847,
+      "home_expected_goals": 1.4648260006080795,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.42462748745326717
+    },
+    {
+      "away_expected_goals": 1.3092216995766888,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.29377989427991824,
+      "draw_probability": 0.2500881234747335,
+      "home_expected_goals": 1.6797224597060183,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.45613198224534823
+    },
+    {
+      "away_expected_goals": 0.78529569593344,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.18633060988097933,
+      "draw_probability": 0.2701984712143927,
+      "home_expected_goals": 1.5284452490268157,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.5434709189046281
+    },
+    {
+      "away_expected_goals": 1.2258367226764997,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.27573680493750535,
+      "draw_probability": 0.2527942344027457,
+      "home_expected_goals": 1.6671120614878345,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.47146896065974886
+    },
+    {
+      "away_expected_goals": 1.2464683190988575,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.3116237089541594,
+      "draw_probability": 0.26615388942378354,
+      "home_expected_goals": 1.4883852070332426,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.42222240162205704
+    },
+    {
+      "away_expected_goals": 1.6269588780994408,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.4472464414676718,
+      "draw_probability": 0.2544139598343128,
+      "home_expected_goals": 1.2910631307932205,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.29833959869801535
+    },
+    {
+      "away_expected_goals": 1.2067955205517245,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.2793261663002736,
+      "draw_probability": 0.25724200541228626,
+      "home_expected_goals": 1.6170350243173295,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.46343182828744023
+    },
+    {
+      "away_expected_goals": 1.3012503168233451,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.3234821514247177,
+      "draw_probability": 0.26320649570622223,
+      "home_expected_goals": 1.4996581354810334,
+      "home_team": "Çaykur Rizespor",
+      "home_win_probability": 0.4133113528690599
+    },
+    {
+      "away_expected_goals": 1.1656761377151619,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.2883691055588304,
+      "draw_probability": 0.26778342048782666,
+      "home_expected_goals": 1.5029004642884236,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.4438474739533428
+    },
+    {
+      "away_expected_goals": 1.2417453523764872,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.29533638642654675,
+      "draw_probability": 0.25980426076572277,
+      "home_expected_goals": 1.5737086300802101,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.44485935280773037
+    },
+    {
+      "away_expected_goals": 1.7019831952377686,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.5207034225023071,
+      "draw_probability": 0.2514911462007394,
+      "home_expected_goals": 1.0498337174778933,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.22780543129695366
+    },
+    {
+      "away_expected_goals": 1.2269495201548428,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.2884046336868451,
+      "draw_probability": 0.2587201612632736,
+      "home_expected_goals": 1.5926860439623087,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.45287520504988144
+    },
+    {
+      "away_expected_goals": 0.9549354951422605,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.22982218283383318,
+      "draw_probability": 0.269706332582255,
+      "home_expected_goals": 1.5294481142305054,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.5004714845839119
+    },
+    {
+      "away_expected_goals": 2.4978199384386683,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.7152726342594535,
+      "draw_probability": 0.1713712208146779,
+      "home_expected_goals": 0.9134705832412237,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.1133561449258685
+    },
+    {
+      "away_expected_goals": 2.272649256321345,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.6954959581075495,
+      "draw_probability": 0.18749446291029018,
+      "home_expected_goals": 0.8286510220203722,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.11700957898216016
+    },
+    {
+      "away_expected_goals": 1.1752824890755298,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.23805971071311388,
+      "draw_probability": 0.23929443474816836,
+      "home_expected_goals": 1.8342578677044932,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.5226458545387177
+    },
+    {
+      "away_expected_goals": 0.8423672322292737,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.21717992712435952,
+      "draw_probability": 0.2840715678578892,
+      "home_expected_goals": 1.4166328327788926,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.4987485050177513
+    },
+    {
+      "away_expected_goals": 1.248070855995413,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.32475066221965326,
+      "draw_probability": 0.2711810500295376,
+      "home_expected_goals": 1.4194708738189328,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.4040682877508092
+    },
+    {
+      "away_expected_goals": 1.3529336630546112,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.3132817537663412,
+      "draw_probability": 0.2525888569321211,
+      "home_expected_goals": 1.6277135350290137,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.43412938930153755
+    },
+    {
+      "away_expected_goals": 0.8115149503126724,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.19959281478057542,
+      "draw_probability": 0.27627098587870974,
+      "home_expected_goals": 1.4811202916386323,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.5241361993407148
+    },
+    {
+      "away_expected_goals": 1.26676464960351,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.2943488774235017,
+      "draw_probability": 0.25591510334225465,
+      "home_expected_goals": 1.6154935901546468,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.44973601923424356
+    },
+    {
+      "away_expected_goals": 1.2880850885569664,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.33080040885088074,
+      "draw_probability": 0.2677434696526083,
+      "home_expected_goals": 1.4423006210496105,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.4014561214965109
+    },
+    {
+      "away_expected_goals": 1.6812793702533355,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.4692798340390988,
+      "draw_probability": 0.2511937262297224,
+      "home_expected_goals": 1.2510881904483528,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.2795264397311785
+    },
+    {
+      "away_expected_goals": 1.2234164634464078,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.2596315096373232,
+      "draw_probability": 0.24488721059440335,
+      "home_expected_goals": 1.7648727568927156,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.49548127976827333
+    },
+    {
+      "away_expected_goals": 1.344696133786972,
+      "away_team": "İstanbul Başakşehir FK",
+      "away_win_probability": 0.3431928812041782,
+      "draw_probability": 0.2643995695982344,
+      "home_expected_goals": 1.4532245079738193,
+      "home_team": "Çorum FK",
+      "home_win_probability": 0.3924075491975875
+    },
+    {
+      "away_expected_goals": 1.0810623622692785,
+      "away_team": "Alanyaspor",
+      "away_win_probability": 0.24766747494064617,
+      "draw_probability": 0.2590865574328903,
+      "home_expected_goals": 1.6205311272743017,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.4932459676264636
+    },
+    {
+      "away_expected_goals": 1.1516098859227444,
+      "away_team": "Amed SK",
+      "away_win_probability": 0.253063361679685,
+      "draw_probability": 0.25136148645831013,
+      "home_expected_goals": 1.6968813842988868,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.4955751518620048
+    },
+    {
+      "away_expected_goals": 1.5784401121848788,
+      "away_team": "Beşiktaş JK",
+      "away_win_probability": 0.47079932906848404,
+      "draw_probability": 0.2621142310588821,
+      "home_expected_goals": 1.1320032550795227,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.26708643987263364
+    },
+    {
+      "away_expected_goals": 1.1378880494574093,
+      "away_team": "Erzurumspor FK",
+      "away_win_probability": 0.24663682945576082,
+      "draw_probability": 0.24967282882800249,
+      "home_expected_goals": 1.7173441432385943,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.5036903417162366
+    },
+    {
+      "away_expected_goals": 0.885618902877064,
+      "away_team": "Eyüpspor",
+      "away_win_probability": 0.19538243235409553,
+      "draw_probability": 0.25645224742171135,
+      "home_expected_goals": 1.6491566378183382,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.5481653202241932
+    },
+    {
+      "away_expected_goals": 2.3165088790996937,
+      "away_team": "Fenerbahçe SK",
+      "away_win_probability": 0.6673959510329981,
+      "draw_probability": 0.19125677589592796,
+      "home_expected_goals": 0.9849671013926352,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.14134727307107384
+    },
+    {
+      "away_expected_goals": 2.107682823862197,
+      "away_team": "Galatasaray SK",
+      "away_win_probability": 0.6485791106626284,
+      "draw_probability": 0.2072332364847752,
+      "home_expected_goals": 0.8935087896639088,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.14418765285259638
+    },
+    {
+      "away_expected_goals": 1.0899714104675058,
+      "away_team": "Gaziantep FK",
+      "away_win_probability": 0.19955934223424548,
+      "draw_probability": 0.22575353556662828,
+      "home_expected_goals": 1.9778235756087093,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.5746871221991263
+    },
+    {
+      "away_expected_goals": 0.7812217137402998,
+      "away_team": "Gençlerbirliği SK",
+      "away_win_probability": 0.18540822963659742,
+      "draw_probability": 0.27028946846377616,
+      "home_expected_goals": 1.5275114061022712,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.5443023018996265
+    },
+    {
+      "away_expected_goals": 1.1574762356433643,
+      "away_team": "Göztepe",
+      "away_win_probability": 0.28151652199237714,
+      "draw_probability": 0.2656768959223084,
+      "home_expected_goals": 1.530571578053209,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.4528065820853146
+    },
+    {
+      "away_expected_goals": 1.2547272904138662,
+      "away_team": "Kasımpaşa",
+      "away_win_probability": 0.26852287701005295,
+      "draw_probability": 0.24532183232295485,
+      "home_expected_goals": 1.7551132044190982,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.4861552906669923
+    },
+    {
+      "away_expected_goals": 0.7526089286870392,
+      "away_team": "Kocaelispor",
+      "away_win_probability": 0.16934603089862332,
+      "draw_probability": 0.26095886983739963,
+      "home_expected_goals": 1.5970462401676189,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.5696950992639767
+    },
+    {
+      "away_expected_goals": 1.1748130893576005,
+      "away_team": "Konyaspor",
+      "away_win_probability": 0.25168444733067463,
+      "draw_probability": 0.24723893393326596,
+      "home_expected_goals": 1.741936815487804,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.5010766187360594
+    },
+    {
+      "away_expected_goals": 1.1945859262150311,
+      "away_team": "Samsunspor",
+      "away_win_probability": 0.28670768578916234,
+      "draw_probability": 0.26260243941308453,
+      "home_expected_goals": 1.555188188995993,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.45068987479775313
+    },
+    {
+      "away_expected_goals": 1.5592391306930968,
+      "away_team": "Trabzonspor",
+      "away_win_probability": 0.4181325034601249,
+      "draw_probability": 0.2573256533824458,
+      "home_expected_goals": 1.3490097340190517,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.32454184315742907
+    },
+    {
+      "away_expected_goals": 1.1346114492871953,
+      "away_team": "Çaykur Rizespor",
+      "away_win_probability": 0.21919034786112948,
+      "draw_probability": 0.23310065804340716,
+      "home_expected_goals": 1.9030077547931241,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.5477089940954634
+    },
+    {
+      "away_expected_goals": 1.1565644489967157,
+      "away_team": "Çorum FK",
+      "away_win_probability": 0.2553855758246778,
+      "draw_probability": 0.2519439550131783,
+      "home_expected_goals": 1.6896121777666873,
+      "home_team": "İstanbul Başakşehir FK",
+      "home_win_probability": 0.4926704691621439
+    }
+  ],
+  "meta": {
+    "checkpoints": [
+      10000,
+      50000,
+      100000,
+      500000,
+      1000000,
+      2000000,
+      5000000
+    ],
+    "fixture_count": 306,
+    "model_version": "0.1.0",
+    "season": "2026-27",
+    "seed": 202627,
+    "simulations": 5000000,
+    "source_alignment": {
+      "market_only": [],
+      "market_team_count": 18,
+      "matched_team_count": 18,
+      "official_only": [],
+      "official_team_count": 18
+    },
+    "team_count": 18,
+    "value_coefficient": 0.1
+  },
+  "schema_version": 1
+}
