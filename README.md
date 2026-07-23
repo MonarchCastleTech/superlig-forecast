@@ -100,12 +100,10 @@ uv run superlig export-dashboard-data `
 Run the local dashboard:
 
 ```powershell
-cd dashboard
-npm ci
-npm run dev
+.\run-dashboard.ps1
 ```
 
-Open `http://localhost:3000`. The dashboard includes selectable Monte Carlo
+Open `http://localhost:3000`. The local-only dashboard includes selectable Monte Carlo
 checkpoints, club visibility controls, the championship ranking with confidence
 intervals, all 306 fixture forecasts, an expected 1st–18th table, exact-position
 probabilities, a full club-by-position heatmap, fold-level backtest history, and
