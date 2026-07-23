@@ -81,7 +81,7 @@ The simulator applies season-specific fixtures, rules, points, deductions, and t
 
 ### 4.1 Evaluation period
 
-- **Warm-up target:** 2000–01 through 2005–06 where sources permit.
+- **Required warm-up:** at least match results from 2000–01 through 2005–06. Inability to obtain this minimum history blocks a leakage-safe twenty-season score rather than silently converting 2006–07 into an in-sample season.
 - **Scored backtest:** 2006–07 through 2025–26.
 - **Production forecast:** 2026–27.
 
@@ -92,9 +92,9 @@ The warm-up period supplies prior information so the first scored season can rem
 All four national league levels are in ingestion scope, with depth proportional to forecasting value and source quality:
 
 - **Süper Lig:** complete match, player, lineup, valuation, transfer, availability, and odds history.
-- **1. Lig:** complete matches, squads, lineups, appearances, valuations, and transfers where available.
-- **2. Lig:** matches, squads, transfers, valuations, and detailed lineups where available.
-- **3. Lig:** matches, squads, promotions, and player histories where available.
+- **1. Lig:** ingest every match, squad, lineup, appearance, valuation, and transfer record exposed by the selected snapshot sources; missing fields remain explicitly missing.
+- **2. Lig:** ingest every exposed match, squad, transfer, valuation, and lineup record; missing fields remain explicitly missing.
+- **3. Lig:** ingest every exposed match, squad, promotion, and player-history record; missing fields remain explicitly missing.
 - **Turkish Cup:** cross-division matches used to help estimate league-strength differences.
 
 Sparse lower-tier coverage must be flagged. A lower tier is not assumed to have Süper Lig feature parity.
@@ -109,6 +109,8 @@ Preferred source classes are:
 4. Supplementary dated sources for injuries and suspensions when their effective time is verifiable.
 
 Source adapters must preserve raw data and may be replaced without changing downstream domain interfaces. Terms, attribution, and redistribution constraints must be recorded per source.
+
+A season qualifies for the full-market evaluation only when at least 80% of its Süper Lig fixtures have a valid odds observation at the forecast cutoff. Consensus uses two or more providers when present and falls back to one labelled provider when only one valid source exists. Seasons below 80% remain in the value/results evaluation and are excluded from full-market aggregate metrics.
 
 ### 4.4 Point-in-time forecast modes
 
@@ -184,7 +186,7 @@ The market contribution is learned from historical out-of-fold data. Matches wit
 
 ### 6.5 Blend and calibration
 
-Blend weights are learned inside the training window. The final output is calibrated using only prior matches. Calibration techniques may differ for 1X2 and score distributions but must preserve normalization and coherence.
+Blend weights are learned inside the training window. The default 1X2 calibrator is multiclass Dirichlet calibration. The score matrix uses a single temperature fitted by prior-period log score. Both calibrators use only earlier matches and preserve normalization and coherence. An identity calibrator is retained as a baseline and fallback when a training fold is too small.
 
 Each match forecast returns:
 
@@ -208,7 +210,7 @@ The production simulator defaults to **5,000,000 seasons** and supports a config
 - Aggregate champion, position, European-place, and relegation probabilities.
 - Record Monte Carlo standard errors or confidence intervals.
 
-Backtest snapshots use adaptive simulation counts until a predefined Monte Carlo error threshold is met. Final season-start forecasts may be rerun at five million for direct comparison. The default five-million run should keep maximum championship-probability sampling error near a few hundredths of a percentage point.
+Backtest snapshots start at 100,000 simulations and double until every club with at least 1% championship probability has a two-sided 95% Monte Carlo half-width no larger than 0.05 percentage points, or until the five-million cap is reached. A snapshot that reaches the cap without meeting the threshold is flagged. Final season-start forecasts run at five million for direct comparison.
 
 ## 8. Backtest Design
 
@@ -265,11 +267,12 @@ The hybrid is compared against:
 
 The hybrid passes when it:
 
-1. Improves out-of-sample log loss and Brier score over simpler baselines.
-2. Remains acceptably calibrated overall and on major evaluation slices.
-3. Does not depend on one unusually successful season.
-4. Shows stable results under paired bootstrap uncertainty analysis.
-5. Passes leakage audits and Monte Carlo convergence tests.
+1. Has lower pooled out-of-sample log loss and Brier score than the best non-market baseline.
+2. Has lower or equal pooled log loss and Brier score than the market-only baseline within a tolerance of 0.005 for each metric.
+3. Achieves pooled 1X2 expected calibration error no greater than 0.03 and no greater than 0.05 on any predeclared evaluation slice containing at least 500 forecasts.
+4. Does not depend on one unusually successful season: leave-one-season-out removal cannot reverse both primary metric improvements.
+5. Shows a paired season-block bootstrap 95% confidence interval excluding zero for improvement in at least one of log loss or Brier score, while the point estimate improves both.
+6. Passes leakage audits and Monte Carlo convergence tests.
 
 Betting returns are not an acceptance metric.
 
@@ -284,7 +287,7 @@ The engine saves immutable forecast snapshots after each historical and current 
 - New market observations.
 - Model and data versions.
 
-The engine should calculate counterfactual delta components where technically defensible so the later dashboard can distinguish changes caused by results, squad news, and market movement. These components are explanatory model outputs, not causal claims.
+The engine calculates explanatory delta components by rescoring each snapshot while changing one input family at a time: results, squad/valuation/availability, lineup, and market observations. Ordering interactions are reported in a separate residual bucket. These components are descriptive model decompositions, not causal claims.
 
 ## 10. Interfaces and Storage
 
