@@ -32,6 +32,7 @@ from superlig_forecast.reporting.charts import (
     backtest_log_loss_chart,
     championship_convergence,
 )
+from superlig_forecast.reporting.dashboard import build_dashboard_payload
 from superlig_forecast.reporting.report import build_report
 from superlig_forecast.simulation.rules import LeagueRules
 from superlig_forecast.simulation.season import FixtureForecast, SeasonSimulator
@@ -525,3 +526,31 @@ def forecast_season(
 def export_results(output: Path = typer.Option(Path("artifacts/report"), "--output")) -> None:
     path = build_report({"engine_version": __version__, "status": "generated"}, output)
     typer.echo(str(path.resolve()))
+
+
+@app.command("export-dashboard-data")
+def export_dashboard_data(
+    forecast: Path = typer.Option(
+        Path("artifacts/forecast-2026-27-5m"),
+        "--forecast",
+    ),
+    backtest: Path = typer.Option(
+        Path("artifacts/backtest-20-seasons.json"),
+        "--backtest",
+    ),
+    output: Path = typer.Option(
+        Path("dashboard/public/data/dashboard.json"),
+        "--output",
+    ),
+) -> None:
+    """Build the versioned static data contract used by the dashboard."""
+
+    payload = build_dashboard_payload(forecast, backtest)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_bytes(
+        orjson.dumps(
+            payload,
+            option=orjson.OPT_INDENT_2 | orjson.OPT_SORT_KEYS,
+        )
+    )
+    typer.echo(str(output.resolve()))

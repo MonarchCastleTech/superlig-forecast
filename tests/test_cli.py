@@ -112,6 +112,7 @@ def test_cli_exposes_complete_engine_command_surface() -> None:
         "backtest",
         "forecast-match",
         "forecast-season",
+        "export-dashboard-data",
         "export-results",
     }:
         assert command in result.stdout
