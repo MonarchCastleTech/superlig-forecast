@@ -1,0 +1,12 @@
+sources:
+  tff:
+    base_url: https://www.tff.org
+    league_discovery_page_id: 86
+    rate_limit_seconds: 1.0
+    competitions:
+      TR1: {tier: 1, page_id: 198, archive_page_id: 545}
+      TR2: {tier: 2, page_id: 142, archive_page_id: 563}
+      TR3: {tier: 3, page_id: 976, archive_page_id: 371}
+      TR4: {tier: 4, page_id: 971, archive_page_id: 376}
+      TRC: {tier: 0, page_id: 288, archive_page_id: 288}
+
