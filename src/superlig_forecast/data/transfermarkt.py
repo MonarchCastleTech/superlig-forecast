@@ -93,6 +93,8 @@ class TransfermarktAdapter:
         )
         return DatasetManifest(
             requested_competitions=TURKISH_COMPETITIONS,
-            missing_competitions=tuple(item for item in TURKISH_COMPETITIONS if item not in present),
+            missing_competitions=tuple(
+                item for item in TURKISH_COMPETITIONS if item not in present
+            ),
             exported_tables=("games", "player_valuations", "players"),
         )

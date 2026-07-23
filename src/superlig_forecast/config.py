@@ -30,4 +30,3 @@ class Settings(BaseModel):
 
         payload = yaml.safe_load(path.read_text(encoding="utf-8"))
         return cls.model_validate(payload)
-

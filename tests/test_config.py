@@ -18,4 +18,3 @@ def test_settings_loads_all_turkish_competitions(tmp_path: Path) -> None:
     settings = Settings.load(path)
 
     assert [item.tier for item in settings.competitions] == [1, 2, 3, 4, 0]
-

@@ -93,4 +93,3 @@ class SnapshotStore:
         path.parent.mkdir(parents=True, exist_ok=True)
         with path.open("ab") as handle:
             handle.write(orjson.dumps(payload, option=orjson.OPT_APPEND_NEWLINE))
-

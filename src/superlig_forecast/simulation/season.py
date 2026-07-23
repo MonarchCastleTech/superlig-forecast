@@ -49,7 +49,9 @@ class SeasonSimulator:
             goals_against = np.zeros_like(points)
             for fixture in fixtures:
                 side = fixture.score_matrix.shape[0]
-                flat = rng.choice(fixture.score_matrix.size, size=size, p=fixture.score_matrix.ravel())
+                flat = rng.choice(
+                    fixture.score_matrix.size, size=size, p=fixture.score_matrix.ravel()
+                )
                 home_goals, away_goals = flat // side, flat % side
                 draw = home_goals == away_goals
                 home_win = home_goals > away_goals
@@ -67,7 +69,9 @@ class SeasonSimulator:
                 total_draws += int(draw.sum())
                 total_decisive += int((~draw).sum())
             goal_difference = goals_for - goals_against
-            ranking_score = points.astype(np.int64) * 1_000_000 + goal_difference * 1_000 + goals_for
+            ranking_score = (
+                points.astype(np.int64) * 1_000_000 + goal_difference * 1_000 + goals_for
+            )
             winner = np.argmax(ranking_score, axis=1)
             champions += np.bincount(winner, minlength=len(self.team_ids))
             total_points += int(points.sum())

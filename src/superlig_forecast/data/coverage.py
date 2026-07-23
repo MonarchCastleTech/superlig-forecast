@@ -17,4 +17,3 @@ def market_eligibility(total_matches: int, matches_with_cutoff_odds: int) -> Mar
         raise ValueError("matches_with_cutoff_odds must be within total matches")
     coverage = matches_with_cutoff_odds / total_matches
     return MarketEligibility(coverage=coverage, eligible=coverage >= 0.80)
-

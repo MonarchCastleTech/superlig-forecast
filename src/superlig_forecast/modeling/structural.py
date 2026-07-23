@@ -28,10 +28,16 @@ def score_matrix(
     lambda_home = float(np.clip(lambda_home, 0.05, 6.0))
     lambda_away = float(np.clip(lambda_away, 0.05, 6.0))
     home = np.array(
-        [exp(-lambda_home) * lambda_home**goals / factorial(goals) for goals in range(max_goals + 1)]
+        [
+            exp(-lambda_home) * lambda_home**goals / factorial(goals)
+            for goals in range(max_goals + 1)
+        ]
     )
     away = np.array(
-        [exp(-lambda_away) * lambda_away**goals / factorial(goals) for goals in range(max_goals + 1)]
+        [
+            exp(-lambda_away) * lambda_away**goals / factorial(goals)
+            for goals in range(max_goals + 1)
+        ]
     )
     matrix = np.outer(home, away)
     for home_goals in range(2):

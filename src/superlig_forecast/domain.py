@@ -100,4 +100,3 @@ class MatchForecast(FrozenRecord):
         if not isclose(score_total, 1.0, abs_tol=1e-9):
             raise ValueError("score probabilities must sum to 1")
         return self
-

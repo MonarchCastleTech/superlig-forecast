@@ -24,9 +24,6 @@ class AcceptanceGate:
             and metrics.hybrid_log_loss > metrics.market_log_loss + 0.005
         ):
             failures.append("log loss exceeded the market-only tolerance")
-        if (
-            metrics.market_brier is not None
-            and metrics.hybrid_brier > metrics.market_brier + 0.005
-        ):
+        if metrics.market_brier is not None and metrics.hybrid_brier > metrics.market_brier + 0.005:
             failures.append("Brier score exceeded the market-only tolerance")
         return GateResult(not failures, tuple(failures))

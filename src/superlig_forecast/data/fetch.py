@@ -81,4 +81,3 @@ class Fetcher:
             content=response.content,
             extension=request.extension,
         )
-

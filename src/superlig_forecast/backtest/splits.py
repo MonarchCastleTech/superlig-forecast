@@ -18,4 +18,3 @@ def walk_forward_folds(seasons: list[str], warmup_end: str) -> list[BacktestFold
     if len(folds) != 20:
         raise ValueError(f"expected 20 scored folds, found {len(folds)}")
     return folds
-

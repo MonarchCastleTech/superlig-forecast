@@ -21,4 +21,3 @@ class MetricComparison:
     best_non_market_brier: float
     market_log_loss: float | None
     market_brier: float | None
-

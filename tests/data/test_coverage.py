@@ -8,4 +8,3 @@ def test_market_eligibility_requires_eighty_percent() -> None:
 
     assert result.coverage == pytest.approx(244 / 306)
     assert result.eligible is False
-

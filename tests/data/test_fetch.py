@@ -31,4 +31,3 @@ def test_fetcher_retries_retryable_status() -> None:
     assert result.content == b"fixture"
     assert result.content_type == "text/html; charset=utf-8"
     assert result.fetched_at == datetime(2026, 7, 23, tzinfo=UTC)
-

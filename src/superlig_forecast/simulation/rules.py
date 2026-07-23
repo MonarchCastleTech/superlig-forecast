@@ -13,4 +13,3 @@ class LeagueRules:
     @classmethod
     def default(cls) -> "LeagueRules":
         return cls(3, 1, 0, ("points", "head_to_head", "goal_difference", "goals_for"))
-

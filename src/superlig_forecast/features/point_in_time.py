@@ -19,4 +19,3 @@ def asof_join(
         strategy="backward",
         check_sortedness=False,
     )
-

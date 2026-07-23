@@ -20,12 +20,20 @@ def test_market_consensus_ignores_observation_after_cutoff() -> None:
     cutoff = datetime(2026, 8, 7, tzinfo=UTC)
     rows = [
         OddsObservation(
-            match_source_key="m1", provider="A", observed_at=cutoff - timedelta(hours=1),
-            home_odds=1.8, draw_odds=3.5, away_odds=4.8,
+            match_source_key="m1",
+            provider="A",
+            observed_at=cutoff - timedelta(hours=1),
+            home_odds=1.8,
+            draw_odds=3.5,
+            away_odds=4.8,
         ),
         OddsObservation(
-            match_source_key="m1", provider="B", observed_at=cutoff + timedelta(hours=1),
-            home_odds=1.6, draw_odds=3.7, away_odds=5.5,
+            match_source_key="m1",
+            provider="B",
+            observed_at=cutoff + timedelta(hours=1),
+            home_odds=1.6,
+            draw_odds=3.7,
+            away_odds=5.5,
         ),
     ]
     consensus = MarketConsensus.from_observations(rows, cutoff)

@@ -50,8 +50,7 @@ class TffAdapter:
         """Return required competitions whose configured pages are present."""
 
         found_page_ids = {
-            int(value)
-            for value in re.findall(r"pageID=(\d+)", page_html, flags=re.IGNORECASE)
+            int(value) for value in re.findall(r"pageID=(\d+)", page_html, flags=re.IGNORECASE)
         }
         return [
             TffCompetition(
@@ -145,4 +144,3 @@ class TffAdapter:
     @staticmethod
     def _display_name(value: str) -> str:
         return re.sub(r"\b(Fk|Sk)\b", lambda match: match.group(1).upper(), value.title())
-

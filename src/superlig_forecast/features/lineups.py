@@ -16,4 +16,3 @@ def expected_start_probabilities(selection_weights: list[float]) -> list[float]:
         else:
             high = scale
     return [min(1.0, high * value) for value in weights]
-

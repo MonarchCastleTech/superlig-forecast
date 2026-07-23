@@ -34,7 +34,11 @@ class HybridModel:
         if market is not None:
             base = one_x_two_from_matrix(matrix)
             target = (1 - self.market_weight) * base + self.market_weight * market.probabilities
-            masks = [np.tril(np.ones_like(matrix), -1), np.eye(matrix.shape[0]), np.triu(np.ones_like(matrix), 1)]
+            masks = [
+                np.tril(np.ones_like(matrix), -1),
+                np.eye(matrix.shape[0]),
+                np.triu(np.ones_like(matrix), 1),
+            ]
             adjusted = np.zeros_like(matrix)
             for probability, current, mask in zip(target, base, masks, strict=True):
                 adjusted += matrix * mask * (probability / current)

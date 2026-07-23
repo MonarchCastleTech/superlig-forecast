@@ -14,4 +14,3 @@ def apply_temperature(
     logits = np.log(np.clip(matrix, 1e-15, 1.0)) / temperature
     calibrated = np.exp(logits - logits.max())
     return cast(npt.NDArray[np.float64], calibrated / calibrated.sum())
-
