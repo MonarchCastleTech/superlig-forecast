@@ -1,0 +1,17 @@
+competitions:
+  - id: TR1
+    tier: 1
+    name: Süper Lig
+  - id: TR2
+    tier: 2
+    name: 1. Lig
+  - id: TR3
+    tier: 3
+    name: 2. Lig
+  - id: TR4
+    tier: 4
+    name: 3. Lig
+  - id: TRC
+    tier: 0
+    name: Turkish Cup
+
