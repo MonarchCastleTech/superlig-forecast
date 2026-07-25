@@ -103,11 +103,22 @@ Run the local dashboard:
 .\run-dashboard.ps1
 ```
 
-Open `http://localhost:3000`. The local-only dashboard includes selectable Monte Carlo
-checkpoints, club visibility controls, the championship ranking with confidence
-intervals, all 306 fixture forecasts, an expected 1st–18th table, exact-position
-probabilities, a full club-by-position heatmap, fold-level backtest history, and
-model methodology notes.
+Open `http://localhost:3000`.
+
+- Enter any positive whole-number target and press **Play** for a finite run.
+  The worker stops exactly at the requested season count.
+- Enable **Run until stopped** for an open-ended run. **Pause** preserves all
+  cumulative counts, **Resume** continues the same run, and **Stop** ends it.
+- Choose any exact finishing position from 1st through 18th. The live graph and
+  possible table update as yielded simulation batches arrive.
+- Reuse the same seed and inputs to reproduce a run, or press **New seed** to
+  explore another deterministic sequence.
+- **Live** results are computed in your browser from the published fixture xG.
+  **Published reference** results are the checked-in five-million-season audit
+  artifact and do not change while you play.
+
+The dashboard also includes all fixture forecasts, full club-by-position
+probabilities, the 20-season table and match backtests, and methodology notes.
 
 ## Verified backtest
 

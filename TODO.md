@@ -19,6 +19,10 @@
   probabilities, and club-by-position heatmap.
 - [x] Strict 20-season preseason table backtest with position log loss, Brier
   score, expected-rank error, and uniform-baseline acceptance gates.
+- [x] Static sports-style Vite dashboard with official MCT branding.
+- [x] Deterministic finite/infinite browser worker with Play, Pause, Resume,
+  Stop, Reset, arbitrary exact-position traces, and a live possible table.
+- [x] Repository-subpath-safe build ready for GitHub Pages deployment.
 
 ## Next research work
 
@@ -31,3 +35,5 @@
   difference and goals scored.
 - [ ] Add sequential in-season updates after each completed match so the
   probability timeline reflects observed 2026-27 results.
+- [ ] Activate the scheduled free-API refresh and Pages deployment workflows
+  after an exact GitHub repository is authorized.
