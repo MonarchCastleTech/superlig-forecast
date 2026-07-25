@@ -13,3 +13,12 @@ test("builds a repository-subpath-safe static dashboard", async () => {
   await readFile(new URL("../dist/data/dashboard.json", import.meta.url));
   await readFile(new URL("../dist/brand/mct-icon.png", import.meta.url));
 });
+
+test("lockfile includes cross-platform optional packages required by clean CI", async () => {
+  const lockfile = JSON.parse(
+    await readFile(new URL("../package-lock.json", import.meta.url), "utf8"),
+  );
+
+  assert.ok(lockfile.packages["node_modules/@emnapi/core"]);
+  assert.ok(lockfile.packages["node_modules/@emnapi/runtime"]);
+});
