@@ -1824,13 +1824,13 @@
       "home_win_probability": 0.21401192983514183
     },
     {
-      "away_expected_goals": 0.9435720656956652,
+      "away_expected_goals": 0.9435720656956651,
       "away_team": "Gaziantep FK",
-      "away_win_probability": 0.13024881566583676,
-      "draw_probability": 0.1856612372677042,
-      "home_expected_goals": 2.3564108964192747,
+      "away_win_probability": 0.13024881566583668,
+      "draw_probability": 0.18566123726770414,
+      "home_expected_goals": 2.356410896419275,
       "home_team": "Beşiktaş JK",
-      "home_win_probability": 0.684089947066459
+      "home_win_probability": 0.6840899470664591
     },
     {
       "away_expected_goals": 0.676292037682045,
@@ -2085,13 +2085,13 @@
       "home_win_probability": 0.39779563343748103
     },
     {
-      "away_expected_goals": 1.2745016862011425,
+      "away_expected_goals": 1.2745016862011422,
       "away_team": "Amed SK",
       "away_win_probability": 0.3320189858533483,
       "draw_probability": 0.27010665366279063,
-      "home_expected_goals": 1.41732384935955,
+      "home_expected_goals": 1.4173238493595501,
       "home_team": "Eyüpspor",
-      "home_win_probability": 0.3978743604838608
+      "home_win_probability": 0.39787436048386104
     },
     {
       "away_expected_goals": 1.7468802666062777,
@@ -3435,13 +3435,13 @@
       "home_win_probability": 0.4825276098643421
     },
     {
-      "away_expected_goals": 1.0692136795041056,
+      "away_expected_goals": 1.0692136795041058,
       "away_team": "Çorum FK",
-      "away_win_probability": 0.28557269358441284,
+      "away_win_probability": 0.28557269358441295,
       "draw_probability": 0.2825117003755541,
-      "home_expected_goals": 1.374493169539797,
+      "home_expected_goals": 1.3744931695397968,
       "home_team": "Konyaspor",
-      "home_win_probability": 0.431915606040033
+      "home_win_probability": 0.4319156060400329
     },
     {
       "away_expected_goals": 1.1529000692432874,
@@ -3561,11 +3561,11 @@
       "home_win_probability": 0.5727521095654968
     },
     {
-      "away_expected_goals": 1.0166710889687542,
+      "away_expected_goals": 1.016671088968754,
       "away_team": "Konyaspor",
-      "away_win_probability": 0.22910743653219928,
-      "draw_probability": 0.2579204328442215,
-      "home_expected_goals": 1.6380121636305023,
+      "away_win_probability": 0.22910743653219917,
+      "draw_probability": 0.25792043284422145,
+      "home_expected_goals": 1.6380121636305025,
       "home_team": "Samsunspor",
       "home_win_probability": 0.5129721306235793
     },
@@ -3732,13 +3732,13 @@
       "home_win_probability": 0.5811126986933143
     },
     {
-      "away_expected_goals": 0.9831929896953675,
+      "away_expected_goals": 0.9831929896953673,
       "away_team": "Çaykur Rizespor",
-      "away_win_probability": 0.13480641609066168,
-      "draw_probability": 0.18510807375691707,
-      "home_expected_goals": 2.383933703095699,
+      "away_win_probability": 0.13480641609066157,
+      "draw_probability": 0.185108073756917,
+      "home_expected_goals": 2.3839337030956993,
       "home_team": "Trabzonspor",
-      "home_win_probability": 0.6800855101524212
+      "home_win_probability": 0.6800855101524214
     },
     {
       "away_expected_goals": 1.0022162733320212,
@@ -4004,11 +4004,11 @@
     {
       "away_expected_goals": 1.3529336630546112,
       "away_team": "Kasımpaşa",
-      "away_win_probability": 0.3132817537663412,
+      "away_win_probability": 0.31328175376634126,
       "draw_probability": 0.2525888569321211,
-      "home_expected_goals": 1.6277135350290137,
+      "home_expected_goals": 1.6277135350290135,
       "home_team": "Çorum FK",
-      "home_win_probability": 0.43412938930153755
+      "home_win_probability": 0.43412938930153744
     },
     {
       "away_expected_goals": 0.8115149503126724,
@@ -4219,16 +4219,16 @@
     }
   ],
   "freshness": {
-    "generated_at": "2026-07-25T21:18:18.158337+00:00",
+    "generated_at": "2026-07-25T23:35:31.906554+00:00",
     "latest_match_date": null,
-    "match_snapshot_at": "2026-07-23T09:38:47.080633+00:00",
+    "match_snapshot_at": "2026-07-25T23:35:31.619010+00:00",
     "source_notes": [
-      "Generated from validated local forecast artifacts.",
-      "matches snapshot is older than 1 day, 0:00:00"
+      "Official TFF fixture snapshot reconciled with thesportsdb.",
+      "Live market refresh unavailable; dated 2026-07-23 valuation snapshot retained."
     ],
-    "source_status": "stale",
-    "squad_snapshot_at": "2026-07-23T09:38:47.080633+00:00",
-    "valuation_snapshot_at": "2026-07-23T09:38:47.080633+00:00"
+    "source_status": "fresh",
+    "squad_snapshot_at": "2026-07-23T07:45:09.809421+00:00",
+    "valuation_snapshot_at": "2026-07-23T07:45:09.809421+00:00"
   },
   "meta": {
     "checkpoints": [
