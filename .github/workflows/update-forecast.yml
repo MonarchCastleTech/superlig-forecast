@@ -1,0 +1,93 @@
+name: Update forecast data
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forecast-data-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Restore bounded source cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/raw/_http_cache
+            data/raw/_manifests
+          key: forecast-sources-${{ runner.os }}-${{ hashFiles('uv.lock') }}
+          restore-keys: |
+            forecast-sources-${{ runner.os }}-
+
+      - name: Install Python environment
+        run: uv sync --locked
+
+      - name: Refresh dashboard candidate
+        env:
+          FOOTBALL_DATA_API_TOKEN: ${{ secrets.FOOTBALL_DATA_API_TOKEN }}
+        run: >
+          uv run superlig refresh-dashboard
+          --season 2026
+          --simulations 5000000
+          --output dashboard/public/data/dashboard.json
+
+      - name: Run Python quality gates
+        run: |
+          uv run pytest -q
+          uv run mypy src
+          uv run ruff check src tests
+          uv run ruff format --check src tests
+
+      - name: Install dashboard dependencies
+        working-directory: dashboard
+        run: npm ci
+
+      - name: Run dashboard quality gates
+        working-directory: dashboard
+        run: |
+          npm test
+          npm run typecheck
+          npm run lint
+          npm audit --omit=dev
+
+      - name: Commit validated changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          approved=(dashboard/public/data/dashboard.json)
+          if git diff --quiet -- "${approved[@]}"; then
+            echo "Validated refresh produced no data change."
+            exit 0
+          fi
+          git config user.name "superlig-forecast-bot"
+          git config user.email "superlig-forecast-bot@users.noreply.github.com"
+          git add -- "${approved[@]}"
+          git commit -m "data: refresh Süper Lig forecast"
+          git pull --rebase origin main
+          if ! git push origin HEAD:main; then
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
