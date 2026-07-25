@@ -22,6 +22,7 @@ type DashboardAppProps = {
 };
 
 export function DashboardApp({ data }: DashboardAppProps) {
+  const mctLogo = `${import.meta.env.BASE_URL}brand/mct-icon.png`;
   const liveSimulation = useLiveSimulation(data);
   const finalCheckpoint = data.meta.checkpoints.at(-1) ?? data.meta.simulations;
   const [checkpoint, setCheckpoint] = useState(finalCheckpoint);
@@ -58,11 +59,16 @@ export function DashboardApp({ data }: DashboardAppProps) {
   return (
     <main>
       <header className="masthead">
-        <a className="brand" href="#top" aria-label="Forecast Lab home">
-          <span className="brand-mark">SL</span>
+        <a
+          className="brand"
+          href="https://github.com/MonarchCastleTech"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <img alt="Monarch Castle Technologies" src={mctLogo} />
           <span>
-            Forecast Lab
-            <small>Research build 01</small>
+            MCT Forecast Lab
+            <small>Forecasting Intelligence</small>
           </span>
         </a>
         <nav aria-label="Dashboard sections">
@@ -182,7 +188,13 @@ export function DashboardApp({ data }: DashboardAppProps) {
 
       <footer>
         <div>
-          <span className="brand-mark">SL</span>
+          <a
+            href="https://github.com/MonarchCastleTech"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img alt="Monarch Castle Technologies" src={mctLogo} />
+          </a>
           <strong>Süper Lig Forecast Lab</strong>
         </div>
         <p>

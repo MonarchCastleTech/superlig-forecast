@@ -222,6 +222,7 @@ export function LiveSimulationPanel({
 
       <div className="transport-controls">
         <button
+          className="play-control"
           disabled={playDisabled}
           onClick={play}
           type="button"
@@ -244,6 +245,7 @@ export function LiveSimulationPanel({
           Resume
         </button>
         <button
+          className="stop-control"
           disabled={
             controller.status !== "running" &&
             controller.status !== "paused"

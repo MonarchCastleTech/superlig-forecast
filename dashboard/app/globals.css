@@ -1428,3 +1428,316 @@ footer p:last-child {
     transition-duration: 0.01ms !important;
   }
 }
+
+.brand img {
+  background: #f2efe5;
+  border: 1px solid rgba(201, 246, 107, 0.45);
+  height: 42px;
+  object-fit: contain;
+  width: 42px;
+}
+
+.live-simulation-panel {
+  background:
+    linear-gradient(rgba(201, 246, 107, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 246, 107, 0.035) 1px, transparent 1px),
+    rgba(8, 12, 9, 0.76);
+  background-size: 36px 36px;
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  padding: 42px 0 48px;
+}
+
+.runner-state {
+  align-items: center;
+  display: inline-flex;
+  font-family: var(--font-geist-mono), monospace;
+  gap: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.runner-state::before {
+  background: var(--muted);
+  border-radius: 50%;
+  content: "";
+  height: 8px;
+  width: 8px;
+}
+
+.runner-state.state-running::before {
+  animation: status-pulse 1.15s ease-in-out infinite;
+  background: var(--lime);
+  box-shadow: 0 0 0 5px rgba(201, 246, 107, 0.1);
+}
+
+.runner-state.state-paused::before {
+  background: #f7bf65;
+}
+
+.runner-state.state-stopped::before,
+.runner-state.state-error::before {
+  background: var(--coral);
+}
+
+@keyframes status-pulse {
+  50% {
+    opacity: 0.45;
+    transform: scale(0.82);
+  }
+}
+
+.simulation-controls {
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(150px, 0.8fr) minmax(145px, 0.8fr) auto minmax(190px, 1fr);
+  margin-top: 28px;
+}
+
+.simulation-controls label {
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  min-height: 78px;
+  padding: 12px 16px;
+}
+
+.simulation-controls label > span {
+  color: var(--muted);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.simulation-controls input,
+.simulation-controls select {
+  background: transparent;
+  border: 0;
+  color: var(--paper);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  min-width: 0;
+  outline: 0;
+}
+
+.simulation-controls input:disabled {
+  color: var(--muted);
+}
+
+.simulation-controls .check-control {
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.simulation-controls .check-control input {
+  accent-color: var(--lime);
+  height: 17px;
+  width: 17px;
+}
+
+.simulation-controls > button {
+  background: rgba(255, 255, 255, 0.025);
+  border: 0;
+  border-right: 1px solid var(--line);
+  color: var(--paper);
+  cursor: pointer;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  padding: 0 18px;
+  text-transform: uppercase;
+}
+
+.transport-controls {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0 24px;
+}
+
+.transport-controls button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--paper);
+  cursor: pointer;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  min-height: 44px;
+  padding: 0 24px;
+  text-transform: uppercase;
+}
+
+.transport-controls .play-control {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--ink);
+}
+
+.transport-controls .stop-control {
+  border-color: var(--coral);
+  color: var(--coral);
+}
+
+.transport-controls button:disabled,
+.simulation-controls button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(1);
+  opacity: 0.35;
+}
+
+.live-scoreboard {
+  background: #0f1510;
+  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.live-scoreboard article {
+  border-right: 1px solid var(--line);
+  min-height: 92px;
+  padding: 17px 20px;
+}
+
+.live-scoreboard article:last-child {
+  border-right: 0;
+}
+
+.live-scoreboard span {
+  color: var(--muted);
+  display: block;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.live-scoreboard strong {
+  display: block;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: clamp(22px, 3vw, 34px);
+  font-variant-numeric: tabular-nums;
+  margin-top: 9px;
+}
+
+.live-simulation-panel progress {
+  accent-color: var(--lime);
+  display: block;
+  height: 5px;
+  margin: 8px 0 0;
+  width: 100%;
+}
+
+.simulation-error {
+  border-left: 3px solid var(--coral);
+  color: var(--coral);
+  padding: 10px 14px;
+}
+
+.live-chart-block {
+  border: 1px solid var(--line);
+  margin-top: 26px;
+  padding: 22px 20px 10px;
+}
+
+.chart-empty {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.club-toggles.compact {
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: 10px;
+}
+
+.club-toggles.compact button {
+  border: 1px solid var(--line);
+  margin: -1px 0 0 -1px;
+  text-align: center;
+}
+
+.club-toggles.compact button[aria-pressed="true"] {
+  background: rgba(201, 246, 107, 0.08);
+  color: var(--lime);
+}
+
+.reference-section {
+  margin-top: 70px;
+}
+
+.reference-heading {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 24px;
+}
+
+footer img {
+  background: #f2efe5;
+  height: 34px;
+  object-fit: contain;
+  width: 34px;
+}
+
+@media (max-width: 1000px) {
+  .simulation-controls {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .simulation-controls > * {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .club-toggles.compact {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .live-simulation-panel {
+    padding-top: 28px;
+  }
+
+  .simulation-controls,
+  .live-scoreboard {
+    grid-template-columns: 1fr;
+  }
+
+  .simulation-controls label,
+  .simulation-controls > button,
+  .live-scoreboard article {
+    border-bottom: 1px solid var(--line);
+    border-right: 0;
+  }
+
+  .transport-controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .transport-controls button {
+    padding: 0 10px;
+  }
+
+  .club-toggles.compact {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .runner-state.state-running::before {
+    animation: none;
+  }
+
+  .recharts-line-curve {
+    transition: none !important;
+  }
+}
