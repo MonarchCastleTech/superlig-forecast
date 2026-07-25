@@ -128,7 +128,7 @@ def parse_current_squad_links(page_html: str, *, season: int) -> dict[int, str]:
     links: dict[int, str] = {}
     pattern = rf'href=["\'](/[^"\']+/kader/verein/(\d+)/saison_id/{season})["\']'
     for path, club_id in re.findall(pattern, page_html, flags=re.IGNORECASE):
-        links[int(club_id)] = f"https://www.transfermarkt.com.tr{path}"
+        links[int(club_id)] = f"https://www.transfermarkt.com{path}"
     if not links:
         raise ValueError("current league page contained no squad links")
     return links

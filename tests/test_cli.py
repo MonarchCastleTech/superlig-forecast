@@ -130,7 +130,10 @@ def test_current_transfermarkt_dry_run_reports_season_page() -> None:
         ],
     )
     assert result.exit_code == 0
-    assert result.stdout.strip().endswith("wettbewerb/TR1/plus/?saison_id=2026")
+    assert result.stdout.strip() == (
+        "https://www.transfermarkt.com/super-lig/startseite/"
+        "wettbewerb/TR1/plus/?saison_id=2026"
+    )
 
 
 def test_fetch_current_squads_writes_complete_manifest(

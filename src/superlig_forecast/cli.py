@@ -78,7 +78,7 @@ HISTORICAL_RESULTS_KAGGLE_URL = (
     "ycliffd/football-soccer-league-odds-and-results?datasetVersionNumber=4"
 )
 TRANSFERMARKT_CURRENT_URL = (
-    "https://www.transfermarkt.com.tr/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026"
+    "https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026"
 )
 
 

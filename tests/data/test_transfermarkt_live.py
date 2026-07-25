@@ -41,8 +41,8 @@ def test_parse_current_squad_values_from_league_table() -> None:
         (12382, "Amed SK", 12_000_000),
     ]
     assert parse_current_squad_links(html, season=2026) == {
-        36: "https://www.transfermarkt.com.tr/fenerbahce-sk/kader/verein/36/saison_id/2026",
-        12382: "https://www.transfermarkt.com.tr/amed-sk/kader/verein/12382/saison_id/2026",
+        36: "https://www.transfermarkt.com/fenerbahce-sk/kader/verein/36/saison_id/2026",
+        12382: "https://www.transfermarkt.com/amed-sk/kader/verein/12382/saison_id/2026",
     }
 
 
