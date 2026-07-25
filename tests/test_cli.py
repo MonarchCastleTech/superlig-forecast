@@ -2,7 +2,10 @@ from typer.testing import CliRunner
 from pathlib import Path
 import json
 
+import pytest
+import superlig_forecast.cli as cli_module
 from superlig_forecast.cli import app
+from superlig_forecast.data.transfermarkt_live import SquadFetchManifest
 
 
 def test_version_option_reports_package_version() -> None:
@@ -81,6 +84,45 @@ def test_current_transfermarkt_dry_run_reports_season_page() -> None:
     assert result.stdout.strip().endswith("wettbewerb/TR1/plus/?saison_id=2026")
 
 
+def test_fetch_current_squads_writes_complete_manifest(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    league_page = tmp_path / "league.html"
+    league_page.write_text(
+        '<a href="/club/kader/verein/36/saison_id/2026">Club</a>',
+        encoding="utf-8",
+    )
+
+    def fake_fetch(links: object, output: Path) -> SquadFetchManifest:
+        del links, output
+        return SquadFetchManifest(
+            fetched=("36",),
+            unchanged=(),
+            failed={},
+            snapshot_timestamp="2026-07-25T12:00:00+00:00",
+            source_urls={"36": "https://example.test/36"},
+            complete=True,
+        )
+
+    monkeypatch.setattr(cli_module, "fetch_current_squad_pages", fake_fetch)
+    manifest = tmp_path / "manifest.json"
+    result = CliRunner().invoke(
+        app,
+        [
+            "fetch-current-squads",
+            "--league-page",
+            str(league_page),
+            "--output",
+            str(tmp_path / "raw"),
+            "--manifest",
+            str(manifest),
+        ],
+    )
+    assert result.exit_code == 0
+    assert json.loads(manifest.read_text(encoding="utf-8"))["complete"] is True
+
+
 def test_demo_forecast_records_seed_and_simulation_count(tmp_path: Path) -> None:
     output = tmp_path / "forecast"
     result = CliRunner().invoke(
@@ -109,6 +151,7 @@ def test_cli_exposes_complete_engine_command_surface() -> None:
     assert result.exit_code == 0
     for command in {
         "fetch-data",
+        "fetch-current-squads",
         "build-snapshots",
         "train-model",
         "backtest",

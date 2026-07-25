@@ -1,4 +1,10 @@
+from collections.abc import Mapping
+from datetime import UTC, datetime
+from pathlib import Path
+
 from superlig_forecast.data.transfermarkt_live import (
+    ConditionalPage,
+    fetch_current_squad_pages,
     parse_current_players,
     parse_current_squad_links,
     parse_current_squad_values,
@@ -68,3 +74,41 @@ def test_parse_current_player_values_from_nested_squad_table() -> None:
     assert players[0].player_name == "Alban Lafont"
     assert players[0].position == "Kaleci"
     assert players[0].market_value_eur == 4_000_000
+
+
+def test_fetch_current_squads_uses_conditional_cache(tmp_path: Path) -> None:
+    requests: list[dict[str, str]] = []
+
+    def first_fetch(
+        url: str,
+        headers: Mapping[str, str],
+    ) -> ConditionalPage:
+        del url
+        requests.append(dict(headers))
+        return ConditionalPage(200, b"<html>squad</html>", etag='"v1"')
+
+    first = fetch_current_squad_pages(
+        {36: "https://example.test/36"},
+        tmp_path,
+        fetch_page=first_fetch,
+        now=lambda: datetime(2026, 7, 25, tzinfo=UTC),
+    )
+    assert first.fetched == ("36",)
+    assert first.complete is True
+
+    def second_fetch(
+        url: str,
+        headers: Mapping[str, str],
+    ) -> ConditionalPage:
+        del url
+        requests.append(dict(headers))
+        return ConditionalPage(304, b"")
+
+    second = fetch_current_squad_pages(
+        {36: "https://example.test/36"},
+        tmp_path,
+        fetch_page=second_fetch,
+        now=lambda: datetime(2026, 7, 26, tzinfo=UTC),
+    )
+    assert second.unchanged == ("36",)
+    assert requests[-1]["If-None-Match"] == '"v1"'

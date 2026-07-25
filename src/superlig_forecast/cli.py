@@ -21,6 +21,7 @@ from superlig_forecast.data.oddsportal_archive import extract_oddsportal_archive
 from superlig_forecast.data.snapshots import SnapshotStore
 from superlig_forecast.data.tff import TFF_PAGES, TffAdapter, decode_tff
 from superlig_forecast.data.transfermarkt_live import (
+    fetch_current_squad_pages,
     parse_current_players,
     parse_current_squad_links,
     parse_current_squad_values,
@@ -239,21 +240,22 @@ def fetch_current_squads(
     league_page: Path = typer.Option(..., "--league-page"),
     season: int = typer.Option(2026, "--season"),
     output: Path = typer.Option(Path("data/raw"), "--output"),
+    manifest_output: Path = typer.Option(
+        Path("artifacts/current-squads-manifest.json"),
+        "--manifest",
+    ),
 ) -> None:
     """Snapshot every current top-flight club squad page."""
 
     links = parse_current_squad_links(league_page.read_text(encoding="utf-8"), season=season)
-    store = SnapshotStore(output)
-    fetcher = Fetcher()
-    for club_id, url in sorted(links.items()):
-        result = fetcher.fetch(
-            FetchRequest(
-                source=f"transfermarkt-squad-{club_id}",
-                url=url,
-                extension=".html",
-            )
-        )
-        typer.echo(str(store.put(result).payload_path.resolve()))
+    manifest = fetch_current_squad_pages(links, output)
+    manifest_output.parent.mkdir(parents=True, exist_ok=True)
+    temporary = manifest_output.with_suffix(manifest_output.suffix + ".partial")
+    temporary.write_bytes(orjson.dumps(asdict(manifest), option=orjson.OPT_INDENT_2))
+    temporary.replace(manifest_output)
+    typer.echo(str(manifest_output.resolve()))
+    if not manifest.complete:
+        raise typer.Exit(code=1)
 
 
 @app.command("build-current-players")
