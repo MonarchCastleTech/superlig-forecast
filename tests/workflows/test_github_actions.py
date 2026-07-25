@@ -9,6 +9,7 @@ def test_update_workflow_has_strict_quality_gates() -> None:
     assert "fetch-data" in text
     assert "--source transfermarkt-current" in text
     assert "--source tff" in text
+    assert "--tff-base-url http://www.tff.org" in text
     assert "fetch-current-squads" in text
     assert "build-current-players" in text
     assert "update-current-changes" in text

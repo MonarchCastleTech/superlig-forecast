@@ -57,6 +57,7 @@ jobs:
           tff_outputs="$(uv run superlig fetch-data \
             --source tff \
             --season 2026-27 \
+            --tff-base-url http://www.tff.org \
             --output data/raw)"
           tff_page="$(printf '%s\n' "$tff_outputs" | grep '/tff-TR1/' | head -n 1)"
           test -f "$league_page"

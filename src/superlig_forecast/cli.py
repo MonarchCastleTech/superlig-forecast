@@ -170,6 +170,7 @@ def fetch_data(
     source: str = typer.Option(..., "--source"),
     season: str = typer.Option(..., "--season"),
     dry_run: bool = typer.Option(False, "--dry-run"),
+    tff_base_url: str = typer.Option("https://www.tff.org", "--tff-base-url"),
     output: Path = typer.Option(Path("data/raw"), "--output"),
 ) -> None:
     """Inspect or fetch one configured source."""
@@ -240,7 +241,7 @@ def fetch_data(
             for source_name, page_id in endpoints.items():
                 if source_name.endswith("-archive") and page_id == config["page_id"]:
                     continue
-                url = f"https://www.tff.org/default.aspx?pageID={page_id}"
+                url = f"{tff_base_url.rstrip('/')}/default.aspx?pageID={page_id}"
                 result = Fetcher().fetch(
                     FetchRequest(source=source_name, url=url, extension=".html")
                 )

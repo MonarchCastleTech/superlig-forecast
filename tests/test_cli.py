@@ -1,6 +1,7 @@
 from typer.testing import CliRunner
 from pathlib import Path
 import json
+from types import SimpleNamespace
 
 import pytest
 import superlig_forecast.cli as cli_module
@@ -24,6 +25,53 @@ def test_tff_dry_run_lists_all_competition_families() -> None:
 
     assert result.exit_code == 0
     assert result.stdout.splitlines() == ["TR1", "TR2", "TR3", "TR4", "TRC"]
+
+
+def test_tff_fetch_accepts_an_explicit_official_base_url(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    requests: list[object] = []
+
+    class FakeFetcher:
+        def fetch(self, request: object) -> object:
+            requests.append(request)
+            return request
+
+    class FakeStore:
+        def __init__(self, output: Path) -> None:
+            del output
+
+        def put(self, result: object) -> object:
+            del result
+            return SimpleNamespace(payload_path=tmp_path / "snapshot.html")
+
+    monkeypatch.setattr(cli_module, "Fetcher", FakeFetcher)
+    monkeypatch.setattr(cli_module, "SnapshotStore", FakeStore)
+
+    result = CliRunner().invoke(
+        app,
+        [
+            "fetch-data",
+            "--source",
+            "tff",
+            "--season",
+            "2026-27",
+            "--tff-base-url",
+            "http://www.tff.org",
+            "--output",
+            str(tmp_path),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    assert requests
+    assert all(
+        str(getattr(request, "url")).startswith(
+            "http://www.tff.org/default.aspx?pageID=",
+        )
+        for request in requests
+    )
 
 
 def test_transfermarkt_dry_run_reports_pinned_kaggle_archive_url() -> None:
