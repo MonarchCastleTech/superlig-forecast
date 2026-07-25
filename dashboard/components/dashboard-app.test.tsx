@@ -1,24 +1,12 @@
 import "@testing-library/jest-dom/vitest";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { render, screen } from "@testing-library/react";
-import { expect, test, vi } from "vitest";
+import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, expect, test } from "vitest";
 import { validateDashboardPayload } from "@/lib/dashboard-data";
 import { DashboardApp } from "./dashboard-app";
 
-vi.mock("@/hooks/use-live-simulation", () => ({
-  useLiveSimulation: () => ({
-    status: "idle",
-    snapshot: null,
-    history: [],
-    error: null,
-    start: vi.fn(),
-    pause: vi.fn(),
-    resume: vi.fn(),
-    stop: vi.fn(),
-    reset: vi.fn(),
-  }),
-}));
+afterEach(cleanup);
 
 test("shows MCT branding in the masthead and footer", () => {
   const payload = validateDashboardPayload(
@@ -35,4 +23,25 @@ test("shows MCT branding in the masthead and footer", () => {
       name: "Monarch Castle Technologies",
     }),
   ).toHaveLength(2);
+});
+
+test("presents one published forecast without simulator controls", () => {
+  const payload = validateDashboardPayload(
+    JSON.parse(
+      readFileSync(
+        join(process.cwd(), "public", "data", "dashboard.json"),
+        "utf8",
+      ),
+    ),
+  );
+
+  render(<DashboardApp data={payload} />);
+
+  expect(screen.getByTestId("forecast-updated")).toHaveTextContent("Updated");
+  expect(screen.getByRole("note")).toHaveTextContent("not betting advice");
+  expect(screen.getByRole("note")).toHaveTextContent("not a guarantee");
+  expect(screen.queryByText(/simulation target/i)).not.toBeInTheDocument();
+  expect(
+    screen.queryByRole("button", { name: /play simulation/i }),
+  ).not.toBeInTheDocument();
 });
