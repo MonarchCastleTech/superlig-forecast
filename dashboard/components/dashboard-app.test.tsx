@@ -45,3 +45,25 @@ test("presents one published forecast without simulator controls", () => {
     screen.queryByRole("button", { name: /play simulation/i }),
   ).not.toBeInTheDocument();
 });
+
+test("exposes the title forecast and possible table accessibly", () => {
+  const payload = validateDashboardPayload(
+    JSON.parse(
+      readFileSync(
+        join(process.cwd(), "public", "data", "dashboard.json"),
+        "utf8",
+      ),
+    ),
+  );
+
+  render(<DashboardApp data={payload} />);
+
+  expect(
+    screen.getByRole("heading", { name: /title forecast/i }),
+  ).toBeVisible();
+  expect(screen.getByText(/model probability/i)).toBeVisible();
+  expect(
+    screen.getByRole("table", { name: /possible final table/i }),
+  ).toBeVisible();
+  expect(screen.getAllByText(/expected points/i).length).toBeGreaterThan(0);
+});

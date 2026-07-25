@@ -53,6 +53,9 @@ export function StandingsPanel({
   expectedStandings,
   sourceLabel = "Reference possible standings",
 }: StandingsPanelProps) {
+  const titleProbability = new Map(
+    data.championship.map((team) => [team.club, team.champion_probability]),
+  );
   const positions = positionRows ?? data.positions;
   const standings = expectedStandings ?? data.expected_standings;
   const initialLeader = leaderAt(positions, 1);
@@ -138,13 +141,14 @@ export function StandingsPanel({
       </div>
 
       <div className="standings-table-wrap">
-        <table className="standings-table">
+        <table aria-label="Possible final table" className="standings-table">
           <thead>
             <tr>
               <th scope="col">Expected</th>
               <th scope="col">Club</th>
               <th scope="col">Average rank</th>
               <th scope="col">Expected points</th>
+              <th scope="col">Title</th>
               <th scope="col">Most likely</th>
               <th scope="col">Top 4</th>
               <th scope="col">{ordinal(focusPosition)}</th>
@@ -168,6 +172,9 @@ export function StandingsPanel({
                 </th>
                 <td>{team.expected_position.toFixed(2)}</td>
                 <td>{team.expected_points.toFixed(1)}</td>
+                <td>
+                  {formatProbability(titleProbability.get(team.club) ?? null, 1)}
+                </td>
                 <td>{ordinal(team.most_likely_position)}</td>
                 <td>{formatProbability(team.top_four_probability, 1)}</td>
                 <td>

@@ -70,11 +70,17 @@ export function ConvergenceChart({
     <article className="panel convergence-panel" aria-labelledby="convergence-heading">
       <div className="panel-heading">
         <div>
-          <p className="section-index">Published audit trail</p>
-          <h2 id="convergence-heading">Published reference convergence</h2>
+          <p className="section-index">02 / Monte Carlo stability</p>
+          <h2 id="convergence-heading">Model convergence</h2>
         </div>
         <span>95% uncertainty tracked</span>
       </div>
+
+      <p className="panel-intro">
+        The lines show how each club&apos;s title probability stabilizes as
+        more simulated seasons are added. Smaller late-stage movement is a
+        useful precision check, not a guarantee of correctness.
+      </p>
 
       <div
         className="chart-shell"
@@ -107,6 +113,12 @@ export function ConvergenceChart({
             />
             <ReferenceLine
               x={selectedCheckpoint}
+              label={{
+                value: "Published result",
+                fill: "#aeb5aa",
+                fontSize: 11,
+                position: "insideTopRight",
+              }}
               stroke="#f3f0e8"
               strokeDasharray="3 4"
             />
