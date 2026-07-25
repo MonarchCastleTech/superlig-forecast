@@ -37,6 +37,11 @@ from superlig_forecast.reporting.charts import (
 )
 from superlig_forecast.reporting.dashboard import build_dashboard_payload
 from superlig_forecast.reporting.report import build_report
+from superlig_forecast.refresh import (
+    RefreshBlocked,
+    RefreshConfig,
+    refresh_forecast,
+)
 from superlig_forecast.simulation.rules import LeagueRules
 from superlig_forecast.simulation.season import (
     FixtureForecast,
@@ -653,6 +658,42 @@ def forecast_season(
 def export_results(output: Path = typer.Option(Path("artifacts/report"), "--output")) -> None:
     path = build_report({"engine_version": __version__, "status": "generated"}, output)
     typer.echo(str(path.resolve()))
+
+
+@app.command("refresh-dashboard")
+def refresh_dashboard(
+    season: int = typer.Option(2026, "--season"),
+    simulations: int = typer.Option(5_000_000, "--simulations", min=1),
+    seed: int = typer.Option(202627, "--seed"),
+    output: Path = typer.Option(
+        Path("dashboard/public/data/dashboard.json"),
+        "--output",
+    ),
+) -> None:
+    """Validate and atomically promote a refreshed dashboard payload."""
+
+    try:
+        result = refresh_forecast(
+            RefreshConfig(
+                season=season,
+                simulations=simulations,
+                seed=seed,
+                output=output,
+            )
+        )
+    except RefreshBlocked as error:
+        typer.echo(str(error), err=True)
+        raise typer.Exit(code=1) from error
+    typer.echo(
+        orjson.dumps(
+            {
+                "changed": result.changed,
+                "output": str(result.output.resolve()),
+                "selected_match_provider": result.selected_match_provider,
+                "generated_at": result.generated_at,
+            }
+        ).decode()
+    )
 
 
 @app.command("export-dashboard-data")

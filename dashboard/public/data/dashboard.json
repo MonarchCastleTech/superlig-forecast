@@ -4108,6 +4108,18 @@
       "home_win_probability": 0.4926704691621439
     }
   ],
+  "freshness": {
+    "generated_at": "2026-07-25T20:53:54.494833+00:00",
+    "latest_match_date": null,
+    "match_snapshot_at": "2026-07-23T09:38:47.080633+00:00",
+    "source_notes": [
+      "Generated from validated local forecast artifacts.",
+      "matches snapshot is older than 1 day, 0:00:00"
+    ],
+    "source_status": "stale",
+    "squad_snapshot_at": "2026-07-23T09:38:47.080633+00:00",
+    "valuation_snapshot_at": "2026-07-23T09:38:47.080633+00:00"
+  },
   "meta": {
     "checkpoints": [
       10000,

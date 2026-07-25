@@ -67,6 +67,15 @@ export type DashboardPayload = {
       market_only: string[];
     } | null;
   };
+  freshness: {
+    generated_at: string;
+    match_snapshot_at: string;
+    squad_snapshot_at: string;
+    valuation_snapshot_at: string;
+    latest_match_date: string | null;
+    source_status: "fresh" | "stale" | "failed";
+    source_notes: string[];
+  };
   championship: ChampionshipRow[];
   convergence: ConvergenceRow[];
   fixtures: FixtureRow[];
@@ -145,6 +154,24 @@ export function validateDashboardPayload(value: unknown): DashboardPayload {
     !Array.isArray(value.meta.checkpoints)
   ) {
     throw new Error("Dashboard metadata is incomplete");
+  }
+  if (
+    !isRecord(value.freshness) ||
+    typeof value.freshness.generated_at !== "string" ||
+    typeof value.freshness.match_snapshot_at !== "string" ||
+    typeof value.freshness.squad_snapshot_at !== "string" ||
+    typeof value.freshness.valuation_snapshot_at !== "string" ||
+    (value.freshness.latest_match_date !== null &&
+      typeof value.freshness.latest_match_date !== "string") ||
+    !["fresh", "stale", "failed"].includes(
+      String(value.freshness.source_status),
+    ) ||
+    !Array.isArray(value.freshness.source_notes) ||
+    !value.freshness.source_notes.every(
+      (note) => typeof note === "string",
+    )
+  ) {
+    throw new Error("Dashboard freshness is incomplete");
   }
   if (
     !Array.isArray(value.championship) ||

@@ -3,10 +3,16 @@
 from __future__ import annotations
 
 import csv
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Literal, cast, overload
 
 import orjson
+
+from superlig_forecast.reporting.freshness import (
+    FreshnessReport,
+    assess_freshness,
+)
 
 
 def _rows(path: Path) -> list[dict[str, str]]:
@@ -74,6 +80,8 @@ def build_dashboard_payload(
     forecast_dir: Path,
     backtest_path: Path,
     position_backtest_path: Path,
+    *,
+    freshness: FreshnessReport | None = None,
 ) -> dict[str, Any]:
     """Normalize engine artifacts into the versioned web dashboard contract."""
 
@@ -162,6 +170,19 @@ def build_dashboard_payload(
         for row in _rows(forecast_dir / "expected-standings.csv")
     ]
     expected_standings.sort(key=lambda row: cast(float, row["expected_position"]))
+    if freshness is None:
+        artifact_time = datetime.fromtimestamp(
+            (forecast_dir / "manifest.json").stat().st_mtime,
+            tz=UTC,
+        )
+        freshness = assess_freshness(
+            now=datetime.now(UTC),
+            match_snapshot_at=artifact_time,
+            squad_snapshot_at=artifact_time,
+            valuation_snapshot_at=artifact_time,
+            latest_match_date=None,
+            notes=("Generated from validated local forecast artifacts.",),
+        )
 
     return {
         "schema_version": 1,
@@ -176,6 +197,7 @@ def build_dashboard_payload(
             "value_coefficient": float(manifest["value_coefficient"]),
             "source_alignment": manifest.get("team_source_alignment"),
         },
+        "freshness": freshness.as_payload(),
         "championship": championship,
         "convergence": convergence,
         "fixtures": fixtures,

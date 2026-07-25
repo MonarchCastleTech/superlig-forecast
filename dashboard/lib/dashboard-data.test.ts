@@ -23,6 +23,15 @@ const payload: DashboardPayload = {
     value_coefficient: 0.1,
     source_alignment: null,
   },
+  freshness: {
+    generated_at: "2026-07-25T12:00:00Z",
+    match_snapshot_at: "2026-07-25T11:00:00Z",
+    squad_snapshot_at: "2026-07-24T12:00:00Z",
+    valuation_snapshot_at: "2026-07-24T12:00:00Z",
+    latest_match_date: null,
+    source_status: "fresh",
+    source_notes: [],
+  },
   championship: [
     {
       club: "Galatasaray SK",

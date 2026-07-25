@@ -146,6 +146,25 @@ def test_demo_forecast_records_seed_and_simulation_count(tmp_path: Path) -> None
     assert (output / "expected-standings.csv").exists()
 
 
+def test_refresh_dashboard_promotes_valid_local_payload(tmp_path: Path) -> None:
+    output = tmp_path / "dashboard.json"
+    output.write_text('{"schema_version":1,"value":"stable"}', encoding="utf-8")
+    result = CliRunner().invoke(
+        app,
+        [
+            "refresh-dashboard",
+            "--season",
+            "2026",
+            "--simulations",
+            "1000",
+            "--output",
+            str(output),
+        ],
+    )
+    assert result.exit_code == 0
+    assert "freshness" in json.loads(output.read_text(encoding="utf-8"))
+
+
 def test_cli_exposes_complete_engine_command_surface() -> None:
     result = CliRunner().invoke(app, ["--help"])
     assert result.exit_code == 0
@@ -158,6 +177,7 @@ def test_cli_exposes_complete_engine_command_surface() -> None:
         "backtest-positions",
         "forecast-match",
         "forecast-season",
+        "refresh-dashboard",
         "export-dashboard-data",
         "export-results",
     }:

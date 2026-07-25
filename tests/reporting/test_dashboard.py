@@ -204,6 +204,8 @@ def test_build_dashboard_payload_normalizes_artifacts(tmp_path: Path) -> None:
     assert payload["meta"]["season"] == "2026-27"
     assert payload["meta"]["simulations"] == 50_000
     assert payload["meta"]["source_alignment"]["matched_team_count"] == 2
+    assert payload["freshness"]["source_status"] == "fresh"
+    assert payload["freshness"]["source_notes"]
     assert [row["club"] for row in payload["championship"]] == [
         "Galatasaray SK",
         "Fenerbahçe SK",
