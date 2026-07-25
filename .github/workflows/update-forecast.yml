@@ -152,13 +152,18 @@ jobs:
             dashboard/public/data/current-changes.json
             automation/state/current-players.json
           )
-          if [[ -z "$(git status --porcelain -- "${approved[@]}")" ]]; then
+          existing=()
+          for path in "${approved[@]}"; do
+            [[ -e "$path" ]] && existing+=("$path")
+          done
+          if (( ${#existing[@]} == 0 )) \
+            || [[ -z "$(git status --porcelain -- "${existing[@]}")" ]]; then
             echo "Validated refresh produced no data change."
             exit 0
           fi
           git config user.name "superlig-forecast-bot"
           git config user.email "superlig-forecast-bot@users.noreply.github.com"
-          git add -- "${approved[@]}"
+          git add -- "${existing[@]}"
           git commit -m "data: refresh Süper Lig forecast"
           git pull --rebase origin main
           if ! git push origin HEAD:main; then

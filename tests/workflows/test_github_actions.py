@@ -26,6 +26,8 @@ def test_update_workflow_has_strict_quality_gates() -> None:
     assert "export-dashboard-data" in text
     assert "superlig refresh-dashboard" in text
     assert '--candidate "$RUNNER_TEMP/dashboard-candidate.json"' in text
+    assert '[[ -e "$path" ]] && existing+=("$path")' in text
+    assert 'git add -- "${existing[@]}"' in text
     assert "pytest" in text
     assert "mypy" in text
     assert "ruff check" in text
