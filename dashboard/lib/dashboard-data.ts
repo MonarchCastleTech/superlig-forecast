@@ -22,6 +22,12 @@ export type FixtureRow = {
   away_win_probability: number;
 };
 
+export type MatchOutcome = {
+  outcome: "home" | "draw" | "away";
+  label: string;
+  confidence: "Too close to call" | "Slight edge" | "Clear model edge";
+};
+
 export type CurrentTableRow = {
   club: string;
   points: number;
@@ -274,6 +280,44 @@ export function filterFixtures(
       (outcome === "away" && fixture.away_win_probability === strongest)
     );
   });
+}
+
+export function classifyMatchOutcome(fixture: FixtureRow): MatchOutcome {
+  const outcomes = [
+    { outcome: "home" as const, probability: fixture.home_win_probability },
+    { outcome: "draw" as const, probability: fixture.draw_probability },
+    { outcome: "away" as const, probability: fixture.away_win_probability },
+  ].sort((left, right) => right.probability - left.probability);
+  const best = outcomes[0];
+  const margin = best.probability - outcomes[1].probability;
+  const label =
+    best.outcome === "draw"
+      ? "Draw most likely"
+      : `${
+          best.outcome === "home" ? fixture.home_team : fixture.away_team
+        } most likely winner`;
+  return {
+    outcome: best.outcome,
+    label,
+    confidence:
+      margin < 0.05
+        ? "Too close to call"
+        : margin <= 0.12
+          ? "Slight edge"
+          : "Clear model edge",
+  };
+}
+
+export function formatForecastUpdate(value: string): string {
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Europe/Istanbul",
+    timeZoneName: "short",
+  }).format(new Date(value));
 }
 
 export function formatProbability(

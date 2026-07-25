@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  classifyMatchOutcome,
   filterFixtures,
+  formatForecastUpdate,
   formatProbability,
   leaderAtPosition,
   positionDistribution,
@@ -172,6 +174,31 @@ describe("dashboard data selectors", () => {
     expect(filterFixtures(payload.fixtures, "galata", "home")).toHaveLength(1);
     expect(filterFixtures(payload.fixtures, "FENER", "away")).toHaveLength(1);
     expect(filterFixtures(payload.fixtures, "", "draw")).toHaveLength(0);
+  });
+
+  it("labels the highest 1X2 outcome without predicting a score", () => {
+    expect(classifyMatchOutcome(payload.fixtures[0])).toEqual({
+      label: "Galatasaray SK most likely winner",
+      confidence: "Clear model edge",
+      outcome: "home",
+    });
+  });
+
+  it("calls a narrow plurality too close to call", () => {
+    expect(
+      classifyMatchOutcome({
+        ...payload.fixtures[0],
+        home_win_probability: 0.36,
+        draw_probability: 0.34,
+        away_win_probability: 0.3,
+      }).confidence,
+    ).toBe("Too close to call");
+  });
+
+  it("formats the publication time for Istanbul", () => {
+    expect(formatForecastUpdate("2026-07-26T03:00:00Z")).toContain(
+      "26 Jul 2026",
+    );
   });
 
   it("formats unit probabilities and missing values", () => {
