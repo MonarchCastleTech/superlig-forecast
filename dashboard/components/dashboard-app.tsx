@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { BacktestPanel } from "@/components/backtest-panel";
 import { ChampionshipRace } from "@/components/championship-race";
 import { ConvergenceChart } from "@/components/convergence-chart";
-import { FixtureExplorer } from "@/components/fixture-explorer";
+import { MatchOutlook } from "@/components/match-outlook";
 import { Methodology } from "@/components/methodology";
 import { StandingsPanel } from "@/components/standings-panel";
 import {
@@ -165,7 +165,7 @@ export function DashboardApp({ data }: DashboardAppProps) {
         positionRows={data.positions}
         sourceLabel="Latest published possible standings"
       />
-      <FixtureExplorer fixtures={data.fixtures} />
+      <MatchOutlook fixtures={data.fixtures} />
       <BacktestPanel backtest={data.backtest} />
       <Methodology data={data} />
 
