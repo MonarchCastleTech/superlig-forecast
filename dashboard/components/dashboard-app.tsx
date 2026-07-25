@@ -1,13 +1,16 @@
-"use client";
-
 import { useMemo, useState } from "react";
 
 import { BacktestPanel } from "@/components/backtest-panel";
 import { ChampionshipRace } from "@/components/championship-race";
 import { ConvergenceChart } from "@/components/convergence-chart";
 import { FixtureExplorer } from "@/components/fixture-explorer";
+import {
+  deriveLiveTables,
+  LiveSimulationPanel,
+} from "@/components/live-simulation-panel";
 import { Methodology } from "@/components/methodology";
 import { StandingsPanel } from "@/components/standings-panel";
+import { useLiveSimulation } from "@/hooks/use-live-simulation";
 import {
   formatInteger,
   rankAtCheckpoint,
@@ -19,6 +22,7 @@ type DashboardAppProps = {
 };
 
 export function DashboardApp({ data }: DashboardAppProps) {
+  const liveSimulation = useLiveSimulation(data);
   const finalCheckpoint = data.meta.checkpoints.at(-1) ?? data.meta.simulations;
   const [checkpoint, setCheckpoint] = useState(finalCheckpoint);
   const [selectedClub, setSelectedClub] = useState(
@@ -30,6 +34,13 @@ export function DashboardApp({ data }: DashboardAppProps) {
   const ranking = useMemo(
     () => rankAtCheckpoint(data, checkpoint),
     [data, checkpoint],
+  );
+  const liveTables = useMemo(
+    () =>
+      liveSimulation.snapshot
+        ? deriveLiveTables(liveSimulation.snapshot)
+        : null,
+    [liveSimulation.snapshot],
   );
 
   function toggleClub(club: string) {
@@ -63,7 +74,7 @@ export function DashboardApp({ data }: DashboardAppProps) {
         </nav>
         <span className="model-status">
           <i />
-          Model complete
+          Simulator {liveSimulation.status}
         </span>
       </header>
 
@@ -98,6 +109,21 @@ export function DashboardApp({ data }: DashboardAppProps) {
         </div>
       </section>
 
+      <div id="race">
+        <LiveSimulationPanel data={data} controller={liveSimulation} />
+      </div>
+
+      <div className="reference-section">
+        <div className="section-heading reference-heading">
+          <div>
+            <p className="section-index">Published reference</p>
+            <h2>Precomputed five-million-run audit</h2>
+          </div>
+          <p>
+            These frozen checkpoints remain available for reproducibility. The
+            live player above is the primary simulation.
+          </p>
+        </div>
       <section className="checkpoint-strip" aria-label="Simulation checkpoint">
         <div>
           <span>Simulation checkpoint</span>
@@ -122,7 +148,7 @@ export function DashboardApp({ data }: DashboardAppProps) {
         </p>
       </section>
 
-      <section className="race-grid" id="race">
+      <section className="race-grid">
         <ChampionshipRace
           checkpoint={checkpoint}
           ranking={ranking}
@@ -138,8 +164,18 @@ export function DashboardApp({ data }: DashboardAppProps) {
           onToggleClub={toggleClub}
         />
       </section>
+      </div>
 
-      <StandingsPanel data={data} />
+      <StandingsPanel
+        data={data}
+        expectedStandings={liveTables?.expectedStandings}
+        positionRows={liveTables?.positionRows}
+        sourceLabel={
+          liveTables
+            ? "Live possible standings"
+            : "Reference possible standings"
+        }
+      />
       <FixtureExplorer fixtures={data.fixtures} />
       <BacktestPanel backtest={data.backtest} />
       <Methodology data={data} />

@@ -70,8 +70,8 @@ export function ConvergenceChart({
     <article className="panel convergence-panel" aria-labelledby="convergence-heading">
       <div className="panel-heading">
         <div>
-          <p className="section-index">02 / stability</p>
-          <h2 id="convergence-heading">Monte Carlo convergence</h2>
+          <p className="section-index">Published audit trail</p>
+          <h2 id="convergence-heading">Published reference convergence</h2>
         </div>
         <span>95% uncertainty tracked</span>
       </div>
@@ -165,4 +165,3 @@ export function ConvergenceChart({
     </article>
   );
 }
-

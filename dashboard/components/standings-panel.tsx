@@ -4,13 +4,16 @@ import { useMemo, useState } from "react";
 
 import {
   formatProbability,
-  leaderAtPosition,
-  positionDistribution,
   type DashboardPayload,
+  type ExpectedStanding,
+  type PositionRow,
 } from "@/lib/dashboard-data";
 
 type StandingsPanelProps = {
   data: DashboardPayload;
+  positionRows?: PositionRow[];
+  expectedStandings?: ExpectedStanding[];
+  sourceLabel?: string;
 };
 
 function ordinal(position: number): string {
@@ -29,22 +32,50 @@ function metric(
   return aggregate[key] ?? Number.NaN;
 }
 
-export function StandingsPanel({ data }: StandingsPanelProps) {
-  const initialLeader = leaderAtPosition(data, 17);
-  const [focusPosition, setFocusPosition] = useState(17);
-  const [selectedClub, setSelectedClub] = useState(
-    initialLeader?.club ?? data.expected_standings[0]?.club ?? "",
+function leaderAt(
+  positions: PositionRow[],
+  position: number,
+): PositionRow | null {
+  return (
+    positions
+      .filter((row) => row.position === position)
+      .sort(
+        (left, right) =>
+          right.probability - left.probability ||
+          left.club.localeCompare(right.club),
+      )[0] ?? null
   );
-  const leader = leaderAtPosition(data, focusPosition);
+}
+
+export function StandingsPanel({
+  data,
+  positionRows,
+  expectedStandings,
+  sourceLabel = "Reference possible standings",
+}: StandingsPanelProps) {
+  const positions = positionRows ?? data.positions;
+  const standings = expectedStandings ?? data.expected_standings;
+  const initialLeader = leaderAt(positions, 1);
+  const [focusPosition, setFocusPosition] = useState(1);
+  const [selectedClub, setSelectedClub] = useState(
+    initialLeader?.club ?? standings[0]?.club ?? "",
+  );
+  const leader = useMemo(
+    () => leaderAt(positions, focusPosition),
+    [focusPosition, positions],
+  );
   const selectedDistribution = useMemo(
-    () => positionDistribution(data, selectedClub),
-    [data, selectedClub],
+    () =>
+      positions
+        .filter((row) => row.club === selectedClub)
+        .sort((left, right) => left.position - right.position),
+    [positions, selectedClub],
   );
   const positionMap = useMemo(() => {
     return new Map(
-      data.positions.map((row) => [`${row.club}:${row.position}`, row]),
+      positions.map((row) => [`${row.club}:${row.position}`, row]),
     );
-  }, [data.positions]);
+  }, [positions]);
   const positionScores = data.position_backtest.aggregate;
   const positionLogLoss = metric(positionScores, "position_log_loss");
   const uniformLogLoss = metric(positionScores, "uniform_log_loss");
@@ -62,12 +93,11 @@ export function StandingsPanel({ data }: StandingsPanelProps) {
       <div className="section-heading">
         <div>
           <p className="section-index">03 / full table</p>
-          <h2>Possible standings</h2>
+          <h2>{sourceLabel}</h2>
         </div>
         <p>
-          The expected table is ordered by each club&apos;s average finishing
-          position across five million seasons. Open a row to inspect its full
-          1st–18th distribution.
+          The table is ordered by each club&apos;s average finishing position.
+          Open a row to inspect its full exact-position distribution.
         </p>
       </div>
 
@@ -117,12 +147,12 @@ export function StandingsPanel({ data }: StandingsPanelProps) {
               <th scope="col">Expected points</th>
               <th scope="col">Most likely</th>
               <th scope="col">Top 4</th>
-              <th scope="col">17th</th>
+              <th scope="col">{ordinal(focusPosition)}</th>
               <th scope="col">Relegation</th>
             </tr>
           </thead>
           <tbody>
-            {data.expected_standings.map((team, index) => (
+            {standings.map((team, index) => (
               <tr
                 className={selectedClub === team.club ? "selected" : ""}
                 key={team.club}
@@ -140,7 +170,13 @@ export function StandingsPanel({ data }: StandingsPanelProps) {
                 <td>{team.expected_points.toFixed(1)}</td>
                 <td>{ordinal(team.most_likely_position)}</td>
                 <td>{formatProbability(team.top_four_probability, 1)}</td>
-                <td>{formatProbability(team.position_17_probability, 1)}</td>
+                <td>
+                  {formatProbability(
+                    positionMap.get(`${team.club}:${focusPosition}`)
+                      ?.probability ?? null,
+                    1,
+                  )}
+                </td>
                 <td
                   className={
                     team.relegation_probability >= 0.4 ? "risk-high" : ""
@@ -196,12 +232,17 @@ export function StandingsPanel({ data }: StandingsPanelProps) {
             <span className="heatmap-corner">Club</span>
             {Array.from({ length: data.meta.team_count }, (_, index) => index + 1).map(
               (position) => (
-                <strong className={position === 17 ? "focus-position" : ""} key={position}>
+                <strong
+                  className={
+                    position === focusPosition ? "focus-position" : ""
+                  }
+                  key={position}
+                >
                   {position}
                 </strong>
               ),
             )}
-            {data.expected_standings.map((team) => (
+            {standings.map((team) => (
               <div className="heatmap-row" key={team.club}>
                 <button
                   className={selectedClub === team.club ? "selected" : ""}
@@ -218,7 +259,9 @@ export function StandingsPanel({ data }: StandingsPanelProps) {
                   const probability = row?.probability ?? 0;
                   return (
                     <span
-                      className={position === 17 ? "focus-position" : ""}
+                      className={
+                        position === focusPosition ? "focus-position" : ""
+                      }
                       key={position}
                       style={{
                         backgroundColor: `rgba(201, 246, 107, ${Math.min(
@@ -285,4 +328,3 @@ export function StandingsPanel({ data }: StandingsPanelProps) {
     </section>
   );
 }
-
