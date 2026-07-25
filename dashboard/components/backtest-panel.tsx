@@ -77,6 +77,13 @@ export function BacktestPanel({ backtest }: BacktestPanelProps) {
             <strong>{backtest.acceptance.passed ? "Passed" : "Review"}</strong>
             <small>{Object.keys(backtest.acceptance.checks).length} model checks</small>
           </article>
+          <p className="metric-explainer">
+            <strong>How to read these scores.</strong> Log loss penalizes
+            confident probability forecasts when the observed outcome differs;
+            Brier score measures the squared distance between forecast
+            probabilities and what occurred. Lower values are better for both,
+            but neither score proves that future forecasts will be correct.
+          </p>
         </div>
 
         <article className="panel fold-chart">
@@ -132,4 +139,3 @@ export function BacktestPanel({ backtest }: BacktestPanelProps) {
     </section>
   );
 }
-

@@ -67,3 +67,33 @@ test("exposes the title forecast and possible table accessibly", () => {
   ).toBeVisible();
   expect(screen.getAllByText(/expected points/i).length).toBeGreaterThan(0);
 });
+
+test("publishes an academic methodology and explains validation metrics", () => {
+  const payload = validateDashboardPayload(
+    JSON.parse(
+      readFileSync(
+        join(process.cwd(), "public", "data", "dashboard.json"),
+        "utf8",
+      ),
+    ),
+  );
+
+  render(<DashboardApp data={payload} />);
+
+  for (const section of [
+    "Forecast target",
+    "Data provenance",
+    "Temporal integrity",
+    "Structural model",
+    "Market-value adjustment",
+    "Current-season state",
+    "Monte Carlo estimation",
+    "Backtest design",
+    "Uncertainty",
+    "Limitations",
+  ]) {
+    expect(screen.getByRole("heading", { name: section })).toBeVisible();
+  }
+  expect(screen.getByText(/log loss penalizes/i)).toBeVisible();
+  expect(screen.getByText(/brier score measures/i)).toBeVisible();
+});

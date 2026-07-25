@@ -751,6 +751,25 @@ main {
   padding: 23px;
 }
 
+.metric-explainer {
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  grid-column: 1 / -1;
+  line-height: 1.7;
+  margin: 0;
+  padding: 20px 23px;
+}
+
+.metric-explainer strong {
+  color: var(--paper);
+  display: inline;
+  font-size: inherit;
+  letter-spacing: 0;
+  margin: 0;
+}
+
 .metric-stack span,
 .metric-stack small {
   color: var(--muted);
@@ -788,6 +807,22 @@ main {
   border-top: 1px solid var(--line);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.method-grid article {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(98, 211, 197, 0.035), transparent 35%),
+    transparent;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  min-height: 190px;
+  padding: 24px;
+}
+
+.method-grid h3 {
+  font-size: 15px;
+  font-weight: 650;
+  margin: 0;
 }
 
 .method-grid details {
