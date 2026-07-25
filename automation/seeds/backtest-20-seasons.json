@@ -1,0 +1,394 @@
+{
+  "method": "strict-expanding-window",
+  "start_season": 2006,
+  "end_season": 2025,
+  "market_weight": 0.9,
+  "fold_count": 20,
+  "match_count": 6437,
+  "market_match_count": 4074,
+  "aggregate": {
+    "naive_log_loss": 1.06559312507665,
+    "naive_brier": 0.6436626859384176,
+    "structural_log_loss": 1.0208457031742775,
+    "structural_brier": 0.6114226726618958,
+    "hybrid_log_loss": 1.0017701370872156,
+    "hybrid_brier": 0.5981495129441596,
+    "market_log_loss": 0.9939522652234796,
+    "market_brier": 0.5929287820192489,
+    "market_subset_hybrid_log_loss": 0.9943520239701876,
+    "market_subset_hybrid_brier": 0.5930886107456383,
+    "hybrid_accuracy": 0.5140593444151002
+  },
+  "folds": [
+    {
+      "season": 2006,
+      "match_count": 306,
+      "market_match_count": 0,
+      "scores": {
+        "naive_log_loss": 1.065212817814523,
+        "naive_brier": 0.642025562696734,
+        "structural_log_loss": 1.0363635037521657,
+        "structural_brier": 0.6234042677068454,
+        "hybrid_log_loss": 1.0363635037521657,
+        "hybrid_brier": 0.6234042677068454,
+        "market_log_loss": null,
+        "market_brier": null,
+        "market_subset_hybrid_log_loss": null,
+        "market_subset_hybrid_brier": null,
+        "hybrid_accuracy": 0.4934640522875817
+      }
+    },
+    {
+      "season": 2007,
+      "match_count": 306,
+      "market_match_count": 0,
+      "scores": {
+        "naive_log_loss": 1.0458431324917292,
+        "naive_brier": 0.6299506104305997,
+        "structural_log_loss": 0.9899774410318681,
+        "structural_brier": 0.5901059335949936,
+        "hybrid_log_loss": 0.9899774410318681,
+        "hybrid_brier": 0.5901059335949936,
+        "market_log_loss": null,
+        "market_brier": null,
+        "market_subset_hybrid_log_loss": null,
+        "market_subset_hybrid_brier": null,
+        "hybrid_accuracy": 0.5555555555555556
+      }
+    },
+    {
+      "season": 2008,
+      "match_count": 306,
+      "market_match_count": 306,
+      "scores": {
+        "naive_log_loss": 1.050477498480514,
+        "naive_brier": 0.6331868122983569,
+        "structural_log_loss": 1.0167976484338206,
+        "structural_brier": 0.6081214824039831,
+        "hybrid_log_loss": 0.9748538305032203,
+        "hybrid_brier": 0.5767678180777224,
+        "market_log_loss": 0.9743604633785018,
+        "market_brier": 0.5760422288528985,
+        "market_subset_hybrid_log_loss": 0.9748538305032203,
+        "market_subset_hybrid_brier": 0.5767678180777224,
+        "hybrid_accuracy": 0.5490196078431373
+      }
+    },
+    {
+      "season": 2009,
+      "match_count": 272,
+      "market_match_count": 272,
+      "scores": {
+        "naive_log_loss": 1.0814376255822349,
+        "naive_brier": 0.6541955112332852,
+        "structural_log_loss": 1.0342701715804599,
+        "structural_brier": 0.6211964456460658,
+        "hybrid_log_loss": 1.0045017512780503,
+        "hybrid_brier": 0.5996846651358677,
+        "market_log_loss": 1.0035610540313051,
+        "market_brier": 0.5991114256627462,
+        "market_subset_hybrid_log_loss": 1.0045017512780503,
+        "market_subset_hybrid_brier": 0.5996846651358677,
+        "hybrid_accuracy": 0.48161764705882354
+      }
+    },
+    {
+      "season": 2010,
+      "match_count": 304,
+      "market_match_count": 304,
+      "scores": {
+        "naive_log_loss": 1.0730615776262205,
+        "naive_brier": 0.6494309106185059,
+        "structural_log_loss": 1.0146671774731388,
+        "structural_brier": 0.605956864166272,
+        "hybrid_log_loss": 0.9811877306334995,
+        "hybrid_brier": 0.58342018273018,
+        "market_log_loss": 0.9796719699939721,
+        "market_brier": 0.5827721452712241,
+        "market_subset_hybrid_log_loss": 0.9811877306334995,
+        "market_subset_hybrid_brier": 0.58342018273018,
+        "hybrid_accuracy": 0.5164473684210527
+      }
+    },
+    {
+      "season": 2011,
+      "match_count": 330,
+      "market_match_count": 330,
+      "scores": {
+        "naive_log_loss": 1.0530970674084987,
+        "naive_brier": 0.6347117407871017,
+        "structural_log_loss": 1.0148383616238221,
+        "structural_brier": 0.6079835151874969,
+        "hybrid_log_loss": 0.979294087654946,
+        "hybrid_brier": 0.5829956878599214,
+        "market_log_loss": 0.9782035169260246,
+        "market_brier": 0.5826937918411312,
+        "market_subset_hybrid_log_loss": 0.979294087654946,
+        "market_subset_hybrid_brier": 0.5829956878599214,
+        "hybrid_accuracy": 0.5515151515151515
+      }
+    },
+    {
+      "season": 2012,
+      "match_count": 306,
+      "market_match_count": 306,
+      "scores": {
+        "naive_log_loss": 1.070635784776198,
+        "naive_brier": 0.6468181254128226,
+        "structural_log_loss": 1.049887693115083,
+        "structural_brier": 0.6287026344795396,
+        "hybrid_log_loss": 1.030874814029948,
+        "hybrid_brier": 0.6186055023242139,
+        "market_log_loss": 1.0320097300242734,
+        "market_brier": 0.6197910505277358,
+        "market_subset_hybrid_log_loss": 1.030874814029948,
+        "market_subset_hybrid_brier": 0.6186055023242139,
+        "hybrid_accuracy": 0.5032679738562091
+      }
+    },
+    {
+      "season": 2013,
+      "match_count": 304,
+      "market_match_count": 304,
+      "scores": {
+        "naive_log_loss": 1.0562399885192513,
+        "naive_brier": 0.6365601027531718,
+        "structural_log_loss": 1.030911630426902,
+        "structural_brier": 0.6197521641225526,
+        "hybrid_log_loss": 1.0054665279943213,
+        "hybrid_brier": 0.6018213881230455,
+        "market_log_loss": 1.005176015844385,
+        "market_brier": 0.6016003084155823,
+        "market_subset_hybrid_log_loss": 1.0054665279943213,
+        "market_subset_hybrid_brier": 0.6018213881230455,
+        "hybrid_accuracy": 0.5
+      }
+    },
+    {
+      "season": 2014,
+      "match_count": 306,
+      "market_match_count": 306,
+      "scores": {
+        "naive_log_loss": 1.0824938504015804,
+        "naive_brier": 0.6557199911547329,
+        "structural_log_loss": 1.0184444348408834,
+        "structural_brier": 0.6097679648817887,
+        "hybrid_log_loss": 1.0006787701123914,
+        "hybrid_brier": 0.5986134398404871,
+        "market_log_loss": 1.001541552620706,
+        "market_brier": 0.5993624383280333,
+        "market_subset_hybrid_log_loss": 1.0006787701123914,
+        "market_subset_hybrid_brier": 0.5986134398404871,
+        "hybrid_accuracy": 0.5163398692810458
+      }
+    },
+    {
+      "season": 2015,
+      "match_count": 305,
+      "market_match_count": 305,
+      "scores": {
+        "naive_log_loss": 1.05746724213993,
+        "naive_brier": 0.6377718241615703,
+        "structural_log_loss": 1.0298933004501436,
+        "structural_brier": 0.6178658935151493,
+        "hybrid_log_loss": 0.9864536746399765,
+        "hybrid_brier": 0.5876094509418149,
+        "market_log_loss": 0.9843394921534093,
+        "market_brier": 0.5863478906774984,
+        "market_subset_hybrid_log_loss": 0.9864536746399765,
+        "market_subset_hybrid_brier": 0.5876094509418149,
+        "hybrid_accuracy": 0.5409836065573771
+      }
+    },
+    {
+      "season": 2016,
+      "match_count": 305,
+      "market_match_count": 305,
+      "scores": {
+        "naive_log_loss": 1.0661172428556618,
+        "naive_brier": 0.644977683653721,
+        "structural_log_loss": 1.011473569279682,
+        "structural_brier": 0.6046139983787624,
+        "hybrid_log_loss": 0.972293910425787,
+        "hybrid_brier": 0.5789366334264355,
+        "market_log_loss": 0.9713046023427948,
+        "market_brier": 0.578644791428171,
+        "market_subset_hybrid_log_loss": 0.972293910425787,
+        "market_subset_hybrid_brier": 0.5789366334264355,
+        "hybrid_accuracy": 0.5377049180327869
+      }
+    },
+    {
+      "season": 2017,
+      "match_count": 306,
+      "market_match_count": 306,
+      "scores": {
+        "naive_log_loss": 1.0387431700350025,
+        "naive_brier": 0.6247605811854003,
+        "structural_log_loss": 0.9690047313813499,
+        "structural_brier": 0.5753261645036887,
+        "hybrid_log_loss": 0.9208932720488439,
+        "hybrid_brier": 0.543230024113723,
+        "market_log_loss": 0.9191482056987678,
+        "market_brier": 0.5425334555267162,
+        "market_subset_hybrid_log_loss": 0.9208932720488439,
+        "market_subset_hybrid_brier": 0.543230024113723,
+        "hybrid_accuracy": 0.5784313725490197
+      }
+    },
+    {
+      "season": 2018,
+      "match_count": 305,
+      "market_match_count": 304,
+      "scores": {
+        "naive_log_loss": 1.0745660446668002,
+        "naive_brier": 0.6493712331173686,
+        "structural_log_loss": 1.0389034195105087,
+        "structural_brier": 0.6249284640722966,
+        "hybrid_log_loss": 1.0194801040436074,
+        "hybrid_brier": 0.6103994789514913,
+        "market_log_loss": 1.0216885815050547,
+        "market_brier": 0.611932510254391,
+        "market_subset_hybrid_log_loss": 1.0216304771636746,
+        "market_subset_hybrid_brier": 0.611937165459794,
+        "hybrid_accuracy": 0.4885245901639344
+      }
+    },
+    {
+      "season": 2019,
+      "match_count": 306,
+      "market_match_count": 306,
+      "scores": {
+        "naive_log_loss": 1.0774421008600774,
+        "naive_brier": 0.6521555179842867,
+        "structural_log_loss": 1.0459889939759324,
+        "structural_brier": 0.6301784968147921,
+        "hybrid_log_loss": 1.0148653898328117,
+        "hybrid_brier": 0.607502812284617,
+        "market_log_loss": 1.0149986765361376,
+        "market_brier": 0.607385459526322,
+        "market_subset_hybrid_log_loss": 1.0148653898328117,
+        "market_subset_hybrid_brier": 0.607502812284617,
+        "hybrid_accuracy": 0.49019607843137253
+      }
+    },
+    {
+      "season": 2020,
+      "match_count": 420,
+      "market_match_count": 420,
+      "scores": {
+        "naive_log_loss": 1.0926707000869873,
+        "naive_brier": 0.6630324002644865,
+        "structural_log_loss": 1.037978566362477,
+        "structural_brier": 0.6243061482868695,
+        "hybrid_log_loss": 1.0246648281851958,
+        "hybrid_brier": 0.6131359669606024,
+        "market_log_loss": 1.025850608803683,
+        "market_brier": 0.6136667717932011,
+        "market_subset_hybrid_log_loss": 1.0246648281851958,
+        "market_subset_hybrid_brier": 0.6131359669606024,
+        "hybrid_accuracy": 0.4642857142857143
+      }
+    },
+    {
+      "season": 2021,
+      "match_count": 380,
+      "market_match_count": 0,
+      "scores": {
+        "naive_log_loss": 1.056120829482355,
+        "naive_brier": 0.6371672115478989,
+        "structural_log_loss": 1.0493578834905168,
+        "structural_brier": 0.6321154480797869,
+        "hybrid_log_loss": 1.0493578834905168,
+        "hybrid_brier": 0.6321154480797869,
+        "market_log_loss": null,
+        "market_brier": null,
+        "market_subset_hybrid_log_loss": null,
+        "market_subset_hybrid_brier": null,
+        "hybrid_accuracy": 0.4710526315789474
+      }
+    },
+    {
+      "season": 2022,
+      "match_count": 342,
+      "market_match_count": 0,
+      "scores": {
+        "naive_log_loss": 1.0639036294427915,
+        "naive_brier": 0.6435219040117109,
+        "structural_log_loss": 1.0192232636315184,
+        "structural_brier": 0.6102010588193396,
+        "hybrid_log_loss": 1.0192232636315184,
+        "hybrid_brier": 0.6102010588193396,
+        "market_log_loss": null,
+        "market_brier": null,
+        "market_subset_hybrid_log_loss": null,
+        "market_subset_hybrid_brier": null,
+        "hybrid_accuracy": 0.5029239766081871
+      }
+    },
+    {
+      "season": 2023,
+      "match_count": 380,
+      "market_match_count": 0,
+      "scores": {
+        "naive_log_loss": 1.0671683569208255,
+        "naive_brier": 0.6446920264281615,
+        "structural_log_loss": 1.0016657533423767,
+        "structural_brier": 0.5935835368941121,
+        "hybrid_log_loss": 1.0016657533423767,
+        "hybrid_brier": 0.5935835368941121,
+        "market_log_loss": null,
+        "market_brier": null,
+        "market_subset_hybrid_log_loss": null,
+        "market_subset_hybrid_brier": null,
+        "hybrid_accuracy": 0.5236842105263158
+      }
+    },
+    {
+      "season": 2024,
+      "match_count": 342,
+      "market_match_count": 0,
+      "scores": {
+        "naive_log_loss": 1.0479453670745253,
+        "naive_brier": 0.6313212082696316,
+        "structural_log_loss": 0.9945017562041143,
+        "structural_brier": 0.5922987420257106,
+        "hybrid_log_loss": 0.9945017562041143,
+        "hybrid_brier": 0.5922987420257106,
+        "market_log_loss": null,
+        "market_brier": null,
+        "market_subset_hybrid_log_loss": null,
+        "market_subset_hybrid_brier": null,
+        "hybrid_accuracy": 0.543859649122807
+      }
+    },
+    {
+      "season": 2025,
+      "match_count": 306,
+      "market_match_count": 0,
+      "scores": {
+        "naive_log_loss": 1.088048215013917,
+        "naive_brier": 0.65932429844079,
+        "structural_log_loss": 1.0094614124709735,
+        "structural_brier": 0.6063653728298868,
+        "hybrid_log_loss": 1.0094614124709735,
+        "hybrid_brier": 0.6063653728298868,
+        "market_log_loss": null,
+        "market_brier": null,
+        "market_subset_hybrid_log_loss": null,
+        "market_subset_hybrid_brier": null,
+        "hybrid_accuracy": 0.49019607843137253
+      }
+    }
+  ],
+  "acceptance": {
+    "passed": true,
+    "checks": {
+      "exact_requested_fold_count": true,
+      "hybrid_beats_naive_log_loss": true,
+      "hybrid_beats_naive_brier": true,
+      "hybrid_within_market_log_loss_tolerance": true
+    }
+  },
+  "chart": "C:\\Users\\akgul\\Downloads\\Fore\\.worktrees\\forecast-engine\\artifacts\\backtest-20-seasons-log-loss.png"
+}

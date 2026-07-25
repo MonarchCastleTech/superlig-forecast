@@ -1152,6 +1152,116 @@
       "simulation_count": 5000000
     }
   ],
+  "current_table": [
+    {
+      "club": "Galatasaray SK",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Fenerbahçe SK",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Beşiktaş JK",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Trabzonspor",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Göztepe",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Samsunspor",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "İstanbul Başakşehir FK",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Alanyaspor",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Çorum FK",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Konyaspor",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Amed SK",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Erzurumspor FK",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Çaykur Rizespor",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Kasımpaşa",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Eyüpspor",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Kocaelispor",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Gençlerbirliği SK",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    },
+    {
+      "club": "Gaziantep FK",
+      "goals_against": 0,
+      "goals_for": 0,
+      "points": 0
+    }
+  ],
   "expected_standings": [
     {
       "club": "Galatasaray SK",
@@ -4109,7 +4219,7 @@
     }
   ],
   "freshness": {
-    "generated_at": "2026-07-25T20:53:54.494833+00:00",
+    "generated_at": "2026-07-25T21:18:18.158337+00:00",
     "latest_match_date": null,
     "match_snapshot_at": "2026-07-23T09:38:47.080633+00:00",
     "source_notes": [
@@ -4130,6 +4240,7 @@
       2000000,
       5000000
     ],
+    "completed_fixture_count": 0,
     "fixture_count": 306,
     "model_version": "0.1.0",
     "season": "2026-27",

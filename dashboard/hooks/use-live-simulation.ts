@@ -56,6 +56,19 @@ export function useLiveSimulation(
     () => prepareFixtures(teams, data.fixtures),
     [data.fixtures, teams],
   );
+  const startingTable = useMemo(() => {
+    const rows = new Map(
+      (data.current_table ?? []).map((row) => [row.club, row]),
+    );
+    return teams.map((team) => {
+      const row = rows.get(team);
+      return {
+        points: row?.points ?? 0,
+        goalsFor: row?.goals_for ?? 0,
+        goalsAgainst: row?.goals_against ?? 0,
+      };
+    });
+  }, [data.current_table, teams]);
 
   useEffect(() => {
     const worker = new Worker(
@@ -108,9 +121,10 @@ export function useLiveSimulation(
         seed,
         teams,
         fixtures,
+        startingTable,
       });
     },
-    [fixtures, post, teams],
+    [fixtures, post, startingTable, teams],
   );
 
   const sendControl = useCallback(

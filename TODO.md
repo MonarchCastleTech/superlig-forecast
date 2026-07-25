@@ -23,6 +23,11 @@
 - [x] Deterministic finite/infinite browser worker with Play, Pause, Resume,
   Stop, Reset, arbitrary exact-position traces, and a live possible table.
 - [x] Repository-subpath-safe build ready for GitHub Pages deployment.
+- [x] Stateless scheduled updater with compact model/backtest seeds, current
+  league/squad/market-value fetches, player transfer/value change detection,
+  free match-feed fallback, and source-gated atomic publication.
+- [x] Sequential in-season simulation: completed TFF scores seed the current
+  table and only remaining fixtures are simulated in Python and the browser.
 
 ## Next research work
 
@@ -33,7 +38,5 @@
 - [ ] Implement exact TFF head-to-head mini-table tie-breaking for simulations
   that finish level on points; the engine currently falls through to goal
   difference and goals scored.
-- [ ] Add sequential in-season updates after each completed match so the
-  probability timeline reflects observed 2026-27 results.
 - [ ] Activate the scheduled free-API refresh and Pages deployment workflows
   after an exact GitHub repository is authorized.

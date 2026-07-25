@@ -38,6 +38,7 @@ jobs:
           path: |
             data/raw/_http_cache
             data/raw/_manifests
+            data/raw/transfermarkt-squad-*
           key: forecast-sources-${{ runner.os }}-${{ hashFiles('uv.lock') }}
           restore-keys: |
             forecast-sources-${{ runner.os }}-
@@ -45,14 +46,68 @@ jobs:
       - name: Install Python environment
         run: uv sync --locked
 
-      - name: Refresh dashboard candidate
+      - name: Fetch league, matches, squads, transfers, and market values
+        shell: bash
+        run: |
+          set -euo pipefail
+          league_page="$(uv run superlig fetch-data \
+            --source transfermarkt-current \
+            --season 2026-27 \
+            --output data/raw | tail -n 1)"
+          tff_outputs="$(uv run superlig fetch-data \
+            --source tff \
+            --season 2026-27 \
+            --output data/raw)"
+          tff_page="$(printf '%s\n' "$tff_outputs" | grep '/tff-TR1/' | head -n 1)"
+          test -f "$league_page"
+          test -f "$tff_page"
+          uv run superlig fetch-current-squads \
+            --league-page "$league_page" \
+            --season 2026 \
+            --output data/raw \
+            --manifest "$RUNNER_TEMP/current-squads-manifest.json"
+          uv run superlig build-current-players \
+            --league-page "$league_page" \
+            --season 2026 \
+            --raw-dir data/raw \
+            --warehouse "$RUNNER_TEMP/current-players.duckdb" \
+            --output "$RUNNER_TEMP/current-players.parquet"
+          uv run superlig update-current-changes \
+            --league-page "$league_page" \
+            --season 2026 \
+            --raw-dir data/raw \
+            --state automation/state/current-players.json \
+            --output dashboard/public/data/current-changes.json
+          echo "LEAGUE_PAGE=$league_page" >> "$GITHUB_ENV"
+          echo "TFF_PAGE=$tff_page" >> "$GITHUB_ENV"
+
+      - name: Rebuild five-million-play forecast
+        run: |
+          uv run superlig forecast-season \
+            --season 2026 \
+            --simulations 5000000 \
+            --seed 202627 \
+            --model-artifact automation/seeds/model-2026-27.json \
+            --squad-page "$LEAGUE_PAGE" \
+            --tff-page "$TFF_PAGE" \
+            --output "$RUNNER_TEMP/forecast"
+          uv run superlig export-dashboard-data \
+            --forecast "$RUNNER_TEMP/forecast" \
+            --backtest automation/seeds/backtest-20-seasons.json \
+            --position-backtest automation/seeds/backtest-positions-20-seasons.json \
+            --output "$RUNNER_TEMP/dashboard-candidate.json"
+
+      - name: Reconcile and atomically publish candidate
         env:
           FOOTBALL_DATA_API_TOKEN: ${{ secrets.FOOTBALL_DATA_API_TOKEN }}
-        run: >
-          uv run superlig refresh-dashboard
-          --season 2026
-          --simulations 5000000
-          --output dashboard/public/data/dashboard.json
+        run: |
+          uv run superlig refresh-dashboard \
+            --season 2026 \
+            --simulations 5000000 \
+            --candidate "$RUNNER_TEMP/dashboard-candidate.json" \
+            --tff-page "$TFF_PAGE" \
+            --squad-page "$LEAGUE_PAGE" \
+            --output dashboard/public/data/dashboard.json
 
       - name: Run Python quality gates
         run: |
@@ -77,8 +132,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          approved=(dashboard/public/data/dashboard.json)
-          if git diff --quiet -- "${approved[@]}"; then
+          approved=(
+            dashboard/public/data/dashboard.json
+            dashboard/public/data/current-changes.json
+            automation/state/current-players.json
+          )
+          if [[ -z "$(git status --porcelain -- "${approved[@]}")" ]]; then
             echo "Validated refresh produced no data change."
             exit 0
           fi

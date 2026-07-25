@@ -133,6 +133,14 @@ checkout has not been connected to or pushed into a remote repository.
 5. Confirm every Python and dashboard validation gate passes before the first
    **Deploy forecast dashboard to Pages** run.
 
+The scheduled job is stateless: it restores the checked-in compact trained
+model and 20-season backtest seeds from `automation/seeds/`, fetches all current
+TFF league pages plus the Süper Lig Transfermarkt league and squad pages,
+detects player transfers and valuation changes, applies completed match scores
+to the starting table, reruns five million remaining-season simulations, and
+atomically promotes the dashboard only after freshness and reconciliation
+checks pass.
+
 Do not create a repository, change this checkout's remotes, enable Pages, or
 push this branch until the exact target is explicitly authorized.
 
@@ -148,7 +156,8 @@ position, expected-rank error, and rank correlation against uniform baselines.
 
 ## Known modeling boundary
 
-The current preseason forecast generates a balanced 306-match double round
-robin from the 18 official clubs. Points, goal difference, and goals scored are
-simulated exactly; head-to-head is presently approximated by the later
-tie-breakers. See [TODO.md](TODO.md) for the remaining research work.
+The forecast generates the remaining fixtures in the balanced 306-match double
+round robin and carries every completed official score into the live starting
+table. Points, goal difference, and goals scored are simulated exactly;
+head-to-head is presently approximated by the later tie-breakers. See
+[TODO.md](TODO.md) for the remaining research work.

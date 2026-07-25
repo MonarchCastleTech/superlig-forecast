@@ -1,6 +1,10 @@
 from superlig_forecast.modeling.structural import score_matrix
 from superlig_forecast.simulation.rules import LeagueRules
-from superlig_forecast.simulation.season import FixtureForecast, SeasonSimulator
+from superlig_forecast.simulation.season import (
+    FixtureForecast,
+    SeasonSimulator,
+    TeamStartingState,
+)
 
 
 def fixtures() -> list[FixtureForecast]:
@@ -68,3 +72,18 @@ def test_simulation_records_team_point_and_goal_difference_sums() -> None:
     assert set(result.goal_difference_sums) == set(teams)
     assert sum(result.point_sums.values()) == result.total_points
     assert sum(result.goal_difference_sums.values()) == 0
+
+
+def test_simulation_starts_from_completed_match_table_state() -> None:
+    teams = ("A", "B")
+    initial = (
+        TeamStartingState(points=3, goals_for=2, goals_against=0),
+        TeamStartingState(points=0, goals_for=0, goals_against=2),
+    )
+    simulator = SeasonSimulator(teams, LeagueRules.default(), initial=initial)
+
+    result = simulator.simulate([], n=100, seed=3)
+
+    assert result.champion_counts == {"A": 100, "B": 0}
+    assert result.point_sums == {"A": 300, "B": 0}
+    assert result.goal_difference_sums == {"A": 200, "B": -200}

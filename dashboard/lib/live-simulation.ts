@@ -7,6 +7,12 @@ export type IndexedFixture = {
   awayExpectedGoals: number;
 };
 
+export type IndexedStartingState = {
+  points: number;
+  goalsFor: number;
+  goalsAgainst: number;
+};
+
 export type TeamSimulationSnapshot = {
   club: string;
   positionCounts: number[];
@@ -26,6 +32,9 @@ export type SimulationAccumulator = {
   positionCounts: Float64Array;
   pointSums: Float64Array;
   goalDifferenceSums: Float64Array;
+  startingPoints: Int32Array;
+  startingGoalsFor: Int32Array;
+  startingGoalsAgainst: Int32Array;
 };
 
 const ZERO_SEED_FALLBACK = 0x6d2b79f5;
@@ -59,17 +68,30 @@ export function prepareFixtures(
 export function createAccumulator(
   teamCount: number,
   seed: number,
+  initial?: IndexedStartingState[],
 ): SimulationAccumulator {
   if (!Number.isInteger(teamCount) || teamCount < 2) {
     throw new Error("Live simulation requires at least two teams");
   }
   const normalizedSeed = seed >>> 0;
+  if (initial !== undefined && initial.length !== teamCount) {
+    throw new Error("Starting table must contain one row per team");
+  }
   return {
     simulations: 0,
     rngState: normalizedSeed || ZERO_SEED_FALLBACK,
     positionCounts: new Float64Array(teamCount * teamCount),
     pointSums: new Float64Array(teamCount),
     goalDifferenceSums: new Float64Array(teamCount),
+    startingPoints: Int32Array.from(
+      initial?.map((row) => row.points) ?? new Array(teamCount).fill(0),
+    ),
+    startingGoalsFor: Int32Array.from(
+      initial?.map((row) => row.goalsFor) ?? new Array(teamCount).fill(0),
+    ),
+    startingGoalsAgainst: Int32Array.from(
+      initial?.map((row) => row.goalsAgainst) ?? new Array(teamCount).fill(0),
+    ),
   };
 }
 
@@ -117,9 +139,9 @@ export function simulateBatch(
   const rng = { value: state.rngState >>> 0 };
 
   for (let simulation = 0; simulation < count; simulation += 1) {
-    const points = new Int32Array(teamCount);
-    const goalsFor = new Int32Array(teamCount);
-    const goalsAgainst = new Int32Array(teamCount);
+    const points = new Int32Array(state.startingPoints);
+    const goalsFor = new Int32Array(state.startingGoalsFor);
+    const goalsAgainst = new Int32Array(state.startingGoalsAgainst);
 
     for (const fixture of fixtures) {
       const homeGoals = samplePoisson(fixture.homeExpectedGoals, rng);
@@ -170,6 +192,9 @@ export function simulateBatch(
     positionCounts,
     pointSums,
     goalDifferenceSums,
+    startingPoints: state.startingPoints,
+    startingGoalsFor: state.startingGoalsFor,
+    startingGoalsAgainst: state.startingGoalsAgainst,
   };
 }
 

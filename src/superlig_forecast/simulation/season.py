@@ -17,6 +17,13 @@ class FixtureForecast:
 
 
 @dataclass(frozen=True)
+class TeamStartingState:
+    points: int = 0
+    goals_for: int = 0
+    goals_against: int = 0
+
+
+@dataclass(frozen=True)
 class SimulationResult:
     champion_counts: dict[str, int]
     position_counts: dict[str, tuple[int, ...]]
@@ -29,9 +36,18 @@ class SimulationResult:
 
 
 class SeasonSimulator:
-    def __init__(self, team_ids: tuple[str, ...], rules: LeagueRules) -> None:
+    def __init__(
+        self,
+        team_ids: tuple[str, ...],
+        rules: LeagueRules,
+        *,
+        initial: tuple[TeamStartingState, ...] | None = None,
+    ) -> None:
         self.team_ids = team_ids
         self.rules = rules
+        self.initial = initial or tuple(TeamStartingState() for _ in team_ids)
+        if len(self.initial) != len(team_ids):
+            raise ValueError("initial table state must contain one row per team")
 
     def simulate(
         self,
@@ -72,9 +88,18 @@ class SeasonSimulator:
         for checkpoint in ordered:
             while completed < checkpoint:
                 size = min(chunk_size, checkpoint - completed)
-                points = np.zeros((size, len(self.team_ids)), dtype=np.int16)
-                goals_for = np.zeros_like(points)
-                goals_against = np.zeros_like(points)
+                points = np.broadcast_to(
+                    np.array([row.points for row in self.initial], dtype=np.int16),
+                    (size, len(self.team_ids)),
+                ).copy()
+                goals_for = np.broadcast_to(
+                    np.array([row.goals_for for row in self.initial], dtype=np.int16),
+                    points.shape,
+                ).copy()
+                goals_against = np.broadcast_to(
+                    np.array([row.goals_against for row in self.initial], dtype=np.int16),
+                    points.shape,
+                ).copy()
                 for fixture in fixtures:
                     side = fixture.score_matrix.shape[0]
                     flat = rng.choice(

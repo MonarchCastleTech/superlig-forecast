@@ -1,5 +1,6 @@
 import type {
   IndexedFixture,
+  IndexedStartingState,
   SimulationSnapshot,
 } from "./live-simulation";
 
@@ -22,6 +23,7 @@ export type StartCommand = {
   seed: number;
   teams: string[];
   fixtures: IndexedFixture[];
+  startingTable?: IndexedStartingState[];
 };
 
 export type PauseCommand = { type: "pause"; runId: string };

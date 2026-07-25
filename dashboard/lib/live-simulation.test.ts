@@ -87,4 +87,19 @@ describe("live season simulation", () => {
       "Simulation count exceeds JavaScript safe integer range",
     );
   });
+
+  test("carries completed-match points into every simulated table", () => {
+    const state = createAccumulator(3, 42, [
+      { points: 12, goalsFor: 8, goalsAgainst: 2 },
+      { points: 0, goalsFor: 0, goalsAgainst: 0 },
+      { points: 0, goalsFor: 0, goalsAgainst: 0 },
+    ]);
+
+    const snapshot = toSnapshot(simulateBatch(state, [], 20), teams, 1);
+
+    expect(snapshot.teams[0].club).toBe("A");
+    expect(snapshot.teams[0].positionCounts[0]).toBe(20);
+    expect(snapshot.teams[0].pointSum).toBe(240);
+    expect(snapshot.teams[0].goalDifferenceSum).toBe(120);
+  });
 });

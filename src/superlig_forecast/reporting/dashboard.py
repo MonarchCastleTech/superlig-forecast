@@ -170,6 +170,23 @@ def build_dashboard_payload(
         for row in _rows(forecast_dir / "expected-standings.csv")
     ]
     expected_standings.sort(key=lambda row: cast(float, row["expected_position"]))
+    raw_starting_table = manifest.get("starting_table", {})
+    if not isinstance(raw_starting_table, dict):
+        raw_starting_table = {}
+    current_table = []
+    for row in expected_standings:
+        club = str(row["club"])
+        raw = raw_starting_table.get(club, {})
+        if not isinstance(raw, dict):
+            raw = {}
+        current_table.append(
+            {
+                "club": club,
+                "points": int(raw.get("points", 0)),
+                "goals_for": int(raw.get("goals_for", 0)),
+                "goals_against": int(raw.get("goals_against", 0)),
+            }
+        )
     if freshness is None:
         artifact_time = datetime.fromtimestamp(
             (forecast_dir / "manifest.json").stat().st_mtime,
@@ -193,6 +210,7 @@ def build_dashboard_payload(
             "model_version": manifest["model_version"],
             "team_count": int(manifest["team_count"]),
             "fixture_count": int(manifest["fixture_count"]),
+            "completed_fixture_count": int(manifest.get("completed_fixture_count", 0)),
             "checkpoints": [int(value) for value in manifest["checkpoints"]],
             "value_coefficient": float(manifest["value_coefficient"]),
             "source_alignment": manifest.get("team_source_alignment"),
@@ -203,6 +221,7 @@ def build_dashboard_payload(
         "fixtures": fixtures,
         "positions": positions,
         "expected_standings": expected_standings,
+        "current_table": current_table,
         "backtest": {
             key: backtest[key]
             for key in (

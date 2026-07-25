@@ -140,7 +140,11 @@ export class SeasonSimulationRunner {
     this.mode = command.mode;
     this.teams = [...command.teams];
     this.fixtures = command.fixtures.map((fixture) => ({ ...fixture }));
-    this.accumulator = createAccumulator(this.teams.length, command.seed);
+    this.accumulator = createAccumulator(
+      this.teams.length,
+      command.seed,
+      command.startingTable,
+    );
     this.startedAt = this.now();
     this.lastProgressAt = 0;
     this.status = "running";

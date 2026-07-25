@@ -22,6 +22,13 @@ export type FixtureRow = {
   away_win_probability: number;
 };
 
+export type CurrentTableRow = {
+  club: string;
+  points: number;
+  goals_for: number;
+  goals_against: number;
+};
+
 export type PositionRow = {
   club: string;
   position: number;
@@ -57,6 +64,7 @@ export type DashboardPayload = {
     model_version: string;
     team_count: number;
     fixture_count: number;
+    completed_fixture_count?: number;
     checkpoints: number[];
     value_coefficient: number;
     source_alignment: {
@@ -81,6 +89,7 @@ export type DashboardPayload = {
   fixtures: FixtureRow[];
   positions: PositionRow[];
   expected_standings: ExpectedStanding[];
+  current_table?: CurrentTableRow[];
   backtest: {
     method: string;
     start_season: number;

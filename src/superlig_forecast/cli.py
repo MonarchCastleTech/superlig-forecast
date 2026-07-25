@@ -1,7 +1,7 @@
 """Command-line interface."""
 
 from dataclasses import asdict
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from pathlib import Path
 from typing import cast
 
@@ -16,9 +16,16 @@ from superlig_forecast.backtest.walk_forward import (
 )
 from superlig_forecast.backtest.positions import run_position_backtest
 from superlig_forecast.data.fetch import FetchRequest, Fetcher
+from superlig_forecast.data.football_data_org import fetch_football_data_matches
+from superlig_forecast.data.current_changes import (
+    PlayerObservation,
+    detect_current_changes,
+)
 from superlig_forecast.data.historical_results import extract_historical_results_archive
 from superlig_forecast.data.oddsportal_archive import extract_oddsportal_archive
 from superlig_forecast.data.snapshots import SnapshotStore
+from superlig_forecast.data.sportsdb import fetch_sportsdb_events
+from superlig_forecast.data.structured_sources import ProviderBatch, select_match_source
 from superlig_forecast.data.tff import TFF_PAGES, TffAdapter, decode_tff
 from superlig_forecast.data.transfermarkt_live import (
     fetch_current_squad_pages,
@@ -28,7 +35,11 @@ from superlig_forecast.data.transfermarkt_live import (
 )
 from superlig_forecast.data.transfermarkt_archive import extract_transfermarkt_archive
 from superlig_forecast.data.warehouse import Warehouse
-from superlig_forecast.forecasting.current_season import prepare_current_season
+from superlig_forecast.forecasting.current_season import (
+    model_from_artifact,
+    prepare_current_season,
+    prepare_current_season_from_model,
+)
 from superlig_forecast.modeling.structural import score_matrix
 from superlig_forecast.modeling.team_strength import TeamStrengthModel, canonical_team_name
 from superlig_forecast.reporting.charts import (
@@ -40,6 +51,7 @@ from superlig_forecast.reporting.report import build_report
 from superlig_forecast.refresh import (
     RefreshBlocked,
     RefreshConfig,
+    RefreshSources,
     refresh_forecast,
 )
 from superlig_forecast.simulation.rules import LeagueRules
@@ -312,6 +324,75 @@ def build_current_players(
     )
 
 
+@app.command("update-current-changes")
+def update_current_changes(
+    league_page: Path = typer.Option(..., "--league-page"),
+    raw_dir: Path = typer.Option(Path("data/raw"), "--raw-dir"),
+    state: Path = typer.Option(
+        Path("automation/state/current-players.json"),
+        "--state",
+    ),
+    output: Path = typer.Option(
+        Path("dashboard/public/data/current-changes.json"),
+        "--output",
+    ),
+    season: int = typer.Option(2026, "--season"),
+) -> None:
+    """Detect transfers and valuation changes from immutable squad snapshots."""
+
+    league_html = league_page.read_text(encoding="utf-8")
+    links = parse_current_squad_links(league_html, season=season)
+    club_names = {item.club_id: item.club_name for item in parse_current_squad_values(league_html)}
+    observed_on = date.today().isoformat()
+    current: list[PlayerObservation] = []
+    for club_id in sorted(links):
+        snapshots = sorted((raw_dir / f"transfermarkt-squad-{club_id}").glob("*.html"))
+        if not snapshots:
+            raise typer.BadParameter(
+                f"no squad snapshot found for club {club_id}",
+                param_hint="raw-dir",
+            )
+        for player in parse_current_players(
+            snapshots[-1].read_text(encoding="utf-8"),
+            club_id=club_id,
+            club_name=club_names[club_id],
+        ):
+            current.append(
+                PlayerObservation(
+                    provider_player_id=str(player.player_id),
+                    player_name=player.player_name,
+                    birth_date=None,
+                    club=player.club_name,
+                    market_value_eur=player.market_value_eur,
+                    observed_on=observed_on,
+                    source_url=links[club_id],
+                )
+            )
+    previous: list[PlayerObservation] = []
+    if state.exists():
+        raw_previous = orjson.loads(state.read_bytes())
+        if not isinstance(raw_previous, list):
+            raise typer.BadParameter("current-player state must be a JSON array")
+        previous = [PlayerObservation(**item) for item in raw_previous]
+    changes = detect_current_changes(previous, current)
+    payload = {
+        "generated_at": datetime.now(UTC).isoformat(),
+        "observation_count": len(current),
+        "transfers": [asdict(item) for item in changes.transfers],
+        "valuation_changes": [asdict(item) for item in changes.valuation_changes],
+        "unobserved": [asdict(item) for item in changes.unobserved],
+    }
+    for path, value in (
+        (state, [asdict(item) for item in current]),
+        (output, payload),
+    ):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = path.with_suffix(path.suffix + ".partial")
+        temporary.write_bytes(orjson.dumps(value, option=orjson.OPT_INDENT_2))
+        temporary.replace(path)
+    typer.echo(str(output.resolve()))
+
+
 @app.command("build-snapshots")
 def build_snapshots(
     output: Path = typer.Option(Path("data/model.duckdb"), "--output"),
@@ -503,6 +584,7 @@ def forecast_season(
     output: Path = typer.Option(Path("artifacts/forecast"), "--output"),
     demo: bool = typer.Option(False, "--demo"),
     warehouse: Path = typer.Option(Path("data/model.duckdb"), "--warehouse"),
+    model_artifact: Path | None = typer.Option(None, "--model-artifact"),
     squad_page: Path | None = typer.Option(None, "--squad-page"),
     tff_page: Path | None = typer.Option(None, "--tff-page"),
     season: int = typer.Option(2026, "--season"),
@@ -544,14 +626,34 @@ def forecast_season(
             "--squad-page is required for a real forecast",
             param_hint="squad-page",
         )
-    historical = load_backtest_matches(warehouse)
     squads = parse_current_squad_values(squad_page.read_text(encoding="utf-8"))
-    prepared = prepare_current_season(
-        [match.played() for match in historical],
-        squads,
-        season=season,
-        value_coefficient=value_coefficient,
+    tff_batch = (
+        TffAdapter().structured_matches(
+            tff_page.read_bytes(),
+            season=f"{season}-{(season + 1) % 100:02d}",
+            observed_at=datetime.now(UTC),
+        )
+        if tff_page is not None
+        else None
     )
+    if model_artifact is not None:
+        model_payload = orjson.loads(model_artifact.read_bytes())
+        if not isinstance(model_payload, dict):
+            raise typer.BadParameter("model artifact must contain a JSON object")
+        prepared = prepare_current_season_from_model(
+            model_from_artifact(model_payload),
+            squads,
+            played_matches=list(tff_batch.matches) if tff_batch is not None else None,
+            value_coefficient=value_coefficient,
+        )
+    else:
+        historical = load_backtest_matches(warehouse)
+        prepared = prepare_current_season(
+            [match.played() for match in historical],
+            squads,
+            season=season,
+            value_coefficient=value_coefficient,
+        )
     checkpoints = tuple(
         sorted(
             {
@@ -565,7 +667,9 @@ def forecast_season(
         )
     )
     checkpoint_results = SeasonSimulator(
-        prepared.team_ids, LeagueRules.default()
+        prepared.team_ids,
+        LeagueRules.default(),
+        initial=tuple(prepared.starting_table[team] for team in prepared.team_ids),
     ).simulate_checkpoints(
         prepared.fixtures,
         checkpoints=checkpoints,
@@ -638,6 +742,11 @@ def forecast_season(
                 "season": f"{season}-{(season + 1) % 100:02d}",
                 "team_count": len(prepared.team_ids),
                 "fixture_count": len(prepared.fixtures),
+                "completed_fixture_count": len(prepared.team_ids) * (len(prepared.team_ids) - 1)
+                - len(prepared.fixtures),
+                "starting_table": {
+                    team: asdict(row) for team, row in prepared.starting_table.items()
+                },
                 "value_coefficient": value_coefficient,
                 "probabilities": probabilities,
                 "position_probabilities_csv": str(position_path.resolve()),
@@ -669,9 +778,69 @@ def refresh_dashboard(
         Path("dashboard/public/data/dashboard.json"),
         "--output",
     ),
+    candidate: Path | None = typer.Option(None, "--candidate"),
+    tff_page: Path | None = typer.Option(None, "--tff-page"),
+    squad_page: Path | None = typer.Option(None, "--squad-page"),
 ) -> None:
     """Validate and atomically promote a refreshed dashboard payload."""
 
+    provided = (candidate, tff_page, squad_page)
+    if any(item is not None for item in provided) and not all(
+        item is not None for item in provided
+    ):
+        raise typer.BadParameter(
+            "--candidate, --tff-page, and --squad-page must be supplied together"
+        )
+    sources = None
+    if candidate is not None and tff_page is not None and squad_page is not None:
+        now = datetime.now(UTC)
+        season_label = f"{season}-{(season + 1) % 100:02d}"
+        verification = TffAdapter().structured_matches(
+            tff_page.read_bytes(),
+            season=season_label,
+            observed_at=now,
+        )
+        try:
+            football_data = fetch_football_data_matches(str(season))
+        except Exception as error:
+            football_data = ProviderBatch(
+                "football-data.org",
+                "TSL",
+                str(season),
+                "",
+                (),
+                available=False,
+                reason=f"API request failed: {type(error).__name__}",
+            )
+        try:
+            sportsdb = fetch_sportsdb_events(f"{season}-{season + 1}")
+        except Exception as error:
+            sportsdb = ProviderBatch(
+                "thesportsdb",
+                "TSL",
+                season_label,
+                "",
+                (),
+                available=False,
+                reason=f"free API request failed: {type(error).__name__}",
+            )
+        primary = select_match_source(football_data, sportsdb, verification)
+        finished_dates = [
+            match.played_on for match in verification.matches if match.status == "finished"
+        ]
+        sources = RefreshSources(
+            candidate_payload=orjson.loads(candidate.read_bytes()),
+            primary_matches=primary,
+            verification_matches=verification,
+            match_snapshot_at=now,
+            squad_snapshot_at=datetime.fromtimestamp(squad_page.stat().st_mtime, tz=UTC),
+            valuation_snapshot_at=datetime.fromtimestamp(squad_page.stat().st_mtime, tz=UTC),
+            latest_match_date=max(finished_dates, default=None),
+            source_notes=(
+                f"Official TFF fixture snapshot reconciled with {primary.provider}.",
+                "Transfermarkt league and current squad values refreshed.",
+            ),
+        )
     try:
         result = refresh_forecast(
             RefreshConfig(
@@ -679,7 +848,8 @@ def refresh_dashboard(
                 simulations=simulations,
                 seed=seed,
                 output=output,
-            )
+            ),
+            sources=sources,
         )
     except RefreshBlocked as error:
         typer.echo(str(error), err=True)

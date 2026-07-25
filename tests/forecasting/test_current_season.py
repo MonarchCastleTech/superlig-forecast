@@ -2,9 +2,14 @@ from datetime import date
 
 import numpy as np
 
+from superlig_forecast.data.structured_sources import StructuredMatch
 from superlig_forecast.data.transfermarkt_live import CurrentSquadValue
-from superlig_forecast.forecasting.current_season import prepare_current_season
-from superlig_forecast.modeling.team_strength import PlayedMatch
+from superlig_forecast.forecasting.current_season import (
+    model_from_artifact,
+    prepare_current_season,
+    prepare_current_season_from_model,
+)
+from superlig_forecast.modeling.team_strength import PlayedMatch, TeamRates
 
 
 def test_prepare_current_season_builds_double_round_robin_with_value_shift() -> None:
@@ -31,3 +36,49 @@ def test_prepare_current_season_builds_double_round_robin_with_value_shift() -> 
         )
         for item in prepared.expectations
     )
+
+
+def test_model_artifact_round_trips_without_the_historical_warehouse() -> None:
+    model = model_from_artifact(
+        {
+            "league_home_goals": 1.5,
+            "league_away_goals": 1.2,
+            "rho": -0.05,
+            "team_rates": {
+                "a": {
+                    "home_attack": 1.2,
+                    "home_defence": 0.9,
+                    "away_attack": 1.1,
+                    "away_defence": 0.8,
+                }
+            },
+        }
+    )
+
+    assert model.league_home_goals == 1.5
+    assert model.rates["a"] == TeamRates(1.2, 0.9, 1.1, 0.8)
+
+
+def test_completed_matches_seed_table_and_are_not_resimulated() -> None:
+    model = model_from_artifact(
+        {
+            "league_home_goals": 1.5,
+            "league_away_goals": 1.2,
+            "rho": -0.05,
+            "team_rates": {},
+        }
+    )
+    squads = [
+        CurrentSquadValue(1, "A SK", 25, 100_000_000),
+        CurrentSquadValue(2, "B SK", 25, 50_000_000),
+    ]
+    played = [
+        StructuredMatch("2026-08-08", "A", "B", 2, 0, "finished"),
+    ]
+
+    prepared = prepare_current_season_from_model(model, squads, played_matches=played)
+
+    assert len(prepared.fixtures) == 1
+    assert prepared.starting_table["A SK"].points == 3
+    assert prepared.starting_table["A SK"].goals_for == 2
+    assert prepared.starting_table["B SK"].goals_against == 2

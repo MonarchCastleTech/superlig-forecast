@@ -1,0 +1,295 @@
+{
+  "model": "recency-weighted-dixon-coles-market-value-hybrid",
+  "model_version": "0.1.0",
+  "before_season": 2026,
+  "historical_match_count": 10109,
+  "league_home_goals": 1.5669670786910515,
+  "league_away_goals": 1.2470877046308102,
+  "rho": -0.05,
+  "team_rates": {
+    "besiktas": {
+      "home_attack": 1.1358811994194902,
+      "home_defence": 0.9080097879642296,
+      "away_attack": 1.2067034375212744,
+      "away_defence": 0.7577367746437611
+    },
+    "caykurrizespor": {
+      "home_attack": 0.9809976023531055,
+      "home_defence": 1.0179543452543354,
+      "away_attack": 0.9325791779211808,
+      "away_defence": 1.1848002455904543
+    },
+    "fatihkaragumruk": {
+      "home_attack": 0.9517210184495326,
+      "home_defence": 1.0212551971351433,
+      "away_attack": 0.8166363567233006,
+      "away_defence": 1.1222464112038852
+    },
+    "gaziantepfk": {
+      "home_attack": 0.83973535066336,
+      "home_defence": 1.056738404310438,
+      "away_attack": 0.9382810523739481,
+      "away_defence": 1.1757441867956513
+    },
+    "altaysk": {
+      "home_attack": 0.8674829830528307,
+      "home_defence": 1.0563183242958054,
+      "away_attack": 0.9200093620994498,
+      "away_defence": 1.003086686137694
+    },
+    "kayserispor": {
+      "home_attack": 0.8388390279208106,
+      "home_defence": 1.1848603020698898,
+      "away_attack": 0.7910348147929707,
+      "away_defence": 1.1494150101951248
+    },
+    "hatayspor": {
+      "home_attack": 0.8867997655246845,
+      "home_defence": 1.237437288836477,
+      "away_attack": 0.7972419441410163,
+      "away_defence": 1.2758497433147837
+    },
+    "kasimpasa": {
+      "home_attack": 0.9263620804100113,
+      "home_defence": 1.2048436370942803,
+      "away_attack": 1.0617739013326497,
+      "away_defence": 1.0613669547756026
+    },
+    "antalyaspor": {
+      "home_attack": 0.8813904059970799,
+      "home_defence": 1.1339010065134176,
+      "away_attack": 0.7037043233061528,
+      "away_defence": 1.045361842862641
+    },
+    "goztepe": {
+      "home_attack": 1.0023509848988688,
+      "home_defence": 0.8085955895460513,
+      "away_attack": 0.934973427624201,
+      "away_defence": 0.9696379166990543
+    },
+    "adanademirspor": {
+      "home_attack": 0.974744209028138,
+      "home_defence": 1.2988535125926512,
+      "away_attack": 0.9944019536525299,
+      "away_defence": 1.2560353754341178
+    },
+    "fenerbahce": {
+      "home_attack": 1.520056957071903,
+      "home_defence": 0.8824892929417861,
+      "away_attack": 1.7277048240613684,
+      "away_defence": 0.6758172591048107
+    },
+    "basaksehirfk": {
+      "home_attack": 1.1345804858139834,
+      "home_defence": 0.8572603620729453,
+      "away_attack": 1.1254717317698324,
+      "away_defence": 0.8515459712396636
+    },
+    "alanyaspor": {
+      "home_attack": 0.9776157650483036,
+      "home_defence": 0.9832093162962355,
+      "away_attack": 0.904103806042704,
+      "away_defence": 0.9915918707312507
+    },
+    "giresunspor": {
+      "home_attack": 0.9003130888112861,
+      "home_defence": 1.0756940636392285,
+      "away_attack": 0.8505385960286356,
+      "away_defence": 1.0029275487676559
+    },
+    "galatasaray": {
+      "home_attack": 1.5409933334820165,
+      "home_defence": 0.7198861720239323,
+      "away_attack": 1.574311104871837,
+      "away_defence": 0.6121483129517045
+    },
+    "yenimalatyaspor": {
+      "home_attack": 0.8674829830528307,
+      "home_defence": 1.3289362486885168,
+      "away_attack": 0.7155459188049162,
+      "away_defence": 0.975965945520721
+    },
+    "trabzonspor": {
+      "home_attack": 1.2182803363825685,
+      "home_defence": 0.8910416250213561,
+      "away_attack": 1.2159321648275014,
+      "away_defence": 0.8852411468625122
+    },
+    "sivasspor": {
+      "home_attack": 0.9280247153823645,
+      "home_defence": 0.9335754578346388,
+      "away_attack": 0.8876972832349677,
+      "away_defence": 1.1729271885606523
+    },
+    "konyaspor": {
+      "home_attack": 0.8557722569872245,
+      "home_defence": 0.8788039892596522,
+      "away_attack": 0.9910017635971734,
+      "away_defence": 1.0567442115697172
+    },
+    "istanbulspor": {
+      "home_attack": 0.731079736463763,
+      "home_defence": 1.3830361765780237,
+      "away_attack": 0.8128610554229359,
+      "away_defence": 1.1992929834687425
+    },
+    "mkeankaragucu": {
+      "home_attack": 0.8321121880369705,
+      "home_defence": 0.9651979198536847,
+      "away_attack": 0.981157019936906,
+      "away_defence": 1.0295584648257534
+    },
+    "umraniyespor": {
+      "home_attack": 0.8932059739988107,
+      "home_defence": 1.1416907007272605,
+      "away_attack": 1.0551940034728777,
+      "away_defence": 1.116933804396798
+    },
+    "pendikspor": {
+      "home_attack": 0.8448782418951308,
+      "home_defence": 1.233353233441044,
+      "away_attack": 0.9073475079916371,
+      "away_defence": 1.2041238813888506
+    },
+    "samsunspor": {
+      "home_attack": 0.9582866730362259,
+      "home_defence": 0.84918237778487,
+      "away_attack": 0.9761827306745284,
+      "away_defence": 0.9738954865251329
+    },
+    "eyupspor": {
+      "home_attack": 0.9207148907029296,
+      "home_defence": 1.0039855744214186,
+      "away_attack": 0.7828119332523662,
+      "away_defence": 0.9547605757564797
+    },
+    "bodrumfk": {
+      "home_attack": 0.6858218260407494,
+      "home_defence": 0.8969373587826606,
+      "away_attack": 0.6577836786304045,
+      "away_defence": 0.8999465006125675
+    },
+    "genclerbirligi": {
+      "home_attack": 0.9267918268013571,
+      "home_defence": 1.0976016226298875,
+      "away_attack": 0.6792355939236393,
+      "away_defence": 0.8990450659020253
+    },
+    "kocaelispor": {
+      "home_attack": 0.67707097870737,
+      "home_defence": 0.7140994296491601,
+      "away_attack": 0.6443717581981186,
+      "away_defence": 0.954538587700689
+    }
+  },
+  "current_squads": [
+    {
+      "club_id": 36,
+      "club_name": "Fenerbahçe SK",
+      "squad_size": 43,
+      "squad_value_eur": 333150000
+    },
+    {
+      "club_id": 141,
+      "club_name": "Galatasaray SK",
+      "squad_size": 35,
+      "squad_value_eur": 323300000
+    },
+    {
+      "club_id": 114,
+      "club_name": "Beşiktaş JK",
+      "squad_size": 35,
+      "squad_value_eur": 202800000
+    },
+    {
+      "club_id": 449,
+      "club_name": "Trabzonspor",
+      "squad_size": 37,
+      "squad_value_eur": 136000000
+    },
+    {
+      "club_id": 6890,
+      "club_name": "İstanbul Başakşehir FK",
+      "squad_size": 43,
+      "squad_value_eur": 77450000
+    },
+    {
+      "club_id": 1467,
+      "club_name": "Göztepe",
+      "squad_size": 27,
+      "squad_value_eur": 66750000
+    },
+    {
+      "club_id": 152,
+      "club_name": "Samsunspor",
+      "squad_size": 38,
+      "squad_value_eur": 52750000
+    },
+    {
+      "club_id": 126,
+      "club_name": "Çaykur Rizespor",
+      "squad_size": 30,
+      "squad_value_eur": 46850000
+    },
+    {
+      "club_id": 11282,
+      "club_name": "Alanyaspor",
+      "squad_size": 27,
+      "squad_value_eur": 32830000
+    },
+    {
+      "club_id": 2293,
+      "club_name": "Konyaspor",
+      "squad_size": 23,
+      "squad_value_eur": 27480000
+    },
+    {
+      "club_id": 10484,
+      "club_name": "Kasımpaşa",
+      "squad_size": 38,
+      "squad_value_eur": 25730000
+    },
+    {
+      "club_id": 120,
+      "club_name": "Kocaelispor",
+      "squad_size": 27,
+      "squad_value_eur": 20150000
+    },
+    {
+      "club_id": 2832,
+      "club_name": "Gaziantep FK",
+      "squad_size": 23,
+      "squad_value_eur": 17980000
+    },
+    {
+      "club_id": 37951,
+      "club_name": "Çorum FK",
+      "squad_size": 30,
+      "squad_value_eur": 16380000
+    },
+    {
+      "club_id": 12382,
+      "club_name": "Amed SK",
+      "squad_size": 27,
+      "squad_value_eur": 14950000
+    },
+    {
+      "club_id": 820,
+      "club_name": "Gençlerbirliği SK",
+      "squad_size": 26,
+      "squad_value_eur": 14550000
+    },
+    {
+      "club_id": 39722,
+      "club_name": "Erzurumspor FK",
+      "squad_size": 28,
+      "squad_value_eur": 11550000
+    },
+    {
+      "club_id": 7160,
+      "club_name": "Eyüpspor",
+      "squad_size": 23,
+      "squad_value_eur": 10180000
+    }
+  ]
+}
