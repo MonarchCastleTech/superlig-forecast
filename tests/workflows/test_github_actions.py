@@ -42,4 +42,6 @@ def test_pages_workflow_is_least_privilege_and_static() -> None:
     assert "actions/upload-pages-artifact" in text
     assert "actions/deploy-pages" in text
     assert "npm run build:pages" in text
+    assert 'workflows: ["Update forecast data"]' in text
+    assert "github.event.workflow_run.conclusion == 'success'" in text
     assert "continue-on-error" not in text
