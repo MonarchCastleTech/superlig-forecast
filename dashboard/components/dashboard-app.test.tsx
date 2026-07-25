@@ -40,6 +40,12 @@ test("presents one published forecast without simulator controls", () => {
   expect(screen.getByTestId("forecast-updated")).toHaveTextContent("Updated");
   expect(screen.getByRole("note")).toHaveTextContent("not betting advice");
   expect(screen.getByRole("note")).toHaveTextContent("not a guarantee");
+  expect(screen.getByTestId("source-freshness")).toHaveTextContent(
+    payload.freshness.source_notes[1],
+  );
+  expect(screen.getByTestId("source-freshness")).toHaveTextContent(
+    /squad & values/i,
+  );
   expect(screen.queryByText(/simulation target/i)).not.toBeInTheDocument();
   expect(
     screen.queryByRole("button", { name: /play simulation/i }),
