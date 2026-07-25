@@ -28,6 +28,7 @@ from superlig_forecast.data.sportsdb import fetch_sportsdb_events
 from superlig_forecast.data.structured_sources import ProviderBatch, select_match_source
 from superlig_forecast.data.tff import TFF_PAGES, TffAdapter, decode_tff
 from superlig_forecast.data.transfermarkt_live import (
+    CurrentSquadValue,
     fetch_current_squad_pages,
     parse_current_players,
     parse_current_squad_links,
@@ -80,6 +81,54 @@ HISTORICAL_RESULTS_KAGGLE_URL = (
 TRANSFERMARKT_CURRENT_URL = (
     "https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026"
 )
+
+
+def _load_current_squad_values(source: Path) -> list[CurrentSquadValue]:
+    """Load squad totals from a live HTML page or a compact dated JSON artifact."""
+
+    if source.suffix.lower() != ".json":
+        return parse_current_squad_values(source.read_text(encoding="utf-8"))
+    payload = orjson.loads(source.read_bytes())
+    rows = payload.get("current_squads") if isinstance(payload, dict) else payload
+    if not isinstance(rows, list) or not rows:
+        raise typer.BadParameter(
+            "JSON squad snapshot must contain a non-empty current_squads array",
+            param_hint="squad-page",
+        )
+    try:
+        return [
+            CurrentSquadValue(
+                club_id=int(row["club_id"]),
+                club_name=str(row["club_name"]),
+                squad_size=int(row["squad_size"]),
+                squad_value_eur=int(row["squad_value_eur"]),
+            )
+            for row in rows
+            if isinstance(row, dict)
+        ]
+    except (KeyError, TypeError, ValueError) as error:
+        raise typer.BadParameter(
+            "JSON squad snapshot contains an invalid current_squads row",
+            param_hint="squad-page",
+        ) from error
+
+
+def _snapshot_datetime(value: str | None, fallback: Path) -> datetime:
+    if value is None:
+        return datetime.fromtimestamp(fallback.stat().st_mtime, tz=UTC)
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as error:
+        raise typer.BadParameter(
+            "--squad-snapshot-at must be an ISO-8601 timestamp",
+            param_hint="squad-snapshot-at",
+        ) from error
+    if parsed.tzinfo is None:
+        raise typer.BadParameter(
+            "--squad-snapshot-at must include a UTC offset",
+            param_hint="squad-snapshot-at",
+        )
+    return parsed.astimezone(UTC)
 
 
 def _write_position_outputs(
@@ -627,7 +676,7 @@ def forecast_season(
             "--squad-page is required for a real forecast",
             param_hint="squad-page",
         )
-    squads = parse_current_squad_values(squad_page.read_text(encoding="utf-8"))
+    squads = _load_current_squad_values(squad_page)
     tff_batch = (
         TffAdapter().structured_matches(
             tff_page.read_bytes(),
@@ -782,6 +831,11 @@ def refresh_dashboard(
     candidate: Path | None = typer.Option(None, "--candidate"),
     tff_page: Path | None = typer.Option(None, "--tff-page"),
     squad_page: Path | None = typer.Option(None, "--squad-page"),
+    squad_snapshot_at: str | None = typer.Option(None, "--squad-snapshot-at"),
+    market_source_note: str = typer.Option(
+        "Transfermarkt league and current squad values refreshed.",
+        "--market-source-note",
+    ),
 ) -> None:
     """Validate and atomically promote a refreshed dashboard payload."""
 
@@ -829,17 +883,18 @@ def refresh_dashboard(
         finished_dates = [
             match.played_on for match in verification.matches if match.status == "finished"
         ]
+        market_snapshot_at = _snapshot_datetime(squad_snapshot_at, squad_page)
         sources = RefreshSources(
             candidate_payload=orjson.loads(candidate.read_bytes()),
             primary_matches=primary,
             verification_matches=verification,
             match_snapshot_at=now,
-            squad_snapshot_at=datetime.fromtimestamp(squad_page.stat().st_mtime, tz=UTC),
-            valuation_snapshot_at=datetime.fromtimestamp(squad_page.stat().st_mtime, tz=UTC),
+            squad_snapshot_at=market_snapshot_at,
+            valuation_snapshot_at=market_snapshot_at,
             latest_match_date=max(finished_dates, default=None),
             source_notes=(
                 f"Official TFF fixture snapshot reconciled with {primary.provider}.",
-                "Transfermarkt league and current squad values refreshed.",
+                market_source_note,
             ),
         )
     try:

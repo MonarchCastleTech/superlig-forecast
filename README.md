@@ -166,6 +166,14 @@ competition pages plus the squad-value sources, applies completed scores,
 reruns the five-million-path season forecast, and atomically promotes the
 dashboard JSON only after freshness and reconciliation checks pass.
 
+Market data is live-first. If Transfermarkt returns an incomplete page to a
+GitHub-hosted runner, the match feed still refreshes and the forecast uses the
+dated `current_squads` snapshot embedded in
+`automation/seeds/model-2026-27.json`. The dashboard records that snapshot's
+true timestamp and fallback note; it never relabels old values as newly fetched.
+Transfers and valuation changes are published only after a complete live squad
+fetch.
+
 `.github/workflows/deploy-pages.yml` tests and exports the Next.js dashboard,
 then deploys the static artifact to GitHub Pages. An optional
 `FOOTBALL_DATA_API_TOKEN` repository secret can enable the configured API path;

@@ -131,8 +131,7 @@ def test_current_transfermarkt_dry_run_reports_season_page() -> None:
     )
     assert result.exit_code == 0
     assert result.stdout.strip() == (
-        "https://www.transfermarkt.com/super-lig/startseite/"
-        "wettbewerb/TR1/plus/?saison_id=2026"
+        "https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026"
     )
 
 
@@ -244,6 +243,56 @@ def test_real_forecast_can_run_from_compact_model_artifact(tmp_path: Path) -> No
             str(model_artifact),
             "--squad-page",
             str(squad_page),
+            "--output",
+            str(output),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["team_count"] == 2
+    assert manifest["fixture_count"] == 2
+
+
+def test_real_forecast_accepts_dated_json_squad_snapshot(tmp_path: Path) -> None:
+    model_artifact = tmp_path / "model.json"
+    model_artifact.write_text(
+        json.dumps(
+            {
+                "league_home_goals": 1.5,
+                "league_away_goals": 1.2,
+                "rho": -0.05,
+                "team_rates": {},
+                "current_squads": [
+                    {
+                        "club_id": 1,
+                        "club_name": "A SK",
+                        "squad_size": 25,
+                        "squad_value_eur": 100_000_000,
+                    },
+                    {
+                        "club_id": 2,
+                        "club_name": "B SK",
+                        "squad_size": 25,
+                        "squad_value_eur": 50_000_000,
+                    },
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    output = tmp_path / "forecast"
+
+    result = CliRunner().invoke(
+        app,
+        [
+            "forecast-season",
+            "--simulations",
+            "100",
+            "--model-artifact",
+            str(model_artifact),
+            "--squad-page",
+            str(model_artifact),
             "--output",
             str(output),
         ],
@@ -373,6 +422,56 @@ def test_refresh_dashboard_uses_explicit_live_source_bundle(
     payload = json.loads(output.read_text(encoding="utf-8"))
     assert payload["freshness"]["source_status"] == "fresh"
     assert "Official TFF fixture snapshot" in payload["freshness"]["source_notes"][0]
+
+
+def test_refresh_dashboard_preserves_dated_market_fallback_provenance(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    candidate = tmp_path / "candidate.json"
+    candidate.write_text('{"schema_version":1}', encoding="utf-8")
+    tff_page = Path(__file__).parent / "fixtures" / "tff" / "super_lig_fixture.html"
+    squad_snapshot = tmp_path / "squads.json"
+    squad_snapshot.write_text('{"current_squads":[]}', encoding="utf-8")
+    output = tmp_path / "dashboard.json"
+    unavailable = ProviderBatch(
+        "test-api",
+        "TSL",
+        "2026-27",
+        "",
+        (),
+        available=False,
+        reason="test",
+    )
+    monkeypatch.setattr(cli_module, "fetch_football_data_matches", lambda season: unavailable)
+    monkeypatch.setattr(cli_module, "fetch_sportsdb_events", lambda season: unavailable)
+
+    result = CliRunner().invoke(
+        app,
+        [
+            "refresh-dashboard",
+            "--candidate",
+            str(candidate),
+            "--tff-page",
+            str(tff_page),
+            "--squad-page",
+            str(squad_snapshot),
+            "--squad-snapshot-at",
+            "2026-07-23T07:45:09.809421+00:00",
+            "--market-source-note",
+            "Live market refresh unavailable; dated valuation snapshot retained.",
+            "--output",
+            str(output),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    freshness = json.loads(output.read_text(encoding="utf-8"))["freshness"]
+    assert freshness["squad_snapshot_at"] == "2026-07-23T07:45:09.809421+00:00"
+    assert freshness["valuation_snapshot_at"] == "2026-07-23T07:45:09.809421+00:00"
+    assert freshness["source_notes"][1] == (
+        "Live market refresh unavailable; dated valuation snapshot retained."
+    )
 
 
 def test_cli_exposes_complete_engine_command_surface() -> None:

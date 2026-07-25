@@ -50,37 +50,49 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          league_page="$(uv run superlig fetch-data \
-            --source transfermarkt-current \
-            --season 2026-27 \
-            --output data/raw | tail -n 1)"
           tff_outputs="$(uv run superlig fetch-data \
             --source tff \
             --season 2026-27 \
             --tff-base-url http://www.tff.org \
             --output data/raw)"
           tff_page="$(printf '%s\n' "$tff_outputs" | grep '/tff-TR1/' | head -n 1)"
-          test -f "$league_page"
           test -f "$tff_page"
-          uv run superlig fetch-current-squads \
-            --league-page "$league_page" \
-            --season 2026 \
-            --output data/raw \
-            --manifest "$RUNNER_TEMP/current-squads-manifest.json"
-          uv run superlig build-current-players \
-            --league-page "$league_page" \
-            --season 2026 \
-            --raw-dir data/raw \
-            --warehouse "$RUNNER_TEMP/current-players.duckdb" \
-            --output "$RUNNER_TEMP/current-players.parquet"
-          uv run superlig update-current-changes \
-            --league-page "$league_page" \
-            --season 2026 \
-            --raw-dir data/raw \
-            --state automation/state/current-players.json \
-            --output dashboard/public/data/current-changes.json
+          league_page="automation/seeds/model-2026-27.json"
+          market_snapshot_at="2026-07-23T07:45:09.809421+00:00"
+          market_source_note="Live market refresh unavailable; dated 2026-07-23 valuation snapshot retained."
+          if live_league_page="$(uv run superlig fetch-data \
+              --source transfermarkt-current \
+              --season 2026-27 \
+              --output data/raw | tail -n 1)" \
+            && test -f "$live_league_page" \
+            && uv run superlig fetch-current-squads \
+              --league-page "$live_league_page" \
+              --season 2026 \
+              --output data/raw \
+              --manifest "$RUNNER_TEMP/current-squads-manifest.json"; then
+            league_page="$live_league_page"
+            market_snapshot_at="$(date -u +'%Y-%m-%dT%H:%M:%S+00:00')"
+            market_source_note="Transfermarkt league, current squads, transfers, and market values refreshed."
+            uv run superlig build-current-players \
+              --league-page "$league_page" \
+              --season 2026 \
+              --raw-dir data/raw \
+              --warehouse "$RUNNER_TEMP/current-players.duckdb" \
+              --output "$RUNNER_TEMP/current-players.parquet"
+            uv run superlig update-current-changes \
+              --league-page "$league_page" \
+              --season 2026 \
+              --raw-dir data/raw \
+              --state automation/state/current-players.json \
+              --output dashboard/public/data/current-changes.json
+          else
+            echo "Live market refresh unavailable; retaining the dated valuation snapshot."
+          fi
+          test -f "$league_page"
           echo "LEAGUE_PAGE=$league_page" >> "$GITHUB_ENV"
           echo "TFF_PAGE=$tff_page" >> "$GITHUB_ENV"
+          echo "MARKET_SNAPSHOT_AT=$market_snapshot_at" >> "$GITHUB_ENV"
+          echo "MARKET_SOURCE_NOTE=$market_source_note" >> "$GITHUB_ENV"
 
       - name: Rebuild five-million-play forecast
         run: |
@@ -108,6 +120,8 @@ jobs:
             --candidate "$RUNNER_TEMP/dashboard-candidate.json" \
             --tff-page "$TFF_PAGE" \
             --squad-page "$LEAGUE_PAGE" \
+            --squad-snapshot-at "$MARKET_SNAPSHOT_AT" \
+            --market-source-note "$MARKET_SOURCE_NOTE" \
             --output dashboard/public/data/dashboard.json
 
       - name: Run Python quality gates

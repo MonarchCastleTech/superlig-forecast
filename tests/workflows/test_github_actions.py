@@ -11,6 +11,12 @@ def test_update_workflow_has_strict_quality_gates() -> None:
     assert "--source tff" in text
     assert "--tff-base-url http://www.tff.org" in text
     assert "fetch-current-squads" in text
+    assert "automation/seeds/model-2026-27.json" in text
+    assert "MARKET_SNAPSHOT_AT" in text
+    assert "MARKET_SOURCE_NOTE" in text
+    assert "Live market refresh unavailable" in text
+    assert "--squad-snapshot-at" in text
+    assert "--market-source-note" in text
     assert "build-current-players" in text
     assert "update-current-changes" in text
     assert "automation/state/current-players.json" in text
