@@ -59,9 +59,7 @@ def parse_sportsdb_events(payload: bytes) -> ProviderBatch:
         event = _mapping(raw, "event")
         league = normalized_name(str(event.get("strLeague", "")))
         if league not in ALLOWED_LEAGUES:
-            raise ValueError(
-                f"TheSportsDB event belongs to wrong competition {league!r}"
-            )
+            raise ValueError(f"TheSportsDB event belongs to wrong competition {league!r}")
         season = str(event.get("strSeason", ""))
         seasons.add(season)
         status = _status(event.get("strStatus"))

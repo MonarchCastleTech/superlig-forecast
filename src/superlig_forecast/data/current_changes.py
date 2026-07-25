@@ -69,12 +69,8 @@ def detect_current_changes(
         for index, item in enumerate(previous)
         if item.provider_player_id is not None
     }
-    previous_keys = Counter(
-        key for item in previous if (key := _fallback_key(item)) is not None
-    )
-    current_keys = Counter(
-        key for item in current if (key := _fallback_key(item)) is not None
-    )
+    previous_keys = Counter(key for item in previous if (key := _fallback_key(item)) is not None)
+    current_keys = Counter(key for item in current if (key := _fallback_key(item)) is not None)
     previous_by_key = {
         key: (index, item)
         for index, item in enumerate(previous)
@@ -102,8 +98,7 @@ def detect_current_changes(
         if normalized_name(old.club) != normalized_name(item.club):
             transfers.append(
                 TransferObservation(
-                    provider_player_id=item.provider_player_id
-                    or old.provider_player_id,
+                    provider_player_id=item.provider_player_id or old.provider_player_id,
                     player_name=item.player_name,
                     from_club=old.club,
                     to_club=item.club,
@@ -113,8 +108,7 @@ def detect_current_changes(
         if old.market_value_eur != item.market_value_eur:
             valuation_changes.append(
                 ValuationChange(
-                    provider_player_id=item.provider_player_id
-                    or old.provider_player_id,
+                    provider_player_id=item.provider_player_id or old.provider_player_id,
                     player_name=item.player_name,
                     club=item.club,
                     previous_value=old.market_value_eur,

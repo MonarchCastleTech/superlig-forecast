@@ -16,9 +16,7 @@ FIXTURES = Path(__file__).parents[1] / "fixtures"
 
 
 def test_parses_finished_scheduled_and_postponed_matches() -> None:
-    batch = parse_football_data_matches(
-        (FIXTURES / "football_data_matches.json").read_bytes()
-    )
+    batch = parse_football_data_matches((FIXTURES / "football_data_matches.json").read_bytes())
     assert batch.competition == "TSL"
     assert [match.status for match in batch.matches] == [
         "finished",
@@ -31,9 +29,7 @@ def test_parses_finished_scheduled_and_postponed_matches() -> None:
 
 
 def test_rejects_wrong_competition() -> None:
-    payload = json.loads(
-        (FIXTURES / "football_data_matches.json").read_text(encoding="utf-8")
-    )
+    payload = json.loads((FIXTURES / "football_data_matches.json").read_text(encoding="utf-8"))
     payload["competition"]["code"] = "PL"
     with pytest.raises(ValueError, match="expected TSL"):
         parse_football_data_matches(json.dumps(payload).encode())

@@ -60,12 +60,8 @@ def test_exposes_normalized_structured_matches() -> None:
         season="2026-27",
         declared_charset="utf-8",
     )
-    finished = next(
-        item for item in batch.matches if item.provider_id == "tff:317785"
-    )
-    scheduled = next(
-        item for item in batch.matches if item.provider_id == "tff:317790"
-    )
+    finished = next(item for item in batch.matches if item.provider_id == "tff:317785")
+    scheduled = next(item for item in batch.matches if item.provider_id == "tff:317790")
     assert batch.competition == "TSL"
     assert finished.status == "finished"
     assert scheduled.status == "scheduled"

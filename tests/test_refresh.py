@@ -36,9 +36,7 @@ def sources(score: tuple[int, int] = (2, 1)) -> RefreshSources:
     observed = datetime(2026, 8, 14, 22, tzinfo=UTC)
     return RefreshSources(
         candidate_payload={"schema_version": 1, "value": "same"},
-        primary_matches=ProviderBatch(
-            "api", "TSL", "2026-27", observed.isoformat(), (primary,)
-        ),
+        primary_matches=ProviderBatch("api", "TSL", "2026-27", observed.isoformat(), (primary,)),
         verification_matches=ProviderBatch(
             "tff", "TSL", "2026-27", observed.isoformat(), (official,)
         ),

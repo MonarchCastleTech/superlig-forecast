@@ -132,9 +132,7 @@ def refresh_forecast(
             active_sources.verification_matches,
         )
     except (ReconciliationError, ValueError) as error:
-        raise RefreshBlocked(
-            f"match source reconciliation failed: {error}"
-        ) from error
+        raise RefreshBlocked(f"match source reconciliation failed: {error}") from error
 
     now = config.now or datetime.now(UTC)
     freshness = assess_freshness(

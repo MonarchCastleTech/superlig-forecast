@@ -62,9 +62,7 @@ class ProviderBatch:
                 raise ValueError("unavailable provider cannot contain matches")
             return
         provider_ids = [
-            match.provider_id
-            for match in self.matches
-            if match.provider_id is not None
+            match.provider_id for match in self.matches if match.provider_id is not None
         ]
         if len(provider_ids) != len(set(provider_ids)):
             raise ValueError("duplicate provider id")
@@ -90,9 +88,7 @@ class ProviderBatch:
             if observed != expected:
                 missing = sorted(expected - observed)
                 extra = sorted(observed - expected)
-                raise ValueError(
-                    f"club coverage mismatch: missing={missing}, extra={extra}"
-                )
+                raise ValueError(f"club coverage mismatch: missing={missing}, extra={extra}")
 
 
 @dataclass(frozen=True, slots=True)
@@ -127,13 +123,9 @@ def _matches(
     primary: StructuredMatch,
     verification: StructuredMatch,
 ) -> bool:
-    if _canonical_club(primary.home_team) != _canonical_club(
-        verification.home_team
-    ):
+    if _canonical_club(primary.home_team) != _canonical_club(verification.home_team):
         return False
-    if _canonical_club(primary.away_team) != _canonical_club(
-        verification.away_team
-    ):
+    if _canonical_club(primary.away_team) != _canonical_club(verification.away_team):
         return False
     primary_date = date.fromisoformat(primary.played_on)
     verification_date = date.fromisoformat(verification.played_on)
@@ -157,8 +149,7 @@ def reconcile_matches(
     if (
         primary_competition is not None
         and verification_competition is not None
-        and normalized_name(primary_competition)
-        != normalized_name(verification_competition)
+        and normalized_name(primary_competition) != normalized_name(verification_competition)
     ):
         raise ReconciliationError("competition conflict")
 
@@ -171,8 +162,7 @@ def reconcile_matches(
         candidates = [
             (index, candidate)
             for index, candidate in enumerate(verification_matches)
-            if index not in used_verification
-            and _matches(primary_match, candidate)
+            if index not in used_verification and _matches(primary_match, candidate)
         ]
         if not candidates:
             only_primary.append(primary_match)
@@ -204,14 +194,11 @@ def reconcile_matches(
             )
         ):
             raise ReconciliationError(
-                "score conflict for "
-                f"{primary_match.home_team} vs {primary_match.away_team}"
+                f"score conflict for {primary_match.home_team} vs {primary_match.away_team}"
             )
 
     only_verification = tuple(
-        match
-        for index, match in enumerate(verification_matches)
-        if index not in used_verification
+        match for index, match in enumerate(verification_matches) if index not in used_verification
     )
     return ReconciliationReport(
         matched=matched,

@@ -120,6 +120,22 @@ Open `http://localhost:3000`.
 The dashboard also includes all fixture forecasts, full club-by-position
 probabilities, the 20-season table and match backtests, and methodology notes.
 
+## GitHub Actions and Pages setup
+
+The repository includes separate update and deployment workflows, but this
+checkout has not been connected to or pushed into a remote repository.
+
+1. Create or choose the exact authorized GitHub repository.
+2. Optionally add `FOOTBALL_DATA_API_TOKEN` as a repository Actions secret.
+   Without it, the updater follows the documented TheSportsDB/TFF fallback.
+3. In repository Pages settings, choose **GitHub Actions** as the source.
+4. Manually run **Update forecast data** (`update-forecast.yml`).
+5. Confirm every Python and dashboard validation gate passes before the first
+   **Deploy forecast dashboard to Pages** run.
+
+Do not create a repository, change this checkout's remotes, enable Pages, or
+push this branch until the exact target is explicitly authorized.
+
 ## Verified backtest
 
 The checked-in engine contract uses 20 strict expanding-window test folds:

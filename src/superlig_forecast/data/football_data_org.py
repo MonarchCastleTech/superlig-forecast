@@ -31,9 +31,7 @@ def parse_football_data_matches(payload: bytes) -> ProviderBatch:
     root = _mapping(json.loads(payload), "payload")
     competition = _mapping(root.get("competition"), "competition")
     if competition.get("code") != "TSL":
-        raise ValueError(
-            f"expected TSL competition, received {competition.get('code')!r}"
-        )
+        raise ValueError(f"expected TSL competition, received {competition.get('code')!r}")
     filters = _mapping(root.get("filters", {}), "filters")
     result_set = _mapping(root.get("resultSet", {}), "resultSet")
     raw_matches = root.get("matches")

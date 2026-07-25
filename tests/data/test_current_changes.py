@@ -49,8 +49,6 @@ def test_uses_unique_name_birth_fallback_and_marks_missing_unobserved() -> None:
     changes = detect_current_changes(previous, current)
     assert changes.transfers[0].player_name == "Player One"
     missing = [
-        item
-        for item in changes.observations
-        if item.player_name == "Missing" and not item.observed
+        item for item in changes.observations if item.player_name == "Missing" and not item.observed
     ]
     assert len(missing) == 1
