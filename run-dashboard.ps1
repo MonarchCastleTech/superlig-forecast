@@ -11,4 +11,4 @@ if (-not (Test-Path -LiteralPath "node_modules")) {
 }
 
 Write-Host "Starting Süper Lig Forecast Lab at http://localhost:3000"
-npm run dev
+npm run dev -- --host 127.0.0.1 --port 3000
