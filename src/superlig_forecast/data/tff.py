@@ -2,12 +2,16 @@
 
 import html as html_module
 import re
-from datetime import datetime
+from datetime import UTC, datetime
 from zoneinfo import ZoneInfo
 
 from pydantic import BaseModel, ConfigDict
 
 from superlig_forecast.domain import MatchRecord
+from superlig_forecast.data.structured_sources import (
+    ProviderBatch,
+    StructuredMatch,
+)
 
 ISTANBUL = ZoneInfo("Europe/Istanbul")
 
@@ -113,6 +117,45 @@ class TffAdapter:
                 raise ValueError(f"conflicting duplicate TFF match {match_id}")
             matches[match_id] = record
         return list(matches.values())
+
+    def structured_matches(
+        self,
+        page: bytes,
+        *,
+        season: str = "2026-27",
+        observed_at: datetime | None = None,
+        expected_clubs: frozenset[str] = frozenset(),
+        declared_charset: str | None = None,
+    ) -> ProviderBatch:
+        """Expose the existing official parser through the normalized feed contract."""
+
+        timestamp = observed_at or datetime.now(UTC)
+        records = self.parse_matches(
+            decode_tff(page, declared_charset),
+            observed_at=timestamp,
+            competition_id="TR1",
+            season=season,
+        )
+        matches = tuple(
+            StructuredMatch(
+                played_on=record.kickoff.date().isoformat(),
+                home_team=record.home_club_name,
+                away_team=record.away_club_name,
+                home_score=record.home_goals,
+                away_score=record.away_goals,
+                status="finished" if record.is_finished else "scheduled",
+                provider_id=record.match_id,
+            )
+            for record in records
+        )
+        return ProviderBatch(
+            provider="tff",
+            competition="TSL",
+            season=season,
+            fetched_at=timestamp.isoformat(),
+            matches=matches,
+            expected_clubs=expected_clubs,
+        )
 
     @staticmethod
     def _cell(row: str, class_name: str) -> str:

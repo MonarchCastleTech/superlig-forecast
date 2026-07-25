@@ -53,8 +53,14 @@ class ProviderBatch:
     fetched_at: str
     matches: tuple[StructuredMatch, ...]
     expected_clubs: frozenset[str] = frozenset()
+    available: bool = True
+    reason: str | None = None
 
     def __post_init__(self) -> None:
+        if not self.available:
+            if self.matches:
+                raise ValueError("unavailable provider cannot contain matches")
+            return
         provider_ids = [
             match.provider_id
             for match in self.matches
@@ -95,6 +101,26 @@ class ReconciliationReport:
     only_primary: tuple[StructuredMatch, ...]
     only_verification: tuple[StructuredMatch, ...]
     conflicts: tuple[str, ...]
+
+
+def select_match_source(
+    football_data: ProviderBatch,
+    sportsdb: ProviderBatch,
+    tff: ProviderBatch,
+) -> ProviderBatch:
+    """Choose the first available structured source that reconciles to TFF."""
+
+    if not tff.available:
+        raise ReconciliationError("TFF verification source is unavailable")
+    for candidate in (football_data, sportsdb):
+        if not candidate.available or not candidate.matches:
+            continue
+        report = reconcile_matches(candidate, tff)
+        if report.conflicts:
+            continue
+        if report.matched > 0:
+            return candidate
+    return tff
 
 
 def _matches(

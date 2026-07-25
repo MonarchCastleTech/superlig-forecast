@@ -1,0 +1,37 @@
+{
+  "events": [
+    {
+      "idEvent": "21001",
+      "strLeague": "Turkish Super Lig",
+      "strSeason": "2026-2027",
+      "dateEvent": "2026-08-14",
+      "strHomeTeam": "Galatasaray A.Ş.",
+      "strAwayTeam": "Fenerbahçe A.Ş.",
+      "intHomeScore": "2",
+      "intAwayScore": "1",
+      "strStatus": "Match Finished"
+    },
+    {
+      "idEvent": "21002",
+      "strLeague": "Süper Lig",
+      "strSeason": "2026-2027",
+      "dateEvent": "2026-08-15",
+      "strHomeTeam": "Beşiktaş JK",
+      "strAwayTeam": "Trabzonspor",
+      "intHomeScore": null,
+      "intAwayScore": null,
+      "strStatus": "Not Started"
+    },
+    {
+      "idEvent": "21003",
+      "strLeague": "Turkish Super Lig",
+      "strSeason": "2026-2027",
+      "dateEvent": "2026-08-16",
+      "strHomeTeam": "Çorum FK",
+      "strAwayTeam": "Amed SK",
+      "intHomeScore": null,
+      "intAwayScore": null,
+      "strStatus": "Postponed"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "filters": {"season": "2026"},
+  "competition": {"id": 2033, "code": "TSL", "name": "Süper Lig"},
+  "resultSet": {"lastUpdated": "2026-07-25T10:00:00Z"},
+  "matches": [
+    {
+      "id": 9001,
+      "utcDate": "2026-08-14T18:30:00Z",
+      "status": "FINISHED",
+      "homeTeam": {"name": "Galatasaray A.Ş."},
+      "awayTeam": {"name": "Fenerbahçe A.Ş."},
+      "score": {"fullTime": {"home": 2, "away": 1}}
+    },
+    {
+      "id": 9002,
+      "utcDate": "2026-08-15T16:00:00Z",
+      "status": "TIMED",
+      "homeTeam": {"name": "Beşiktaş JK"},
+      "awayTeam": {"name": "Trabzonspor"},
+      "score": {"fullTime": {"home": null, "away": null}}
+    },
+    {
+      "id": 9003,
+      "utcDate": "2026-08-16T16:00:00Z",
+      "status": "POSTPONED",
+      "homeTeam": {"name": "Çorum FK"},
+      "awayTeam": {"name": "Amed SK"},
+      "score": {"fullTime": {"home": null, "away": null}}
+    }
+  ]
+}

@@ -51,3 +51,21 @@ def test_parses_finished_score() -> None:
     match = next(item for item in matches if item.match_id == "tff:317785")
 
     assert (match.home_goals, match.away_goals) == (2, 1)
+
+
+def test_exposes_normalized_structured_matches() -> None:
+    page = (FIXTURES / "super_lig_fixture.html").read_bytes()
+    batch = TffAdapter().structured_matches(
+        page,
+        season="2026-27",
+        declared_charset="utf-8",
+    )
+    finished = next(
+        item for item in batch.matches if item.provider_id == "tff:317785"
+    )
+    scheduled = next(
+        item for item in batch.matches if item.provider_id == "tff:317790"
+    )
+    assert batch.competition == "TSL"
+    assert finished.status == "finished"
+    assert scheduled.status == "scheduled"
