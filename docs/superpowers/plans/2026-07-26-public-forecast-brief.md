@@ -485,6 +485,11 @@ git commit -m "ci: publish the daily forecast brief"
 ### Task 7: Publish repository and add MCT portfolio entry
 
 **Files:**
+- Modify in governance repository: `portfolio/repositories.json`
+- Modify in governance repository: `portfolio/products.json`
+- Modify in governance repository: `portfolio/logo-inventory.json`
+- Modify in governance repository: `brand/lockups.md`
+- Copy in governance repository: `assets/logos/superlig-forecast.png`
 - Modify in website repository: `src/content/site.json`
 - Copy in website repository: `src/assets/products/superlig-forecast-logo.png`
 - Modify in website repository: `tests/homepage-content.test.mjs`
@@ -520,7 +525,40 @@ gh run watch --repo MonarchCastleTech/superlig-forecast --exit-status
 
 If Pages already exists, use `PUT` instead of treating HTTP 409 as a failure.
 
-- [ ] **Step 3: Add a failing website registry test**
+- [ ] **Step 3: Add a failing governance registry test**
+
+First register the new repository and product in
+`MonarchCastleTech/company-governance`, because the public website is an exact
+projection of that private source of truth. Add a failing governance test that
+expects repository `MonarchCastleTech/superlig-forecast`, product
+`superlig-forecast`, its product-specific logo inventory record, and a
+`Süper Lig Forecast` section in `brand/lockups.md` containing the canonical MCT
+endorsement.
+
+Run: `npm test`
+
+Expected: FAIL because the governed records do not exist.
+
+- [ ] **Step 4: Update and publish the governance source of truth**
+
+Add the repository record, product record, approved logo inventory record, logo
+bytes, and lockup text. Use family `forecasting-intelligence`, lifecycle
+`production`, daily update frequency, forecast capability
+`probabilistic-season-and-match-outcome-forecast`, and evidence status
+`20-season-expanding-window-backtest; daily-source-gated-release`.
+
+Run:
+
+```bash
+npm test
+git add portfolio assets/logos/superlig-forecast.png brand/lockups.md tests
+git commit -m "feat: register Süper Lig Forecast"
+git push origin main
+```
+
+Expected: governance tests pass and the source-of-truth commit is published.
+
+- [ ] **Step 5: Add a failing website registry test**
 
 ```js
 assert.match(homepage, /Süper Lig Forecast/);
@@ -532,9 +570,10 @@ Run: `npm test`
 
 Expected: FAIL because the product is not registered.
 
-- [ ] **Step 4: Add the governed product entry**
+- [ ] **Step 6: Sync the governed product entry**
 
-Append this product to `src/content/site.json`:
+Run the website content sync against the adjacent governance checkout. The
+projected product contains:
 
 ```json
 {
@@ -552,10 +591,10 @@ Append this product to `src/content/site.json`:
 }
 ```
 
-Set `logo` to an `approved-image` object with the copied asset path, computed
-SHA-256, and alt text `Süper Lig Forecast product mark`.
+Set `logo` to an `approved-image` object with the governed copied asset path,
+computed SHA-256, and alt text `Süper Lig Forecast product mark`.
 
-- [ ] **Step 5: Verify and push the MCT website**
+- [ ] **Step 7: Verify and push the MCT website**
 
 Run:
 
@@ -570,7 +609,7 @@ gh run watch --repo MonarchCastleTech/MonarchCastleTech.github.io --exit-status
 
 Expected: website tests and Pages workflow pass.
 
-- [ ] **Step 6: Verify both live URLs**
+- [ ] **Step 8: Verify both live URLs**
 
 Run:
 
@@ -583,8 +622,7 @@ Also verify HTTP 200 and visible product content at:
 - `https://monarchcastletech.github.io/superlig-forecast/`
 - `https://monarchcastle.tech/`
 
-- [ ] **Step 7: Record final release URLs**
+- [ ] **Step 9: Record final release URLs**
 
 Report the source repository, dashboard URL, company portfolio URL, update
 schedule, test totals, and any deployment propagation delay.
-
