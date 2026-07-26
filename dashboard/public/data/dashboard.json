@@ -4219,9 +4219,9 @@
     }
   ],
   "freshness": {
-    "generated_at": "2026-07-25T23:47:13.649240+00:00",
+    "generated_at": "2026-07-26T06:17:33.176248+00:00",
     "latest_match_date": null,
-    "match_snapshot_at": "2026-07-25T23:47:13.355536+00:00",
+    "match_snapshot_at": "2026-07-26T06:17:32.856961+00:00",
     "source_notes": [
       "Official TFF fixture snapshot reconciled with thesportsdb.",
       "Live market refresh unavailable; dated 2026-07-23 valuation snapshot retained."
