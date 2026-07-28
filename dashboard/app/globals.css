@@ -82,6 +82,14 @@ main {
   width: fit-content;
 }
 
+.product-lockup {
+  display: block;
+  height: 42px;
+  max-width: 190px;
+  object-fit: contain;
+  width: auto;
+}
+
 .brand small {
   color: var(--muted);
   display: block;

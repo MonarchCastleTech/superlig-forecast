@@ -22,7 +22,11 @@ test("shows MCT branding in the masthead and footer", () => {
     screen.getAllByRole("img", {
       name: "Monarch Castle Technologies",
     }),
-  ).toHaveLength(2);
+  ).toHaveLength(1);
+  expect(screen.getByRole("img", { name: "Süper Lig Forecast" })).toHaveAttribute(
+    "src",
+    expect.stringContaining("brand/superlig-forecast-logo.png"),
+  );
 });
 
 test("presents one published forecast without simulator controls", () => {

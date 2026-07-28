@@ -20,6 +20,7 @@ type DashboardAppProps = {
 
 export function DashboardApp({ data }: DashboardAppProps) {
   const mctLogo = `${import.meta.env.BASE_URL}brand/mct-icon.png`;
+  const productLogo = `${import.meta.env.BASE_URL}brand/superlig-forecast-logo.png`;
   const finalCheckpoint = data.meta.checkpoints.at(-1) ?? data.meta.simulations;
   const [selectedClub, setSelectedClub] = useState(
     data.championship[0]?.club ?? "",
@@ -58,7 +59,7 @@ export function DashboardApp({ data }: DashboardAppProps) {
           rel="noreferrer"
           target="_blank"
         >
-          <img alt="Monarch Castle Technologies" src={mctLogo} />
+          <img className="product-lockup" alt="Süper Lig Forecast" src={productLogo} />
           <span>
             MCT Forecast Lab
             <small>Forecasting Intelligence</small>
