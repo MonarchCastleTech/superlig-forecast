@@ -18,22 +18,22 @@ jobs:
     timeout-minutes: 90
     steps:
       - name: Check out full history
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.13"
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v9
         with:
           enable-cache: true
 
       - name: Restore bounded source cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: |
             data/raw/_http_cache
@@ -114,15 +114,18 @@ jobs:
         env:
           FOOTBALL_DATA_API_TOKEN: ${{ secrets.FOOTBALL_DATA_API_TOKEN }}
         run: |
-          uv run superlig refresh-dashboard \
-            --season 2026 \
-            --simulations 5000000 \
-            --candidate "$RUNNER_TEMP/dashboard-candidate.json" \
-            --tff-page "$TFF_PAGE" \
-            --squad-page "$LEAGUE_PAGE" \
-            --squad-snapshot-at "$MARKET_SNAPSHOT_AT" \
-            --market-source-note "$MARKET_SOURCE_NOTE" \
-            --output dashboard/public/data/dashboard.json
+          if ! uv run superlig refresh-dashboard \
+              --season 2026 \
+              --simulations 5000000 \
+              --candidate "$RUNNER_TEMP/dashboard-candidate.json" \
+              --tff-page "$TFF_PAGE" \
+              --squad-page "$LEAGUE_PAGE" \
+              --squad-snapshot-at "$MARKET_SNAPSHOT_AT" \
+              --market-source-note "$MARKET_SOURCE_NOTE" \
+              --output dashboard/public/data/dashboard.json; then
+            echo "Live sources did not pass freshness gates; retaining last validated dashboard."
+            git restore -- dashboard/public/data/dashboard.json
+          fi
 
       - name: Run Python quality gates
         run: |
