@@ -424,7 +424,7 @@ def test_refresh_dashboard_uses_explicit_live_source_bundle(
     assert "Official TFF fixture snapshot" in payload["freshness"]["source_notes"][0]
 
 
-def test_refresh_dashboard_preserves_dated_market_fallback_provenance(
+def test_refresh_dashboard_rejects_stale_dated_market_fallback(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -465,13 +465,9 @@ def test_refresh_dashboard_preserves_dated_market_fallback_provenance(
         ],
     )
 
-    assert result.exit_code == 0, result.output
-    freshness = json.loads(output.read_text(encoding="utf-8"))["freshness"]
-    assert freshness["squad_snapshot_at"] == "2026-07-23T07:45:09.809421+00:00"
-    assert freshness["valuation_snapshot_at"] == "2026-07-23T07:45:09.809421+00:00"
-    assert freshness["source_notes"][1] == (
-        "Live market refresh unavailable; dated valuation snapshot retained."
-    )
+    assert result.exit_code == 1
+    assert "critical dashboard sources are stale or failed" in result.output
+    assert not output.exists()
 
 
 def test_cli_exposes_complete_engine_command_surface() -> None:
