@@ -73,7 +73,7 @@ export function TitleProbabilityChart({ data }: { data: DashboardPayload }) {
         <span>MODEL HISTORY</span>
       </div>
       <p className="politico-deck">
-        Each line is the probability published by a reproducible five-million-season simulation.
+        Each line is the probability published by a seeded five-million-season simulation.
       </p>
       <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Championship probability publication history">
         {[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6].map((tick) => (

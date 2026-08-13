@@ -32,37 +32,36 @@ export function Methodology({ data }: MethodologyProps) {
         <article>
           <h3>Data provenance</h3>
           <p>
-            Point-in-time Turkish league results, fixtures, squad membership,
-            player market values, and available pre-match odds are normalized
-            into versioned snapshots. Source timestamps and identifiers are
-            retained so every forecast can be audited and reproduced.
+            TFF completed scores and Transfermarkt aggregate squad values feed
+            the live forecast. Published JSON and player-state changes are
+            versioned, but raw live pages are cached rather than permanently
+            archived, so historical runs are not fully reproducible.
           </p>
         </article>
         <article>
           <h3>Temporal integrity</h3>
           <p>
-            A forecast may use only information available before its prediction
-            date. Historical evaluation uses expanding windows: each test
-            season is scored after training exclusively on earlier seasons,
-            preventing future results or future valuations from leaking back.
+            Historical evaluation uses expanding windows: each test season is
+            scored after fitting the scoring-ratio model on earlier seasons.
+            Current squad-value adjustments are not included in those folds.
           </p>
         </article>
         <article>
           <h3>Structural model</h3>
           <p>
-            A recency-weighted Dixon–Coles goal model estimates attacking and
-            defensive strength, home advantage, and low-score dependence.
-            Promoted clubs are partially pooled toward their prior-division
-            evidence rather than treated as established top-flight teams.
+            Recency-weighted home/away scoring and conceding ratios, shrunk
+            toward league means, set expected goals. A fixed Dixon–Coles
+            correction modifies four low-score cells; this is not a fitted
+            log-linear Dixon–Coles model.
           </p>
         </article>
         <article>
           <h3>Market-value adjustment</h3>
           <p>
-            Current squad value supplies a deliberately conservative strength
-            adjustment. The coefficient is selected inside historical folds,
-            so a large squad cannot override observed match performance simply
-            because its published valuation is high.
+            Aggregate squad value supplies a fixed log-ratio strength
+            adjustment with coefficient {data.meta.value_coefficient.toFixed(2)}.
+            That coefficient is a modelling assumption and has not been selected
+            or validated inside the checked-in historical folds.
           </p>
         </article>
         <article>
@@ -80,17 +79,18 @@ export function Methodology({ data }: MethodologyProps) {
           <p>
             Each of {formatInteger(data.meta.simulations)} season paths samples
             every remaining fixture, then applies points, goal difference, and
-            goals scored to form a possible table. A recorded random seed makes
-            the published run exactly repeatable.
+            goals scored to form a possible table. The seed makes simulation
+            repeatable only when code, dependencies, model artifact, and exact
+            live input pages are also identical.
           </p>
         </article>
         <article>
           <h3>Backtest design</h3>
           <p>
-            Twenty strict expanding-window folds compare the hybrid forecast
-            with structural, market-only, and naive baselines using proper
-            probability scores. A separate table backtest scores the
-            probability assigned to clubs&apos; observed finishing positions.
+            Twenty expanding-window folds assess the historical scoring-ratio
+            core. Historical odds appear only in market and blended comparison
+            baselines, not in the live title forecast. A separate table backtest
+            also excludes the current squad-value adjustment.
           </p>
         </article>
         <article>
@@ -108,7 +108,7 @@ export function Methodology({ data }: MethodologyProps) {
             Forecasts can be wrong and change after new matches or transfers.
             Squad valuations are imperfect proxies, rare events are difficult
             to calibrate, and exact TFF head-to-head mini-table tie-breaking is
-            currently approximated by later table criteria.
+            not implemented; unresolved ties use stable internal team order.
           </p>
         </article>
       </div>

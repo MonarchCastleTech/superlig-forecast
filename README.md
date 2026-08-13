@@ -1,6 +1,6 @@
 # Süper Lig Forecast
 
-An open, reproducible forecast of the 2026–27 Turkish Süper Lig from
+A transparent forecast of the 2026–27 Turkish Süper Lig from
 [Monarch Castle Technologies](https://monarchcastle.tech).
 
 **Public dashboard:** <https://monarchcastletech.github.io/superlig-forecast/>
@@ -21,7 +21,7 @@ An open, reproducible forecast of the 2026–27 Turkish Süper Lig from
 - the publication time and current data-alignment audit.
 
 The public site has no simulation controls. It presents the latest checked,
-reproducible five-million-season result and is refreshed by GitHub Actions every
+five-million-season result and is refreshed by GitHub Actions every
 six hours.
 
 **Full methodology:** <https://monarchcastletech.github.io/superlig-forecast/methodology/>
@@ -37,34 +37,37 @@ score.
 
 ### Data and temporal integrity
 
-The pipeline normalizes point-in-time match results, fixtures, player and squad
-market values, lineups, and available pre-match odds. Historical evaluation is
-strictly temporal: each test season is predicted using only earlier data.
-Promoted teams enter through their lower-division history and a partial-pooling
-adjustment, so the league's changing membership is represented in every fold.
+The live forecast consumes completed TFF scores and aggregate Transfermarkt
+squad values. Published JSON and detected player-state changes are versioned;
+raw live pages are held in a bounded Actions cache, not an immutable public
+archive. Historical evaluation is temporal: each test season is fitted using
+only earlier match results.
 
 ### Structural and market information
 
-A recency-weighted Dixon–Coles model estimates attack, defence, home advantage,
-and low-score dependence. When point-in-time odds exist, de-vigged market
-probabilities are blended with the structural estimate. Current squad market
-value contributes a conservative strength adjustment selected within historical
-folds rather than on the forecast season.
+A recency-weighted scoring-ratio model estimates separate home/away attack and
+defence factors with shrinkage toward league means. A fixed Dixon–Coles
+correction modifies the four low-score cells. Historical odds are used only in
+backtest comparison baselines, not in the live title forecast. Current aggregate
+squad value applies a fixed 0.10 log-ratio adjustment that has not been selected
+or validated inside the checked-in historical folds.
 
 ### Current-season state
 
-Completed official scores are fixed into the starting table. Only remaining
-fixtures are sampled. Scheduled updates fetch new match results, transfers, and
-market values, reconcile club identities, rebuild the current state, and publish
-only after validation succeeds.
+Completed official scores are fixed into the starting table. Every other ordered
+home-and-away pairing is sampled. Scheduled updates fetch TFF results and attempt
+a complete Transfermarkt squad refresh, rebuild the current state, and publish
+only after validation succeeds. If a live squad fetch fails, the dated fallback
+is attempted and freshness gates decide whether publication is allowed.
 
 ### Monte Carlo
 
 Five million season paths sample every remaining match from its calibrated
 outcome/score distribution. Each path applies points, goal difference, and goals
 scored to create one possible table. Checkpoints reveal how the title
-probabilities stabilize as the number of paths grows, and the recorded seed
-makes the reference publication repeatable.
+probabilities stabilize as the number of paths grows. The recorded seed makes
+the simulation repeatable only with the same code, dependencies, model artifact,
+and exact raw TFF and Transfermarkt pages.
 
 ### Backtesting
 
@@ -80,15 +83,17 @@ compared with naive, structural, market-only, and hybrid baselines using:
 Lower is better for both. A separate table backtest simulates each historical
 season and scores the probability assigned to every club's actual finishing
 position, expected-rank error, and rank correlation against uniform baselines.
-Passing a backtest is evidence of historical forecast quality, not proof of
-future accuracy.
+The match and table backtests omit the current squad-value adjustment. Historical
+odds affect only the market and blended comparison series. These results validate
+the historical scoring-ratio core and simulation structure, not the complete
+live forecast or its 0.10 value coefficient.
 
 ### Limitations
 
 Market values are imperfect proxies for player quality and availability.
 Injuries, tactical changes, discipline, financial events, and late transfers may
 not be represented immediately. Exact TFF head-to-head mini-table tie-breaking
-is currently approximated by later table criteria. Monte Carlo confidence
+is not implemented; unresolved ties use stable internal team order. Monte Carlo confidence
 intervals measure simulation noise conditional on the model; they do not capture
 all model or data uncertainty.
 
