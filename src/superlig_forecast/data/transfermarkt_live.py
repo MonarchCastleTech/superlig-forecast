@@ -68,11 +68,12 @@ def _money_to_eur(value: str) -> int:
         raise ValueError(f"missing market value in {value!r}")
     number = float(number_match.group(1))
     multiplier = 1.0
-    if "milyar" in normalized:
+    suffix = normalized[number_match.end() :].strip()
+    if "milyar" in normalized or re.match(r"^(?:bn|b)\b", suffix):
         multiplier = 1_000_000_000.0
-    elif "mil." in normalized:
+    elif "mil." in normalized or re.match(r"^m\b", suffix):
         multiplier = 1_000_000.0
-    elif "bin" in normalized:
+    elif "bin" in normalized or re.match(r"^k\b", suffix):
         multiplier = 1_000.0
     return round(number * multiplier)
 

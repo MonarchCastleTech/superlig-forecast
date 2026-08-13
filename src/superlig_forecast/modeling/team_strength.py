@@ -21,6 +21,7 @@ def canonical_team_name(value: str) -> str:
         "istanbulbuyuksehirbelediyespor": "istanbulbasaksehir",
         "buyuksehyr": "istanbulbasaksehir",
         "istanbulbasaksehirfk": "istanbulbasaksehir",
+        "basaksehirfk": "istanbulbasaksehir",
         "fenerbahcesk": "fenerbahce",
         "fenerbahceas": "fenerbahce",
         "galatasaraysk": "galatasaray",
@@ -37,11 +38,14 @@ def canonical_team_name(value: str) -> str:
         "trabzonsporas": "trabzonspor",
         "caykurrizesporas": "caykurrizespor",
         "genclerbirligisk": "genclerbirligi",
+        "genclerbirligiankara": "genclerbirligi",
         "genclerbirligisporkulubu": "genclerbirligi",
         "gaziantepbb": "gaziantepfk",
         "gaziantepfutbolkulubuas": "gaziantepfk",
         "erzurumbb": "erzurumspor",
         "erzurumsporfk": "erzurumspor",
+        "arcacorumfk": "corumfk",
+        "tumosankonyaspor": "konyaspor",
     }
     return aliases.get(normalized, normalized)
 

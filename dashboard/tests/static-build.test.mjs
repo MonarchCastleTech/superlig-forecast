@@ -11,6 +11,7 @@ test("builds a repository-subpath-safe static dashboard", async () => {
   assert.ok(assets.some((name) => name.endsWith(".js")));
   assert.ok(assets.some((name) => name.endsWith(".css")));
   await readFile(new URL("../dist/data/dashboard.json", import.meta.url));
+  await readFile(new URL("../dist/methodology/index.html", import.meta.url));
   await readFile(new URL("../dist/brand/mct-icon.png", import.meta.url));
   await readFile(new URL("../dist/brand/superlig-forecast-logo.png", import.meta.url));
 });

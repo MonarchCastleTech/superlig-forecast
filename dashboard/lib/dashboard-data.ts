@@ -95,6 +95,10 @@ export type DashboardPayload = {
   fixtures: FixtureRow[];
   positions: PositionRow[];
   expected_standings: ExpectedStanding[];
+  publication_history?: Array<{
+    generated_at: string;
+    probabilities: Record<string, number>;
+  }>;
   current_table?: CurrentTableRow[];
   backtest: {
     method: string;
@@ -231,6 +235,19 @@ export function validateDashboardPayload(value: unknown): DashboardPayload {
   ];
   if (!probabilityValues.every(isProbability)) {
     throw new Error("Dashboard contains an invalid probability");
+  }
+  if (
+    value.publication_history !== undefined &&
+    (!Array.isArray(value.publication_history) ||
+      !value.publication_history.every(
+        (entry) =>
+          isRecord(entry) &&
+          typeof entry.generated_at === "string" &&
+          isRecord(entry.probabilities) &&
+          Object.values(entry.probabilities).every(isProbability),
+      ))
+  ) {
+    throw new Error("Dashboard publication history is invalid");
   }
   return value as DashboardPayload;
 }

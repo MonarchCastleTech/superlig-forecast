@@ -1,3 +1,4 @@
+from dataclasses import replace
 from datetime import UTC, datetime
 import json
 from pathlib import Path
@@ -93,3 +94,35 @@ def test_refresh_conflict_never_replaces_output(tmp_path: Path) -> None:
         refresh_forecast(config, sources=sources((1, 1)))
 
     assert output.read_bytes() == original_output
+
+
+def test_refresh_keeps_a_bounded_publication_history(tmp_path: Path) -> None:
+    output = tmp_path / "dashboard.json"
+    current = sources()
+    current_payload = {
+        **current.candidate_payload,
+        "championship": [{"club": "Galatasaray", "champion_probability": 0.5}],
+        "freshness": {
+            "generated_at": "2026-08-14T22:00:00+00:00",
+            "source_status": "fresh",
+        },
+    }
+    output.write_text(json.dumps(current_payload), encoding="utf-8")
+    candidate = {
+        **current.candidate_payload,
+        "value": "changed",
+        "championship": [{"club": "Galatasaray", "champion_probability": 0.6}],
+    }
+    updated_sources = replace(current, candidate_payload=candidate)
+
+    refresh_forecast(
+        RefreshConfig(
+            season=2026,
+            output=output,
+            now=datetime(2026, 8, 14, 23, tzinfo=UTC),
+        ),
+        sources=updated_sources,
+    )
+
+    history = json.loads(output.read_text(encoding="utf-8"))["publication_history"]
+    assert [row["probabilities"]["Galatasaray"] for row in history] == [0.5, 0.6]

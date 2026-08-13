@@ -307,6 +307,77 @@ main {
   grid-template-columns: minmax(440px, 0.82fr) minmax(0, 1.18fr);
 }
 
+.politico-chart {
+  background: #f8f7f3;
+  color: #111;
+  margin: 34px 0 0;
+  padding: 34px 38px 25px;
+}
+
+.politico-chart-heading {
+  align-items: start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.politico-chart-heading p {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 0 7px;
+}
+
+.politico-chart-heading h3 {
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 3vw, 40px);
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+.politico-chart-heading span {
+  border: 1px solid #111;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 6px 8px;
+}
+
+.politico-deck {
+  color: #484848;
+  font-family: Georgia, serif;
+  margin: 12px 0 16px;
+}
+
+.politico-chart svg { display: block; overflow: visible; width: 100%; }
+.politico-gridline { stroke: #d8d5ce; stroke-width: 1; }
+.politico-axis-label, .politico-date-label { fill: #555; font: 12px Arial, sans-serif; }
+.politico-series { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
+.politico-point { stroke: #f8f7f3; stroke-width: 2; }
+.politico-label-leader { fill: none; stroke-width: 1; }
+.politico-direct-label { font: 700 14px Arial, sans-serif; }
+.politico-chart > small { color: #595959; display: block; font-size: 11px; margin-top: -8px; }
+
+.methodology-page { max-width: 1300px; }
+.methodology-masthead { align-items: center; border-bottom: 1px solid var(--line); display: flex; font-family: monospace; font-size: 11px; justify-content: space-between; min-height: 72px; }
+.methodology-masthead a { color: var(--lime); text-decoration: none; }
+.methodology-hero { padding: 90px 0 64px; }
+.methodology-hero h1 { font-size: clamp(48px, 8vw, 105px); letter-spacing: -.065em; line-height: .88; margin: 14px 0 30px; max-width: 1100px; }
+.methodology-hero > p:not(.eyebrow) { color: #bbbdb7; font-family: Georgia, serif; font-size: 21px; line-height: 1.55; max-width: 760px; }
+.methodology-hero dl { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 54px; }
+.methodology-hero dl div { border-right: 1px solid var(--line); padding: 20px 16px; }
+.methodology-hero dt { color: var(--muted); font: 9px monospace; letter-spacing: .08em; text-transform: uppercase; }
+.methodology-hero dd { font-size: 18px; margin: 8px 0 0; }
+.methodology-paper { background: #f7f5ef; color: #191919; margin: 0 -34px; padding: 0 70px 90px; }
+.methodology-paper > nav { border-bottom: 1px solid #bbb; display: flex; flex-wrap: wrap; gap: 25px; padding: 24px 0; position: sticky; top: 0; background: #f7f5ef; z-index: 2; }
+.methodology-paper > nav a { color: #222; font: 700 11px Arial, sans-serif; text-decoration: none; }
+.methodology-paper > section { border-bottom: 1px solid #c9c5bb; display: grid; gap: 35px; grid-template-columns: 55px minmax(0, 760px); padding: 65px 0; }
+.methodology-paper > section > span { color: #d9222a; font: 800 13px monospace; }
+.methodology-paper h2 { font-family: Georgia, serif; font-size: 38px; letter-spacing: -.03em; margin: 0 0 24px; }
+.methodology-paper p, .methodology-paper li { font-family: Georgia, serif; font-size: 17px; line-height: 1.7; }
+.methodology-paper a { color: #b31219; }
+.methodology-paper aside { border-left: 5px solid #d9222a; margin-top: 25px; padding: 12px 20px; }
+.equation { background: #eae7df; font-family: Georgia, serif; font-size: 20px; line-height: 2; margin: 28px 0; overflow-x: auto; padding: 24px; text-align: center; }
+.methodology-paper pre { background: #171717; color: #d8f596; line-height: 1.8; overflow-x: auto; padding: 24px; }
+
 .panel {
   min-width: 0;
 }
@@ -1274,6 +1345,11 @@ footer p:last-child {
 }
 
 @media (max-width: 760px) {
+  .politico-chart { margin-left: -18px; margin-right: -18px; overflow-x: auto; padding: 25px 18px; }
+  .politico-chart svg { min-width: 760px; }
+  .methodology-hero dl { grid-template-columns: repeat(2, 1fr); }
+  .methodology-paper { margin: 0 -18px; padding: 0 22px 60px; }
+  .methodology-paper > section { gap: 10px; grid-template-columns: 28px minmax(0, 1fr); }
   main {
     padding: 0 17px;
   }

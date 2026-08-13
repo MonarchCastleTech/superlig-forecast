@@ -6,6 +6,7 @@ import { ConvergenceChart } from "@/components/convergence-chart";
 import { MatchOutlook } from "@/components/match-outlook";
 import { Methodology } from "@/components/methodology";
 import { StandingsPanel } from "@/components/standings-panel";
+import { TitleProbabilityChart } from "@/components/title-probability-chart";
 import {
   formatForecastUpdate,
   formatInteger,
@@ -70,7 +71,7 @@ export function DashboardApp({ data }: DashboardAppProps) {
           <a href="#standings">Table</a>
           <a href="#fixtures">Matches</a>
           <a href="#validation">Validation</a>
-          <a href="#methodology">Methodology</a>
+          <a href={`${import.meta.env.BASE_URL}methodology/`}>Methodology</a>
         </nav>
         <span className="model-status" data-testid="forecast-updated">
           <i />
@@ -156,6 +157,7 @@ export function DashboardApp({ data }: DashboardAppProps) {
           </p>
         </div>
 
+        <TitleProbabilityChart data={data} />
         <section className="race-grid">
           <ChampionshipRace
             checkpoint={finalCheckpoint}

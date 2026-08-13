@@ -21,8 +21,10 @@ An open, reproducible forecast of the 2026–27 Turkish Süper Lig from
 - the publication time and current data-alignment audit.
 
 The public site has no simulation controls. It presents the latest checked,
-reproducible five-million-season result and is refreshed by GitHub Actions once
-per day.
+reproducible five-million-season result and is refreshed by GitHub Actions every
+six hours.
+
+**Full methodology:** <https://monarchcastletech.github.io/superlig-forecast/methodology/>
 
 ## Methodology
 
@@ -159,7 +161,7 @@ Use `forecast-season --demo` only for a four-team smoke test.
 
 ## Automated publication
 
-`.github/workflows/update-forecast.yml` runs the stateless data refresh and
+`.github/workflows/update-forecast.yml` runs the six-hourly stateless data refresh and
 commits a new validated publication when inputs changed. It restores compact
 trained-model and backtest seeds from `automation/seeds/`, fetches current TFF
 competition pages plus the squad-value sources, applies completed scores,
@@ -177,7 +179,9 @@ fetch.
 `.github/workflows/deploy-pages.yml` tests and exports the Next.js dashboard,
 then deploys the static artifact to GitHub Pages. An optional
 `FOOTBALL_DATA_API_TOKEN` repository secret can enable the configured API path;
-the updater retains its documented free-source fallbacks.
+the updater retains its documented free-source fallbacks. TheSportsDB v1 uses
+its documented public key (`123`) and requires no account; TFF remains the
+official verification source.
 
 ## Development verification
 

@@ -46,6 +46,22 @@ def test_parse_current_squad_values_from_league_table() -> None:
     }
 
 
+def test_parse_current_squad_values_supports_english_money_suffixes() -> None:
+    html = """
+    <table class="items">
+      <thead><tr><th>marktwert_gesamt_anzeige</th></tr></thead>
+      <tbody><tr>
+        <td><a href="/club/startseite/verein/36/saison_id/2026">crest</a></td>
+        <td class="hauptlink"><a title="Fenerbahce">Fenerbahce</a></td>
+        <td>30</td><td>25.1</td><td>20</td><td>€800k</td>
+        <td><a href="/fenerbahce/kader/verein/36/saison_id/2026">€333.15m</a></td>
+      </tr></tbody>
+    </table>
+    """
+
+    assert parse_current_squad_values(html)[0].squad_value_eur == 333_150_000
+
+
 def test_parse_current_player_values_from_nested_squad_table() -> None:
     html = """
     <table class="items"><tbody>

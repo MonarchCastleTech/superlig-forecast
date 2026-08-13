@@ -60,7 +60,28 @@ def _without_generated_at(payload: object) -> object:
     freshness = clone.get("freshness")
     if isinstance(freshness, dict):
         freshness["generated_at"] = ""
+    clone.pop("publication_history", None)
     return clone
+
+
+def _publication_snapshot(payload: object) -> dict[str, object] | None:
+    if not isinstance(payload, dict):
+        return None
+    freshness = payload.get("freshness")
+    championship = payload.get("championship")
+    if not isinstance(freshness, dict) or not isinstance(championship, list):
+        return None
+    generated_at = freshness.get("generated_at")
+    if not isinstance(generated_at, str):
+        return None
+    probabilities = {
+        row["club"]: row["champion_probability"]
+        for row in championship
+        if isinstance(row, dict)
+        and isinstance(row.get("club"), str)
+        and isinstance(row.get("champion_probability"), (int, float))
+    }
+    return {"generated_at": generated_at, "probabilities": probabilities}
 
 
 def _validate_candidate(payload: object) -> None:
@@ -153,13 +174,30 @@ def refresh_forecast(
             existing = orjson.loads(config.output.read_bytes())
         except orjson.JSONDecodeError:
             existing = None
-    if _without_generated_at(existing) == _without_generated_at(candidate):
+    has_history = isinstance(existing, dict) and isinstance(
+        existing.get("publication_history"), list
+    )
+    if (has_history or _publication_snapshot(candidate) is None) and _without_generated_at(
+        existing
+    ) == _without_generated_at(candidate):
         return RefreshResult(
             changed=False,
             output=config.output,
             selected_match_provider=selected.provider,
             generated_at=freshness.generated_at,
         )
+
+    history = list(existing.get("publication_history", [])) if isinstance(existing, dict) else []
+    if not history:
+        initial = _publication_snapshot(existing)
+        if initial is not None:
+            history.append(initial)
+    latest = _publication_snapshot(candidate)
+    if latest is not None and (
+        not history or history[-1].get("generated_at") != latest["generated_at"]
+    ):
+        history.append(latest)
+    candidate["publication_history"] = history[-730:]
 
     config.output.parent.mkdir(parents=True, exist_ok=True)
     with TemporaryDirectory(

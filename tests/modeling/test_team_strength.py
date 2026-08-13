@@ -28,6 +28,10 @@ def test_fitted_team_strength_rewards_repeated_goal_dominance() -> None:
 
 
 def test_current_legal_names_resolve_to_historical_team_names() -> None:
+    assert canonical_team_name("ARCA Corum FK") == canonical_team_name("Corum FK")
+    assert canonical_team_name("TumosAn Konyaspor") == canonical_team_name("Konyaspor")
+    assert canonical_team_name("Genclerbirligi Ankara") == canonical_team_name("Genclerbirligi")
+    assert canonical_team_name("Basaksehir FK") == canonical_team_name("Istanbul Basaksehir")
     assert canonical_team_name("Fenerbahçe SK") == canonical_team_name("Fenerbahce")
     assert canonical_team_name("Beşiktaş JK") == canonical_team_name("Besiktas")
     assert canonical_team_name("Galatasaray A.Ş.") == canonical_team_name("Galatasaray")
