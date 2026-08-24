@@ -26,6 +26,8 @@ class FixtureExpectation:
     home_win_probability: float
     draw_probability: float
     away_win_probability: float
+    # Presentation metadata only. It never enters the model or probabilities.
+    predicted: bool = True
 
 
 @dataclass(frozen=True)

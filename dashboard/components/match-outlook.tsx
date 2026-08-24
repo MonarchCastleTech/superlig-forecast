@@ -90,6 +90,13 @@ export function MatchOutlook({ fixtures }: MatchOutlookProps) {
                 <span>{fixture.away_team}</span>
               </header>
               <div className="match-call">
+                <p
+                  className="prediction-status"
+                  data-predicted={fixture.predicted === false ? "no" : "yes"}
+                >
+                  Predicted:{" "}
+                  <strong>{fixture.predicted === false ? "No" : "Yes"}</strong>
+                </p>
                 <strong>{prediction.label}</strong>
                 <small data-confidence={prediction.confidence}>
                   {prediction.confidence}

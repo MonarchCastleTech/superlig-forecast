@@ -67,6 +67,22 @@ def _probability(row: dict[str, str], key: str) -> float:
     return value
 
 
+def _prediction_flag(row: dict[str, str]) -> bool:
+    """Read optional forecast-status metadata without changing old artifacts."""
+
+    raw = row.get("predicted")
+    if raw is None or raw.strip() == "":
+        # Every row in fixture-expectations.csv is produced by the model. This
+        # default keeps already-published artifacts compatible with the label.
+        return True
+    normalized = raw.strip().lower()
+    if normalized in {"yes", "true", "1"}:
+        return True
+    if normalized in {"no", "false", "0"}:
+        return False
+    raise ValueError(f"predicted must be yes/no, got {raw!r}")
+
+
 def _load_json(path: Path) -> dict[str, Any]:
     if not path.exists():
         raise FileNotFoundError(f"Dashboard source artifact is missing: {path}")
@@ -128,6 +144,7 @@ def build_dashboard_payload(
             "home_win_probability": _probability(row, "home_win_probability"),
             "draw_probability": _probability(row, "draw_probability"),
             "away_win_probability": _probability(row, "away_win_probability"),
+            "predicted": _prediction_flag(row),
         }
         for row in _rows(forecast_dir / "fixture-expectations.csv")
     ]

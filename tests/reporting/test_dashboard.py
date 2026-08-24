@@ -213,6 +213,7 @@ def test_build_dashboard_payload_normalizes_artifacts(tmp_path: Path) -> None:
     assert payload["championship"][0]["champion_probability"] == pytest.approx(0.6)
     assert payload["convergence"][0]["simulation_count"] == 10_000
     assert payload["fixtures"][0]["home_expected_goals"] == pytest.approx(1.6)
+    assert payload["fixtures"][0]["predicted"] is True
     gala_first = next(
         row
         for row in payload["positions"]
@@ -238,3 +239,17 @@ def test_build_dashboard_payload_rejects_invalid_probability(tmp_path: Path) -> 
 
     with pytest.raises(ValueError, match="champion_probability"):
         build_dashboard_payload(forecast, backtest, position_backtest)
+
+
+def test_build_dashboard_payload_accepts_explicit_no_prediction(tmp_path: Path) -> None:
+    forecast, backtest, position_backtest = _artifact_set(tmp_path)
+    fixture = forecast / "fixture-expectations.csv"
+    text = fixture.read_text(encoding="utf-8")
+    text = text.replace(
+        "away_win_probability\n",
+        "away_win_probability,predicted\n",
+    ).replace("0.3\n", "0.3,no\n")
+    fixture.write_text(text, encoding="utf-8")
+
+    payload = build_dashboard_payload(forecast, backtest, position_backtest)
+    assert payload["fixtures"][0]["predicted"] is False

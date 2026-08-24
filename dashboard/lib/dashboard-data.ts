@@ -20,6 +20,8 @@ export type FixtureRow = {
   home_win_probability: number;
   draw_probability: number;
   away_win_probability: number;
+  /** Optional for compatibility with older published dashboard snapshots. */
+  predicted?: boolean;
 };
 
 export type MatchOutcome = {
@@ -235,6 +237,15 @@ export function validateDashboardPayload(value: unknown): DashboardPayload {
   ];
   if (!probabilityValues.every(isProbability)) {
     throw new Error("Dashboard contains an invalid probability");
+  }
+  if (
+    value.fixtures.some(
+      (row) =>
+        !isRecord(row) ||
+        (row.predicted !== undefined && typeof row.predicted !== "boolean"),
+    )
+  ) {
+    throw new Error("Dashboard contains an invalid prediction status");
   }
   if (
     value.publication_history !== undefined &&

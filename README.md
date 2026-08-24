@@ -188,6 +188,12 @@ the updater retains its documented free-source fallbacks. TheSportsDB v1 uses
 its documented public key (`123`) and requires no account; TFF remains the
 official verification source.
 
+Each remaining fixture carries a presentation-only `Predicted: Yes/No` flag.
+The flag does not alter any probability or simulation. The scheduled workflow
+generates the next fixture forecasts with the Python engine and free-source
+fallbacks; no Codex, ChatGPT sign-in, or manual entry is required. Older
+dashboard snapshots default existing forecast rows to `Yes` for compatibility.
+
 ## Development verification
 
 ```powershell

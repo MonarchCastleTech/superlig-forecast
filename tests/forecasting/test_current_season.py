@@ -36,6 +36,7 @@ def test_prepare_current_season_builds_double_round_robin_with_value_shift() -> 
         )
         for item in prepared.expectations
     )
+    assert all(item.predicted for item in prepared.expectations)
 
 
 def test_model_artifact_round_trips_without_the_historical_warehouse() -> None:

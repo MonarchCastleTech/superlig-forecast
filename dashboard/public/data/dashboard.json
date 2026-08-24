@@ -1470,6 +1470,7 @@
       "draw_probability": 0.2624314643987729,
       "home_expected_goals": 1.5518128045670225,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.44629977246400643
     },
     {
@@ -1479,6 +1480,7 @@
       "draw_probability": 0.26613661654352117,
       "home_expected_goals": 1.4732225264842262,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.41218695861365523
     },
     {
@@ -1488,6 +1490,7 @@
       "draw_probability": 0.25892177777589875,
       "home_expected_goals": 1.0569228961969244,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.24100519223473904
     },
     {
@@ -1497,6 +1500,7 @@
       "draw_probability": 0.24232360479393825,
       "home_expected_goals": 1.7996412290590393,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.5196712556657044
     },
     {
@@ -1506,6 +1510,7 @@
       "draw_probability": 0.26457735030034274,
       "home_expected_goals": 1.5108605815627094,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.42867071637133725
     },
     {
@@ -1515,6 +1520,7 @@
       "draw_probability": 0.2607559562752034,
       "home_expected_goals": 1.579238052022084,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.45791896277264554
     },
     {
@@ -1524,6 +1530,7 @@
       "draw_probability": 0.2689585978513584,
       "home_expected_goals": 1.539353784449998,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.5137250921050512
     },
     {
@@ -1533,6 +1540,7 @@
       "draw_probability": 0.1837248371801159,
       "home_expected_goals": 0.9261896878075324,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.12617862973127753
     },
     {
@@ -1542,6 +1550,7 @@
       "draw_probability": 0.20011640004062947,
       "home_expected_goals": 0.8406386554662554,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.12959817694239578
     },
     {
@@ -1551,6 +1560,7 @@
       "draw_probability": 0.2388483572929265,
       "home_expected_goals": 1.8383270605389797,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.5346943431761875
     },
     {
@@ -1560,6 +1570,7 @@
       "draw_probability": 0.28188849930569027,
       "home_expected_goals": 1.437425006557296,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.5159323661660957
     },
     {
@@ -1569,6 +1580,7 @@
       "draw_probability": 0.2724434692106018,
       "home_expected_goals": 1.438728526125048,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.4231661373401448
     },
     {
@@ -1578,6 +1590,7 @@
       "draw_probability": 0.25350584091560013,
       "home_expected_goals": 1.6391465959913578,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.45016339396256505
     },
     {
@@ -1587,6 +1600,7 @@
       "draw_probability": 0.27386401107295477,
       "home_expected_goals": 1.4993915424219157,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.5397601154853093
     },
     {
@@ -1596,6 +1610,7 @@
       "draw_probability": 0.25598630479288975,
       "home_expected_goals": 1.6329311556785242,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.46785350261500613
     },
     {
@@ -1605,6 +1620,7 @@
       "draw_probability": 0.2691704614598615,
       "home_expected_goals": 1.4609298015686603,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.42041927373262505
     },
     {
@@ -1614,6 +1630,7 @@
       "draw_probability": 0.2569828400981019,
       "home_expected_goals": 1.2608711235868686,
       "home_team": "Alanyaspor",
+      "predicted": true,
       "home_win_probability": 0.29494921695912457
     },
     {
@@ -1623,6 +1640,7 @@
       "draw_probability": 0.26580180398588976,
       "home_expected_goals": 1.5338453266328964,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.4571343882702984
     },
     {
@@ -1632,6 +1650,7 @@
       "draw_probability": 0.26352763205066465,
       "home_expected_goals": 1.4876093249088376,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.40763686933007115
     },
     {
@@ -1641,6 +1660,7 @@
       "draw_probability": 0.25410876768985124,
       "home_expected_goals": 1.0672443081931349,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.2361010663643172
     },
     {
@@ -1650,6 +1670,7 @@
       "draw_probability": 0.24073453182044646,
       "home_expected_goals": 1.8172156790376721,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.5157464993303288
     },
     {
@@ -1659,6 +1680,7 @@
       "draw_probability": 0.2621395652946976,
       "home_expected_goals": 1.5256149355342759,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.4242348298819245
     },
     {
@@ -1668,6 +1690,7 @@
       "draw_probability": 0.25860241983102955,
       "home_expected_goals": 1.5946601482162945,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.45370495514738995
     },
     {
@@ -1677,6 +1700,7 @@
       "draw_probability": 0.26712490186618604,
       "home_expected_goals": 1.5543863896423014,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.5107073373821496
     },
     {
@@ -1686,6 +1710,7 @@
       "draw_probability": 0.17771543446374544,
       "home_expected_goals": 0.9352344207666732,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.12166444673993264
     },
     {
@@ -1695,6 +1720,7 @@
       "draw_probability": 0.19395402218345895,
       "home_expected_goals": 0.8488479372731195,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.12529087168509231
     },
     {
@@ -1704,6 +1730,7 @@
       "draw_probability": 0.2373691118756639,
       "home_expected_goals": 1.8562792981561973,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.5309170106555434
     },
     {
@@ -1713,6 +1740,7 @@
       "draw_probability": 0.2799498285029918,
       "home_expected_goals": 1.4514622232357477,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.5134244941305305
     },
     {
@@ -1722,6 +1750,7 @@
       "draw_probability": 0.2699113160838802,
       "home_expected_goals": 1.4527784723626307,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.4189326144348675
     },
     {
@@ -1731,6 +1760,7 @@
       "draw_probability": 0.2513264962340647,
       "home_expected_goals": 1.6551537308545432,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.4455903100082552
     },
     {
@@ -1740,6 +1770,7 @@
       "draw_probability": 0.27208384242563666,
       "home_expected_goals": 1.5140338951504413,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.5374485043263917
     },
     {
@@ -1749,6 +1780,7 @@
       "draw_probability": 0.2539429241376638,
       "home_expected_goals": 1.6488775934743665,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.46360495458741124
     },
     {
@@ -1758,6 +1790,7 @@
       "draw_probability": 0.26662866462083645,
       "home_expected_goals": 1.4751965550222845,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.4160496482821131
     },
     {
@@ -1767,6 +1800,7 @@
       "draw_probability": 0.2529790512010886,
       "home_expected_goals": 1.2731841980670342,
       "home_team": "Amed SK",
+      "predicted": true,
       "home_win_probability": 0.28971558847198214
     },
     {
@@ -1776,6 +1810,7 @@
       "draw_probability": 0.2595036596730978,
       "home_expected_goals": 1.6156695782914374,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.4912652381033702
     },
     {
@@ -1785,6 +1820,7 @@
       "draw_probability": 0.2549059726254504,
       "home_expected_goals": 1.6505582376959331,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.47687160283887897
     },
     {
@@ -1794,6 +1830,7 @@
       "draw_probability": 0.26128666377164234,
       "home_expected_goals": 1.1241773413604619,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.26333683679090425
     },
     {
@@ -1803,6 +1840,7 @@
       "draw_probability": 0.23204475932898294,
       "home_expected_goals": 1.9141565572720078,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.5517463931111278
     },
     {
@@ -1812,6 +1850,7 @@
       "draw_probability": 0.25784583370251063,
       "home_expected_goals": 1.607000130150488,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.45887398681225544
     },
     {
@@ -1821,6 +1860,7 @@
       "draw_probability": 0.25272068860273617,
       "home_expected_goals": 1.6797286169933454,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.48870288878385804
     },
     {
@@ -1830,6 +1870,7 @@
       "draw_probability": 0.2578512381619588,
       "home_expected_goals": 1.6373064213510413,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.5436069345541392
     },
     {
@@ -1839,6 +1880,7 @@
       "draw_probability": 0.19129765704182286,
       "home_expected_goals": 0.9851252769539328,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.14141129125103047
     },
     {
@@ -1848,6 +1890,7 @@
       "draw_probability": 0.20740814028744428,
       "home_expected_goals": 0.8941304348191661,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.14445584437351006
     },
     {
@@ -1857,6 +1900,7 @@
       "draw_probability": 0.22801450959984676,
       "home_expected_goals": 1.9553040575654779,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.56681967485003
     },
     {
@@ -1866,6 +1910,7 @@
       "draw_probability": 0.27010708841175124,
       "home_expected_goals": 1.5288916798861258,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.5448479114038718
     },
     {
@@ -1875,6 +1920,7 @@
       "draw_probability": 0.26569588826297,
       "home_expected_goals": 1.5302781454148409,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.45268114008519234
     },
     {
@@ -1884,6 +1930,7 @@
       "draw_probability": 0.24612521888282388,
       "home_expected_goals": 1.7434492799920271,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.4815215998498943
     },
     {
@@ -1893,6 +1940,7 @@
       "draw_probability": 0.26126842361507846,
       "home_expected_goals": 1.5948012895580004,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.5688479818178283
     },
     {
@@ -1902,6 +1950,7 @@
       "draw_probability": 0.247647155655428,
       "home_expected_goals": 1.7368383368556752,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.4990703664563645
     },
     {
@@ -1911,6 +1960,7 @@
       "draw_probability": 0.2626811478066118,
       "home_expected_goals": 1.5538921392953953,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.45013869627692876
     },
     {
@@ -1920,6 +1970,7 @@
       "draw_probability": 0.2569949494833834,
       "home_expected_goals": 1.3411032655384625,
       "home_team": "Basaksehir FK",
+      "predicted": true,
       "home_win_probability": 0.32092608154585556
     },
     {
@@ -1929,6 +1980,7 @@
       "draw_probability": 0.22597453348621777,
       "home_expected_goals": 1.938335138305121,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.6037567322920454
     },
     {
@@ -1938,6 +1990,7 @@
       "draw_probability": 0.22404453379863773,
       "home_expected_goals": 1.9801914159504594,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.5922098833287823
     },
     {
@@ -1947,6 +2000,7 @@
       "draw_probability": 0.23458790850987526,
       "home_expected_goals": 1.8799062568264289,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.5571109759592454
     },
     {
@@ -1956,6 +2010,7 @@
       "draw_probability": 0.1924064764771252,
       "home_expected_goals": 2.296432986688461,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.6671430099443821
     },
     {
@@ -1965,6 +2020,7 @@
       "draw_probability": 0.2296397803639268,
       "home_expected_goals": 1.9279343136643012,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.5742018101205891
     },
     {
@@ -1974,6 +2030,7 @@
       "draw_probability": 0.22019771475001493,
       "home_expected_goals": 2.015187415101261,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.6039278648554325
     },
     {
@@ -1983,6 +2040,7 @@
       "draw_probability": 0.216846235053994,
       "home_expected_goals": 1.9642930778169698,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.650458482012522
     },
     {
@@ -1992,6 +2050,7 @@
       "draw_probability": 0.2258704789947407,
       "home_expected_goals": 1.1818647609690478,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.21771926244431172
     },
     {
@@ -2001,6 +2060,7 @@
       "draw_probability": 0.24112052416570032,
       "home_expected_goals": 1.0726973282933239,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.21779037926057382
     },
     {
@@ -2010,6 +2070,7 @@
       "draw_probability": 0.1868425358694522,
       "home_expected_goals": 2.3457980590670577,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.6812059642269592
     },
     {
@@ -2019,6 +2080,7 @@
       "draw_probability": 0.22770319567671837,
       "home_expected_goals": 1.8342268156831392,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.6474047266751233
     },
     {
@@ -2028,6 +2090,7 @@
       "draw_probability": 0.2378356023050488,
       "home_expected_goals": 1.835890172404381,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.5654573491963835
     },
     {
@@ -2037,6 +2100,7 @@
       "draw_probability": 0.2152940150661342,
       "home_expected_goals": 2.0916337391429978,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.5998994953350167
     },
     {
@@ -2046,6 +2110,7 @@
       "draw_probability": 0.21658138999530144,
       "home_expected_goals": 1.913299241193601,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.6704726426379983
     },
     {
@@ -2055,6 +2120,7 @@
       "draw_probability": 0.2139917683463577,
       "home_expected_goals": 2.0837025237814513,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.6152743557609641
     },
     {
@@ -2064,6 +2130,7 @@
       "draw_probability": 0.2355100620589173,
       "home_expected_goals": 1.8642201197583461,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.5640835060532591
     },
     {
@@ -2073,6 +2140,7 @@
       "draw_probability": 0.2540069282830941,
       "home_expected_goals": 1.6089351551930013,
       "home_team": "Besiktas JK",
+      "predicted": true,
       "home_win_probability": 0.4305099852991093
     },
     {
@@ -2082,6 +2150,7 @@
       "draw_probability": 0.2656084183472147,
       "home_expected_goals": 1.5372625450741588,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.4589517847667003
     },
     {
@@ -2091,6 +2160,7 @@
       "draw_probability": 0.2600314575984538,
       "home_expected_goals": 1.5704580883158017,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.443860095951374
     },
     {
@@ -2100,6 +2170,7 @@
       "draw_probability": 0.26349912850236723,
       "home_expected_goals": 1.4909235352338326,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.4094796554460094
     },
     {
@@ -2109,6 +2180,7 @@
       "draw_probability": 0.25467194703998747,
       "home_expected_goals": 1.0696219970434806,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.23758353092075848
     },
     {
@@ -2118,6 +2190,7 @@
       "draw_probability": 0.26205806848466906,
       "home_expected_goals": 1.52901381767803,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.42609011226994675
     },
     {
@@ -2127,6 +2200,7 @@
       "draw_probability": 0.2584305290535385,
       "home_expected_goals": 1.5982128545885814,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.45557491232300656
     },
     {
@@ -2136,6 +2210,7 @@
       "draw_probability": 0.26676551968259055,
       "home_expected_goals": 1.5578493710416013,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.5124400592880844
     },
     {
@@ -2145,6 +2220,7 @@
       "draw_probability": 0.17861163626067858,
       "home_expected_goals": 0.9373180078494483,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.12275290189488758
     },
     {
@@ -2154,6 +2230,7 @@
       "draw_probability": 0.1948512789906076,
       "home_expected_goals": 0.8507390659121753,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.12634753722444328
     },
     {
@@ -2163,6 +2240,7 @@
       "draw_probability": 0.2369953910178011,
       "home_expected_goals": 1.8604148597670394,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.5328296331635605
     },
     {
@@ -2172,6 +2250,7 @@
       "draw_probability": 0.2795634977362772,
       "home_expected_goals": 1.45469590227099,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.5150661215570399
     },
     {
@@ -2181,6 +2260,7 @@
       "draw_probability": 0.26983616875164923,
       "home_expected_goals": 1.4560150838387855,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.4207363775583647
     },
     {
@@ -2190,6 +2270,7 @@
       "draw_probability": 0.2511911356196078,
       "home_expected_goals": 1.6588412094770562,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.447517405577849
     },
     {
@@ -2199,6 +2280,7 @@
       "draw_probability": 0.2716412919423063,
       "home_expected_goals": 1.5174069761628286,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.5390852199885587
     },
     {
@@ -2208,6 +2290,7 @@
       "draw_probability": 0.2537464677451149,
       "home_expected_goals": 1.6525510896359212,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.4655008094266423
     },
     {
@@ -2217,6 +2300,7 @@
       "draw_probability": 0.26656778378303647,
       "home_expected_goals": 1.4784831112250374,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.41787436753448853
     },
     {
@@ -2226,6 +2310,7 @@
       "draw_probability": 0.25336364245197623,
       "home_expected_goals": 1.2760206956233484,
       "home_team": "Caykur Rizespor",
+      "predicted": true,
       "home_win_probability": 0.2914090740359916
     },
     {
@@ -2235,6 +2320,7 @@
       "draw_probability": 0.2627800535155025,
       "home_expected_goals": 1.5754205564303565,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.47466173032843717
     },
     {
@@ -2244,6 +2330,7 @@
       "draw_probability": 0.257692095387081,
       "home_expected_goals": 1.6094400811838425,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.45989241607104353
     },
     {
@@ -2253,6 +2340,7 @@
       "draw_probability": 0.2620414091299359,
       "home_expected_goals": 1.5279313172623283,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.4252380985903377
     },
     {
@@ -2262,6 +2350,7 @@
       "draw_probability": 0.2580147165456569,
       "home_expected_goals": 1.0961722102395322,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.24992549287887622
     },
     {
@@ -2271,6 +2360,7 @@
       "draw_probability": 0.23646391442508585,
       "home_expected_goals": 1.866471727307799,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.5342898589039287
     },
     {
@@ -2280,6 +2370,7 @@
       "draw_probability": 0.25580296663753654,
       "home_expected_goals": 1.6378837777177662,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.4716751113390628
     },
     {
@@ -2289,6 +2380,7 @@
       "draw_probability": 0.2625340880078597,
       "home_expected_goals": 1.5965183896695045,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.5276426936851426
     },
     {
@@ -2298,6 +2390,7 @@
       "draw_probability": 0.18478753397362951,
       "home_expected_goals": 0.960584164500759,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.1315827292118945
     },
     {
@@ -2307,6 +2400,7 @@
       "draw_probability": 0.20097014672127794,
       "home_expected_goals": 0.8718561555350618,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.13493160096533724
     },
     {
@@ -2316,6 +2410,7 @@
       "draw_probability": 0.2327466037558255,
       "home_expected_goals": 1.9065941747927662,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.5494246117341803
     },
     {
@@ -2325,6 +2420,7 @@
       "draw_probability": 0.2750532951417846,
       "home_expected_goals": 1.490804440097879,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.5295985794783107
     },
     {
@@ -2334,6 +2430,7 @@
       "draw_probability": 0.26797589195093724,
       "home_expected_goals": 1.4921563664595983,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.4362318077169567
     },
     {
@@ -2343,6 +2440,7 @@
       "draw_probability": 0.2488877070994645,
       "home_expected_goals": 1.7000170528046514,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.4640325714014576
     },
     {
@@ -2352,6 +2450,7 @@
       "draw_probability": 0.26667280643383373,
       "home_expected_goals": 1.5550721315482423,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.5536274359935326
     },
     {
@@ -2361,6 +2460,7 @@
       "draw_probability": 0.2509289141877254,
       "home_expected_goals": 1.6935707992795868,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.48182435183831224
     },
     {
@@ -2370,6 +2470,7 @@
       "draw_probability": 0.2648347252234713,
       "home_expected_goals": 1.5151820963976383,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.43352072196163255
     },
     {
@@ -2379,6 +2480,7 @@
       "draw_probability": 0.2552887539481813,
       "home_expected_goals": 1.3076941481187323,
       "home_team": "Corum FK",
+      "predicted": true,
       "home_win_probability": 0.3056020647128127
     },
     {
@@ -2388,6 +2490,7 @@
       "draw_probability": 0.2675221499630197,
       "home_expected_goals": 1.5072083749796388,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.44570924371078646
     },
     {
@@ -2397,6 +2500,7 @@
       "draw_probability": 0.2615171536332443,
       "home_expected_goals": 1.5397549305085707,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.4303437564015624
     },
     {
@@ -2406,6 +2510,7 @@
       "draw_probability": 0.26421855657728344,
       "home_expected_goals": 1.4617753135007137,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.3962128427836399
     },
     {
@@ -2415,6 +2520,7 @@
       "draw_probability": 0.2513152334383787,
       "home_expected_goals": 1.048710408753639,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.22727103059387804
     },
     {
@@ -2424,6 +2530,7 @@
       "draw_probability": 0.24328986351980672,
       "home_expected_goals": 1.7856576820574115,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.5035966161669532
     },
     {
@@ -2433,6 +2540,7 @@
       "draw_probability": 0.26315251613031415,
       "home_expected_goals": 1.4991209138922619,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.4126910775055531
     },
     {
@@ -2442,6 +2550,7 @@
       "draw_probability": 0.2699141783897774,
       "home_expected_goals": 1.52739271929467,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.49962087456742754
     },
     {
@@ -2451,6 +2560,7 @@
       "draw_probability": 0.1730043036823328,
       "home_expected_goals": 0.9189930217038937,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.11544534063988282
     },
     {
@@ -2460,6 +2570,7 @@
       "draw_probability": 0.18926667546000234,
       "home_expected_goals": 0.8341067367925296,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.11922897252282907
     },
     {
@@ -2469,6 +2580,7 @@
       "draw_probability": 0.24016536821173803,
       "home_expected_goals": 1.8240429174329382,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.5187741367465176
     },
     {
@@ -2478,6 +2590,7 @@
       "draw_probability": 0.28295465709309914,
       "home_expected_goals": 1.4262559469603344,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.5028368124612312
     },
     {
@@ -2487,6 +2600,7 @@
       "draw_probability": 0.27090576463220967,
       "home_expected_goals": 1.4275493379386492,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.4076923437175659
     },
     {
@@ -2496,6 +2610,7 @@
       "draw_probability": 0.2526442198077311,
       "home_expected_goals": 1.6264101221334057,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.4335816856936108
     },
     {
@@ -2505,6 +2620,7 @@
       "draw_probability": 0.2754408535293744,
       "home_expected_goals": 1.4877409913183146,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.5268380896482443
     },
     {
@@ -2514,6 +2630,7 @@
       "draw_probability": 0.2556500831083857,
       "home_expected_goals": 1.6202429769475932,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.45172232156310943
     },
     {
@@ -2523,6 +2640,7 @@
       "draw_probability": 0.2675264848182217,
       "home_expected_goals": 1.4495781053436323,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.40470108555186146
     },
     {
@@ -2532,6 +2650,7 @@
       "draw_probability": 0.25119249366839,
       "home_expected_goals": 1.2510739204916212,
       "home_team": "Erzurumspor FK",
+      "predicted": true,
       "home_win_probability": 0.27951985728177864
     },
     {
@@ -2541,6 +2660,7 @@
       "draw_probability": 0.2783896296850086,
       "home_expected_goals": 1.3592586315299051,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.40041265882278426
     },
     {
@@ -2550,6 +2670,7 @@
       "draw_probability": 0.27074472007818745,
       "home_expected_goals": 1.3886103703230668,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.3848780288382885
     },
     {
@@ -2559,6 +2680,7 @@
       "draw_probability": 0.27099657270802047,
       "home_expected_goals": 1.3182853447586633,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.35250576155649327
     },
     {
@@ -2568,6 +2690,7 @@
       "draw_probability": 0.24640682525623803,
       "home_expected_goals": 0.9457674855959419,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.19691629525736612
     },
     {
@@ -2577,6 +2700,7 @@
       "draw_probability": 0.2570098030662844,
       "home_expected_goals": 1.6103749538460521,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.4545046216255847
     },
     {
@@ -2586,6 +2710,7 @@
       "draw_probability": 0.2711200463073543,
       "home_expected_goals": 1.3519650472633447,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.36809937237874635
     },
     {
@@ -2595,6 +2720,7 @@
       "draw_probability": 0.2702172513659569,
       "home_expected_goals": 1.4131513348728473,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.39599443035342563
     },
     {
@@ -2604,6 +2730,7 @@
       "draw_probability": 0.1620888853318365,
       "home_expected_goals": 0.8287833439643949,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.09644866941446184
     },
     {
@@ -2613,6 +2740,7 @@
       "draw_probability": 0.17871784217639405,
       "home_expected_goals": 0.7522296189588281,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.10047890669362097
     },
     {
@@ -2622,6 +2750,7 @@
       "draw_probability": 0.2548632229323944,
       "home_expected_goals": 1.644992239268313,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.46929326608670535
     },
     {
@@ -2631,6 +2760,7 @@
       "draw_probability": 0.2997538570121132,
       "home_expected_goals": 1.2862526103617773,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.45824908603570247
     },
     {
@@ -2640,6 +2770,7 @@
       "draw_probability": 0.27900735988561093,
       "home_expected_goals": 1.2874190402200516,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.36412571856573844
     },
     {
@@ -2649,6 +2780,7 @@
       "draw_probability": 0.26151213429205133,
       "home_expected_goals": 1.4667593636130793,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.38697707383374247
     },
     {
@@ -2658,6 +2790,7 @@
       "draw_probability": 0.2936831591748921,
       "home_expected_goals": 1.341702194268656,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.48158402584009763
     },
     {
@@ -2667,6 +2800,7 @@
       "draw_probability": 0.26614744838452864,
       "home_expected_goals": 1.4611975942752284,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.40492255747689165
     },
     {
@@ -2676,6 +2810,7 @@
       "draw_probability": 0.27517080710434366,
       "home_expected_goals": 1.30728543211002,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.36092666949477736
     },
     {
@@ -2685,6 +2820,7 @@
       "draw_probability": 0.24920087966814172,
       "home_expected_goals": 1.1282667037549914,
       "home_team": "Eyüpspor",
+      "predicted": true,
       "home_win_probability": 0.24343456092929375
     },
     {
@@ -2694,6 +2830,7 @@
       "draw_probability": 0.15777802253932727,
       "home_expected_goals": 2.6400375094160276,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.7429917316106092
     },
     {
@@ -2703,6 +2840,7 @@
       "draw_probability": 0.15795402335410613,
       "home_expected_goals": 2.6970463005195358,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.734532320839294
     },
     {
@@ -2712,6 +2850,7 @@
       "draw_probability": 0.1719153009513974,
       "home_expected_goals": 2.5604566177071506,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.7016943729300302
     },
     {
@@ -2721,6 +2860,7 @@
       "draw_probability": 0.23843774697107262,
       "home_expected_goals": 1.8369290282519983,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.49417634255230136
     },
     {
@@ -2730,6 +2870,7 @@
       "draw_probability": 0.1232080658944286,
       "home_expected_goals": 3.1277714069709375,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.8021120501199122
     },
     {
@@ -2739,6 +2880,7 @@
       "draw_probability": 0.16519223097082156,
       "home_expected_goals": 2.6258714518349677,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.7178375083300779
     },
     {
@@ -2748,6 +2890,7 @@
       "draw_probability": 0.15316825152206548,
       "home_expected_goals": 2.7447113036512407,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.7452204365608943
     },
     {
@@ -2757,6 +2900,7 @@
       "draw_probability": 0.14412072257212874,
       "home_expected_goals": 2.6753925585115916,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.7815164200876772
     },
     {
@@ -2766,6 +2910,7 @@
       "draw_probability": 0.24291069681024036,
       "home_expected_goals": 1.461027624676401,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.3213570441357213
     },
     {
@@ -2775,6 +2920,7 @@
       "draw_probability": 0.11738009507776598,
       "home_expected_goals": 3.19500727354481,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.8137196252196304
     },
     {
@@ -2784,6 +2930,7 @@
       "draw_probability": 0.15284511899793465,
       "home_expected_goals": 2.4982406285088663,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.7758876555586263
     },
     {
@@ -2793,6 +2940,7 @@
       "draw_probability": 0.17318082954777148,
       "home_expected_goals": 2.500506141860421,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.7076026417084508
     },
     {
@@ -2802,6 +2950,7 @@
       "draw_probability": 0.14983775219662268,
       "home_expected_goals": 2.848832184988422,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.743952497065128
     },
     {
@@ -2811,6 +2960,7 @@
       "draw_probability": 0.1412910444218487,
       "home_expected_goals": 2.6059382939861884,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.7960461639428362
     },
     {
@@ -2820,6 +2970,7 @@
       "draw_probability": 0.1466391140712077,
       "home_expected_goals": 2.8380297671629644,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.7563169569937002
     },
     {
@@ -2829,6 +2980,7 @@
       "draw_probability": 0.17152990916021832,
       "home_expected_goals": 2.5390918962927778,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.7072657704520359
     },
     {
@@ -2838,6 +2990,7 @@
       "draw_probability": 0.210992611155746,
       "home_expected_goals": 2.191390475251748,
       "home_team": "Fenerbahce",
+      "predicted": true,
       "home_win_probability": 0.575118887767228
     },
     {
@@ -2847,6 +3000,7 @@
       "draw_probability": 0.14414927674515748,
       "home_expected_goals": 2.670969684956776,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.7818836392619768
     },
     {
@@ -2856,6 +3010,7 @@
       "draw_probability": 0.1441425668329253,
       "home_expected_goals": 2.7286464233631125,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.7760059197464785
     },
     {
@@ -2865,6 +3020,7 @@
       "draw_probability": 0.1586283658504661,
       "home_expected_goals": 2.5904563784230157,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.7467916158287975
     },
     {
@@ -2874,6 +3030,7 @@
       "draw_probability": 0.23655050952653625,
       "home_expected_goals": 1.8584515297146218,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.5535447706953721
     },
     {
@@ -2883,6 +3040,7 @@
       "draw_probability": 0.10930215312357587,
       "home_expected_goals": 3.164418149248913,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.8364693387456512
     },
     {
@@ -2892,6 +3050,7 @@
       "draw_probability": 0.15160076953765297,
       "home_expected_goals": 2.656637649817346,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.7611884948134638
     },
     {
@@ -2901,6 +3060,7 @@
       "draw_probability": 0.1392676090368329,
       "home_expected_goals": 2.7768698966827445,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.7854539308768469
     },
     {
@@ -2910,6 +3070,7 @@
       "draw_probability": 0.13096893515403185,
       "home_expected_goals": 2.706738973842864,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.8135729795567537
     },
     {
@@ -2919,6 +3080,7 @@
       "draw_probability": 0.24531180597190458,
       "home_expected_goals": 1.6285754129325911,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.3932634618805745
     },
     {
@@ -2928,6 +3090,7 @@
       "draw_probability": 0.10367906635256167,
       "home_expected_goals": 3.232441789337397,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.8464452571600647
     },
     {
@@ -2937,6 +3100,7 @@
       "draw_probability": 0.1402205454123845,
       "home_expected_goals": 2.527511431438162,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.8060490631662814
     },
     {
@@ -2946,6 +3110,7 @@
       "draw_probability": 0.15998611828715845,
       "home_expected_goals": 2.5298034888279854,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.7504979935331212
     },
     {
@@ -2955,6 +3120,7 @@
       "draw_probability": 0.13567570611874907,
       "home_expected_goals": 2.8822107172698397,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.7861181695025575
     },
     {
@@ -2964,6 +3130,7 @@
       "draw_probability": 0.12883213426638548,
       "home_expected_goals": 2.6364709437953078,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.824138437767574
     },
     {
@@ -2973,6 +3140,7 @@
       "draw_probability": 0.13258184587522806,
       "home_expected_goals": 2.8712817321955266,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.7958923465664932
     },
     {
@@ -2982,6 +3150,7 @@
       "draw_probability": 0.15823699160005178,
       "home_expected_goals": 2.5688413358253976,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.750954427998705
     },
     {
@@ -2991,6 +3160,7 @@
       "draw_probability": 0.20295525265050582,
       "home_expected_goals": 2.2170660478968522,
       "home_team": "Galatasaray",
+      "predicted": true,
       "home_win_probability": 0.6329861781636628
     },
     {
@@ -3000,6 +3170,7 @@
       "draw_probability": 0.28307086924031616,
       "home_expected_goals": 1.2783606525440188,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.37331711104281307
     },
     {
@@ -3009,6 +3180,7 @@
       "draw_probability": 0.27436844915027486,
       "home_expected_goals": 1.3059654858601737,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.3577274866534027
     },
     {
@@ -3018,6 +3190,7 @@
       "draw_probability": 0.2730837476686,
       "home_expected_goals": 1.2398259422256421,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.32652820582348596
     },
     {
@@ -3027,6 +3200,7 @@
       "draw_probability": 0.24154286970625877,
       "home_expected_goals": 0.8894789497717045,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.17923922144076504
     },
     {
@@ -3036,6 +3210,7 @@
       "draw_probability": 0.2635206133556828,
       "home_expected_goals": 1.5145314725881813,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.4248460374382801
     },
     {
@@ -3045,6 +3220,7 @@
       "draw_probability": 0.2739500335743033,
       "home_expected_goals": 1.2715011550752475,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.34153632297562597
     },
     {
@@ -3054,6 +3230,7 @@
       "draw_probability": 0.2743625485325741,
       "home_expected_goals": 1.329045864184206,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.3684789628064943
     },
     {
@@ -3063,6 +3240,7 @@
       "draw_probability": 0.293069821435803,
       "home_expected_goals": 1.2954802970457848,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.4261100153169648
     },
     {
@@ -3072,6 +3250,7 @@
       "draw_probability": 0.15416621716119694,
       "home_expected_goals": 0.7794572657710052,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.08558885665399792
     },
     {
@@ -3081,6 +3260,7 @@
       "draw_probability": 0.1709248811521341,
       "home_expected_goals": 0.7074597315396849,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.08970877046648842
     },
     {
@@ -3090,6 +3270,7 @@
       "draw_probability": 0.3083132531524762,
       "home_expected_goals": 1.2096996761152095,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.43144536365052155
     },
     {
@@ -3099,6 +3280,7 @@
       "draw_probability": 0.28193652647239886,
       "home_expected_goals": 1.2107966844403228,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.33819754875244035
     },
     {
@@ -3108,6 +3290,7 @@
       "draw_probability": 0.26489011124654316,
       "home_expected_goals": 1.3794633439870216,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.35912351809336635
     },
     {
@@ -3117,6 +3300,7 @@
       "draw_probability": 0.3032069501906049,
       "home_expected_goals": 1.2618491086236556,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.45428503884144583
     },
     {
@@ -3126,6 +3310,7 @@
       "draw_probability": 0.27057249517049703,
       "home_expected_goals": 1.3742325903135784,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.37688398163315096
     },
     {
@@ -3135,6 +3320,7 @@
       "draw_probability": 0.2778063975238413,
       "home_expected_goals": 1.2294807031480577,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.3348819079900627
     },
     {
@@ -3144,6 +3330,7 @@
       "draw_probability": 0.2459903059931315,
       "home_expected_goals": 1.0611164985080965,
       "home_team": "Gaziantep FK",
+      "predicted": true,
       "home_win_probability": 0.22231379992759626
     },
     {
@@ -3153,6 +3340,7 @@
       "draw_probability": 0.2718128350631045,
       "home_expected_goals": 1.3797466862407222,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.384489474838194
     },
     {
@@ -3162,6 +3350,7 @@
       "draw_probability": 0.26363070383302856,
       "home_expected_goals": 1.4095408426991483,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.36801696913197046
     },
     {
@@ -3171,6 +3360,7 @@
       "draw_probability": 0.2626183115307377,
       "home_expected_goals": 1.3381558106445295,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.335427685240718
     },
     {
@@ -3180,6 +3370,7 @@
       "draw_probability": 0.23133083706933172,
       "home_expected_goals": 0.9600230036696379,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.18164496517730355
     },
     {
@@ -3189,6 +3380,7 @@
       "draw_probability": 0.2523909769874109,
       "home_expected_goals": 1.6346480755272381,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.4377911995853887
     },
     {
@@ -3198,6 +3390,7 @@
       "draw_probability": 0.26335974229686276,
       "home_expected_goals": 1.372343166050251,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.3511087558737156
     },
     {
@@ -3207,6 +3400,7 @@
       "draw_probability": 0.26352007707368114,
       "home_expected_goals": 1.434451712293259,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.379238477287821
     },
     {
@@ -3216,6 +3410,7 @@
       "draw_probability": 0.28053306571772463,
       "home_expected_goals": 1.3982240797086174,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.439875586545766
     },
     {
@@ -3225,6 +3420,7 @@
       "draw_probability": 0.14487625983611063,
       "home_expected_goals": 0.8412755644297855,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.08449675163430251
     },
     {
@@ -3234,6 +3430,7 @@
       "draw_probability": 0.1609630252430437,
       "home_expected_goals": 0.7635679479793908,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.08885133106893782
     },
     {
@@ -3243,6 +3440,7 @@
       "draw_probability": 0.2507151142351692,
       "home_expected_goals": 1.669787146002924,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.4528441327815831
     },
     {
@@ -3252,6 +3450,7 @@
       "draw_probability": 0.27105532538896154,
       "home_expected_goals": 1.306824259447601,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.34779720603067105
     },
     {
@@ -3261,6 +3460,7 @@
       "draw_probability": 0.25452007203633326,
       "home_expected_goals": 1.4888677728534052,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.3692737001304113
     },
     {
@@ -3270,6 +3470,7 @@
       "draw_probability": 0.28951115832634794,
       "home_expected_goals": 1.3619256214547388,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.4696218045714403
     },
     {
@@ -3279,6 +3480,7 @@
       "draw_probability": 0.2597956783623171,
       "home_expected_goals": 1.4832221711735412,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.38792628477031843
     },
     {
@@ -3288,6 +3490,7 @@
       "draw_probability": 0.26710991122183725,
       "home_expected_goals": 1.3269900967223596,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.3442457163586983
     },
     {
@@ -3297,6 +3500,7 @@
       "draw_probability": 0.2362536909072347,
       "home_expected_goals": 1.1452730257445805,
       "home_team": "Genclerbirligi Ankara",
+      "predicted": true,
       "home_win_probability": 0.22637412235017743
     },
     {
@@ -3306,6 +3510,7 @@
       "draw_probability": 0.2611473508634892,
       "home_expected_goals": 1.607945983427769,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.5385383895734865
     },
     {
@@ -3315,6 +3520,7 @@
       "draw_probability": 0.2575455855001848,
       "home_expected_goals": 1.6426678600480882,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.5269346982719154
     },
     {
@@ -3324,6 +3530,7 @@
       "draw_probability": 0.265855460321852,
       "home_expected_goals": 1.5594763027037273,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.4934186958268595
     },
     {
@@ -3333,6 +3540,7 @@
       "draw_probability": 0.28736280771507106,
       "home_expected_goals": 1.1188032905915133,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.3138825959958694
     },
     {
@@ -3342,6 +3550,7 @@
       "draw_probability": 0.22906506806312074,
       "home_expected_goals": 1.905006066384114,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.5997582853168681
     },
     {
@@ -3351,6 +3560,7 @@
       "draw_probability": 0.2620176823041978,
       "home_expected_goals": 1.5993179789743355,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.5096801531331532
     },
     {
@@ -3360,6 +3570,7 @@
       "draw_probability": 0.25440058197587634,
       "home_expected_goals": 1.6716987923974735,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.5382317534561547
     },
     {
@@ -3369,6 +3580,7 @@
       "draw_probability": 0.2561708928930446,
       "home_expected_goals": 1.6294793930798452,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.5847671387462438
     },
     {
@@ -3378,6 +3590,7 @@
       "draw_probability": 0.23249314655910736,
       "home_expected_goals": 0.9804159548057756,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.18702086361235773
     },
     {
@@ -3387,6 +3600,7 @@
       "draw_probability": 0.24903678116547945,
       "home_expected_goals": 0.8898561071183734,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.18775970036928522
     },
     {
@@ -3396,6 +3610,7 @@
       "draw_probability": 0.22411990672019402,
       "home_expected_goals": 1.9459568639444325,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.6138248892745006
     },
     {
@@ -3405,6 +3620,7 @@
       "draw_probability": 0.2688151686108479,
       "home_expected_goals": 1.5215829206667058,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.5822857774122863
     },
     {
@@ -3414,6 +3630,7 @@
       "draw_probability": 0.2482179548342602,
       "home_expected_goals": 1.7351148432452181,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.5337598581374257
     },
     {
@@ -3423,6 +3640,7 @@
       "draw_probability": 0.2586062422140186,
       "home_expected_goals": 1.58717745408192,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.6051038261952475
     },
     {
@@ -3432,6 +3650,7 @@
       "draw_probability": 0.24844685463787547,
       "home_expected_goals": 1.7285355032578875,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.549010023149795
     },
     {
@@ -3441,6 +3660,7 @@
       "draw_probability": 0.2676900035554619,
       "home_expected_goals": 1.5464638671368955,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.5002690107886123
     },
     {
@@ -3450,6 +3670,7 @@
       "draw_probability": 0.275587783057685,
       "home_expected_goals": 1.334692215635353,
       "home_team": "Göztepe",
+      "predicted": true,
       "home_win_probability": 0.3756197819841174
     },
     {
@@ -3459,6 +3680,7 @@
       "draw_probability": 0.2647494216891524,
       "home_expected_goals": 1.4277410081747794,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.3808307223241033
     },
     {
@@ -3468,6 +3690,7 @@
       "draw_probability": 0.25648316412668354,
       "home_expected_goals": 1.4585715507692107,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.363616387373189
     },
     {
@@ -3477,6 +3700,7 @@
       "draw_probability": 0.2549738744996724,
       "home_expected_goals": 1.3847033989913353,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.33044659186353176
     },
     {
@@ -3486,6 +3710,7 @@
       "draw_probability": 0.2207597355625695,
       "home_expected_goals": 0.9934172879695764,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.17534568814869592
     },
     {
@@ -3495,6 +3720,7 @@
       "draw_probability": 0.24627579783188402,
       "home_expected_goals": 1.6915091115189227,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.43438726716902837
     },
     {
@@ -3504,6 +3730,7 @@
       "draw_probability": 0.2559604873519438,
       "home_expected_goals": 1.4200799574281484,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.3463998825287134
     },
     {
@@ -3513,6 +3740,7 @@
       "draw_probability": 0.25653213261995356,
       "home_expected_goals": 1.4843489419552047,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.37505006280633824
     },
     {
@@ -3522,6 +3750,7 @@
       "draw_probability": 0.2738637831255619,
       "home_expected_goals": 1.4468611355440812,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.43809125614601346
     },
     {
@@ -3531,6 +3760,7 @@
       "draw_probability": 0.133964462910112,
       "home_expected_goals": 0.8705392333895632,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.07875237446825199
     },
     {
@@ -3540,6 +3770,7 @@
       "draw_probability": 0.14953264762625434,
       "home_expected_goals": 0.7901285668808928,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.08328986757655953
     },
     {
@@ -3549,6 +3780,7 @@
       "draw_probability": 0.24476253323895822,
       "home_expected_goals": 1.7278704903195288,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.4497653455519359
     },
     {
@@ -3558,6 +3790,7 @@
       "draw_probability": 0.2879519444992642,
       "home_expected_goals": 1.3510567864618799,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.44509224314412965
     },
     {
@@ -3567,6 +3800,7 @@
       "draw_probability": 0.2634755088702728,
       "home_expected_goals": 1.3522819835679984,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.3434027857418869
     },
     {
@@ -3576,6 +3810,7 @@
       "draw_probability": 0.2827866463431761,
       "home_expected_goals": 1.409300039801365,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.46928100798403066
     },
     {
@@ -3585,6 +3820,7 @@
       "draw_probability": 0.25298835337707537,
       "home_expected_goals": 1.5348158753606402,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.3837250684182531
     },
     {
@@ -3594,6 +3830,7 @@
       "draw_probability": 0.2595383520571255,
       "home_expected_goals": 1.3731492870581765,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.3396073913458165
     },
     {
@@ -3603,6 +3840,7 @@
       "draw_probability": 0.22677390409303325,
       "home_expected_goals": 1.1851112097011876,
       "home_team": "Kasimpasa",
+      "predicted": true,
       "home_win_probability": 0.21978836643275795
     },
     {
@@ -3612,6 +3850,7 @@
       "draw_probability": 0.3342209894519671,
       "home_expected_goals": 1.0259673269253782,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.38692491945960134
     },
     {
@@ -3621,6 +3860,7 @@
       "draw_probability": 0.3255712007107608,
       "home_expected_goals": 1.048121995868946,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.3759905977480281
     },
     {
@@ -3630,6 +3870,7 @@
       "draw_probability": 0.3272008698619488,
       "home_expected_goals": 0.9950407228715765,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.3484548753797181
     },
     {
@@ -3639,6 +3880,7 @@
       "draw_probability": 0.3147768050807268,
       "home_expected_goals": 0.7138645409944242,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.21217203308308905
     },
     {
@@ -3648,6 +3890,7 @@
       "draw_probability": 0.3083803568456203,
       "home_expected_goals": 1.215509725978638,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.437252611653806
     },
     {
@@ -3657,6 +3900,7 @@
       "draw_probability": 0.3266232083039429,
       "home_expected_goals": 1.0204621353598515,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.36172565679369906
     },
     {
@@ -3666,6 +3910,7 @@
       "draw_probability": 0.3246384958479867,
       "home_expected_goals": 1.066645496264871,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.38543704721974037
     },
     {
@@ -3675,6 +3920,7 @@
       "draw_probability": 0.34269234868978615,
       "home_expected_goals": 1.039706951868023,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.42831107655675804
     },
     {
@@ -3684,6 +3930,7 @@
       "draw_probability": 0.23458424997173394,
       "home_expected_goals": 0.6255650045424922,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.12159072200215151
     },
     {
@@ -3693,6 +3940,7 @@
       "draw_probability": 0.25436821932661663,
       "home_expected_goals": 0.5677823141933127,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.12348064066633774
     },
     {
@@ -3702,6 +3950,7 @@
       "draw_probability": 0.3059586320655762,
       "home_expected_goals": 1.2416388253025208,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.44982828129803626
     },
     {
@@ -3711,6 +3960,7 @@
       "draw_probability": 0.36029370226505386,
       "home_expected_goals": 0.9708624405925863,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.42768469710841894
     },
     {
@@ -3720,6 +3970,7 @@
       "draw_probability": 0.3360457728464543,
       "home_expected_goals": 0.9717428609158275,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.3563526914841123
     },
     {
@@ -3729,6 +3980,7 @@
       "draw_probability": 0.31462897120638145,
       "home_expected_goals": 1.1071087934421344,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.3801897457161286
     },
     {
@@ -3738,6 +3990,7 @@
       "draw_probability": 0.31962137082927417,
       "home_expected_goals": 1.1029107743983946,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.3939696156797967
     },
     {
@@ -3747,6 +4000,7 @@
       "draw_probability": 0.3316842716011443,
       "home_expected_goals": 0.9867379976103516,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.35460249514009035
     },
     {
@@ -3756,6 +4010,7 @@
       "draw_probability": 0.3113483252818589,
       "home_expected_goals": 0.8516148047612737,
       "home_team": "Kocaelispor",
+      "predicted": true,
       "home_win_probability": 0.2559447480593947
     },
     {
@@ -3765,6 +4020,7 @@
       "draw_probability": 0.2908040653904867,
       "home_expected_goals": 1.3181993828205434,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.4327046206659282
     },
     {
@@ -3774,6 +4030,7 @@
       "draw_probability": 0.2841361203044754,
       "home_expected_goals": 1.3466644909790304,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.419274751135027
     },
     {
@@ -3783,6 +4040,7 @@
       "draw_probability": 0.28698710757972135,
       "home_expected_goals": 1.2784637798373288,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.3876020343908143
     },
     {
@@ -3792,6 +4050,7 @@
       "draw_probability": 0.27729218422916113,
       "home_expected_goals": 0.9171986014178046,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.22981605727041576
     },
     {
@@ -3801,6 +4060,7 @@
       "draw_probability": 0.2652987635394307,
       "home_expected_goals": 1.5617302116229554,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.4882023453110398
     },
     {
@@ -3810,6 +4070,7 @@
       "draw_probability": 0.28583410212113675,
       "home_expected_goals": 1.31112611651514,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.40288943614721917
     },
     {
@@ -3819,6 +4080,7 @@
       "draw_probability": 0.28276201476134416,
       "home_expected_goals": 1.3704641443878376,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.4300960678658588
     },
     {
@@ -3828,6 +4090,7 @@
       "draw_probability": 0.29455941873917063,
       "home_expected_goals": 1.3358525425696528,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.48143515049806174
     },
     {
@@ -3837,6 +4100,7 @@
       "draw_probability": 0.2001062126599082,
       "home_expected_goals": 0.80374821035799,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.1242401723474672
     },
     {
@@ -3846,6 +4110,7 @@
       "draw_probability": 0.21764194587659216,
       "home_expected_goals": 0.7295069506638215,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.12716716654056343
     },
     {
@@ -3855,6 +4120,7 @@
       "draw_probability": 0.26222988707094197,
       "home_expected_goals": 1.5953018095661557,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.5023688962868463
     },
     {
@@ -3864,6 +4130,7 @@
       "draw_probability": 0.30914161287109065,
       "home_expected_goals": 1.2473986611523715,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.48273792891240325
     },
     {
@@ -3873,6 +4140,7 @@
       "draw_probability": 0.29421141401035633,
       "home_expected_goals": 1.2485298565581713,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.3975055314993028
     },
     {
@@ -3882,6 +4150,7 @@
       "draw_probability": 0.27453663834310177,
       "home_expected_goals": 1.4224528305439537,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.4231740218779605
     },
     {
@@ -3891,6 +4160,7 @@
       "draw_probability": 0.30172824197087156,
       "home_expected_goals": 1.3011732744512643,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.5052555408019862
     },
     {
@@ -3900,6 +4170,7 @@
       "draw_probability": 0.29055280411741463,
       "home_expected_goals": 1.2677961425472855,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.39509461175511623
     },
     {
@@ -3909,6 +4180,7 @@
       "draw_probability": 0.27504908219659807,
       "home_expected_goals": 1.0941850491490348,
       "home_team": "Konyaspor",
+      "predicted": true,
       "home_win_probability": 0.27971326942424246
     },
     {
@@ -3918,6 +4190,7 @@
       "draw_probability": 0.2708567542968356,
       "home_expected_goals": 1.5205452599173879,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.502450138171349
     },
     {
@@ -3927,6 +4200,7 @@
       "draw_probability": 0.2663596025476829,
       "home_expected_goals": 1.5533798112360293,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.48990963856523734
     },
     {
@@ -3936,6 +4210,7 @@
       "draw_probability": 0.27284561791522455,
       "home_expected_goals": 1.4747101733944321,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.4565562055689728
     },
     {
@@ -3945,6 +4220,7 @@
       "draw_probability": 0.28296250587043015,
       "home_expected_goals": 1.0579901674696532,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.28256764532310996
     },
     {
@@ -3954,6 +4230,7 @@
       "draw_probability": 0.24104478923886052,
       "home_expected_goals": 1.8014584906510667,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.5623494728202438
     },
     {
@@ -3963,6 +4240,7 @@
       "draw_probability": 0.26991116309900665,
       "home_expected_goals": 1.512386235043774,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.47270941869848804
     },
     {
@@ -3972,6 +4250,7 @@
       "draw_probability": 0.2637950052861424,
       "home_expected_goals": 1.5808327524602974,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.5012051557014555
     },
     {
@@ -3981,6 +4260,7 @@
       "draw_probability": 0.26847970515056624,
       "home_expected_goals": 1.540908210112098,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.5504018197953766
     },
     {
@@ -3990,6 +4270,7 @@
       "draw_probability": 0.21920249771512498,
       "home_expected_goals": 0.9271249458575294,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.1619737930957481
     },
     {
@@ -3999,6 +4280,7 @@
       "draw_probability": 0.2360091289826129,
       "home_expected_goals": 0.8414875248501553,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.16376698360411446
     },
     {
@@ -4008,6 +4290,7 @@
       "draw_probability": 0.23666843922999886,
       "home_expected_goals": 1.84018338673709,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.5766656615637276
     },
     {
@@ -4017,6 +4300,7 @@
       "draw_probability": 0.28154153476489313,
       "home_expected_goals": 1.4388765054525516,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.5494219359751327
     },
     {
@@ -4026,6 +4310,7 @@
       "draw_probability": 0.27828238629374946,
       "home_expected_goals": 1.4401813413026863,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.4657034392976852
     },
     {
@@ -4035,6 +4320,7 @@
       "draw_probability": 0.2570599126195045,
       "home_expected_goals": 1.6408017915406141,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.4956682776828925
     },
     {
@@ -4044,6 +4330,7 @@
       "draw_probability": 0.27218768965834816,
       "home_expected_goals": 1.5009056145699953,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.5724224740691846
     },
     {
@@ -4053,6 +4340,7 @@
       "draw_probability": 0.2582552717539,
       "home_expected_goals": 1.6345800749318302,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.5116031497528506
     },
     {
@@ -4062,6 +4350,7 @@
       "draw_probability": 0.27497295154984674,
       "home_expected_goals": 1.26214433995266,
       "home_team": "Samsunspor",
+      "predicted": true,
       "home_win_probability": 0.3405598788073716
     },
     {
@@ -4071,6 +4360,7 @@
       "draw_probability": 0.2160718320816706,
       "home_expected_goals": 2.0359121143385694,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.624121610096303
     },
     {
@@ -4080,6 +4370,7 @@
       "draw_probability": 0.21456634193376076,
       "home_expected_goals": 2.0798754625930806,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.6128432220747144
     },
     {
@@ -4089,6 +4380,7 @@
       "draw_probability": 0.225775183771916,
       "home_expected_goals": 1.9745418872406193,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.5776335088053899
     },
     {
@@ -4098,6 +4390,7 @@
       "draw_probability": 0.2654297708178179,
       "home_expected_goals": 1.4165806540474735,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.37804364883412755
     },
     {
@@ -4107,6 +4400,7 @@
       "draw_probability": 0.18205275683373842,
       "home_expected_goals": 2.4120368273640493,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.6876503211068753
     },
     {
@@ -4116,6 +4410,7 @@
       "draw_probability": 0.2204914848103539,
       "home_expected_goals": 2.0249877058258745,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.5947993177068891
     },
     {
@@ -4125,6 +4420,7 @@
       "draw_probability": 0.2105188751858784,
       "home_expected_goals": 2.116633181739006,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.6245600257381335
     },
     {
@@ -4134,6 +4430,7 @@
       "draw_probability": 0.20590551489285333,
       "home_expected_goals": 2.0631767923971074,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.6702510857236273
     },
     {
@@ -4143,6 +4440,7 @@
       "draw_probability": 0.22605573572291277,
       "home_expected_goals": 1.2413605556728946,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.23007832816883197
     },
     {
@@ -4152,6 +4450,7 @@
       "draw_probability": 0.2409980675087482,
       "home_expected_goals": 1.1266975676871913,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.22972785632277526
     },
     {
@@ -4161,6 +4460,7 @@
       "draw_probability": 0.17634730390492678,
       "home_expected_goals": 2.4638869676698505,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.701536031785098
     },
     {
@@ -4170,6 +4470,7 @@
       "draw_probability": 0.2163631841267827,
       "home_expected_goals": 1.926562915100044,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.6668432672921397
     },
     {
@@ -4179,6 +4480,7 @@
       "draw_probability": 0.22864733274688687,
       "home_expected_goals": 1.9283100062156717,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.5857714411965707
     },
     {
@@ -4188,6 +4490,7 @@
       "draw_probability": 0.2059248334380054,
       "home_expected_goals": 2.1969278604751676,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.6208470429060355
     },
     {
@@ -4197,6 +4500,7 @@
       "draw_probability": 0.20502980323359668,
       "home_expected_goals": 2.009615894858564,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.6897449299494929
     },
     {
@@ -4206,6 +4510,7 @@
       "draw_probability": 0.20422283891189164,
       "home_expected_goals": 2.188597382882877,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.6360028660534061
     },
     {
@@ -4215,6 +4520,7 @@
       "draw_probability": 0.22645074531330325,
       "home_expected_goals": 1.9580661004414337,
       "home_team": "Trabzonspor",
+      "predicted": true,
       "home_win_probability": 0.5845106394996334
     }
   ],

@@ -15,6 +15,7 @@ const fixture: FixtureRow = {
   home_win_probability: 0.56,
   draw_probability: 0.24,
   away_win_probability: 0.2,
+  predicted: true,
 };
 
 test("shows a likely winner with all three outcome probabilities", () => {
@@ -27,7 +28,15 @@ test("shows a likely winner with all three outcome probabilities", () => {
   expect(screen.getByText("Home")).toBeVisible();
   expect(screen.getByText("Draw")).toBeVisible();
   expect(screen.getByText("Away")).toBeVisible();
+  expect(screen.getByText("Predicted:")).toBeVisible();
+  expect(screen.getByText("Yes")).toBeVisible();
   expect(screen.queryByText(/score prediction/i)).not.toBeInTheDocument();
+});
+
+test("shows an explicit no when a fixture has no model forecast", () => {
+  render(<MatchOutlook fixtures={[{ ...fixture, predicted: false }]} />);
+
+  expect(screen.getByText("No")).toBeVisible();
 });
 
 test("calls a fixture with a narrow edge too close to call", () => {
