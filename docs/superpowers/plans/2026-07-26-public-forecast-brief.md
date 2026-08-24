@@ -527,9 +527,9 @@ If Pages already exists, use `PUT` instead of treating HTTP 409 as a failure.
 
 - [ ] **Step 3: Add a failing governance registry test**
 
-First register the new repository and product in
-`MonarchCastleTech/company-governance`, because the public website is an exact
-projection of that private source of truth. Add a failing governance test that
+Register the new repository and product in the public site registry at
+`MonarchCastleTech/MonarchCastleTech.github.io/src/content/site.json`. Add a
+failing registry test that
 expects repository `MonarchCastleTech/superlig-forecast`, product
 `superlig-forecast`, its product-specific logo inventory record, and a
 `Süper Lig Forecast` section in `brand/lockups.md` containing the canonical MCT
