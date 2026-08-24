@@ -1,7 +1,7 @@
 # Süper Lig Forecast
 
 A transparent forecast of the 2026–27 Turkish Süper Lig from
-[Monarch Castle Technologies](https://monarchcastle.tech).
+[Monarch Castle Technologies](https://monarchcastletech.github.io).
 
 **Public dashboard:** <https://monarchcastletech.github.io/superlig-forecast/>
 

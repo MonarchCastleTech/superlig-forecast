@@ -197,5 +197,5 @@ The release is accepted when:
 - Dashboard unit tests, static build, typecheck, lint, production dependency
   audit, Python tests, coverage, mypy, and ruff pass.
 - GitHub Pages serves the repository-subpath build.
-- monarchcastle.tech includes a working product entry.
+- monarchcastletech.github.io includes a working product entry.
 

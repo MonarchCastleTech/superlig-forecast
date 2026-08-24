@@ -497,7 +497,7 @@ git commit -m "ci: publish the daily forecast brief"
 
 **Interfaces:**
 - Consumes: verified forecast branch and `dashboard/public/brand/mct-icon.png`
-- Produces: public GitHub repository, Pages URL, and monarchcastle.tech product card
+- Produces: public GitHub repository, Pages URL, and monarchcastletech.github.io product card
 
 - [ ] **Step 1: Create and push the authorized public repository**
 
@@ -620,7 +620,7 @@ node scripts/check-live-site.mjs
 Also verify HTTP 200 and visible product content at:
 
 - `https://monarchcastletech.github.io/superlig-forecast/`
-- `https://monarchcastle.tech/`
+- `https://monarchcastletech.github.io/`
 
 - [ ] **Step 9: Record final release URLs**
 
