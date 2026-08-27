@@ -124,6 +124,10 @@ test("methodology names production inputs and excluded features", () => {
   expect(
     screen.getByRole("heading", { name: "What the homepage uses now" }),
   ).toBeVisible();
+  expect(screen.getByRole("list", { name: "Production calculation path" })).toBeVisible();
+  expect(screen.getByText(/methodology page is documentation/i)).toBeVisible();
+  expect(screen.getByText(/Both pages read the same published/i)).toBeVisible();
+  expect(screen.getByText(/current published-run audit/i)).toBeVisible();
   expect(screen.getByRole("table", { name: "Production inclusion audit" })).toBeVisible();
   expect(screen.getByText(/aggregate only/i)).toBeVisible();
   expect(screen.getByText(/individual minutes, injuries, lineups, xG, odds/i)).toBeVisible();
