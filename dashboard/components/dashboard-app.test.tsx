@@ -5,6 +5,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, expect, test } from "vitest";
 import { validateDashboardPayload } from "@/lib/dashboard-data";
 import { DashboardApp } from "./dashboard-app";
+import { MethodologyPage } from "./methodology-page";
 
 afterEach(cleanup);
 
@@ -106,4 +107,25 @@ test("publishes an academic methodology and explains validation metrics", () => 
   }
   expect(screen.getByText(/log loss penalizes/i)).toBeVisible();
   expect(screen.getByText(/brier score measures/i)).toBeVisible();
+});
+
+test("methodology names production inputs and excluded features", () => {
+  const payload = validateDashboardPayload(
+    JSON.parse(
+      readFileSync(
+        join(process.cwd(), "public", "data", "dashboard.json"),
+        "utf8",
+      ),
+    ),
+  );
+
+  render(<MethodologyPage data={payload} />);
+
+  expect(
+    screen.getByRole("heading", { name: "What the homepage uses now" }),
+  ).toBeVisible();
+  expect(screen.getByRole("table", { name: "Production inclusion audit" })).toBeVisible();
+  expect(screen.getByText(/aggregate only/i)).toBeVisible();
+  expect(screen.getByText(/individual minutes, injuries, lineups, xG, odds/i)).toBeVisible();
+  expect(screen.getByText(/not consumed by the production title forecast/i)).toBeVisible();
 });

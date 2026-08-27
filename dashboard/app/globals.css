@@ -369,12 +369,19 @@ main {
 .methodology-paper { background: #f7f5ef; color: #191919; margin: 0 -34px; padding: 0 70px 90px; }
 .methodology-paper > nav { border-bottom: 1px solid #bbb; display: flex; flex-wrap: wrap; gap: 25px; padding: 24px 0; position: sticky; top: 0; background: #f7f5ef; z-index: 2; }
 .methodology-paper > nav a { color: #222; font: 700 11px Arial, sans-serif; text-decoration: none; }
-.methodology-paper > section { border-bottom: 1px solid #c9c5bb; display: grid; gap: 35px; grid-template-columns: 55px minmax(0, 760px); padding: 65px 0; }
+.methodology-paper > section { border-bottom: 1px solid #c9c5bb; display: grid; gap: 35px; grid-template-columns: 55px minmax(0, 760px); padding: 65px 0; scroll-margin-top: 72px; }
 .methodology-paper > section > span { color: #d9222a; font: 800 13px monospace; }
 .methodology-paper h2 { font-family: Georgia, serif; font-size: 38px; letter-spacing: -.03em; margin: 0 0 24px; }
 .methodology-paper p, .methodology-paper li { font-family: Georgia, serif; font-size: 17px; line-height: 1.7; }
 .methodology-paper a { color: #b31219; }
 .methodology-paper aside { border-left: 5px solid #d9222a; margin-top: 25px; padding: 12px 20px; }
+.production-disclosure { background: #fffdf7; }
+.production-disclosure code, .implementation-links { font-family: monospace; overflow-wrap: anywhere; }
+.production-disclosure table { border-collapse: collapse; margin: 30px 0; width: 100%; }
+.production-disclosure caption { font: 800 11px Arial, sans-serif; letter-spacing: .08em; padding-bottom: 10px; text-align: left; text-transform: uppercase; }
+.production-disclosure th, .production-disclosure td { border-bottom: 1px solid #c9c5bb; padding: 13px 12px; text-align: left; vertical-align: top; }
+.production-disclosure th { background: #eae7df; font: 800 11px Arial, sans-serif; text-transform: uppercase; }
+.production-disclosure td { font: 15px/1.5 Georgia, serif; }
 .equation { background: #eae7df; font-family: Georgia, serif; font-size: 20px; line-height: 2; margin: 28px 0; overflow-x: auto; padding: 24px; text-align: center; }
 .methodology-paper pre { background: #171717; color: #d8f596; line-height: 1.8; overflow-x: auto; padding: 24px; }
 
@@ -1348,8 +1355,13 @@ footer p:last-child {
   .politico-chart { margin-left: -18px; margin-right: -18px; overflow-x: auto; padding: 25px 18px; }
   .politico-chart svg { min-width: 760px; }
   .methodology-hero dl { grid-template-columns: repeat(2, 1fr); }
-  .methodology-paper { margin: 0 -18px; padding: 0 22px 60px; }
-  .methodology-paper > section { gap: 10px; grid-template-columns: 28px minmax(0, 1fr); }
+  .methodology-paper { margin: 0 -17px; padding: 0 22px 60px; }
+  .methodology-paper > section { gap: 10px; grid-template-columns: 28px minmax(0, 1fr); scroll-margin-top: 105px; }
+  .production-disclosure table, .production-disclosure tbody, .production-disclosure tr, .production-disclosure td { display: block; width: 100%; }
+  .production-disclosure thead { display: none; }
+  .production-disclosure tbody tr { border-bottom: 1px solid #aaa; padding: 12px 0; }
+  .production-disclosure td { border: 0; overflow-wrap: anywhere; padding: 5px 0; }
+  .production-disclosure td::before { color: #666; content: attr(data-label); display: block; font: 800 9px Arial, sans-serif; letter-spacing: .08em; margin-bottom: 3px; text-transform: uppercase; }
   main {
     padding: 0 17px;
   }
