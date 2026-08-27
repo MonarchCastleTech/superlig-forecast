@@ -30,7 +30,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -61,3 +61,8 @@ jobs:
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          # GitHub Pages activation can exceed the action's 10-minute default
+          # during service-side queues. Keep the validated artifact waiting
+          # instead of requiring a manual fresh run.
+          timeout: 1200000
