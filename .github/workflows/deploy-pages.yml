@@ -28,7 +28,7 @@ jobs:
       github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -61,8 +61,9 @@ jobs:
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v5
-        with:
-          # GitHub Pages activation can exceed the action's 10-minute default
-          # during service-side queues. Keep the validated artifact waiting
-          # instead of requiring a manual fresh run.
-          timeout: 1200000
+        continue-on-error: true
+
+      - name: Retry delayed Pages activation
+        if: steps.deployment.outcome == 'failure'
+        id: deployment_retry
+        uses: actions/deploy-pages@v5

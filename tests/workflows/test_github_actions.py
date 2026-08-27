@@ -44,4 +44,6 @@ def test_pages_workflow_is_least_privilege_and_static() -> None:
     assert "npm run build:pages" in text
     assert 'workflows: ["Update forecast data"]' in text
     assert "github.event.workflow_run.conclusion == 'success'" in text
-    assert "continue-on-error" not in text
+    assert text.count("continue-on-error: true") == 1
+    assert "if: steps.deployment.outcome == 'failure'" in text
+    assert "id: deployment_retry" in text
