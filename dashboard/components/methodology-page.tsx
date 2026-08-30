@@ -58,7 +58,7 @@ export function MethodologyPage({ data }: { data: DashboardPayload }) {
 
         <section id="sources">
           <span>02</span><div><h2>Data and autonomous refresh</h2>
-          <p>TFF supplies official fixtures and completed scores. Current public Transfermarkt league and squad pages supply club-level squad totals. If those pages are temporarily unavailable, automation attempts a keyless CC0 structured player dataset; it is accepted only while current and complete.</p>
+          <p>TFF supplies official fixtures and completed scores. Current public Transfermarkt league and squad pages supply club-level squad totals. If GitHub cannot reach every squad page directly, automation validates all 18 aggregate totals from the league overview through a keyless public HTML reader, then tries a keyless CC0 structured player dataset; every route must still be current and complete.</p>
           <p>A GitHub Actions job runs every six hours over HTTPS. It requires all 18 clubs, reconciles match sources, runs the five-million-path forecast, applies freshness gates, and then runs Python, TypeScript, accessibility and static-build checks. A failed or stale refresh fails visibly and raises a repository alert; it cannot be reported as a successful update.</p>
           <p>Individual player names support transfer-change reporting. The title model itself uses only each club’s aggregate squad value—never personal profiles, social data or private information.</p></div>
         </section>

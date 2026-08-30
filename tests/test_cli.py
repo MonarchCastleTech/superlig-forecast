@@ -138,6 +138,63 @@ def test_current_transfermarkt_dry_run_reports_season_page() -> None:
     )
 
 
+def test_current_transfermarkt_dry_run_supports_keyless_public_reader() -> None:
+    result = CliRunner().invoke(
+        app,
+        [
+            "fetch-data",
+            "--source",
+            "transfermarkt-current",
+            "--season",
+            "2026-27",
+            "--public-reader",
+            "--dry-run",
+        ],
+    )
+    assert result.exit_code == 0
+    assert result.stdout.strip().startswith("https://r.jina.ai/https://www.transfermarkt.com/")
+
+
+def test_validate_current_league_requires_complete_aligned_totals(tmp_path: Path) -> None:
+    league_page = tmp_path / "league.html"
+    league_page.write_text(
+        """
+        <table class="items">
+        <thead><tr><th>marktwert_gesamt_anzeige</th></tr></thead><tbody>
+          <tr><td><a href="/a/startseite/verein/1/saison_id/2026">crest</a></td>
+            <td class="hauptlink"><a title="A SK">A SK</a></td>
+            <td>25</td><td>25</td><td>5</td><td>€1m</td>
+            <td><a href="/a/kader/verein/1/saison_id/2026">€100m</a></td></tr>
+          <tr><td><a href="/b/startseite/verein/2/saison_id/2026">crest</a></td>
+            <td class="hauptlink"><a title="B SK">B SK</a></td>
+            <td>24</td><td>25</td><td>5</td><td>€1m</td>
+            <td><a href="/b/kader/verein/2/saison_id/2026">€50m</a></td></tr>
+        </tbody></table>
+        """,
+        encoding="utf-8",
+    )
+
+    accepted = CliRunner().invoke(
+        app,
+        [
+            "validate-current-league",
+            "--league-page",
+            str(league_page),
+            "--expected-clubs",
+            "2",
+        ],
+    )
+    rejected = CliRunner().invoke(
+        app,
+        ["validate-current-league", "--league-page", str(league_page)],
+    )
+
+    assert accepted.exit_code == 0
+    assert json.loads(accepted.stdout) == {"clubs": 2, "squad_value_eur": 150_000_000}
+    assert rejected.exit_code == 1
+    assert "expected 18 unique squad values" in rejected.output
+
+
 def test_fetch_current_squads_writes_complete_manifest(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,

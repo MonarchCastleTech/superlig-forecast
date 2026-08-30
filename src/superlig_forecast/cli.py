@@ -30,6 +30,7 @@ from superlig_forecast.data.structured_sources import ProviderBatch, select_matc
 from superlig_forecast.data.tff import TFF_PAGES, TffAdapter, decode_tff
 from superlig_forecast.data.transfermarkt_live import (
     CurrentSquadValue,
+    PUBLIC_READER_PREFIX,
     fetch_current_squad_pages,
     parse_current_players,
     parse_current_squad_links,
@@ -225,6 +226,7 @@ def fetch_data(
         TRANSFERMARKT_CURRENT_URL,
         "--transfermarkt-current-url",
     ),
+    public_reader: bool = typer.Option(False, "--public-reader"),
     output: Path = typer.Option(Path("data/raw"), "--output"),
 ) -> None:
     """Inspect or fetch one configured source."""
@@ -243,14 +245,22 @@ def fetch_data(
         typer.echo(str(SnapshotStore(output).put(result).payload_path.resolve()))
         return
     if source == "transfermarkt-current":
+        current_url = (
+            f"{PUBLIC_READER_PREFIX}{transfermarkt_current_url}"
+            if public_reader
+            else transfermarkt_current_url
+        )
         if dry_run:
-            typer.echo(transfermarkt_current_url)
+            typer.echo(current_url)
             return
         result = Fetcher().fetch(
             FetchRequest(
-                source="transfermarkt-current",
-                url=transfermarkt_current_url,
+                source=(
+                    "transfermarkt-current-reader" if public_reader else "transfermarkt-current"
+                ),
+                url=current_url,
                 extension=".html",
+                headers={"X-Return-Format": "html"} if public_reader else {},
             )
         )
         typer.echo(str(SnapshotStore(output).put(result).payload_path.resolve()))
@@ -342,7 +352,11 @@ def fetch_current_squads(
 ) -> None:
     """Snapshot every current top-flight club squad page."""
 
-    links = parse_current_squad_links(league_page.read_text(encoding="utf-8"), season=season)
+    try:
+        links = parse_current_squad_links(league_page.read_text(encoding="utf-8"), season=season)
+    except ValueError as error:
+        typer.echo(str(error), err=True)
+        raise typer.Exit(code=1) from error
     manifest = fetch_current_squad_pages(links, output)
     manifest_output.parent.mkdir(parents=True, exist_ok=True)
     temporary = manifest_output.with_suffix(manifest_output.suffix + ".partial")
@@ -351,6 +365,40 @@ def fetch_current_squads(
     typer.echo(str(manifest_output.resolve()))
     if not manifest.complete:
         raise typer.Exit(code=1)
+
+
+@app.command("validate-current-league")
+def validate_current_league(
+    league_page: Path = typer.Option(..., "--league-page"),
+    season: int = typer.Option(2026, "--season"),
+    expected_clubs: int = typer.Option(18, "--expected-clubs", min=1),
+) -> None:
+    """Require a complete, internally aligned current league overview."""
+
+    try:
+        league_html = league_page.read_text(encoding="utf-8")
+        values = parse_current_squad_values(league_html)
+        links = parse_current_squad_links(league_html, season=season)
+        value_ids = {item.club_id for item in values}
+        if len(values) != expected_clubs or len(value_ids) != expected_clubs:
+            raise ValueError(
+                f"expected {expected_clubs} unique squad values, found {len(value_ids)}"
+            )
+        if len(links) != expected_clubs or set(links) != value_ids:
+            raise ValueError("current squad values and squad links are not aligned")
+        if any(item.squad_size < 11 or item.squad_value_eur <= 0 for item in values):
+            raise ValueError("current squad values contain an invalid club total")
+    except (OSError, UnicodeError, ValueError) as error:
+        typer.echo(str(error), err=True)
+        raise typer.Exit(code=1) from error
+    typer.echo(
+        orjson.dumps(
+            {
+                "clubs": len(values),
+                "squad_value_eur": sum(item.squad_value_eur for item in values),
+            }
+        ).decode()
+    )
 
 
 def _latest_squad_snapshot(raw_dir: Path, club_id: int) -> Path:

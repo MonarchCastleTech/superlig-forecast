@@ -17,6 +17,8 @@ import httpx
 from superlig_forecast.data.fetch import FetchResult, system_ssl_context
 from superlig_forecast.data.snapshots import SnapshotStore
 
+PUBLIC_READER_PREFIX = "https://r.jina.ai/"
+
 
 @dataclass(frozen=True)
 class CurrentSquadValue:

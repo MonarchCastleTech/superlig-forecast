@@ -10,6 +10,10 @@ def test_update_workflow_has_strict_quality_gates() -> None:
     assert "fetch-data" in text
     assert "--source transfermarkt-current" in text
     assert "--transfermarkt-current-url" in text
+    assert "--public-reader" in text
+    assert "validate-current-league" in text
+    assert "r.jina.ai" not in text
+    assert "keyless public reader" in text
     assert "transfermarkt.co.uk" in text
     assert "transfermarkt.de" in text
     assert "transfermarkt.com.tr" in text
