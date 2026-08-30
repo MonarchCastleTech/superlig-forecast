@@ -1,4 +1,5 @@
 from typer.testing import CliRunner
+from datetime import UTC, datetime
 from pathlib import Path
 import json
 from types import SimpleNamespace
@@ -6,6 +7,8 @@ from types import SimpleNamespace
 import pytest
 import superlig_forecast.cli as cli_module
 from superlig_forecast.cli import app
+from superlig_forecast.data.fetch import FetchResult
+from superlig_forecast.data.snapshots import SnapshotStore
 from superlig_forecast.data.structured_sources import ProviderBatch
 from superlig_forecast.data.transfermarkt_live import SquadFetchManifest
 
@@ -320,10 +323,7 @@ def test_update_current_changes_writes_player_state_and_change_feed(tmp_path: Pa
         """,
         encoding="utf-8",
     )
-    squad_dir = tmp_path / "raw" / "transfermarkt-squad-1"
-    squad_dir.mkdir(parents=True)
-    (squad_dir / "snapshot.html").write_text(
-        """
+    squad_html = """
         <table class="items"><tbody><tr class="odd theme6">
           <td class="zentriert rueckennummer bg_Torwart" title="Kaleci">1</td>
           <td class="posrela"><table class="inline-table">
@@ -333,8 +333,17 @@ def test_update_current_changes_writes_player_state_and_change_feed(tmp_path: Pa
           <td class="zentriert">25</td><td class="zentriert"><img title="Türkiye"></td>
           <td class="zentriert">2028</td><td class="rechts hauptlink">€4m</td>
         </tr></tbody></table>
-        """,
-        encoding="utf-8",
+        """
+    SnapshotStore(tmp_path / "raw").put(
+        FetchResult(
+            source="transfermarkt-squad-1",
+            url="https://www.transfermarkt.com/a/kader/verein/1/saison_id/2026",
+            fetched_at=datetime(2026, 8, 30, tzinfo=UTC),
+            status_code=200,
+            content_type="text/html",
+            content=squad_html.encode(),
+            extension=".html",
+        )
     )
     state = tmp_path / "state.json"
     changes = tmp_path / "changes.json"

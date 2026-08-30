@@ -46,6 +46,16 @@ def test_parse_current_squad_values_from_league_table() -> None:
     }
 
 
+def test_parse_current_squad_links_keeps_allowed_public_origin() -> None:
+    html = """
+      <meta property="og:url" content="https://www.transfermarkt.co.uk/super-lig/startseite/wettbewerb/TR1/" />
+      <a href="/fenerbahce/kader/verein/36/saison_id/2026">Fenerbahce</a>
+    """
+    assert parse_current_squad_links(html, season=2026) == {
+        36: "https://www.transfermarkt.co.uk/fenerbahce/kader/verein/36/saison_id/2026"
+    }
+
+
 def test_parse_current_squad_values_supports_english_money_suffixes() -> None:
     html = """
     <table class="items">
@@ -128,3 +138,19 @@ def test_fetch_current_squads_uses_conditional_cache(tmp_path: Path) -> None:
     )
     assert second.unchanged == ("36",)
     assert requests[-1]["If-None-Match"] == '"v1"'
+
+    def alternate_origin_fetch(
+        url: str,
+        headers: Mapping[str, str],
+    ) -> ConditionalPage:
+        del url
+        requests.append(dict(headers))
+        return ConditionalPage(200, b"<html>same squad</html>", etag='"v2"')
+
+    fetch_current_squad_pages(
+        {36: "https://example.co.uk/36"},
+        tmp_path,
+        fetch_page=alternate_origin_fetch,
+        now=lambda: datetime(2026, 7, 27, tzinfo=UTC),
+    )
+    assert requests[-1] == {}

@@ -45,12 +45,7 @@ test("presents one published forecast without simulator controls", () => {
   expect(screen.getByTestId("forecast-updated")).toHaveTextContent("Updated");
   expect(screen.getByRole("note")).toHaveTextContent("not betting advice");
   expect(screen.getByRole("note")).toHaveTextContent("not a guarantee");
-  expect(screen.getByTestId("source-freshness")).toHaveTextContent(
-    payload.freshness.source_notes[1],
-  );
-  expect(screen.getByTestId("source-freshness")).toHaveTextContent(
-    /squad & values/i,
-  );
+  expect(screen.queryByText(/source status/i)).not.toBeInTheDocument();
   expect(screen.queryByText(/simulation target/i)).not.toBeInTheDocument();
   expect(
     screen.queryByRole("button", { name: /play simulation/i }),
@@ -93,15 +88,11 @@ test("publishes an academic methodology and explains validation metrics", () => 
 
   for (const section of [
     "Forecast target",
-    "Data provenance",
-    "Temporal integrity",
-    "Structural model",
-    "Market-value adjustment",
-    "Current-season state",
-    "Monte Carlo estimation",
-    "Backtest design",
-    "Uncertainty",
-    "Limitations",
+    "Official inputs",
+    "Historical testing",
+    "Goal model",
+    "Squad strength",
+    "Five million seasons",
   ]) {
     expect(screen.getByRole("heading", { name: section })).toBeVisible();
   }
@@ -109,7 +100,7 @@ test("publishes an academic methodology and explains validation metrics", () => 
   expect(screen.getByText(/brier score measures/i)).toBeVisible();
 });
 
-test("methodology names production inputs and excluded features", () => {
+test("methodology explains the live calculation and autonomous safety gates", () => {
   const payload = validateDashboardPayload(
     JSON.parse(
       readFileSync(
@@ -122,14 +113,12 @@ test("methodology names production inputs and excluded features", () => {
   render(<MethodologyPage data={payload} />);
 
   expect(
-    screen.getByRole("heading", { name: "What the homepage uses now" }),
+    screen.getByRole("heading", { name: "From matches to title probabilities" }),
   ).toBeVisible();
-  expect(screen.getByRole("list", { name: "Production calculation path" })).toBeVisible();
-  expect(screen.getByText(/methodology page is documentation/i)).toBeVisible();
-  expect(screen.getByText(/Both pages read the same published/i)).toBeVisible();
-  expect(screen.getByText(/current published-run audit/i)).toBeVisible();
-  expect(screen.getByRole("table", { name: "Production inclusion audit" })).toBeVisible();
-  expect(screen.getByText(/aggregate only/i)).toBeVisible();
-  expect(screen.getByText(/individual minutes, injuries, lineups, xG, odds/i)).toBeVisible();
-  expect(screen.getByText(/not consumed by the production title forecast/i)).toBeVisible();
+  expect(screen.getByRole("list", { name: "Forecast calculation path" })).toBeVisible();
+  expect(screen.getByText(/five million simulated seasons/i)).toBeVisible();
+  expect(screen.getByText(/keyless CC0 structured player dataset/i)).toBeVisible();
+  expect(screen.getByText(/cannot be reported as a successful update/i)).toBeVisible();
+  expect(screen.queryByText(/current published-run audit/i)).not.toBeInTheDocument();
+  expect(screen.queryByText(/production inclusion audit/i)).not.toBeInTheDocument();
 });

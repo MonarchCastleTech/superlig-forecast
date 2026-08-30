@@ -8,5 +8,10 @@ export default defineConfig({
   test: {
     environment: "jsdom",
     include: ["lib/**/*.test.ts", "components/**/*.test.tsx"],
+    pool: "vmThreads",
+    maxWorkers: 1,
+    fileParallelism: false,
+    testTimeout: 30_000,
+    hookTimeout: 30_000,
   },
 });

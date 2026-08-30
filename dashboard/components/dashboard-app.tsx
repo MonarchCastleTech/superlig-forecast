@@ -87,20 +87,6 @@ export function DashboardApp({ data }: DashboardAppProps) {
         </span>
       </aside>
 
-      <section
-        aria-label="Data source freshness"
-        className={`source-freshness source-${data.freshness.source_status}`}
-        data-testid="source-freshness"
-      >
-        <strong>Source status · {data.freshness.source_status}</strong>
-        <span>
-          Matches {formatForecastUpdate(data.freshness.match_snapshot_at)}
-          {" · "}Squad &amp; values{" "}
-          {formatForecastUpdate(data.freshness.valuation_snapshot_at)}
-        </span>
-        <small>{data.freshness.source_notes.join(" ")}</small>
-      </section>
-
       <section className="hero" id="top">
         <div>
           <p className="eyebrow">2026–27 Süper Lig · daily forecast brief</p>

@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 import re
 import time
+from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup
 import httpx
@@ -71,7 +72,7 @@ def _money_to_eur(value: str) -> int:
     suffix = normalized[number_match.end() :].strip()
     if "milyar" in normalized or re.match(r"^(?:bn|b)\b", suffix):
         multiplier = 1_000_000_000.0
-    elif "mil." in normalized or re.match(r"^m\b", suffix):
+    elif "mil." in normalized or "mio." in normalized or re.match(r"^m\b", suffix):
         multiplier = 1_000_000.0
     elif "bin" in normalized or re.match(r"^k\b", suffix):
         multiplier = 1_000.0
@@ -126,10 +127,23 @@ def parse_current_squad_values(page_html: str) -> list[CurrentSquadValue]:
 def parse_current_squad_links(page_html: str, *, season: int) -> dict[int, str]:
     """Return stable current-season squad URLs keyed by Transfermarkt club ID."""
 
+    origin = "https://www.transfermarkt.com"
+    soup = BeautifulSoup(page_html, "html.parser")
+    og_url = soup.find("meta", attrs={"property": "og:url"})
+    if og_url is not None:
+        parsed = urlsplit(str(og_url.get("content") or ""))
+        allowed_hosts = {
+            "www.transfermarkt.com",
+            "www.transfermarkt.co.uk",
+            "www.transfermarkt.de",
+            "www.transfermarkt.com.tr",
+        }
+        if parsed.scheme == "https" and parsed.netloc in allowed_hosts:
+            origin = f"{parsed.scheme}://{parsed.netloc}"
     links: dict[int, str] = {}
     pattern = rf'href=["\'](/[^"\']+/kader/verein/(\d+)/saison_id/{season})["\']'
     for path, club_id in re.findall(pattern, page_html, flags=re.IGNORECASE):
-        links[int(club_id)] = f"https://www.transfermarkt.com{path}"
+        links[int(club_id)] = f"{origin}{path}"
     if not links:
         raise ValueError("current league page contained no squad links")
     return links
@@ -274,9 +288,9 @@ def fetch_current_squad_pages(
         cache_path = _cache_path(output, key)
         cache = _read_cache(cache_path)
         headers: dict[str, str] = {}
-        if cache.get("etag"):
+        if cache.get("url") == url and cache.get("etag"):
             headers["If-None-Match"] = cache["etag"]
-        if cache.get("last_modified"):
+        if cache.get("url") == url and cache.get("last_modified"):
             headers["If-Modified-Since"] = cache["last_modified"]
         try:
             page = request(url, headers)

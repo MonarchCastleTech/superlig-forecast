@@ -1,7 +1,627 @@
 {
-  "generated_at": "2026-08-13T07:48:22.994699+00:00",
-  "observation_count": 557,
-  "transfers": [],
-  "valuation_changes": [],
-  "unobserved": []
+  "generated_at": "2026-08-30T08:00:06.028785+00:00",
+  "observation_count": 564,
+  "transfers": [
+    {
+      "provider_player_id": "322873",
+      "player_name": "İrfan Can Eğribayat",
+      "from_club": "Fenerbahce",
+      "to_club": "Genclerbirligi Ankara",
+      "observed_on": "2026-08-30"
+    },
+    {
+      "provider_player_id": "618869",
+      "player_name": "Metehan Baltacı",
+      "from_club": "Galatasaray",
+      "to_club": "Genclerbirligi Ankara",
+      "observed_on": "2026-08-30"
+    },
+    {
+      "provider_player_id": "465606",
+      "player_name": "Halil Dervişoğlu",
+      "from_club": "Galatasaray",
+      "to_club": "Gaziantep FK",
+      "observed_on": "2026-08-30"
+    },
+    {
+      "provider_player_id": "727147",
+      "player_name": "Emre Bilgin",
+      "from_club": "Besiktas JK",
+      "to_club": "Eyüpspor",
+      "observed_on": "2026-08-30"
+    },
+    {
+      "provider_player_id": "566271",
+      "player_name": "Yusuf Barası",
+      "from_club": "Kasimpasa",
+      "to_club": "Eyüpspor",
+      "observed_on": "2026-08-30"
+    },
+    {
+      "provider_player_id": "637669",
+      "player_name": "Emre Demir",
+      "from_club": "Fenerbahce",
+      "to_club": "Alanyaspor",
+      "observed_on": "2026-08-30"
+    },
+    {
+      "provider_player_id": "942940",
+      "player_name": "Ali Turap Bülbül",
+      "from_club": "Galatasaray",
+      "to_club": "Amed SK",
+      "observed_on": "2026-08-30"
+    },
+    {
+      "provider_player_id": "655912",
+      "player_name": "Göktan Gürpüz",
+      "from_club": "Trabzonspor",
+      "to_club": "Corum FK",
+      "observed_on": "2026-08-30"
+    },
+    {
+      "provider_player_id": "341647",
+      "player_name": "Cengiz Ünder",
+      "from_club": "Fenerbahce",
+      "to_club": "Corum FK",
+      "observed_on": "2026-08-30"
+    }
+  ],
+  "valuation_changes": [
+    {
+      "provider_player_id": "1321749",
+      "player_name": "Ege Bilim",
+      "club": "Kocaelispor",
+      "previous_value": null,
+      "current_value": 50000,
+      "observed_on": "2026-08-30"
+    },
+    {
+      "provider_player_id": "1494766",
+      "player_name": "Saikuba Jarju",
+      "club": "Samsunspor",
+      "previous_value": null,
+      "current_value": 1000000,
+      "observed_on": "2026-08-30"
+    },
+    {
+      "provider_player_id": "1314014",
+      "player_name": "Ahmet Taha Dağbaşı",
+      "club": "Kasimpasa",
+      "previous_value": null,
+      "current_value": 50000,
+      "observed_on": "2026-08-30"
+    }
+  ],
+  "unobserved": [
+    {
+      "provider_player_id": "205927",
+      "player_name": "Dominik Livakovic",
+      "birth_date": null,
+      "club": "Fenerbahce",
+      "market_value_eur": 4000000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/fenerbahce/kader/verein/36/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1036405",
+      "player_name": "Omar Fayed",
+      "birth_date": null,
+      "club": "Fenerbahce",
+      "market_value_eur": 600000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/fenerbahce/kader/verein/36/saison_id/2026"
+    },
+    {
+      "provider_player_id": "287579",
+      "player_name": "Sofyan Amrabat",
+      "birth_date": null,
+      "club": "Fenerbahce",
+      "market_value_eur": 10000000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/fenerbahce/kader/verein/36/saison_id/2026"
+    },
+    {
+      "provider_player_id": "191614",
+      "player_name": "Fred",
+      "birth_date": null,
+      "club": "Fenerbahce",
+      "market_value_eur": 4500000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/fenerbahce/kader/verein/36/saison_id/2026"
+    },
+    {
+      "provider_player_id": "511401",
+      "player_name": "Anthony Musaba",
+      "birth_date": null,
+      "club": "Fenerbahce",
+      "market_value_eur": 7000000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/fenerbahce/kader/verein/36/saison_id/2026"
+    },
+    {
+      "provider_player_id": "986288",
+      "player_name": "Sidiki Chérif",
+      "birth_date": null,
+      "club": "Fenerbahce",
+      "market_value_eur": 18000000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/fenerbahce/kader/verein/36/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1047596",
+      "player_name": "Çağrı Fedai",
+      "birth_date": null,
+      "club": "Fenerbahce",
+      "market_value_eur": 150000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/fenerbahce/kader/verein/36/saison_id/2026"
+    },
+    {
+      "provider_player_id": "278343",
+      "player_name": "Felix Uduokhai",
+      "birth_date": null,
+      "club": "Besiktas JK",
+      "market_value_eur": 3500000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/besiktas-jk/kader/verein/114/saison_id/2026"
+    },
+    {
+      "provider_player_id": "656441",
+      "player_name": "Jean Onana",
+      "birth_date": null,
+      "club": "Besiktas JK",
+      "market_value_eur": 1000000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/besiktas-jk/kader/verein/114/saison_id/2026"
+    },
+    {
+      "provider_player_id": "950779",
+      "player_name": "Hüseyincan Kırıkcı",
+      "birth_date": null,
+      "club": "Caykur Rizespor",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/caykur-rizespor/kader/verein/126/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1054907",
+      "player_name": "Furkan Orak",
+      "birth_date": null,
+      "club": "Caykur Rizespor",
+      "market_value_eur": 200000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/caykur-rizespor/kader/verein/126/saison_id/2026"
+    },
+    {
+      "provider_player_id": "951695",
+      "player_name": "Eren Emre Aydın",
+      "birth_date": null,
+      "club": "Caykur Rizespor",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/caykur-rizespor/kader/verein/126/saison_id/2026"
+    },
+    {
+      "provider_player_id": "646478",
+      "player_name": "Elias Jelert",
+      "birth_date": null,
+      "club": "Galatasaray",
+      "market_value_eur": 5000000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/galatasaray/kader/verein/141/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1226512",
+      "player_name": "Ali Efe Çördek",
+      "birth_date": null,
+      "club": "Galatasaray",
+      "market_value_eur": 50000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/galatasaray/kader/verein/141/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1053356",
+      "player_name": "Yalın Dilek",
+      "birth_date": null,
+      "club": "Galatasaray",
+      "market_value_eur": 150000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/galatasaray/kader/verein/141/saison_id/2026"
+    },
+    {
+      "provider_player_id": "460651",
+      "player_name": "Antoine Makoumbou",
+      "birth_date": null,
+      "club": "Samsunspor",
+      "market_value_eur": 4000000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/samsunspor/kader/verein/152/saison_id/2026"
+    },
+    {
+      "provider_player_id": "606967",
+      "player_name": "Arbnor Muja",
+      "birth_date": null,
+      "club": "Samsunspor",
+      "market_value_eur": 2500000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/samsunspor/kader/verein/152/saison_id/2026"
+    },
+    {
+      "provider_player_id": "480705",
+      "player_name": "Cherif Ndiaye",
+      "birth_date": null,
+      "club": "Samsunspor",
+      "market_value_eur": 5000000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/samsunspor/kader/verein/152/saison_id/2026"
+    },
+    {
+      "provider_player_id": "764863",
+      "player_name": "Richie Omorowa",
+      "birth_date": null,
+      "club": "Samsunspor",
+      "market_value_eur": 375000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/samsunspor/kader/verein/152/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1173277",
+      "player_name": "Emre Köroğlu",
+      "birth_date": null,
+      "club": "Samsunspor",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/samsunspor/kader/verein/152/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1104114",
+      "player_name": "Anthony Dennis",
+      "birth_date": null,
+      "club": "Göztepe",
+      "market_value_eur": 8000000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/goztepe/kader/verein/1467/saison_id/2026"
+    },
+    {
+      "provider_player_id": "859182",
+      "player_name": "Musah Mohammed",
+      "birth_date": null,
+      "club": "Göztepe",
+      "market_value_eur": 900000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/goztepe/kader/verein/1467/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1116387",
+      "player_name": "Guilherme Luiz",
+      "birth_date": null,
+      "club": "Göztepe",
+      "market_value_eur": 1500000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/goztepe/kader/verein/1467/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1268578",
+      "player_name": "Tibet Durakçay",
+      "birth_date": null,
+      "club": "Göztepe",
+      "market_value_eur": 50000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/goztepe/kader/verein/1467/saison_id/2026"
+    },
+    {
+      "provider_player_id": "952098",
+      "player_name": "Yusuf Delen",
+      "birth_date": null,
+      "club": "Gaziantep FK",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/gaziantep-fk/kader/verein/2832/saison_id/2026"
+    },
+    {
+      "provider_player_id": "889343",
+      "player_name": "Ali Mevran Ablak",
+      "birth_date": null,
+      "club": "Gaziantep FK",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/gaziantep-fk/kader/verein/2832/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1201580",
+      "player_name": "Yusuf Yılmaz",
+      "birth_date": null,
+      "club": "Basaksehir FK",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/basaksehir-fk/kader/verein/6890/saison_id/2026"
+    },
+    {
+      "provider_player_id": "946025",
+      "player_name": "Francis Nzaba",
+      "birth_date": null,
+      "club": "Basaksehir FK",
+      "market_value_eur": 1200000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/basaksehir-fk/kader/verein/6890/saison_id/2026"
+    },
+    {
+      "provider_player_id": "889264",
+      "player_name": "Efe Arda Koyuncu",
+      "birth_date": null,
+      "club": "Basaksehir FK",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/basaksehir-fk/kader/verein/6890/saison_id/2026"
+    },
+    {
+      "provider_player_id": "981856",
+      "player_name": "Doğukan Tuzcu",
+      "birth_date": null,
+      "club": "Basaksehir FK",
+      "market_value_eur": 150000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/basaksehir-fk/kader/verein/6890/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1162593",
+      "player_name": "Mohamed Hassan Fofana",
+      "birth_date": null,
+      "club": "Basaksehir FK",
+      "market_value_eur": 175000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/basaksehir-fk/kader/verein/6890/saison_id/2026"
+    },
+    {
+      "provider_player_id": "588020",
+      "player_name": "Ömer Beyaz",
+      "birth_date": null,
+      "club": "Basaksehir FK",
+      "market_value_eur": 550000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/basaksehir-fk/kader/verein/6890/saison_id/2026"
+    },
+    {
+      "provider_player_id": "685887",
+      "player_name": "Matchoi Djaló",
+      "birth_date": null,
+      "club": "Basaksehir FK",
+      "market_value_eur": 500000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/basaksehir-fk/kader/verein/6890/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1001554",
+      "player_name": "Berkay Aslan",
+      "birth_date": null,
+      "club": "Basaksehir FK",
+      "market_value_eur": 400000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/basaksehir-fk/kader/verein/6890/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1456741",
+      "player_name": "Gilbert Mendy",
+      "birth_date": null,
+      "club": "Eyüpspor",
+      "market_value_eur": 50000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/eyupspor/kader/verein/7160/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1414670",
+      "player_name": "Ismaila Manga",
+      "birth_date": null,
+      "club": "Eyüpspor",
+      "market_value_eur": 100000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/eyupspor/kader/verein/7160/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1173689",
+      "player_name": "Berkay Kumlu",
+      "birth_date": null,
+      "club": "Eyüpspor",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/eyupspor/kader/verein/7160/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1254156",
+      "player_name": "Şant Kazancı",
+      "birth_date": null,
+      "club": "Kasimpasa",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/kasimpasa/kader/verein/10484/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1160504",
+      "player_name": "Burak Gültekin",
+      "birth_date": null,
+      "club": "Kasimpasa",
+      "market_value_eur": 100000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/kasimpasa/kader/verein/10484/saison_id/2026"
+    },
+    {
+      "provider_player_id": "891989",
+      "player_name": "Oğuzhan Yılmaz",
+      "birth_date": null,
+      "club": "Kasimpasa",
+      "market_value_eur": 50000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/kasimpasa/kader/verein/10484/saison_id/2026"
+    },
+    {
+      "provider_player_id": "815262",
+      "player_name": "Emirhan Çavuş",
+      "birth_date": null,
+      "club": "Alanyaspor",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/alanyaspor/kader/verein/11282/saison_id/2026"
+    },
+    {
+      "provider_player_id": "341649",
+      "player_name": "Abdulsamed Damlu",
+      "birth_date": null,
+      "club": "Amed SK",
+      "market_value_eur": 150000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/amed-sk/kader/verein/12382/saison_id/2026"
+    },
+    {
+      "provider_player_id": "391282",
+      "player_name": "Celal Hanalp",
+      "birth_date": null,
+      "club": "Amed SK",
+      "market_value_eur": 200000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/amed-sk/kader/verein/12382/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1047884",
+      "player_name": "Emrullah Ertuş",
+      "birth_date": null,
+      "club": "Amed SK",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/amed-sk/kader/verein/12382/saison_id/2026"
+    },
+    {
+      "provider_player_id": "315209",
+      "player_name": "Çekdar Orhan",
+      "birth_date": null,
+      "club": "Amed SK",
+      "market_value_eur": 225000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/amed-sk/kader/verein/12382/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1351480",
+      "player_name": "Cıvan Süer",
+      "birth_date": null,
+      "club": "Amed SK",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/amed-sk/kader/verein/12382/saison_id/2026"
+    },
+    {
+      "provider_player_id": "74040",
+      "player_name": "Sinan Osmanoğlu",
+      "birth_date": null,
+      "club": "Corum FK",
+      "market_value_eur": 50000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/corum-fk/kader/verein/37951/saison_id/2026"
+    },
+    {
+      "provider_player_id": "241380",
+      "player_name": "Burak Çoban",
+      "birth_date": null,
+      "club": "Corum FK",
+      "market_value_eur": 300000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/corum-fk/kader/verein/37951/saison_id/2026"
+    },
+    {
+      "provider_player_id": "957634",
+      "player_name": "Hasan Abdulkareem",
+      "birth_date": null,
+      "club": "Corum FK",
+      "market_value_eur": 750000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/corum-fk/kader/verein/37951/saison_id/2026"
+    },
+    {
+      "provider_player_id": "1181573",
+      "player_name": "Semih Akyıldız",
+      "birth_date": null,
+      "club": "Corum FK",
+      "market_value_eur": 100000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/corum-fk/kader/verein/37951/saison_id/2026"
+    },
+    {
+      "provider_player_id": "872051",
+      "player_name": "Eren Özdemir",
+      "birth_date": null,
+      "club": "Erzurumspor FK",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/erzurumspor-fk/kader/verein/39722/saison_id/2026"
+    },
+    {
+      "provider_player_id": "986918",
+      "player_name": "Mert Önal",
+      "birth_date": null,
+      "club": "Erzurumspor FK",
+      "market_value_eur": null,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/erzurumspor-fk/kader/verein/39722/saison_id/2026"
+    },
+    {
+      "provider_player_id": "620107",
+      "player_name": "Furkan Özhan",
+      "birth_date": null,
+      "club": "Erzurumspor FK",
+      "market_value_eur": 250000,
+      "observed_on": "2026-08-30",
+      "observed": false,
+      "source_url": "https://www.transfermarkt.com/erzurumspor-fk/kader/verein/39722/saison_id/2026"
+    }
+  ]
 }

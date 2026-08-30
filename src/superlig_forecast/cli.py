@@ -23,6 +23,7 @@ from superlig_forecast.data.current_changes import (
 )
 from superlig_forecast.data.historical_results import extract_historical_results_archive
 from superlig_forecast.data.oddsportal_archive import extract_oddsportal_archive
+from superlig_forecast.data.public_squads import fetch_public_squad_snapshot
 from superlig_forecast.data.snapshots import SnapshotStore
 from superlig_forecast.data.sportsdb import fetch_sportsdb_events
 from superlig_forecast.data.structured_sources import ProviderBatch, select_match_source
@@ -220,6 +221,10 @@ def fetch_data(
     season: str = typer.Option(..., "--season"),
     dry_run: bool = typer.Option(False, "--dry-run"),
     tff_base_url: str = typer.Option("https://www.tff.org", "--tff-base-url"),
+    transfermarkt_current_url: str = typer.Option(
+        TRANSFERMARKT_CURRENT_URL,
+        "--transfermarkt-current-url",
+    ),
     output: Path = typer.Option(Path("data/raw"), "--output"),
 ) -> None:
     """Inspect or fetch one configured source."""
@@ -239,12 +244,12 @@ def fetch_data(
         return
     if source == "transfermarkt-current":
         if dry_run:
-            typer.echo(TRANSFERMARKT_CURRENT_URL)
+            typer.echo(transfermarkt_current_url)
             return
         result = Fetcher().fetch(
             FetchRequest(
                 source="transfermarkt-current",
-                url=TRANSFERMARKT_CURRENT_URL,
+                url=transfermarkt_current_url,
                 extension=".html",
             )
         )
@@ -302,6 +307,29 @@ def fetch_data(
     )
 
 
+@app.command("fetch-public-squads")
+def fetch_public_squads(
+    output: Path = typer.Option(
+        Path("data/processed/public-current-squads.json"),
+        "--output",
+    ),
+) -> None:
+    """Build a keyless CC0 fallback snapshot from public structured player data."""
+
+    snapshot = fetch_public_squad_snapshot()
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_bytes(orjson.dumps(snapshot.as_payload(), option=orjson.OPT_INDENT_2))
+    typer.echo(
+        orjson.dumps(
+            {
+                "output": str(output.resolve()),
+                "snapshot_at": snapshot.snapshot_at.isoformat(),
+                "source_version": snapshot.version,
+            }
+        ).decode()
+    )
+
+
 @app.command("fetch-current-squads")
 def fetch_current_squads(
     league_page: Path = typer.Option(..., "--league-page"),
@@ -325,6 +353,23 @@ def fetch_current_squads(
         raise typer.Exit(code=1)
 
 
+def _latest_squad_snapshot(raw_dir: Path, club_id: int) -> Path:
+    source = f"transfermarkt-squad-{club_id}"
+    manifest = SnapshotStore(raw_dir).latest(source)
+    if manifest is None:
+        raise typer.BadParameter(
+            f"no successful squad snapshot manifest found for club {club_id}",
+            param_hint="raw-dir",
+        )
+    snapshot = raw_dir / source / f"{manifest.sha256}.html"
+    if not snapshot.is_file():
+        raise typer.BadParameter(
+            f"latest squad snapshot payload is missing for club {club_id}",
+            param_hint="raw-dir",
+        )
+    return snapshot
+
+
 @app.command("build-current-players")
 def build_current_players(
     league_page: Path = typer.Option(..., "--league-page"),
@@ -340,15 +385,8 @@ def build_current_players(
     club_names = {item.club_id: item.club_name for item in parse_current_squad_values(league_html)}
     rows: list[dict[str, object]] = []
     for club_id in sorted(links):
-        source_dir = raw_dir / f"transfermarkt-squad-{club_id}"
-        snapshots = sorted(source_dir.glob("*.html"))
-        if not snapshots:
-            raise typer.BadParameter(
-                f"no squad snapshot found for club {club_id}",
-                param_hint="raw-dir",
-            )
         players = parse_current_players(
-            snapshots[-1].read_text(encoding="utf-8"),
+            _latest_squad_snapshot(raw_dir, club_id).read_text(encoding="utf-8"),
             club_id=club_id,
             club_name=club_names[club_id],
         )
@@ -396,14 +434,8 @@ def update_current_changes(
     observed_on = date.today().isoformat()
     current: list[PlayerObservation] = []
     for club_id in sorted(links):
-        snapshots = sorted((raw_dir / f"transfermarkt-squad-{club_id}").glob("*.html"))
-        if not snapshots:
-            raise typer.BadParameter(
-                f"no squad snapshot found for club {club_id}",
-                param_hint="raw-dir",
-            )
         for player in parse_current_players(
-            snapshots[-1].read_text(encoding="utf-8"),
+            _latest_squad_snapshot(raw_dir, club_id).read_text(encoding="utf-8"),
             club_id=club_id,
             club_name=club_names[club_id],
         ):
@@ -893,7 +925,11 @@ def refresh_dashboard(
             valuation_snapshot_at=market_snapshot_at,
             latest_match_date=max(finished_dates, default=None),
             source_notes=(
-                f"Official TFF fixture snapshot reconciled with {primary.provider}.",
+                (
+                    "Official TFF fixture snapshot passed structural validation."
+                    if primary.provider == verification.provider
+                    else f"Official TFF fixture snapshot reconciled with {primary.provider}."
+                ),
                 market_source_note,
             ),
         )

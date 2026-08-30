@@ -38,5 +38,5 @@
 - [ ] Implement exact TFF head-to-head mini-table tie-breaking for simulations
   that finish level on points; the engine currently falls through to goal
   difference and goals scored.
-- [ ] Activate the scheduled free-API refresh and Pages deployment workflows
+- [x] Activate the scheduled keyless refresh, dead-man alert, and Pages deployment workflows
   after an exact GitHub repository is authorized.

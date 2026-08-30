@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: forecast-data-update
@@ -53,23 +54,31 @@ jobs:
           tff_outputs="$(uv run superlig fetch-data \
             --source tff \
             --season 2026-27 \
-            --tff-base-url http://www.tff.org \
+            --tff-base-url https://www.tff.org \
             --output data/raw)"
           tff_page="$(printf '%s\n' "$tff_outputs" | grep '/tff-TR1/' | head -n 1)"
           test -f "$tff_page"
-          league_page="automation/seeds/model-2026-27.json"
-          market_snapshot_at="2026-07-23T07:45:09.809421+00:00"
-          market_source_note="Live market refresh unavailable; dated 2026-07-23 valuation snapshot retained."
-          if live_league_page="$(uv run superlig fetch-data \
+          live_league_page=""
+          for market_url in \
+            "https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026" \
+            "https://www.transfermarkt.co.uk/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026" \
+            "https://www.transfermarkt.de/sueper-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026" \
+            "https://www.transfermarkt.com.tr/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026"; do
+            candidate_page="$(uv run superlig fetch-data \
               --source transfermarkt-current \
               --season 2026-27 \
-              --output data/raw | tail -n 1)" \
-            && test -f "$live_league_page" \
-            && uv run superlig fetch-current-squads \
-              --league-page "$live_league_page" \
-              --season 2026 \
-              --output data/raw \
-              --manifest "$RUNNER_TEMP/current-squads-manifest.json"; then
+              --transfermarkt-current-url "$market_url" \
+              --output data/raw | tail -n 1)" || continue
+            if test -f "$candidate_page" && uv run superlig fetch-current-squads \
+                --league-page "$candidate_page" \
+                --season 2026 \
+                --output data/raw \
+                --manifest "$RUNNER_TEMP/current-squads-manifest.json"; then
+              live_league_page="$candidate_page"
+              break
+            fi
+          done
+          if [[ -n "$live_league_page" ]]; then
             league_page="$live_league_page"
             market_snapshot_at="$(date -u +'%Y-%m-%dT%H:%M:%S+00:00')"
             market_source_note="Transfermarkt league, current squads, transfers, and market values refreshed."
@@ -86,7 +95,13 @@ jobs:
               --state automation/state/current-players.json \
               --output dashboard/public/data/current-changes.json
           else
-            echo "Live market refresh unavailable; retaining the dated valuation snapshot."
+            echo "::warning::Direct public squad pages unavailable; trying keyless CC0 structured data."
+            fallback_info="$(uv run superlig fetch-public-squads \
+              --output "$RUNNER_TEMP/public-current-squads.json")"
+            league_page="$RUNNER_TEMP/public-current-squads.json"
+            market_snapshot_at="$(jq -r '.snapshot_at' <<< "$fallback_info")"
+            source_version="$(jq -r '.source_version' <<< "$fallback_info")"
+            market_source_note="Keyless CC0 Transfermarkt-derived player dataset v${source_version}."
           fi
           test -f "$league_page"
           echo "LEAGUE_PAGE=$league_page" >> "$GITHUB_ENV"
@@ -114,18 +129,15 @@ jobs:
         env:
           FOOTBALL_DATA_API_TOKEN: ${{ secrets.FOOTBALL_DATA_API_TOKEN }}
         run: |
-          if ! uv run superlig refresh-dashboard \
-              --season 2026 \
-              --simulations 5000000 \
-              --candidate "$RUNNER_TEMP/dashboard-candidate.json" \
-              --tff-page "$TFF_PAGE" \
-              --squad-page "$LEAGUE_PAGE" \
-              --squad-snapshot-at "$MARKET_SNAPSHOT_AT" \
-              --market-source-note "$MARKET_SOURCE_NOTE" \
-              --output dashboard/public/data/dashboard.json; then
-            echo "Live sources did not pass freshness gates; retaining last validated dashboard."
-            git restore -- dashboard/public/data/dashboard.json
-          fi
+          uv run superlig refresh-dashboard \
+            --season 2026 \
+            --simulations 5000000 \
+            --candidate "$RUNNER_TEMP/dashboard-candidate.json" \
+            --tff-page "$TFF_PAGE" \
+            --squad-page "$LEAGUE_PAGE" \
+            --squad-snapshot-at "$MARKET_SNAPSHOT_AT" \
+            --market-source-note "$MARKET_SOURCE_NOTE" \
+            --output dashboard/public/data/dashboard.json
 
       - name: Run Python quality gates
         run: |
@@ -173,3 +185,40 @@ jobs:
             git pull --rebase origin main
             git push origin HEAD:main
           fi
+
+      - name: Alert on autonomous refresh failure
+        if: failure()
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const title = "[forecast-deadman] Autonomous refresh failed";
+            const runUrl = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`;
+            const body = `The scheduled forecast refresh failed its source, freshness, model, or publication gate.\n\nRun: ${runUrl}\nCommit: \`${context.sha}\`\n\nThe previous dashboard remains online, but this run was not accepted as current.`;
+            const open = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: "open", per_page: 100
+            });
+            const existing = open.find((issue) => !issue.pull_request && issue.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({ owner, repo, issue_number: existing.number, body });
+            } else {
+              await github.rest.issues.create({ owner, repo, title, body });
+            }
+
+      - name: Resolve autonomous refresh alert
+        if: success()
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const title = "[forecast-deadman] Autonomous refresh failed";
+            const open = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: "open", per_page: 100
+            });
+            for (const issue of open.filter((item) => !item.pull_request && item.title === title)) {
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: issue.number,
+                body: `Recovered in ${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}.`
+              });
+              await github.rest.issues.update({ owner, repo, issue_number: issue.number, state: "closed" });
+            }

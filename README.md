@@ -57,8 +57,9 @@ or validated inside the checked-in historical folds.
 Completed official scores are fixed into the starting table. Every other ordered
 home-and-away pairing is sampled. Scheduled updates fetch TFF results and attempt
 a complete Transfermarkt squad refresh, rebuild the current state, and publish
-only after validation succeeds. If a live squad fetch fails, the dated fallback
-is attempted and freshness gates decide whether publication is allowed.
+only after validation succeeds. If direct public squad pages fail, a keyless
+CC0 structured player dataset is attempted. Stale or incomplete input fails the
+run and raises a repository alert; it is never reported as a successful update.
 
 ### Monte Carlo
 
@@ -174,14 +175,14 @@ reruns the five-million-path season forecast, and atomically promotes the
 dashboard JSON only after freshness and reconciliation checks pass.
 
 Market data is live-first. If Transfermarkt returns an incomplete page to a
-GitHub-hosted runner, the match feed still refreshes and the forecast uses the
-dated `current_squads` snapshot embedded in
-`automation/seeds/model-2026-27.json`. The dashboard records that snapshot's
-true timestamp and fallback note; it never relabels old values as newly fetched.
-Transfers and valuation changes are published only after a complete live squad
-fetch.
+GitHub-hosted runner, automation downloads only the current `clubs.csv` and
+`players.csv` files from the anonymous CC0 public dataset endpoint, pins its
+version, reconstructs all 18 squad totals, and preserves the dataset timestamp.
+If that fallback is too old or incomplete, publication fails and the dead-man
+workflow opens or updates a GitHub issue. Transfers and valuation changes are
+published only after a complete direct squad-page fetch.
 
-`.github/workflows/deploy-pages.yml` tests and exports the Next.js dashboard,
+`.github/workflows/deploy-pages.yml` tests and exports the Vite dashboard,
 then deploys the static artifact to GitHub Pages. An optional
 `FOOTBALL_DATA_API_TOKEN` repository secret can enable the configured API path;
 the updater retains its documented free-source fallbacks. TheSportsDB v1 uses
