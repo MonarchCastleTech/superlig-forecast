@@ -3660,7 +3660,7 @@
       "draw_probability": 0.27570786221333393,
       "home_expected_goals": 1.3217280299299914,
       "home_team": "Göztepe",
-      "home_win_probability": 0.3696013436811199,
+      "home_win_probability": 0.36960134368111985,
       "predicted": true
     },
     {
@@ -4515,16 +4515,16 @@
     }
   ],
   "freshness": {
-    "generated_at": "2026-08-30T07:44:27.267607+00:00",
+    "generated_at": "2026-08-30T08:32:04.308617+00:00",
     "latest_match_date": "2026-08-29",
-    "match_snapshot_at": "2026-08-30T07:44:15.582419+00:00",
+    "match_snapshot_at": "2026-08-30T08:32:03.873351+00:00",
     "source_notes": [
       "Official TFF fixture snapshot passed structural validation.",
-      "Transfermarkt league, current squads, transfers, and market values refreshed."
+      "Transfermarkt league and all 18 aggregate squad values refreshed through the keyless public reader."
     ],
     "source_status": "fresh",
-    "squad_snapshot_at": "2026-08-30T06:55:33.149266+00:00",
-    "valuation_snapshot_at": "2026-08-30T06:55:33.149266+00:00"
+    "squad_snapshot_at": "2026-08-30T08:30:10+00:00",
+    "valuation_snapshot_at": "2026-08-30T08:30:10+00:00"
   },
   "meta": {
     "checkpoints": [
@@ -18185,6 +18185,29 @@
     },
     {
       "generated_at": "2026-08-30T07:44:27.267607+00:00",
+      "probabilities": {
+        "Alanyaspor": 0.0000148,
+        "Amed SK": 0.0000182,
+        "Basaksehir FK": 0.0000702,
+        "Besiktas JK": 0.015277,
+        "Caykur Rizespor": 2.2e-6,
+        "Corum FK": 0.000037,
+        "Erzurumspor FK": 0.0000132,
+        "Eyüpspor": 4e-7,
+        "Fenerbahce": 0.3670052,
+        "Galatasaray": 0.609382,
+        "Gaziantep FK": 2e-7,
+        "Genclerbirligi Ankara": 4e-7,
+        "Göztepe": 0.0000888,
+        "Kasimpasa": 2.4e-6,
+        "Kocaelispor": 4e-7,
+        "Konyaspor": 8.2e-6,
+        "Samsunspor": 0.0000764,
+        "Trabzonspor": 0.008003
+      }
+    },
+    {
+      "generated_at": "2026-08-30T08:32:04.308617+00:00",
       "probabilities": {
         "Alanyaspor": 0.0000148,
         "Amed SK": 0.0000182,
