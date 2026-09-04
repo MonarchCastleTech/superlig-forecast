@@ -523,7 +523,7 @@ def test_refresh_dashboard_rejects_stale_dated_market_fallback(
             "--squad-page",
             str(squad_snapshot),
             "--squad-snapshot-at",
-            "2026-07-23T07:45:09.809421+00:00",
+            "2026-01-01T00:00:00+00:00",
             "--market-source-note",
             "Live market refresh unavailable; dated valuation snapshot retained.",
             "--output",

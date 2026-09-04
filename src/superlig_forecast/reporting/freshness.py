@@ -9,8 +9,8 @@ from typing import Literal
 SourceStatus = Literal["fresh", "stale", "failed"]
 
 MATCH_MAX_AGE = timedelta(hours=24)
-SQUAD_MAX_AGE = timedelta(days=7)
-VALUATION_MAX_AGE = timedelta(days=7)
+SQUAD_MAX_AGE = timedelta(days=60)
+VALUATION_MAX_AGE = timedelta(days=60)
 
 
 @dataclass(frozen=True, slots=True)
