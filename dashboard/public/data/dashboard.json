@@ -4515,9 +4515,9 @@
     }
   ],
   "freshness": {
-    "generated_at": "2026-09-07T04:38:00.238163+00:00",
+    "generated_at": "2026-09-07T12:29:06.605547+00:00",
     "latest_match_date": "2026-09-06",
-    "match_snapshot_at": "2026-09-07T04:37:59.869559+00:00",
+    "match_snapshot_at": "2026-09-07T12:29:06.355442+00:00",
     "source_notes": [
       "Official TFF fixture snapshot passed structural validation.",
       "Keyless CC0 Transfermarkt-derived player dataset v679."
@@ -18492,6 +18492,29 @@
     },
     {
       "generated_at": "2026-09-07T04:38:00.238163+00:00",
+      "probabilities": {
+        "Alanyaspor": 0.0000402,
+        "Antalyaspor": 4e-7,
+        "Basaksehir FK": 0.000131,
+        "Beşiktaş Jimnastik Kulübü": 0.0196166,
+        "Caykur Rizespor": 0.0000146,
+        "Eyüpspor": 2.8e-6,
+        "Fatih Karagümrük": 3e-6,
+        "Fenerbahce": 0.374186,
+        "Galatasaray": 0.593658,
+        "Gaziantep FK": 2e-6,
+        "Gençlerbirliği Spor Kulübü": 1.8e-6,
+        "Göztepe": 0.0003674,
+        "Kasimpasa": 0.0000128,
+        "Kayserispor": 2e-7,
+        "Kocaelispor": 1e-6,
+        "Konyaspor": 0.0000286,
+        "Samsunspor": 0.0000786,
+        "Trabzonspor": 0.011855
+      }
+    },
+    {
+      "generated_at": "2026-09-07T12:29:06.605547+00:00",
       "probabilities": {
         "Alanyaspor": 0.0000402,
         "Antalyaspor": 4e-7,
