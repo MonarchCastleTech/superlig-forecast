@@ -39,8 +39,8 @@ class RefreshSources:
     primary_matches: ProviderBatch
     verification_matches: ProviderBatch
     match_snapshot_at: datetime
-    squad_snapshot_at: datetime
-    valuation_snapshot_at: datetime
+    squad_snapshot_at: datetime | None
+    valuation_snapshot_at: datetime | None
     latest_match_date: str | None
     source_notes: tuple[str, ...] = ()
 
@@ -99,10 +99,24 @@ def _validate_candidate(payload: object) -> None:
     team_count = meta.get("team_count")
     if (
         not isinstance(alignment, dict)
-        or not isinstance(team_count, int)
         or team_count != 18
-        or alignment.get("official_team_count") != team_count
-        or alignment.get("market_team_count") != team_count
+        or alignment.get("official_team_count") != 18
+    ):
+        raise RefreshBlocked("official TFF team list is incomplete")
+    if meta.get("model_input_mode") == "official-results-only":
+        if (
+            alignment.get("market_team_count") != 0
+            or alignment.get("matched_team_count") != 0
+            or len(alignment.get("official_only", [])) != 18
+            or alignment.get("market_only")
+            or meta.get("value_coefficient") != 0.0
+            or any(
+                row.get("squad_value_eur") is not None for row in payload.get("championship", [])
+            )
+        ):
+            raise RefreshBlocked("official-only forecast contains market inputs")
+    elif (
+        alignment.get("market_team_count") != team_count
         or alignment.get("matched_team_count") != team_count
         or alignment.get("official_only")
         or alignment.get("market_only")
@@ -115,7 +129,10 @@ def _validate_candidate(payload: object) -> None:
     except (ValueError, KeyError, TypeError) as error:
         raise RefreshBlocked("candidate season or publication date is invalid") from error
     if published_at.date() >= datetime(season_start_year, 9, 1, tzinfo=UTC).date():
-        if not isinstance(meta.get("completed_fixture_count"), int) or meta["completed_fixture_count"] <= 0:
+        if (
+            not isinstance(meta.get("completed_fixture_count"), int)
+            or meta["completed_fixture_count"] <= 0
+        ):
             raise RefreshBlocked("no completed fixtures recorded after the season began")
         if not freshness.get("latest_match_date"):
             raise RefreshBlocked("latest completed match date is missing")

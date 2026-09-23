@@ -47,91 +47,17 @@ jobs:
       - name: Install Python environment
         run: uv sync --locked
 
-      - name: Fetch league, matches, squads, transfers, and market values
+      - name: Fetch all official TFF match weeks
         shell: bash
         run: |
           set -euo pipefail
-          tff_outputs="$(uv run superlig fetch-data \
-            --source tff \
+          tff_page="$(uv run superlig fetch-data \
+            --source tff-season \
             --season 2026-27 \
             --tff-base-url https://www.tff.org \
             --output data/raw)"
-          tff_page="$(printf '%s\n' "$tff_outputs" | grep '/tff-TR1/' | head -n 1)"
           test -f "$tff_page"
-          live_league_page=""
-          market_mode=""
-          for market_url in \
-            "https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026" \
-            "https://www.transfermarkt.co.uk/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026" \
-            "https://www.transfermarkt.de/sueper-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026" \
-            "https://www.transfermarkt.com.tr/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026"; do
-            candidate_page="$(uv run superlig fetch-data \
-              --source transfermarkt-current \
-              --season 2026-27 \
-              --transfermarkt-current-url "$market_url" \
-              --output data/raw | tail -n 1)" || continue
-            if test -f "$candidate_page" && uv run superlig fetch-current-squads \
-                --league-page "$candidate_page" \
-                --season 2026 \
-                --output data/raw \
-                --manifest "$RUNNER_TEMP/current-squads-manifest.json"; then
-              live_league_page="$candidate_page"
-              market_mode="direct"
-              break
-            fi
-          done
-          if [[ -z "$live_league_page" ]]; then
-            echo "::warning::Direct squad pages unavailable; trying keyless public reader."
-            reader_page="$(uv run superlig fetch-data \
-              --source transfermarkt-current \
-              --season 2026-27 \
-              --transfermarkt-current-url "https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1/plus/?saison_id=2026" \
-              --public-reader \
-              --output data/raw | tail -n 1)"
-            if test -f "$reader_page" && uv run superlig validate-current-league \
-                --league-page "$reader_page" \
-                --season 2026 \
-                --expected-clubs 18; then
-              live_league_page="$reader_page"
-              market_mode="reader"
-            fi
-          fi
-          if [[ -n "$live_league_page" ]]; then
-            league_page="$live_league_page"
-            market_snapshot_at="$(date -u +'%Y-%m-%dT%H:%M:%S+00:00')"
-            if [[ "$market_mode" == "reader" ]]; then
-              market_source_note="Transfermarkt league and all 18 aggregate squad values refreshed through the keyless public reader."
-            else
-              market_source_note="Transfermarkt league, current squads, transfers, and market values refreshed."
-            fi
-            if [[ "$market_mode" == "direct" ]]; then
-              uv run superlig build-current-players \
-                --league-page "$league_page" \
-                --season 2026 \
-                --raw-dir data/raw \
-                --warehouse "$RUNNER_TEMP/current-players.duckdb" \
-                --output "$RUNNER_TEMP/current-players.parquet"
-              uv run superlig update-current-changes \
-                --league-page "$league_page" \
-                --season 2026 \
-                --raw-dir data/raw \
-                --state automation/state/current-players.json \
-                --output dashboard/public/data/current-changes.json
-            fi
-          else
-            echo "::warning::Live squad sources unavailable; trying keyless CC0 structured data."
-            fallback_info="$(uv run superlig fetch-public-squads \
-              --output "$RUNNER_TEMP/public-current-squads.json")"
-            league_page="$RUNNER_TEMP/public-current-squads.json"
-            market_snapshot_at="$(jq -r '.snapshot_at' <<< "$fallback_info")"
-            source_version="$(jq -r '.source_version' <<< "$fallback_info")"
-            market_source_note="Keyless CC0 Transfermarkt-derived player dataset v${source_version}."
-          fi
-          test -f "$league_page"
-          echo "LEAGUE_PAGE=$league_page" >> "$GITHUB_ENV"
           echo "TFF_PAGE=$tff_page" >> "$GITHUB_ENV"
-          echo "MARKET_SNAPSHOT_AT=$market_snapshot_at" >> "$GITHUB_ENV"
-          echo "MARKET_SOURCE_NOTE=$market_source_note" >> "$GITHUB_ENV"
 
       - name: Rebuild five-million-play forecast
         run: |
@@ -140,8 +66,8 @@ jobs:
             --simulations 5000000 \
             --seed 202627 \
             --model-artifact automation/seeds/model-2026-27.json \
-            --squad-page "$LEAGUE_PAGE" \
             --tff-page "$TFF_PAGE" \
+            --value-coefficient 0 \
             --output "$RUNNER_TEMP/forecast"
           uv run superlig export-dashboard-data \
             --forecast "$RUNNER_TEMP/forecast" \
@@ -158,9 +84,6 @@ jobs:
             --simulations 5000000 \
             --candidate "$RUNNER_TEMP/dashboard-candidate.json" \
             --tff-page "$TFF_PAGE" \
-            --squad-page "$LEAGUE_PAGE" \
-            --squad-snapshot-at "$MARKET_SNAPSHOT_AT" \
-            --market-source-note "$MARKET_SOURCE_NOTE" \
             --output dashboard/public/data/dashboard.json
 
       - name: Run Python quality gates

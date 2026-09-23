@@ -3,6 +3,7 @@
 from dataclasses import asdict
 from datetime import UTC, date, datetime
 from pathlib import Path
+import re
 from typing import cast
 
 import orjson
@@ -15,7 +16,7 @@ from superlig_forecast.backtest.walk_forward import (
     run_walk_forward,
 )
 from superlig_forecast.backtest.positions import run_position_backtest
-from superlig_forecast.data.fetch import FetchRequest, Fetcher
+from superlig_forecast.data.fetch import FetchRequest, FetchResult, Fetcher
 from superlig_forecast.data.football_data_org import fetch_football_data_matches
 from superlig_forecast.data.current_changes import (
     PlayerObservation,
@@ -291,6 +292,57 @@ def fetch_data(
         )
         typer.echo(str(SnapshotStore(output).put(result).payload_path.resolve()))
         return
+    if source == "tff-season":
+        if dry_run:
+            typer.echo(f"{tff_base_url.rstrip('/')}/default.aspx?pageID=198&hafta=1..34")
+            return
+        store = SnapshotStore(output)
+        fetcher = Fetcher()
+        pages: list[bytes] = []
+        for week in range(1, 35):
+            url = f"{tff_base_url.rstrip('/')}/default.aspx?pageID=198&hafta={week}"
+            result = fetcher.fetch(
+                FetchRequest(source=f"tff-TR1-week-{week:02d}", url=url, extension=".html")
+            )
+            store.put(result)
+            page = decode_tff(result.content)
+            listed_rows = len(
+                re.findall(r'<tr[^>]*class=["\']haftaninMaclariTr["\']', page, re.IGNORECASE)
+            )
+            if listed_rows != 9:
+                raise ValueError(
+                    f"official TFF week {week} lists {listed_rows} fixtures; expected 9"
+                )
+            matches = TffAdapter().parse_matches(
+                page,
+                observed_at=result.fetched_at,
+                competition_id="TR1",
+                season=season,
+            )
+            pages.append(page.encode("utf-8"))
+        combined = b"\n".join(pages)
+        all_matches = TffAdapter().parse_matches(
+            combined.decode("utf-8"),
+            observed_at=datetime.now(UTC),
+            competition_id="TR1",
+            season=season,
+        )
+        official_clubs = {
+            name for match in all_matches for name in (match.home_club_name, match.away_club_name)
+        }
+        if len(official_clubs) != 18 or not any(match.is_finished for match in all_matches):
+            raise ValueError("official TFF season lacks 18 clubs or completed results")
+        aggregate = FetchResult(
+            source="tff-TR1-season",
+            url=f"{tff_base_url.rstrip('/')}/default.aspx?pageID=198&hafta=1..34",
+            fetched_at=datetime.now(UTC),
+            status_code=200,
+            content_type="text/html; charset=utf-8",
+            content=combined,
+            extension=".html",
+        )
+        typer.echo(str(store.put(aggregate).payload_path.resolve()))
+        return
     if source == "tff":
         if dry_run:
             for competition_id in TFF_PAGES:
@@ -312,7 +364,7 @@ def fetch_data(
                 typer.echo(str(store.put(result).payload_path.resolve()))
         return
     raise typer.BadParameter(
-        "source must be tff, transfermarkt, transfermarkt-current, odds, or historical-results",
+        "source must be tff, tff-season, transfermarkt, transfermarkt-current, odds, or historical-results",
         param_hint="source",
     )
 
@@ -751,12 +803,29 @@ def forecast_season(
         )
         typer.echo(str(manifest_path.resolve()))
         return
-    if squad_page is None:
-        raise typer.BadParameter(
-            "--squad-page is required for a real forecast",
-            param_hint="squad-page",
+    official_only = squad_page is None
+    if official_only and tff_page is None:
+        raise typer.BadParameter("--tff-page is required without --squad-page")
+    if official_only:
+        official_matches = TffAdapter().parse_matches(
+            decode_tff(tff_page.read_bytes()),
+            observed_at=datetime.now(UTC),
+            competition_id="TR1",
+            season=f"{season}-{(season + 1) % 100:02d}",
         )
-    squads = _load_current_squad_values(squad_page)
+        official_clubs = sorted(
+            {
+                name
+                for match in official_matches
+                for name in (match.home_club_name, match.away_club_name)
+            }
+        )
+        if len(official_clubs) != 18:
+            raise ValueError(f"official TFF source has {len(official_clubs)} clubs; expected 18")
+        squads = [CurrentSquadValue(index, name, 0, 0) for index, name in enumerate(official_clubs)]
+        value_coefficient = 0.0
+    else:
+        squads = _load_current_squad_values(squad_page)
     tff_batch = (
         TffAdapter().structured_matches(
             tff_page.read_bytes(),
@@ -824,7 +893,7 @@ def forecast_season(
     probabilities = [
         {
             "club": club,
-            "squad_value_eur": prepared.squad_values[club],
+            "squad_value_eur": None if official_only else prepared.squad_values[club],
             "champion_count": count,
             "champion_probability": count / simulations,
             "ci95_half_width": SeasonSimulator.half_width(count, simulations),
@@ -855,7 +924,9 @@ def forecast_season(
             for match in tff_matches
             for name in (match.home_club_name, match.away_club_name)
         }
-        market = {canonical_team_name(item.club_name) for item in squads}
+        market = (
+            set() if official_only else {canonical_team_name(item.club_name) for item in squads}
+        )
         alignment = {
             "official_team_count": len(official),
             "market_team_count": len(market),
@@ -885,6 +956,9 @@ def forecast_season(
                 "convergence_csv": str(convergence_csv.resolve()),
                 "convergence_chart": str(convergence_chart.resolve()),
                 "model_version": __version__,
+                "model_input_mode": "official-results-only"
+                if official_only
+                else "official-plus-market",
                 "demo": False,
             },
             option=orjson.OPT_INDENT_2,
@@ -919,15 +993,10 @@ def refresh_dashboard(
 ) -> None:
     """Validate and atomically promote a refreshed dashboard payload."""
 
-    provided = (candidate, tff_page, squad_page)
-    if any(item is not None for item in provided) and not all(
-        item is not None for item in provided
-    ):
-        raise typer.BadParameter(
-            "--candidate, --tff-page, and --squad-page must be supplied together"
-        )
+    if (candidate is None) != (tff_page is None):
+        raise typer.BadParameter("--candidate and --tff-page must be supplied together")
     sources = None
-    if candidate is not None and tff_page is not None and squad_page is not None:
+    if candidate is not None and tff_page is not None:
         now = datetime.now(UTC)
         season_label = f"{season}-{(season + 1) % 100:02d}"
         verification = TffAdapter().structured_matches(
@@ -963,9 +1032,17 @@ def refresh_dashboard(
         finished_dates = [
             match.played_on for match in verification.matches if match.status == "finished"
         ]
-        market_snapshot_at = _snapshot_datetime(squad_snapshot_at, squad_page)
+        market_snapshot_at = (
+            _snapshot_datetime(squad_snapshot_at, squad_page) if squad_page else None
+        )
+        candidate_payload = orjson.loads(candidate.read_bytes())
+        official_only = (
+            candidate_payload.get("meta", {}).get("model_input_mode") == "official-results-only"
+        )
+        if official_only != (squad_page is None):
+            raise typer.BadParameter("candidate input mode and --squad-page disagree")
         sources = RefreshSources(
-            candidate_payload=orjson.loads(candidate.read_bytes()),
+            candidate_payload=candidate_payload,
             primary_matches=primary,
             verification_matches=verification,
             match_snapshot_at=now,
@@ -978,7 +1055,9 @@ def refresh_dashboard(
                     if primary.provider == verification.provider
                     else f"Official TFF fixture snapshot reconciled with {primary.provider}."
                 ),
-                market_source_note,
+                "Market values were not used; all 18 clubs came from TFF."
+                if official_only
+                else market_source_note,
             ),
         )
     try:

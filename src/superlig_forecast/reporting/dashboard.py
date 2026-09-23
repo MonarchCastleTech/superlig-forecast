@@ -230,6 +230,7 @@ def build_dashboard_payload(
             "completed_fixture_count": int(manifest.get("completed_fixture_count", 0)),
             "checkpoints": [int(value) for value in manifest["checkpoints"]],
             "value_coefficient": float(manifest["value_coefficient"]),
+            "model_input_mode": manifest.get("model_input_mode", "official-plus-market"),
             "source_alignment": manifest.get("team_source_alignment"),
         },
         "freshness": freshness.as_payload(),

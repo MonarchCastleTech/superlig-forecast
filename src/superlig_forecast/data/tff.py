@@ -91,7 +91,10 @@ class TffAdapter:
             date_text = self._cell_text(row, "haftaninMaclariTarih")
             date_match = re.search(r"(\d{2}\.\d{2}\.\d{4})\s*(\d{2}:\d{2})", date_text)
             if date_match is None:
-                raise ValueError(f"missing kickoff for {match_id}")
+                # TFF lists future pairings before assigning a kickoff date.
+                # They remain in the raw source, while the typed match feed
+                # contains only fixtures with a real date and time.
+                continue
             kickoff = datetime.strptime(
                 f"{date_match.group(1)} {date_match.group(2)}", "%d.%m.%Y %H:%M"
             ).replace(tzinfo=ISTANBUL)

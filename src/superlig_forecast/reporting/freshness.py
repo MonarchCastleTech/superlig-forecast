@@ -17,8 +17,8 @@ VALUATION_MAX_AGE = timedelta(days=60)
 class FreshnessReport:
     generated_at: str
     match_snapshot_at: str
-    squad_snapshot_at: str
-    valuation_snapshot_at: str
+    squad_snapshot_at: str | None
+    valuation_snapshot_at: str | None
     latest_match_date: str | None
     source_status: SourceStatus
     source_notes: tuple[str, ...]
@@ -33,17 +33,17 @@ def assess_freshness(
     *,
     now: datetime,
     match_snapshot_at: datetime,
-    squad_snapshot_at: datetime,
-    valuation_snapshot_at: datetime,
+    squad_snapshot_at: datetime | None,
+    valuation_snapshot_at: datetime | None,
     latest_match_date: str | None,
     notes: tuple[str, ...] = (),
     failed: bool = False,
 ) -> FreshnessReport:
-    ages = {
-        "matches": (now - match_snapshot_at, MATCH_MAX_AGE),
-        "squads": (now - squad_snapshot_at, SQUAD_MAX_AGE),
-        "valuations": (now - valuation_snapshot_at, VALUATION_MAX_AGE),
-    }
+    ages = {"matches": (now - match_snapshot_at, MATCH_MAX_AGE)}
+    if squad_snapshot_at is not None:
+        ages["squads"] = (now - squad_snapshot_at, SQUAD_MAX_AGE)
+    if valuation_snapshot_at is not None:
+        ages["valuations"] = (now - valuation_snapshot_at, VALUATION_MAX_AGE)
     stale = [
         f"{name} snapshot is older than {maximum}"
         for name, (age, maximum) in ages.items()
@@ -53,8 +53,8 @@ def assess_freshness(
     return FreshnessReport(
         generated_at=now.isoformat(),
         match_snapshot_at=match_snapshot_at.isoformat(),
-        squad_snapshot_at=squad_snapshot_at.isoformat(),
-        valuation_snapshot_at=valuation_snapshot_at.isoformat(),
+        squad_snapshot_at=squad_snapshot_at.isoformat() if squad_snapshot_at else None,
+        valuation_snapshot_at=valuation_snapshot_at.isoformat() if valuation_snapshot_at else None,
         latest_match_date=latest_match_date,
         source_status=status,
         source_notes=notes + tuple(stale),

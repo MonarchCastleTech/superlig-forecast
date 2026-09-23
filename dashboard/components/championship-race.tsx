@@ -73,7 +73,7 @@ export function ChampionshipRace({
             <span className="rank-number">{String(index + 1).padStart(2, "0")}</span>
             <span className="club-block">
               <strong>{team.club}</strong>
-              <small>{formatCurrency(team.squad_value_eur)} squad</small>
+              <small>{team.squad_value_eur === null ? "TFF results model" : `${formatCurrency(team.squad_value_eur)} squad`}</small>
               <i
                 style={{
                   width: `${Math.max(team.champion_probability * 100, 0.12)}%`,

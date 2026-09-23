@@ -77,6 +77,7 @@ export type DashboardPayload = {
     withdrawal_reason?: string;
     checkpoints: number[];
     value_coefficient: number;
+    model_input_mode?: "official-results-only" | "official-plus-market";
     source_alignment: {
       official_team_count: number;
       market_team_count: number;
@@ -88,8 +89,8 @@ export type DashboardPayload = {
   freshness: {
     generated_at: string;
     match_snapshot_at: string;
-    squad_snapshot_at: string;
-    valuation_snapshot_at: string;
+    squad_snapshot_at: string | null;
+    valuation_snapshot_at: string | null;
     latest_match_date: string | null;
     source_status: "fresh" | "stale" | "failed";
     source_notes: string[];
@@ -182,8 +183,8 @@ export function validateDashboardPayload(value: unknown): DashboardPayload {
     !isRecord(value.freshness) ||
     typeof value.freshness.generated_at !== "string" ||
     typeof value.freshness.match_snapshot_at !== "string" ||
-    typeof value.freshness.squad_snapshot_at !== "string" ||
-    typeof value.freshness.valuation_snapshot_at !== "string" ||
+    (value.freshness.squad_snapshot_at !== null && typeof value.freshness.squad_snapshot_at !== "string") ||
+    (value.freshness.valuation_snapshot_at !== null && typeof value.freshness.valuation_snapshot_at !== "string") ||
     (value.freshness.latest_match_date !== null &&
       typeof value.freshness.latest_match_date !== "string") ||
     !["fresh", "stale", "failed"].includes(

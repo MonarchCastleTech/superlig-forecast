@@ -7,7 +7,7 @@ A transparent forecast of the 2026–27 Turkish Süper Lig from
 
 > This is a forecast-quality research project, not a betting website or betting
 > advice. Probabilities are estimates, not guarantees. They can be wrong and
-> will change as new matches, transfers, and market values become available.
+> will change as new official match results become available.
 
 ## What the dashboard publishes
 
@@ -26,9 +26,9 @@ six hours.
 
 **Full methodology:** <https://monarchcastletech.github.io/superlig-forecast/methodology/>
 
-**Current publication hold (23 September 2026):** The last candidate recorded zero completed fixtures even though official results exist, and only 15 of 18 official clubs matched the squad-value source. The displayed probabilities are withheld. A refreshed candidate must reconcile all 18 clubs and, after 1 September, contain completed official results and a latest match date before publication resumes. The historic model and backtest remain available for methodological review; they do not validate the withdrawn current-season snapshot.
+**Publication recovery (24 September 2026):** The earlier candidate missed completed fixtures and used a squad-value source that included three clubs from the previous season. The scheduled pipeline now fetches all 34 official TFF fixture weeks and derives the 18 current clubs from TFF. It uses the historically evaluated structural match model with the unvalidated squad-value adjustment disabled. It publishes only when the official source includes all clubs, completed results and a latest match date. If the source fails, the existing withdrawal notice remains.
 
-The public `dashboard/public/data/dashboard.json` contains only withdrawal metadata and source-alignment diagnostics while this hold is active. Current-season championship, fixture and standings probabilities were removed from the public download. The previous full payload is retained solely as `dashboard/tests/fixtures/withdrawn-dashboard.json` for renderer checks; its numerical outputs are **not publishable current forecasts**. The scheduled refresh replaces the public file with a full payload only after the publication gate passes.
+The withdrawn pre-recovery payload is retained solely as `dashboard/tests/fixtures/withdrawn-dashboard.json` for renderer checks; its numerical outputs are **not publishable current forecasts**. The scheduled refresh replaces the public withdrawal file only after the publication gate passes.
 
 ## Methodology
 
@@ -41,11 +41,11 @@ score.
 
 ### Data and temporal integrity
 
-The live forecast consumes completed TFF scores and aggregate Transfermarkt
-squad values. Published JSON and detected player-state changes are versioned;
-raw live pages are held in a bounded Actions cache, not an immutable public
-archive. Historical evaluation is temporal: each test season is fitted using
-only earlier match results.
+The live forecast consumes all 34 official TFF fixture weeks, fixes completed
+scores into the current table and identifies the 18 clubs from the same official
+source. Raw pages are content-addressed during each run. Historical evaluation
+is temporal: each test season is fitted using only earlier match results. No
+current squad value is imputed, and the public data marks squad values null.
 
 ### Structural and market information
 
@@ -53,18 +53,16 @@ A recency-weighted scoring-ratio model estimates separate home/away attack and
 defence factors with shrinkage toward league means. A fixed Dixon–Coles
 correction modifies the four low-score cells. Historical odds are used only in
 backtest comparison baselines, not in the live title forecast. Current aggregate
-squad value applies a fixed 0.10 log-ratio adjustment that has not been selected
-or validated inside the checked-in historical folds.
+squad value adjustment is disabled in the current official-results-only mode;
+the earlier 0.10 adjustment was not validated inside the checked-in folds.
 
 ### Current-season state
 
 Completed official scores are fixed into the starting table. Every other ordered
-home-and-away pairing is sampled. Scheduled updates fetch TFF results and attempt
-a complete Transfermarkt squad refresh, rebuild the current state, and publish
-only after validation succeeds. If direct public squad pages fail, the workflow
-tries the free keyless [Jina Reader](https://github.com/jina-ai/reader) HTML route,
-then a keyless CC0 structured player dataset. Stale or incomplete input fails
-the run and raises a repository alert; it is never reported as successful.
+home-and-away pairing is sampled. Scheduled updates fetch each TFF week, rebuild
+the current state, and publish only after validation succeeds. Fixtures without
+an assigned kickoff remain in the raw official pages but do not enter the dated
+match feed. Stale or incomplete input blocks publication.
 
 ### Monte Carlo
 
@@ -73,7 +71,7 @@ outcome/score distribution. Each path applies points, goal difference, and goals
 scored to create one possible table. Checkpoints reveal how the title
 probabilities stabilize as the number of paths grows. The recorded seed makes
 the simulation repeatable only with the same code, dependencies, model artifact,
-and exact raw TFF and Transfermarkt pages.
+and exact raw TFF pages.
 
 ### Backtesting
 
