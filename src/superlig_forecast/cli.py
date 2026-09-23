@@ -313,7 +313,7 @@ def fetch_data(
                 raise ValueError(
                     f"official TFF week {week} lists {listed_rows} fixtures; expected 9"
                 )
-            matches = TffAdapter().parse_matches(
+            TffAdapter().parse_matches(
                 page,
                 observed_at=result.fetched_at,
                 competition_id="TR1",
