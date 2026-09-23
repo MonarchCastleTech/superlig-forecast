@@ -3,14 +3,34 @@ import { formatForecastUpdate, formatInteger, type DashboardPayload, validateDas
 
 export function MethodologyLoader() {
   const [data, setData] = useState<DashboardPayload | null>(null);
+  const [withheld, setWithheld] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/dashboard.json`)
       .then((response) => {
         if (!response.ok) throw new Error(`Data request failed: ${response.status}`);
         return response.json() as Promise<unknown>;
       })
-      .then((payload) => setData(validateDashboardPayload(payload)));
+      .then((payload) => {
+        const candidate = payload as { meta?: { publication_status?: string; withdrawal_reason?: string } };
+        if (candidate?.meta?.publication_status === "WITHHELD") {
+          setWithheld(candidate.meta.withdrawal_reason || "The current forecast has not passed its publication gate.");
+          return;
+        }
+        setData(validateDashboardPayload(payload));
+      })
+      .catch((reason: unknown) => setError(reason instanceof Error ? reason.message : "Methodology data failed to load"));
   }, []);
+  if (error) return <main className="methodology-page" role="alert"><h1>Methodology unavailable</h1><p>{error}</p></main>;
+  if (withheld) return <main className="methodology-page">
+    <header className="methodology-masthead"><a href={import.meta.env.BASE_URL}>← Forecast</a><span>MONARCH CASTLE TECHNOLOGIES · METHODOLOGY</span></header>
+    <section className="methodology-hero"><p className="eyebrow">Publication gate</p><h1>Current forecast withheld</h1><p>{withheld}</p></section>
+    <article className="methodology-paper">
+      <section><span>01</span><div><h2>Model method</h2><p>The research model estimates fixture scores from historical home and away strength, applies a conservative squad-value adjustment, and simulates complete seasons. Five million paths reduce simulation noise; they do not repair missing official match results or unmatched current teams.</p></div></section>
+      <section><span>02</span><div><h2>Publication requirements</h2><p>A current-season forecast requires all 18 official clubs to match the squad source, at least one completed official fixture after the season starts, a latest match date, and fresh source snapshots. Invalid candidates are rejected before replacing the public file.</p></div></section>
+      <section><span>03</span><div><h2>Research record</h2><p>Historical backtests and the withdrawn candidate remain available in the source repository for method review. They are not current title probabilities.</p><a href="https://github.com/MonarchCastleTech/superlig-forecast/blob/main/README.md" target="_blank" rel="noreferrer">Read the full method ↗</a></div></section>
+    </article>
+  </main>;
   if (!data) return <main className="methodology-page"><p>Loading methodology…</p></main>;
   return <MethodologyPage data={data} />;
 }

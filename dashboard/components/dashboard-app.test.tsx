@@ -13,7 +13,7 @@ test("shows MCT branding in the masthead and footer", () => {
   const payload = validateDashboardPayload(
     JSON.parse(
       readFileSync(
-        join(process.cwd(), "public", "data", "dashboard.json"),
+        join(process.cwd(), "tests", "fixtures", "withdrawn-dashboard.json"),
         "utf8",
       ),
     ),
@@ -34,7 +34,7 @@ test("presents one published forecast without simulator controls", () => {
   const payload = validateDashboardPayload(
     JSON.parse(
       readFileSync(
-        join(process.cwd(), "public", "data", "dashboard.json"),
+        join(process.cwd(), "tests", "fixtures", "withdrawn-dashboard.json"),
         "utf8",
       ),
     ),
@@ -56,7 +56,7 @@ test("exposes the title forecast and possible table accessibly", () => {
   const payload = validateDashboardPayload(
     JSON.parse(
       readFileSync(
-        join(process.cwd(), "public", "data", "dashboard.json"),
+        join(process.cwd(), "tests", "fixtures", "withdrawn-dashboard.json"),
         "utf8",
       ),
     ),
@@ -78,7 +78,7 @@ test("publishes an academic methodology and explains validation metrics", () => 
   const payload = validateDashboardPayload(
     JSON.parse(
       readFileSync(
-        join(process.cwd(), "public", "data", "dashboard.json"),
+        join(process.cwd(), "tests", "fixtures", "withdrawn-dashboard.json"),
         "utf8",
       ),
     ),
@@ -104,7 +104,7 @@ test("methodology explains the live calculation and autonomous safety gates", ()
   const payload = validateDashboardPayload(
     JSON.parse(
       readFileSync(
-        join(process.cwd(), "public", "data", "dashboard.json"),
+        join(process.cwd(), "tests", "fixtures", "withdrawn-dashboard.json"),
         "utf8",
       ),
     ),

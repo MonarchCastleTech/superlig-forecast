@@ -28,6 +28,8 @@ six hours.
 
 **Current publication hold (23 September 2026):** The last candidate recorded zero completed fixtures even though official results exist, and only 15 of 18 official clubs matched the squad-value source. The displayed probabilities are withheld. A refreshed candidate must reconcile all 18 clubs and, after 1 September, contain completed official results and a latest match date before publication resumes. The historic model and backtest remain available for methodological review; they do not validate the withdrawn current-season snapshot.
 
+The public `dashboard/public/data/dashboard.json` contains only withdrawal metadata and source-alignment diagnostics while this hold is active. Current-season championship, fixture and standings probabilities were removed from the public download. The previous full payload is retained solely as `dashboard/tests/fixtures/withdrawn-dashboard.json` for renderer checks; its numerical outputs are **not publishable current forecasts**. The scheduled refresh replaces the public file with a full payload only after the publication gate passes.
+
 ## Methodology
 
 ### Forecast target
