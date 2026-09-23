@@ -807,6 +807,7 @@ def forecast_season(
     if official_only and tff_page is None:
         raise typer.BadParameter("--tff-page is required without --squad-page")
     if official_only:
+        assert tff_page is not None
         official_matches = TffAdapter().parse_matches(
             decode_tff(tff_page.read_bytes()),
             observed_at=datetime.now(UTC),
@@ -825,6 +826,7 @@ def forecast_season(
         squads = [CurrentSquadValue(index, name, 0, 0) for index, name in enumerate(official_clubs)]
         value_coefficient = 0.0
     else:
+        assert squad_page is not None
         squads = _load_current_squad_values(squad_page)
     tff_batch = (
         TffAdapter().structured_matches(
