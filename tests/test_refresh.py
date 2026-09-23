@@ -36,7 +36,22 @@ def sources(score: tuple[int, int] = (2, 1)) -> RefreshSources:
     )
     observed = datetime(2026, 8, 14, 22, tzinfo=UTC)
     return RefreshSources(
-        candidate_payload={"schema_version": 1, "value": "same"},
+        candidate_payload={
+            "schema_version": 1,
+            "value": "same",
+            "meta": {
+                "season": "2026-27",
+                "team_count": 18,
+                "value_coefficient": 0.1,
+                "source_alignment": {
+                    "official_team_count": 18,
+                    "market_team_count": 18,
+                    "matched_team_count": 18,
+                    "official_only": [],
+                    "market_only": [],
+                },
+            },
+        },
         primary_matches=ProviderBatch("api", "TSL", "2026-27", observed.isoformat(), (primary,)),
         verification_matches=ProviderBatch(
             "tff", "TSL", "2026-27", observed.isoformat(), (official,)

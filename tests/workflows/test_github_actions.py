@@ -8,29 +8,10 @@ def test_update_workflow_has_strict_quality_gates() -> None:
     assert "contents: write" in text
     assert "issues: write" in text
     assert "fetch-data" in text
-    assert "--source transfermarkt-current" in text
-    assert "--transfermarkt-current-url" in text
-    assert "--public-reader" in text
-    assert "validate-current-league" in text
-    assert "r.jina.ai" not in text
-    assert "keyless public reader" in text
-    assert "transfermarkt.co.uk" in text
-    assert "transfermarkt.de" in text
-    assert "transfermarkt.com.tr" in text
-    assert "--source tff" in text
+    assert "--source tff-season" in text
     assert "--tff-base-url https://www.tff.org" in text
-    assert "fetch-current-squads" in text
-    assert "fetch-public-squads" in text
-    assert "Keyless CC0" in text
-    assert "MARKET_SNAPSHOT_AT" in text
-    assert "MARKET_SOURCE_NOTE" in text
-    assert "dated valuation snapshot retained" not in text
-    assert "--squad-snapshot-at" in text
-    assert "--market-source-note" in text
-    assert "build-current-players" in text
-    assert "update-current-changes" in text
-    assert "automation/state/current-players.json" in text
-    assert "dashboard/public/data/current-changes.json" in text
+    assert "--value-coefficient 0" in text
+    assert "--squad-page" not in text
     assert "forecast-season" in text
     assert "--model-artifact automation/seeds/model-2026-27.json" in text
     assert "export-dashboard-data" in text

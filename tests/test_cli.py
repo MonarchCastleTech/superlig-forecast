@@ -425,9 +425,10 @@ def test_update_current_changes_writes_player_state_and_change_feed(tmp_path: Pa
     assert json.loads(changes.read_text(encoding="utf-8"))["observation_count"] == 1
 
 
-def test_refresh_dashboard_promotes_valid_local_payload(tmp_path: Path) -> None:
+def test_refresh_dashboard_rejects_unverified_local_payload(tmp_path: Path) -> None:
     output = tmp_path / "dashboard.json"
-    output.write_text('{"schema_version":1,"value":"stable"}', encoding="utf-8")
+    original = '{"schema_version":1,"value":"stable"}'
+    output.write_text(original, encoding="utf-8")
     result = CliRunner().invoke(
         app,
         [
@@ -440,8 +441,8 @@ def test_refresh_dashboard_promotes_valid_local_payload(tmp_path: Path) -> None:
             str(output),
         ],
     )
-    assert result.exit_code == 0
-    assert "freshness" in json.loads(output.read_text(encoding="utf-8"))
+    assert result.exit_code == 1
+    assert output.read_text(encoding="utf-8") == original
 
 
 def test_refresh_dashboard_uses_explicit_live_source_bundle(
@@ -450,7 +451,25 @@ def test_refresh_dashboard_uses_explicit_live_source_bundle(
 ) -> None:
     candidate = tmp_path / "candidate.json"
     candidate.write_text(
-        '{"schema_version":1,"freshness":{"source_status":"stale"}}',
+        json.dumps(
+            {
+                "schema_version": 1,
+                "meta": {
+                    "season": "2026-27",
+                    "team_count": 18,
+                    "completed_fixture_count": 1,
+                    "value_coefficient": 0.1,
+                    "source_alignment": {
+                        "official_team_count": 18,
+                        "market_team_count": 18,
+                        "matched_team_count": 18,
+                        "official_only": [],
+                        "market_only": [],
+                    },
+                },
+                "freshness": {"source_status": "stale"},
+            }
+        ),
         encoding="utf-8",
     )
     tff_page = Path(__file__).parent / "fixtures" / "tff" / "super_lig_fixture.html"
