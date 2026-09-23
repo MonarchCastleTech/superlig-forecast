@@ -73,6 +73,8 @@ export type DashboardPayload = {
     team_count: number;
     fixture_count: number;
     completed_fixture_count?: number;
+    publication_status?: "WITHHELD";
+    withdrawal_reason?: string;
     checkpoints: number[];
     value_coefficient: number;
     source_alignment: {

@@ -23,6 +23,12 @@ export function MethodologyPage({ data }: { data: DashboardPayload }) {
   const source = data.meta.source_alignment;
   return (
     <main className="methodology-page">
+      {data.meta.publication_status === "WITHHELD" && (
+        <section role="alert" className="methodology-card">
+          <h2>Current forecast withheld</h2>
+          <p>{data.meta.withdrawal_reason}</p>
+        </section>
+      )}
       <header className="methodology-masthead">
         <a href={import.meta.env.BASE_URL}>← Forecast</a>
         <span>MONARCH CASTLE TECHNOLOGIES · METHODOLOGY</span>

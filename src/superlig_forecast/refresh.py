@@ -92,6 +92,33 @@ def _validate_candidate(payload: object) -> None:
         raise RefreshBlocked("candidate dashboard freshness is missing")
     if freshness.get("source_status") != "fresh":
         raise RefreshBlocked("critical dashboard sources are stale or failed")
+    meta = payload.get("meta")
+    if not isinstance(meta, dict):
+        raise RefreshBlocked("candidate dashboard metadata is missing")
+    alignment = meta.get("source_alignment")
+    team_count = meta.get("team_count")
+    if (
+        not isinstance(alignment, dict)
+        or not isinstance(team_count, int)
+        or team_count != 18
+        or alignment.get("official_team_count") != team_count
+        or alignment.get("market_team_count") != team_count
+        or alignment.get("matched_team_count") != team_count
+        or alignment.get("official_only")
+        or alignment.get("market_only")
+    ):
+        raise RefreshBlocked("official and market squad team lists do not align")
+    season = str(meta.get("season", ""))
+    try:
+        season_start_year = int(season[:4])
+        published_at = datetime.fromisoformat(freshness["generated_at"].replace("Z", "+00:00"))
+    except (ValueError, KeyError, TypeError) as error:
+        raise RefreshBlocked("candidate season or publication date is invalid") from error
+    if published_at.date() >= datetime(season_start_year, 9, 1, tzinfo=UTC).date():
+        if not isinstance(meta.get("completed_fixture_count"), int) or meta["completed_fixture_count"] <= 0:
+            raise RefreshBlocked("no completed fixtures recorded after the season began")
+        if not freshness.get("latest_match_date"):
+            raise RefreshBlocked("latest completed match date is missing")
 
 
 def _fallback_sources(config: RefreshConfig) -> RefreshSources:

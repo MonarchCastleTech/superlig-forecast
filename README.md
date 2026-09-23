@@ -26,6 +26,8 @@ six hours.
 
 **Full methodology:** <https://monarchcastletech.github.io/superlig-forecast/methodology/>
 
+**Current publication hold (23 September 2026):** The last candidate recorded zero completed fixtures even though official results exist, and only 15 of 18 official clubs matched the squad-value source. The displayed probabilities are withheld. A refreshed candidate must reconcile all 18 clubs and, after 1 September, contain completed official results and a latest match date before publication resumes. The historic model and backtest remain available for methodological review; they do not validate the withdrawn current-season snapshot.
+
 ## Methodology
 
 ### Forecast target
