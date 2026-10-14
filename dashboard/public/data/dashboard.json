@@ -3895,9 +3895,9 @@
     }
   ],
   "freshness": {
-    "generated_at": "2026-10-14T11:48:38.264114+00:00",
+    "generated_at": "2026-10-14T17:09:11.409586+00:00",
     "latest_match_date": "2026-10-12",
-    "match_snapshot_at": "2026-10-14T11:48:37.820164+00:00",
+    "match_snapshot_at": "2026-10-14T17:09:10.838576+00:00",
     "source_notes": [
       "Official TFF fixture snapshot passed structural validation.",
       "Market values were not used; all 18 clubs came from TFF."
@@ -18965,6 +18965,29 @@
     },
     {
       "generated_at": "2026-10-14T11:48:38.264114+00:00",
+      "probabilities": {
+        "Amed Sporti̇f Faali̇yetler": 0.0009872,
+        "Arca Çorum FK": 0.0002148,
+        "Beşi̇ktaş A.Ş.": 0.0314754,
+        "Corendon Alanyaspor": 0.0002722,
+        "Erzurumspor FK": 0.000088,
+        "Eyüpspor": 4e-7,
+        "Fenerbahçe A.Ş.": 0.2940682,
+        "Galatasaray A.Ş.": 0.6555612,
+        "Gazi̇antep Futbol Kulübü A.Ş.": 1.4e-6,
+        "Gençlerbi̇rli̇ği̇": 5.2e-6,
+        "Göztepe A.Ş.": 0.0000624,
+        "Kasimpaşa A.Ş.": 0.0000362,
+        "Kocaeli̇spor": 0.0000278,
+        "Samsunspor A.Ş.": 0.0000186,
+        "Trabzonspor A.Ş.": 0.0170714,
+        "Tümosan Konyaspor": 4.2e-6,
+        "Çaykur Ri̇zespor A.Ş.": 0.000034,
+        "İstanbul Başakşehi̇r FK": 0.0000714
+      }
+    },
+    {
+      "generated_at": "2026-10-14T17:09:11.409586+00:00",
       "probabilities": {
         "Amed Sporti̇f Faali̇yetler": 0.0009872,
         "Arca Çorum FK": 0.0002148,
