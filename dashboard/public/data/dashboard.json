@@ -394,121 +394,121 @@
   },
   "championship": [
     {
-      "champion_count": 3335531,
-      "champion_probability": 0.6671062,
-      "ci95_half_width": 0.00041306786600931936,
+      "champion_count": 3334710,
+      "champion_probability": 0.666942,
+      "ci95_half_width": 0.000413118874938451,
       "club": "Galatasaray A.Ş.",
       "squad_value_eur": null
     },
     {
-      "champion_count": 1475990,
-      "champion_probability": 0.295198,
-      "ci95_half_width": 0.00039981707579389694,
+      "champion_count": 1475265,
+      "champion_probability": 0.295053,
+      "ci95_half_width": 0.00039975998478510716,
       "club": "Fenerbahçe A.Ş.",
       "squad_value_eur": null
     },
     {
-      "champion_count": 100576,
-      "champion_probability": 0.0201152,
-      "ci95_half_width": 0.0001230610899067392,
+      "champion_count": 100517,
+      "champion_probability": 0.0201034,
+      "ci95_half_width": 0.00012302573024347636,
       "club": "Trabzonspor A.Ş.",
       "squad_value_eur": null
     },
     {
-      "champion_count": 79159,
-      "champion_probability": 0.0158318,
-      "ci95_half_width": 0.00010941349242594573,
+      "champion_count": 79931,
+      "champion_probability": 0.0159862,
+      "ci95_half_width": 0.00010993710205291542,
       "club": "Beşi̇ktaş A.Ş.",
       "squad_value_eur": null
     },
     {
-      "champion_count": 5696,
-      "champion_probability": 0.0011392,
-      "ci95_half_width": 0.000029568108432092087,
+      "champion_count": 5698,
+      "champion_probability": 0.0011396,
+      "ci95_half_width": 0.000029573293085365194,
       "club": "Amed Sporti̇f Faali̇yetler",
       "squad_value_eur": null
     },
     {
-      "champion_count": 1175,
-      "champion_probability": 0.000235,
-      "ci95_half_width": 0.00001343550406676281,
+      "champion_count": 1183,
+      "champion_probability": 0.0002366,
+      "ci95_half_width": 0.000013481153577660214,
       "club": "Arca Çorum FK",
       "squad_value_eur": null
     },
     {
-      "champion_count": 445,
-      "champion_probability": 0.000089,
-      "ci95_half_width": 8.268881069242681e-6,
+      "champion_count": 942,
+      "champion_probability": 0.0001884,
+      "ci95_half_width": 0.000012030137855388891,
       "club": "Erzurumspor FK",
       "squad_value_eur": null
     },
     {
-      "champion_count": 444,
-      "champion_probability": 0.0000888,
-      "ci95_half_width": 8.25958579220164e-6,
-      "club": "Göztepe A.Ş.",
-      "squad_value_eur": null
-    },
-    {
-      "champion_count": 366,
-      "champion_probability": 0.0000732,
-      "ci95_half_width": 7.499127093005105e-6,
-      "club": "İstanbul Başakşehi̇r FK",
-      "squad_value_eur": null
-    },
-    {
-      "champion_count": 276,
-      "champion_probability": 0.0000552,
-      "ci95_half_width": 6.512213363997466e-6,
+      "champion_count": 565,
+      "champion_probability": 0.000113,
+      "ci95_half_width": 9.31720716319649e-6,
       "club": "Kasimpaşa A.Ş.",
       "squad_value_eur": null
     },
     {
-      "champion_count": 155,
-      "champion_probability": 0.000031,
-      "ci95_half_width": 4.880284996235362e-6,
+      "champion_count": 467,
+      "champion_probability": 0.0000934,
+      "ci95_half_width": 8.470796037821994e-6,
+      "club": "Göztepe A.Ş.",
+      "squad_value_eur": null
+    },
+    {
+      "champion_count": 344,
+      "champion_probability": 0.0000688,
+      "ci95_half_width": 7.270266790385289e-6,
+      "club": "İstanbul Başakşehi̇r FK",
+      "squad_value_eur": null
+    },
+    {
+      "champion_count": 190,
+      "champion_probability": 0.000038,
+      "ci95_half_width": 5.403244446248939e-6,
       "club": "Corendon Alanyaspor",
       "squad_value_eur": null
     },
     {
-      "champion_count": 79,
-      "champion_probability": 0.0000158,
-      "ci95_half_width": 3.484144686518515e-6,
+      "champion_count": 83,
+      "champion_probability": 0.0000166,
+      "ci95_half_width": 3.5712603211948578e-6,
       "club": "Kocaeli̇spor",
       "squad_value_eur": null
     },
     {
-      "champion_count": 65,
-      "champion_probability": 0.000013,
-      "ci95_half_width": 3.1603844946335245e-6,
+      "champion_count": 68,
+      "champion_probability": 0.0000136,
+      "ci95_half_width": 3.2324928293087982e-6,
       "club": "Çaykur Ri̇zespor A.Ş.",
       "squad_value_eur": null
     },
     {
-      "champion_count": 24,
-      "champion_probability": 4.8e-6,
-      "ci95_half_width": 1.920395349376581e-6,
+      "champion_count": 21,
+      "champion_probability": 4.2e-6,
+      "ci95_half_width": 1.796365900042416e-6,
       "club": "Samsunspor A.Ş.",
       "squad_value_eur": null
     },
     {
-      "champion_count": 10,
-      "champion_probability": 2e-6,
-      "ci95_half_width": 1.239611603172542e-6,
-      "club": "Gençlerbi̇rli̇ği̇",
-      "squad_value_eur": null
-    },
-    {
-      "champion_count": 8,
-      "champion_probability": 1.6e-6,
-      "ci95_half_width": 1.1087425459054053e-6,
+      "champion_count": 9,
+      "champion_probability": 1.8e-6,
+      "ci95_half_width": 1.1759989415995235e-6,
       "club": "Tümosan Konyaspor",
       "squad_value_eur": null
     },
     {
-      "champion_count": 1,
-      "champion_probability": 2e-7,
-      "ci95_half_width": 3.9199996079999803e-7,
+      "champion_count": 5,
+      "champion_probability": 1e-6,
+      "ci95_half_width": 8.765382089104844e-7,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "squad_value_eur": null
+    },
+    {
+      "champion_count": 2,
+      "champion_probability": 4e-7,
+      "ci95_half_width": 5.543716055758988e-7,
       "club": "Gazi̇antep Futbol Kulübü A.Ş.",
       "squad_value_eur": null
     },
@@ -522,17 +522,17 @@
   ],
   "convergence": [
     {
-      "champion_probability": 0.0009,
+      "champion_probability": 0.0007,
       "club": "Amed Sporti̇f Faali̇yetler",
       "simulation_count": 10000
     },
     {
-      "champion_probability": 0.0005,
+      "champion_probability": 0.0003,
       "club": "Arca Çorum FK",
       "simulation_count": 10000
     },
     {
-      "champion_probability": 0.0168,
+      "champion_probability": 0.0133,
       "club": "Beşi̇ktaş A.Ş.",
       "simulation_count": 10000
     },
@@ -542,7 +542,7 @@
       "simulation_count": 10000
     },
     {
-      "champion_probability": 0.0,
+      "champion_probability": 0.0001,
       "club": "Erzurumspor FK",
       "simulation_count": 10000
     },
@@ -552,12 +552,12 @@
       "simulation_count": 10000
     },
     {
-      "champion_probability": 0.2856,
+      "champion_probability": 0.2876,
       "club": "Fenerbahçe A.Ş.",
       "simulation_count": 10000
     },
     {
-      "champion_probability": 0.6775,
+      "champion_probability": 0.6771,
       "club": "Galatasaray A.Ş.",
       "simulation_count": 10000
     },
@@ -572,17 +572,17 @@
       "simulation_count": 10000
     },
     {
-      "champion_probability": 0.0002,
+      "champion_probability": 0.0,
       "club": "Göztepe A.Ş.",
       "simulation_count": 10000
     },
     {
-      "champion_probability": 0.0,
+      "champion_probability": 0.0001,
       "club": "Kasimpaşa A.Ş.",
       "simulation_count": 10000
     },
     {
-      "champion_probability": 0.0,
+      "champion_probability": 0.0001,
       "club": "Kocaeli̇spor",
       "simulation_count": 10000
     },
@@ -592,7 +592,7 @@
       "simulation_count": 10000
     },
     {
-      "champion_probability": 0.0183,
+      "champion_probability": 0.0206,
       "club": "Trabzonspor A.Ş.",
       "simulation_count": 10000
     },
@@ -607,32 +607,32 @@
       "simulation_count": 10000
     },
     {
-      "champion_probability": 0.0002,
+      "champion_probability": 0.0001,
       "club": "İstanbul Başakşehi̇r FK",
       "simulation_count": 10000
     },
     {
-      "champion_probability": 0.00092,
+      "champion_probability": 0.00106,
       "club": "Amed Sporti̇f Faali̇yetler",
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.00032,
+      "champion_probability": 0.00028,
       "club": "Arca Çorum FK",
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.01626,
+      "champion_probability": 0.01536,
       "club": "Beşi̇ktaş A.Ş.",
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.0,
+      "champion_probability": 0.00006,
       "club": "Corendon Alanyaspor",
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.00004,
+      "champion_probability": 0.0003,
       "club": "Erzurumspor FK",
       "simulation_count": 50000
     },
@@ -642,12 +642,12 @@
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.29374,
+      "champion_probability": 0.29482,
       "club": "Fenerbahçe A.Ş.",
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.66854,
+      "champion_probability": 0.66736,
       "club": "Galatasaray A.Ş.",
       "simulation_count": 50000
     },
@@ -667,22 +667,22 @@
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.00002,
+      "champion_probability": 0.00008,
       "club": "Kasimpaşa A.Ş.",
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.0,
+      "champion_probability": 0.00002,
       "club": "Kocaeli̇spor",
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.00002,
+      "champion_probability": 0.0,
       "club": "Samsunspor A.Ş.",
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.01996,
+      "champion_probability": 0.02054,
       "club": "Trabzonspor A.Ş.",
       "simulation_count": 50000
     },
@@ -697,32 +697,32 @@
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.00008,
+      "champion_probability": 0.00002,
       "club": "İstanbul Başakşehi̇r FK",
       "simulation_count": 50000
     },
     {
-      "champion_probability": 0.001,
+      "champion_probability": 0.00123,
       "club": "Amed Sporti̇f Faali̇yetler",
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.00029,
+      "champion_probability": 0.00017,
       "club": "Arca Çorum FK",
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.01618,
+      "champion_probability": 0.01566,
       "club": "Beşi̇ktaş A.Ş.",
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.00001,
+      "champion_probability": 0.00003,
       "club": "Corendon Alanyaspor",
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.00003,
+      "champion_probability": 0.0002,
       "club": "Erzurumspor FK",
       "simulation_count": 100000
     },
@@ -732,12 +732,12 @@
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.2952,
+      "champion_probability": 0.29533,
       "club": "Fenerbahçe A.Ş.",
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.66694,
+      "champion_probability": 0.66648,
       "club": "Galatasaray A.Ş.",
       "simulation_count": 100000
     },
@@ -752,12 +752,12 @@
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.00008,
+      "champion_probability": 0.00007,
       "club": "Göztepe A.Ş.",
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.00003,
+      "champion_probability": 0.00013,
       "club": "Kasimpaşa A.Ş.",
       "simulation_count": 100000
     },
@@ -767,12 +767,12 @@
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.00001,
+      "champion_probability": 0.0,
       "club": "Samsunspor A.Ş.",
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.0201,
+      "champion_probability": 0.02066,
       "club": "Trabzonspor A.Ş.",
       "simulation_count": 100000
     },
@@ -782,37 +782,37 @@
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.00003,
+      "champion_probability": 0.00002,
       "club": "Çaykur Ri̇zespor A.Ş.",
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.00009,
+      "champion_probability": 0.00001,
       "club": "İstanbul Başakşehi̇r FK",
       "simulation_count": 100000
     },
     {
-      "champion_probability": 0.001144,
+      "champion_probability": 0.001284,
       "club": "Amed Sporti̇f Faali̇yetler",
       "simulation_count": 500000
     },
     {
-      "champion_probability": 0.000228,
+      "champion_probability": 0.000232,
       "club": "Arca Çorum FK",
       "simulation_count": 500000
     },
     {
-      "champion_probability": 0.016116,
+      "champion_probability": 0.015696,
       "club": "Beşi̇ktaş A.Ş.",
       "simulation_count": 500000
     },
     {
-      "champion_probability": 0.00002,
+      "champion_probability": 0.000034,
       "club": "Corendon Alanyaspor",
       "simulation_count": 500000
     },
     {
-      "champion_probability": 0.000078,
+      "champion_probability": 0.000196,
       "club": "Erzurumspor FK",
       "simulation_count": 500000
     },
@@ -822,17 +822,17 @@
       "simulation_count": 500000
     },
     {
-      "champion_probability": 0.294544,
+      "champion_probability": 0.295152,
       "club": "Fenerbahçe A.Ş.",
       "simulation_count": 500000
     },
     {
-      "champion_probability": 0.667152,
+      "champion_probability": 0.666598,
       "club": "Galatasaray A.Ş.",
       "simulation_count": 500000
     },
     {
-      "champion_probability": 0.0,
+      "champion_probability": 2e-6,
       "club": "Gazi̇antep Futbol Kulübü A.Ş.",
       "simulation_count": 500000
     },
@@ -842,67 +842,67 @@
       "simulation_count": 500000
     },
     {
-      "champion_probability": 0.000096,
+      "champion_probability": 0.000086,
       "club": "Göztepe A.Ş.",
       "simulation_count": 500000
     },
     {
-      "champion_probability": 0.000054,
+      "champion_probability": 0.00015,
       "club": "Kasimpaşa A.Ş.",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.000018,
+      "club": "Kocaeli̇spor",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 4e-6,
+      "club": "Samsunspor A.Ş.",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.020484,
+      "club": "Trabzonspor A.Ş.",
+      "simulation_count": 500000
+    },
+    {
+      "champion_probability": 0.0,
+      "club": "Tümosan Konyaspor",
       "simulation_count": 500000
     },
     {
       "champion_probability": 0.000012,
-      "club": "Kocaeli̇spor",
-      "simulation_count": 500000
-    },
-    {
-      "champion_probability": 2e-6,
-      "club": "Samsunspor A.Ş.",
-      "simulation_count": 500000
-    },
-    {
-      "champion_probability": 0.020476,
-      "club": "Trabzonspor A.Ş.",
-      "simulation_count": 500000
-    },
-    {
-      "champion_probability": 2e-6,
-      "club": "Tümosan Konyaspor",
-      "simulation_count": 500000
-    },
-    {
-      "champion_probability": 0.00001,
       "club": "Çaykur Ri̇zespor A.Ş.",
       "simulation_count": 500000
     },
     {
-      "champion_probability": 0.000066,
+      "champion_probability": 0.000052,
       "club": "İstanbul Başakşehi̇r FK",
       "simulation_count": 500000
     },
     {
-      "champion_probability": 0.001149,
+      "champion_probability": 0.001236,
       "club": "Amed Sporti̇f Faali̇yetler",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.000239,
+      "champion_probability": 0.000245,
       "club": "Arca Çorum FK",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.016078,
+      "champion_probability": 0.015796,
       "club": "Beşi̇ktaş A.Ş.",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.000024,
+      "champion_probability": 0.00004,
       "club": "Corendon Alanyaspor",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.000078,
+      "champion_probability": 0.000166,
       "club": "Erzurumspor FK",
       "simulation_count": 1000000
     },
@@ -912,87 +912,87 @@
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.295133,
+      "champion_probability": 0.295002,
       "club": "Fenerbahçe A.Ş.",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.666877,
+      "champion_probability": 0.666945,
       "club": "Galatasaray A.Ş.",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.0,
+      "champion_probability": 1e-6,
       "club": "Gazi̇antep Futbol Kulübü A.Ş.",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 2e-6,
+      "champion_probability": 0.0,
       "club": "Gençlerbi̇rli̇ği̇",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.000095,
+      "champion_probability": 0.000068,
       "club": "Göztepe A.Ş.",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.000056,
+      "champion_probability": 0.000121,
       "club": "Kasimpaşa A.Ş.",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.00001,
+      "champion_probability": 0.000016,
       "club": "Kocaeli̇spor",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 5e-6,
+      "champion_probability": 4e-6,
       "club": "Samsunspor A.Ş.",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.02016,
+      "champion_probability": 0.020279,
       "club": "Trabzonspor A.Ş.",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 1e-6,
+      "champion_probability": 2e-6,
       "club": "Tümosan Konyaspor",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.000013,
+      "champion_probability": 9e-6,
       "club": "Çaykur Ri̇zespor A.Ş.",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.00008,
+      "champion_probability": 0.00007,
       "club": "İstanbul Başakşehi̇r FK",
       "simulation_count": 1000000
     },
     {
-      "champion_probability": 0.001113,
+      "champion_probability": 0.001176,
       "club": "Amed Sporti̇f Faali̇yetler",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.000243,
+      "champion_probability": 0.0002395,
       "club": "Arca Çorum FK",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.01586,
+      "champion_probability": 0.01596,
       "club": "Beşi̇ktaş A.Ş.",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.000029,
+      "champion_probability": 0.000038,
       "club": "Corendon Alanyaspor",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.0000845,
+      "champion_probability": 0.000182,
       "club": "Erzurumspor FK",
       "simulation_count": 2000000
     },
@@ -1002,12 +1002,12 @@
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.295181,
+      "champion_probability": 0.2951225,
       "club": "Fenerbahçe A.Ş.",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.667115,
+      "champion_probability": 0.6668115,
       "club": "Galatasaray A.Ş.",
       "simulation_count": 2000000
     },
@@ -1017,72 +1017,72 @@
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 3e-6,
+      "champion_probability": 1e-6,
       "club": "Gençlerbi̇rli̇ği̇",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.0000905,
+      "champion_probability": 0.000079,
       "club": "Göztepe A.Ş.",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.0000545,
+      "champion_probability": 0.000115,
       "club": "Kasimpaşa A.Ş.",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.0000115,
+      "champion_probability": 0.000017,
       "club": "Kocaeli̇spor",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 5.5e-6,
+      "champion_probability": 3e-6,
       "club": "Samsunspor A.Ş.",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.0201235,
+      "champion_probability": 0.020182,
       "club": "Trabzonspor A.Ş.",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 2e-6,
+      "champion_probability": 1.5e-6,
       "club": "Tümosan Konyaspor",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.000012,
+      "champion_probability": 9.5e-6,
       "club": "Çaykur Ri̇zespor A.Ş.",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.0000715,
+      "champion_probability": 0.000062,
       "club": "İstanbul Başakşehi̇r FK",
       "simulation_count": 2000000
     },
     {
-      "champion_probability": 0.0011392,
+      "champion_probability": 0.0011396,
       "club": "Amed Sporti̇f Faali̇yetler",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.000235,
+      "champion_probability": 0.0002366,
       "club": "Arca Çorum FK",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.0158318,
+      "champion_probability": 0.0159862,
       "club": "Beşi̇ktaş A.Ş.",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.000031,
+      "champion_probability": 0.000038,
       "club": "Corendon Alanyaspor",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.000089,
+      "champion_probability": 0.0001884,
       "club": "Erzurumspor FK",
       "simulation_count": 5000000
     },
@@ -1092,62 +1092,62 @@
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.295198,
+      "champion_probability": 0.295053,
       "club": "Fenerbahçe A.Ş.",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.6671062,
+      "champion_probability": 0.666942,
       "club": "Galatasaray A.Ş.",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 2e-7,
+      "champion_probability": 4e-7,
       "club": "Gazi̇antep Futbol Kulübü A.Ş.",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 2e-6,
+      "champion_probability": 1e-6,
       "club": "Gençlerbi̇rli̇ği̇",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.0000888,
+      "champion_probability": 0.0000934,
       "club": "Göztepe A.Ş.",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.0000552,
+      "champion_probability": 0.000113,
       "club": "Kasimpaşa A.Ş.",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.0000158,
+      "champion_probability": 0.0000166,
       "club": "Kocaeli̇spor",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 4.8e-6,
+      "champion_probability": 4.2e-6,
       "club": "Samsunspor A.Ş.",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.0201152,
+      "champion_probability": 0.0201034,
       "club": "Trabzonspor A.Ş.",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 1.6e-6,
+      "champion_probability": 1.8e-6,
       "club": "Tümosan Konyaspor",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.000013,
+      "champion_probability": 0.0000136,
       "club": "Çaykur Ri̇zespor A.Ş.",
       "simulation_count": 5000000
     },
     {
-      "champion_probability": 0.0000732,
+      "champion_probability": 0.0000688,
       "club": "İstanbul Başakşehi̇r FK",
       "simulation_count": 5000000
     }
@@ -1190,28 +1190,28 @@
       "points": 13
     },
     {
+      "club": "Erzurumspor FK",
+      "goals_against": 12,
+      "goals_for": 8,
+      "points": 14
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "goals_against": 9,
+      "goals_for": 13,
+      "points": 16
+    },
+    {
       "club": "Göztepe A.Ş.",
       "goals_against": 16,
       "goals_for": 17,
       "points": 9
     },
     {
-      "club": "Erzurumspor FK",
-      "goals_against": 11,
-      "goals_for": 5,
-      "points": 11
-    },
-    {
       "club": "İstanbul Başakşehi̇r FK",
       "goals_against": 12,
       "goals_for": 12,
       "points": 11
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "goals_against": 9,
-      "goals_for": 12,
-      "points": 13
     },
     {
       "club": "Corendon Alanyaspor",
@@ -1251,13 +1251,13 @@
     },
     {
       "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "goals_against": 12,
-      "goals_for": 8,
+      "goals_against": 15,
+      "goals_for": 9,
       "points": 8
     },
     {
       "club": "Eyüpspor",
-      "goals_against": 22,
+      "goals_against": 23,
       "goals_for": 2,
       "points": 3
     }
@@ -1265,201 +1265,201 @@
   "expected_standings": [
     {
       "club": "Galatasaray A.Ş.",
-      "expected_goal_difference": 36.210058,
-      "expected_points": 73.6194414,
-      "expected_position": 1.4079684000000001,
+      "expected_goal_difference": 36.2145632,
+      "expected_points": 73.6210556,
+      "expected_position": 1.4090094,
       "median_position": 1,
       "most_likely_position": 1,
       "position_17_probability": 0.0,
       "relegation_probability": 0.0,
-      "top_four_probability": 0.9977072
+      "top_four_probability": 0.997554
     },
     {
       "club": "Fenerbahçe A.Ş.",
-      "expected_goal_difference": 44.085974,
-      "expected_points": 69.0677552,
-      "expected_position": 1.9799126,
+      "expected_goal_difference": 44.0841046,
+      "expected_points": 69.0679394,
+      "expected_position": 1.984837,
       "median_position": 2,
       "most_likely_position": 2,
       "position_17_probability": 0.0,
-      "relegation_probability": 2e-7,
-      "top_four_probability": 0.9848520000000001
+      "relegation_probability": 4e-7,
+      "top_four_probability": 0.983778
     },
     {
       "club": "Trabzonspor A.Ş.",
-      "expected_goal_difference": 23.2281148,
-      "expected_points": 58.4900976,
-      "expected_position": 3.9523204,
+      "expected_goal_difference": 23.2190052,
+      "expected_points": 58.486412,
+      "expected_position": 3.9937688000000002,
       "median_position": 4,
       "most_likely_position": 3,
-      "position_17_probability": 0.0000724,
-      "relegation_probability": 0.0002914,
-      "top_four_probability": 0.7436088
+      "position_17_probability": 0.0000674,
+      "relegation_probability": 0.000272,
+      "top_four_probability": 0.7332798
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "expected_goal_difference": 16.0299768,
-      "expected_points": 57.414346,
-      "expected_position": 4.285998,
+      "expected_goal_difference": 16.0342968,
+      "expected_points": 57.4183894,
+      "expected_position": 4.3346694,
       "median_position": 4,
       "most_likely_position": 3,
-      "position_17_probability": 0.0001514,
-      "relegation_probability": 0.0005974,
-      "top_four_probability": 0.6747948
+      "position_17_probability": 0.0001484,
+      "relegation_probability": 0.000585,
+      "top_four_probability": 0.6633706
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "expected_goal_difference": 4.5686546,
-      "expected_points": 50.142569,
-      "expected_position": 6.9682726,
+      "expected_goal_difference": 4.5775196,
+      "expected_points": 50.1505854,
+      "expected_position": 7.0568832,
       "median_position": 6,
       "most_likely_position": 5,
-      "position_17_probability": 0.0034156,
-      "relegation_probability": 0.0114146,
-      "top_four_probability": 0.2038104
+      "position_17_probability": 0.0030724,
+      "relegation_probability": 0.010569799999999999,
+      "top_four_probability": 0.1974708
     },
     {
       "club": "Arca Çorum FK",
-      "expected_goal_difference": 1.6083708,
-      "expected_points": 46.6031266,
-      "expected_position": 8.6884334,
+      "expected_goal_difference": 1.6107466,
+      "expected_points": 46.6024004,
+      "expected_position": 8.7779566,
       "median_position": 8,
       "most_likely_position": 6,
-      "position_17_probability": 0.0137982,
-      "relegation_probability": 0.0421702,
-      "top_four_probability": 0.0941632
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "expected_goal_difference": 1.1689782,
-      "expected_points": 44.9428036,
-      "expected_position": 9.5297386,
-      "median_position": 9,
-      "most_likely_position": 7,
-      "position_17_probability": 0.0223604,
-      "relegation_probability": 0.06717100000000001,
-      "top_four_probability": 0.062232199999999994
+      "position_17_probability": 0.0126064,
+      "relegation_probability": 0.0395434,
+      "top_four_probability": 0.09041980000000001
     },
     {
       "club": "Erzurumspor FK",
-      "expected_goal_difference": -8.9018586,
-      "expected_points": 45.0389346,
-      "expected_position": 9.7713724,
+      "expected_goal_difference": -6.9080698,
+      "expected_points": 46.674276,
+      "expected_position": 8.9542444,
       "median_position": 9,
       "most_likely_position": 7,
-      "position_17_probability": 0.0258466,
-      "relegation_probability": 0.0766544,
-      "top_four_probability": 0.0557602
-    },
-    {
-      "club": "İstanbul Başakşehi̇r FK",
-      "expected_goal_difference": -3.9102084,
-      "expected_points": 44.3286758,
-      "expected_position": 10.0077566,
-      "median_position": 10,
-      "most_likely_position": 8,
-      "position_17_probability": 0.029412,
-      "relegation_probability": 0.0872662,
-      "top_four_probability": 0.048902799999999996
+      "position_17_probability": 0.0126816,
+      "relegation_probability": 0.040142,
+      "top_four_probability": 0.079982
     },
     {
       "club": "Kasimpaşa A.Ş.",
-      "expected_goal_difference": -5.228892,
-      "expected_points": 43.7609142,
-      "expected_position": 10.352258,
+      "expected_goal_difference": -4.0240114,
+      "expected_points": 45.531909,
+      "expected_position": 9.4685654,
+      "median_position": 9,
+      "most_likely_position": 7,
+      "position_17_probability": 0.0173746,
+      "relegation_probability": 0.0540146,
+      "top_four_probability": 0.060566
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "expected_goal_difference": 1.152933,
+      "expected_points": 44.930233,
+      "expected_position": 9.6157186,
+      "median_position": 9,
+      "most_likely_position": 8,
+      "position_17_probability": 0.0207872,
+      "relegation_probability": 0.0631892,
+      "top_four_probability": 0.0594944
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "expected_goal_difference": -3.9105668,
+      "expected_points": 44.3287238,
+      "expected_position": 10.0823762,
       "median_position": 10,
       "most_likely_position": 9,
-      "position_17_probability": 0.0345602,
-      "relegation_probability": 0.1017316,
-      "top_four_probability": 0.0404648
+      "position_17_probability": 0.02725,
+      "relegation_probability": 0.0820008,
+      "top_four_probability": 0.046869
     },
     {
       "club": "Corendon Alanyaspor",
-      "expected_goal_difference": -6.4393786,
-      "expected_points": 43.4578496,
-      "expected_position": 10.541688,
-      "median_position": 10,
-      "most_likely_position": 9,
-      "position_17_probability": 0.0359732,
-      "relegation_probability": 0.105342,
-      "top_four_probability": 0.0331294
+      "expected_goal_difference": -6.4376876,
+      "expected_points": 43.4592632,
+      "expected_position": 10.6087182,
+      "median_position": 11,
+      "most_likely_position": 10,
+      "position_17_probability": 0.0333174,
+      "relegation_probability": 0.09904199999999999,
+      "top_four_probability": 0.0315536
     },
     {
       "club": "Kocaeli̇spor",
-      "expected_goal_difference": -6.6209964,
-      "expected_points": 42.8653332,
-      "expected_position": 10.8784848,
+      "expected_goal_difference": -6.6217136,
+      "expected_points": 42.8618198,
+      "expected_position": 10.9441064,
       "median_position": 11,
       "most_likely_position": 11,
-      "position_17_probability": 0.0371808,
-      "relegation_probability": 0.110121,
-      "top_four_probability": 0.0231486
+      "position_17_probability": 0.034168,
+      "relegation_probability": 0.103128,
+      "top_four_probability": 0.021989599999999998
     },
     {
       "club": "Çaykur Ri̇zespor A.Ş.",
-      "expected_goal_difference": -11.1549278,
-      "expected_points": 41.2095744,
-      "expected_position": 11.859551,
+      "expected_goal_difference": -11.1502908,
+      "expected_points": 41.2128762,
+      "expected_position": 11.8974542,
       "median_position": 12,
       "most_likely_position": 14,
-      "position_17_probability": 0.066803,
-      "relegation_probability": 0.1903358,
-      "top_four_probability": 0.0168386
+      "position_17_probability": 0.063031,
+      "relegation_probability": 0.1806556,
+      "top_four_probability": 0.0160362
     },
     {
       "club": "Samsunspor A.Ş.",
-      "expected_goal_difference": -12.8530028,
-      "expected_points": 39.4161486,
-      "expected_position": 12.8430614,
+      "expected_goal_difference": -12.858742,
+      "expected_points": 39.412441,
+      "expected_position": 12.863916399999999,
       "median_position": 13,
-      "most_likely_position": 16,
-      "position_17_probability": 0.0975862,
-      "relegation_probability": 0.2806692,
-      "top_four_probability": 0.0087876
+      "most_likely_position": 15,
+      "position_17_probability": 0.094955,
+      "relegation_probability": 0.2704628,
+      "top_four_probability": 0.008248199999999999
     },
     {
       "club": "Gençlerbi̇rli̇ği̇",
-      "expected_goal_difference": -16.4889004,
-      "expected_points": 38.1378832,
-      "expected_position": 13.6022,
+      "expected_goal_difference": -16.4897664,
+      "expected_points": 38.1396708,
+      "expected_position": 13.6003718,
       "median_position": 14,
-      "most_likely_position": 17,
-      "position_17_probability": 0.1264404,
-      "relegation_probability": 0.360358,
-      "top_four_probability": 0.0048912
+      "most_likely_position": 16,
+      "position_17_probability": 0.124599,
+      "relegation_probability": 0.3480484,
+      "top_four_probability": 0.0045914
     },
     {
       "club": "Tümosan Konyaspor",
-      "expected_goal_difference": -10.8559536,
-      "expected_points": 36.993015,
-      "expected_position": 13.9884144,
+      "expected_goal_difference": -10.8490706,
+      "expected_points": 36.9942732,
+      "expected_position": 13.9757892,
       "median_position": 15,
-      "most_likely_position": 18,
-      "position_17_probability": 0.1399244,
-      "relegation_probability": 0.4112226,
-      "top_four_probability": 0.0037668000000000003
+      "most_likely_position": 17,
+      "position_17_probability": 0.1394972,
+      "relegation_probability": 0.3987612,
+      "top_four_probability": 0.0034832
     },
     {
       "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "expected_goal_difference": -16.5836584,
-      "expected_points": 36.1847982,
-      "expected_position": 14.5060934,
-      "median_position": 15,
+      "expected_goal_difference": -18.5787632,
+      "expected_points": 34.8237626,
+      "expected_position": 15.1104628,
+      "median_position": 16,
       "most_likely_position": 18,
-      "position_17_probability": 0.16592,
-      "relegation_probability": 0.4782518,
-      "top_four_probability": 0.0025538
+      "position_17_probability": 0.199958,
+      "relegation_probability": 0.5572737999999999,
+      "top_four_probability": 0.001106
     },
     {
       "club": "Eyüpspor",
-      "expected_goal_difference": -27.8623502,
-      "expected_points": 33.2596264,
-      "expected_position": 15.836476,
+      "expected_goal_difference": -29.0644868,
+      "expected_points": 31.7502186,
+      "expected_position": 16.321151999999998,
       "median_position": 17,
       "most_likely_position": 18,
-      "position_17_probability": 0.2005552,
-      "relegation_probability": 0.6764026,
-      "top_four_probability": 0.0005876
+      "position_17_probability": 0.2164864,
+      "relegation_probability": 0.752311,
+      "top_four_probability": 0.0002074
     }
   ],
   "fixtures": [
@@ -2174,16 +2174,6 @@
       "predicted": true
     },
     {
-      "away_expected_goals": 1.3294025768878348,
-      "away_team": "Kasimpaşa A.Ş.",
-      "away_win_probability": 0.324761948864447,
-      "draw_probability": 0.25993718886236733,
-      "home_expected_goals": 1.5312658645052395,
-      "home_team": "Eyüpspor",
-      "home_win_probability": 0.41530086227318563,
-      "predicted": true
-    },
-    {
       "away_expected_goals": 0.8067908570244138,
       "away_team": "Kocaeli̇spor",
       "away_win_probability": 0.21339382422807224,
@@ -2511,16 +2501,6 @@
       "home_expected_goals": 0.9970585763373586,
       "home_team": "Gazi̇antep Futbol Kulübü A.Ş.",
       "home_win_probability": 0.23134710417731147,
-      "predicted": true
-    },
-    {
-      "away_expected_goals": 1.317845471026729,
-      "away_team": "Erzurumspor FK",
-      "away_win_probability": 0.36327121261901074,
-      "draw_probability": 0.27439308941292956,
-      "home_expected_goals": 1.315837649302571,
-      "home_team": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "home_win_probability": 0.36233569796805976,
       "predicted": true
     },
     {
@@ -3795,9 +3775,9 @@
     }
   ],
   "freshness": {
-    "generated_at": "2026-10-24T10:55:33.001587+00:00",
-    "latest_match_date": "2026-10-23",
-    "match_snapshot_at": "2026-10-24T10:55:32.599339+00:00",
+    "generated_at": "2026-10-24T15:56:02.455817+00:00",
+    "latest_match_date": "2026-10-24",
+    "match_snapshot_at": "2026-10-24T15:56:01.865868+00:00",
     "source_notes": [
       "Official TFF fixture snapshot passed structural validation.",
       "Market values were not used; all 18 clubs came from TFF."
@@ -3816,8 +3796,8 @@
       2000000,
       5000000
     ],
-    "completed_fixture_count": 73,
-    "fixture_count": 233,
+    "completed_fixture_count": 75,
+    "fixture_count": 231,
     "model_input_mode": "official-results-only",
     "model_version": "0.1.0",
     "season": "2026-27",
@@ -15447,543 +15427,543 @@
   "positions": [
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 5696,
+      "count": 5698,
       "position": 1,
-      "probability": 0.0011392
+      "probability": 0.0011396
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 54975,
+      "count": 54799,
       "position": 2,
-      "probability": 0.010995
+      "probability": 0.0109598
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 313874,
+      "count": 307781,
       "position": 3,
-      "probability": 0.0627748
+      "probability": 0.0615562
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 644507,
+      "count": 619076,
       "position": 4,
-      "probability": 0.1289014
+      "probability": 0.1238152
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 909137,
+      "count": 862690,
       "position": 5,
-      "probability": 0.1818274
+      "probability": 0.172538
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 738784,
+      "count": 727928,
       "position": 6,
-      "probability": 0.1477568
+      "probability": 0.1455856
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 575495,
+      "count": 583771,
       "position": 7,
-      "probability": 0.115099
+      "probability": 0.1167542
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 448645,
+      "count": 464030,
       "position": 8,
-      "probability": 0.089729
+      "probability": 0.092806
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 351149,
+      "count": 368171,
       "position": 9,
-      "probability": 0.0702298
+      "probability": 0.0736342
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 272813,
+      "count": 289154,
       "position": 10,
-      "probability": 0.0545626
+      "probability": 0.0578308
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 209951,
+      "count": 224744,
       "position": 11,
-      "probability": 0.0419902
+      "probability": 0.0449488
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 159697,
+      "count": 169845,
       "position": 12,
-      "probability": 0.0319394
+      "probability": 0.033969
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 117799,
+      "count": 125166,
       "position": 13,
-      "probability": 0.0235598
+      "probability": 0.0250332
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 83769,
+      "count": 87467,
       "position": 14,
-      "probability": 0.0167538
+      "probability": 0.0174934
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 56636,
+      "count": 56831,
       "position": 15,
-      "probability": 0.0113272
+      "probability": 0.0113662
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 34086,
+      "count": 32833,
       "position": 16,
-      "probability": 0.0068172
+      "probability": 0.0065666
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 17078,
+      "count": 15362,
       "position": 17,
-      "probability": 0.0034156
+      "probability": 0.0030724
     },
     {
       "club": "Amed Sporti̇f Faali̇yetler",
-      "count": 5909,
+      "count": 4654,
       "position": 18,
-      "probability": 0.0011818
+      "probability": 0.0009308
     },
     {
       "club": "Arca Çorum FK",
-      "count": 1175,
+      "count": 1183,
       "position": 1,
-      "probability": 0.000235
+      "probability": 0.0002366
     },
     {
       "club": "Arca Çorum FK",
-      "count": 17326,
+      "count": 17097,
       "position": 2,
-      "probability": 0.0034652
+      "probability": 0.0034194
     },
     {
       "club": "Arca Çorum FK",
-      "count": 132124,
+      "count": 128717,
       "position": 3,
-      "probability": 0.0264248
+      "probability": 0.0257434
     },
     {
       "club": "Arca Çorum FK",
-      "count": 320191,
+      "count": 305102,
       "position": 4,
-      "probability": 0.0640382
+      "probability": 0.0610204
     },
     {
       "club": "Arca Çorum FK",
-      "count": 542203,
+      "count": 511042,
       "position": 5,
-      "probability": 0.1084406
+      "probability": 0.1022084
     },
     {
       "club": "Arca Çorum FK",
-      "count": 590515,
+      "count": 564100,
       "position": 6,
-      "probability": 0.118103
+      "probability": 0.11282
     },
     {
       "club": "Arca Çorum FK",
-      "count": 561838,
+      "count": 552750,
       "position": 7,
-      "probability": 0.1123676
+      "probability": 0.11055
     },
     {
       "club": "Arca Çorum FK",
-      "count": 510797,
+      "count": 514231,
       "position": 8,
-      "probability": 0.1021594
+      "probability": 0.1028462
     },
     {
       "club": "Arca Çorum FK",
-      "count": 456896,
+      "count": 469303,
       "position": 9,
-      "probability": 0.0913792
+      "probability": 0.0938606
     },
     {
       "club": "Arca Çorum FK",
-      "count": 401458,
+      "count": 418900,
       "position": 10,
-      "probability": 0.0802916
+      "probability": 0.08378
     },
     {
       "club": "Arca Çorum FK",
-      "count": 349458,
+      "count": 367725,
       "position": 11,
-      "probability": 0.0698916
+      "probability": 0.073545
     },
     {
       "club": "Arca Çorum FK",
-      "count": 298277,
+      "count": 316484,
       "position": 12,
-      "probability": 0.0596554
+      "probability": 0.0632968
     },
     {
       "club": "Arca Çorum FK",
-      "count": 249339,
+      "count": 263860,
       "position": 13,
-      "probability": 0.0498678
+      "probability": 0.052772
     },
     {
       "club": "Arca Çorum FK",
-      "count": 202063,
+      "count": 212278,
       "position": 14,
-      "probability": 0.0404126
+      "probability": 0.0424556
     },
     {
       "club": "Arca Çorum FK",
-      "count": 155489,
+      "count": 159511,
       "position": 15,
-      "probability": 0.0310978
+      "probability": 0.0319022
     },
     {
       "club": "Arca Çorum FK",
-      "count": 111550,
+      "count": 110591,
       "position": 16,
-      "probability": 0.02231
+      "probability": 0.0221182
     },
     {
       "club": "Arca Çorum FK",
-      "count": 68991,
+      "count": 63032,
       "position": 17,
-      "probability": 0.0137982
+      "probability": 0.0126064
     },
     {
       "club": "Arca Çorum FK",
-      "count": 30310,
+      "count": 24094,
       "position": 18,
-      "probability": 0.006062
+      "probability": 0.0048188
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 79159,
+      "count": 79931,
       "position": 1,
-      "probability": 0.0158318
+      "probability": 0.0159862
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 424265,
+      "count": 424258,
       "position": 2,
-      "probability": 0.084853
+      "probability": 0.0848516
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 1464156,
+      "count": 1442398,
       "position": 3,
-      "probability": 0.2928312
+      "probability": 0.2884796
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 1406394,
+      "count": 1370266,
       "position": 4,
-      "probability": 0.2812788
+      "probability": 0.2740532
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 699227,
+      "count": 699477,
       "position": 5,
-      "probability": 0.1398454
+      "probability": 0.1398954
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 369970,
+      "count": 385212,
       "position": 6,
-      "probability": 0.073994
+      "probability": 0.0770424
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 213487,
+      "count": 226649,
       "position": 7,
-      "probability": 0.0426974
+      "probability": 0.0453298
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 129865,
+      "count": 140523,
       "position": 8,
-      "probability": 0.025973
+      "probability": 0.0281046
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 81299,
+      "count": 88091,
       "position": 9,
-      "probability": 0.0162598
+      "probability": 0.0176182
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 51619,
+      "count": 56459,
       "position": 10,
-      "probability": 0.0103238
+      "probability": 0.0112918
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 32643,
+      "count": 35837,
       "position": 11,
-      "probability": 0.0065286
+      "probability": 0.0071674
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 20755,
+      "count": 22206,
       "position": 12,
-      "probability": 0.004151
+      "probability": 0.0044412
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 12547,
+      "count": 13645,
       "position": 13,
-      "probability": 0.0025094
+      "probability": 0.002729
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 7520,
+      "count": 7970,
       "position": 14,
-      "probability": 0.001504
+      "probability": 0.001594
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 4107,
+      "count": 4153,
       "position": 15,
-      "probability": 0.0008214
+      "probability": 0.0008306
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 2023,
+      "count": 1999,
       "position": 16,
-      "probability": 0.0004046
+      "probability": 0.0003998
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 757,
+      "count": 742,
       "position": 17,
-      "probability": 0.0001514
+      "probability": 0.0001484
     },
     {
       "club": "Beşi̇ktaş A.Ş.",
-      "count": 207,
+      "count": 184,
       "position": 18,
-      "probability": 0.0000414
+      "probability": 0.0000368
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 155,
+      "count": 190,
       "position": 1,
-      "probability": 0.000031
+      "probability": 0.000038
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 3403,
+      "count": 3335,
       "position": 2,
-      "probability": 0.0006806
+      "probability": 0.000667
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 39419,
+      "count": 38140,
       "position": 3,
-      "probability": 0.0078838
+      "probability": 0.007628
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 122670,
+      "count": 116103,
       "position": 4,
-      "probability": 0.024534
+      "probability": 0.0232206
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 256195,
+      "count": 238264,
       "position": 5,
-      "probability": 0.051239
+      "probability": 0.0476528
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 350665,
+      "count": 328650,
       "position": 6,
-      "probability": 0.070133
+      "probability": 0.06573
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 410223,
+      "count": 391611,
       "position": 7,
-      "probability": 0.0820446
+      "probability": 0.0783222
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 441784,
+      "count": 432237,
       "position": 8,
-      "probability": 0.0883568
+      "probability": 0.0864474
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 456572,
+      "count": 457039,
       "position": 9,
-      "probability": 0.0913144
+      "probability": 0.0914078
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 456086,
+      "count": 466807,
       "position": 10,
-      "probability": 0.0912172
+      "probability": 0.0933614
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 444786,
+      "count": 463670,
       "position": 11,
-      "probability": 0.0889572
+      "probability": 0.092734
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 426112,
+      "count": 448119,
       "position": 12,
-      "probability": 0.0852224
+      "probability": 0.0896238
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 396560,
+      "count": 419399,
       "position": 13,
-      "probability": 0.079312
+      "probability": 0.0838798
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 358152,
+      "count": 377769,
       "position": 14,
-      "probability": 0.0716304
+      "probability": 0.0755538
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 310508,
+      "count": 323457,
       "position": 15,
-      "probability": 0.0621016
+      "probability": 0.0646914
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 251098,
+      "count": 251857,
       "position": 16,
-      "probability": 0.0502196
+      "probability": 0.0503714
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 179866,
+      "count": 166587,
       "position": 17,
-      "probability": 0.0359732
+      "probability": 0.0333174
     },
     {
       "club": "Corendon Alanyaspor",
-      "count": 95746,
+      "count": 76766,
       "position": 18,
-      "probability": 0.0191492
+      "probability": 0.0153532
     },
     {
       "club": "Erzurumspor FK",
-      "count": 445,
+      "count": 942,
       "position": 1,
-      "probability": 0.000089
+      "probability": 0.0001884
     },
     {
       "club": "Erzurumspor FK",
-      "count": 8577,
+      "count": 14547,
       "position": 2,
-      "probability": 0.0017154
+      "probability": 0.0029094
     },
     {
       "club": "Erzurumspor FK",
-      "count": 73185,
+      "count": 110592,
       "position": 3,
-      "probability": 0.014637
+      "probability": 0.0221184
     },
     {
       "club": "Erzurumspor FK",
-      "count": 196594,
+      "count": 273829,
       "position": 4,
-      "probability": 0.0393188
+      "probability": 0.0547658
     },
     {
       "club": "Erzurumspor FK",
-      "count": 364869,
+      "count": 467752,
       "position": 5,
-      "probability": 0.0729738
+      "probability": 0.0935504
     },
     {
       "club": "Erzurumspor FK",
-      "count": 452889,
+      "count": 543039,
       "position": 6,
-      "probability": 0.0905778
+      "probability": 0.1086078
     },
     {
       "club": "Erzurumspor FK",
-      "count": 480076,
+      "count": 546303,
       "position": 7,
-      "probability": 0.0960152
+      "probability": 0.1092606
     },
     {
       "club": "Erzurumspor FK",
-      "count": 478565,
+      "count": 520032,
       "position": 8,
-      "probability": 0.095713
+      "probability": 0.1040064
     },
     {
       "club": "Erzurumspor FK",
-      "count": 463803,
+      "count": 481315,
       "position": 9,
-      "probability": 0.0927606
+      "probability": 0.096263
     },
     {
       "club": "Erzurumspor FK",
-      "count": 439114,
+      "count": 435899,
       "position": 10,
-      "probability": 0.0878228
+      "probability": 0.0871798
     },
     {
       "club": "Erzurumspor FK",
-      "count": 409980,
+      "count": 387916,
       "position": 11,
-      "probability": 0.081996
+      "probability": 0.0775832
     },
     {
       "club": "Erzurumspor FK",
-      "count": 375432,
+      "count": 336517,
       "position": 12,
-      "probability": 0.0750864
+      "probability": 0.0673034
     },
     {
       "club": "Erzurumspor FK",
-      "count": 337171,
+      "count": 282649,
       "position": 13,
-      "probability": 0.0674342
+      "probability": 0.0565298
     },
     {
       "club": "Erzurumspor FK",
-      "count": 292512,
+      "count": 226635,
       "position": 14,
-      "probability": 0.0585024
+      "probability": 0.045327
     },
     {
       "club": "Erzurumspor FK",
-      "count": 243516,
+      "count": 171323,
       "position": 15,
-      "probability": 0.0487032
+      "probability": 0.0342646
     },
     {
       "club": "Erzurumspor FK",
-      "count": 189262,
+      "count": 114963,
       "position": 16,
-      "probability": 0.0378524
+      "probability": 0.0229926
     },
     {
       "club": "Erzurumspor FK",
-      "count": 129233,
+      "count": 63408,
       "position": 17,
-      "probability": 0.0258466
+      "probability": 0.0126816
     },
     {
       "club": "Erzurumspor FK",
-      "count": 64777,
+      "count": 22339,
       "position": 18,
-      "probability": 0.0129554
+      "probability": 0.0044678
     },
     {
       "club": "Eyüpspor",
@@ -15993,1401 +15973,1401 @@
     },
     {
       "club": "Eyüpspor",
-      "count": 19,
-      "position": 2,
-      "probability": 3.8e-6
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 445,
-      "position": 3,
-      "probability": 0.000089
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 2474,
-      "position": 4,
-      "probability": 0.0004948
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 8239,
-      "position": 5,
-      "probability": 0.0016478
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 17709,
-      "position": 6,
-      "probability": 0.0035418
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 30722,
-      "position": 7,
-      "probability": 0.0061444
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 47582,
-      "position": 8,
-      "probability": 0.0095164
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 69441,
-      "position": 9,
-      "probability": 0.0138882
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 97163,
-      "position": 10,
-      "probability": 0.0194326
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 132470,
-      "position": 11,
-      "probability": 0.026494
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 179786,
-      "position": 12,
-      "probability": 0.0359572
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 242736,
-      "position": 13,
-      "probability": 0.0485472
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 330678,
-      "position": 14,
-      "probability": 0.0661356
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 458523,
-      "position": 15,
-      "probability": 0.0917046
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 659806,
-      "position": 16,
-      "probability": 0.1319612
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 1002776,
-      "position": 17,
-      "probability": 0.2005552
-    },
-    {
-      "club": "Eyüpspor",
-      "count": 1719431,
-      "position": 18,
-      "probability": 0.3438862
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 1475990,
-      "position": 1,
-      "probability": 0.295198
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 2547418,
-      "position": 2,
-      "probability": 0.5094836
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 692803,
-      "position": 3,
-      "probability": 0.1385606
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 208049,
-      "position": 4,
-      "probability": 0.0416098
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 51634,
-      "position": 5,
-      "probability": 0.0103268
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 15120,
-      "position": 6,
-      "probability": 0.003024
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 5327,
-      "position": 7,
-      "probability": 0.0010654
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 2089,
-      "position": 8,
-      "probability": 0.0004178
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 910,
-      "position": 9,
-      "probability": 0.000182
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 377,
-      "position": 10,
-      "probability": 0.0000754
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 181,
-      "position": 11,
-      "probability": 0.0000362
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 58,
-      "position": 12,
-      "probability": 0.0000116
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 28,
-      "position": 13,
-      "probability": 5.6e-6
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
-      "count": 11,
-      "position": 14,
-      "probability": 2.2e-6
-    },
-    {
-      "club": "Fenerbahçe A.Ş.",
       "count": 4,
-      "position": 15,
+      "position": 2,
       "probability": 8e-7
     },
     {
+      "club": "Eyüpspor",
+      "count": 167,
+      "position": 3,
+      "probability": 0.0000334
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 866,
+      "position": 4,
+      "probability": 0.0001732
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 3123,
+      "position": 5,
+      "probability": 0.0006246
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 7550,
+      "position": 6,
+      "probability": 0.00151
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 14132,
+      "position": 7,
+      "probability": 0.0028264
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 24264,
+      "position": 8,
+      "probability": 0.0048528
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 38328,
+      "position": 9,
+      "probability": 0.0076656
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 58662,
+      "position": 10,
+      "probability": 0.0117324
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 87495,
+      "position": 11,
+      "probability": 0.017499
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 127291,
+      "position": 12,
+      "probability": 0.0254582
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 187220,
+      "position": 13,
+      "probability": 0.037444
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 274666,
+      "position": 14,
+      "probability": 0.0549332
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 414677,
+      "position": 15,
+      "probability": 0.0829354
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 649285,
+      "position": 16,
+      "probability": 0.129857
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 1082432,
+      "position": 17,
+      "probability": 0.2164864
+    },
+    {
+      "club": "Eyüpspor",
+      "count": 2029838,
+      "position": 18,
+      "probability": 0.4059676
+    },
+    {
       "club": "Fenerbahçe A.Ş.",
-      "count": 1,
-      "position": 16,
-      "probability": 2e-7
+      "count": 1475265,
+      "position": 1,
+      "probability": 0.295053
     },
     {
       "club": "Fenerbahçe A.Ş.",
-      "count": 0,
-      "position": 17,
-      "probability": 0.0
+      "count": 2541355,
+      "position": 2,
+      "probability": 0.508271
     },
     {
       "club": "Fenerbahçe A.Ş.",
-      "count": 0,
-      "position": 18,
-      "probability": 0.0
-    },
-    {
-      "club": "Galatasaray A.Ş.",
-      "count": 3335531,
-      "position": 1,
-      "probability": 0.6671062
-    },
-    {
-      "club": "Galatasaray A.Ş.",
-      "count": 1365994,
-      "position": 2,
-      "probability": 0.2731988
-    },
-    {
-      "club": "Galatasaray A.Ş.",
-      "count": 236873,
+      "count": 692826,
       "position": 3,
-      "probability": 0.0473746
+      "probability": 0.1385652
     },
     {
-      "club": "Galatasaray A.Ş.",
-      "count": 50138,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 209444,
       "position": 4,
-      "probability": 0.0100276
+      "probability": 0.0418888
     },
     {
-      "club": "Galatasaray A.Ş.",
-      "count": 8771,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 54247,
       "position": 5,
-      "probability": 0.0017542
+      "probability": 0.0108494
     },
     {
-      "club": "Galatasaray A.Ş.",
-      "count": 1919,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 16637,
       "position": 6,
-      "probability": 0.0003838
+      "probability": 0.0033274
     },
     {
-      "club": "Galatasaray A.Ş.",
-      "count": 530,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 5969,
       "position": 7,
-      "probability": 0.000106
+      "probability": 0.0011938
     },
     {
-      "club": "Galatasaray A.Ş.",
-      "count": 170,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 2450,
       "position": 8,
-      "probability": 0.000034
+      "probability": 0.00049
     },
     {
-      "club": "Galatasaray A.Ş.",
-      "count": 41,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 1047,
       "position": 9,
-      "probability": 8.2e-6
+      "probability": 0.0002094
     },
     {
-      "club": "Galatasaray A.Ş.",
-      "count": 22,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 452,
       "position": 10,
-      "probability": 4.4e-6
+      "probability": 0.0000904
     },
     {
-      "club": "Galatasaray A.Ş.",
-      "count": 9,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 188,
       "position": 11,
-      "probability": 1.8e-6
+      "probability": 0.0000376
     },
     {
-      "club": "Galatasaray A.Ş.",
-      "count": 1,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 80,
       "position": 12,
-      "probability": 2e-7
+      "probability": 0.000016
     },
     {
-      "club": "Galatasaray A.Ş.",
-      "count": 1,
-      "position": 13,
-      "probability": 2e-7
-    },
-    {
-      "club": "Galatasaray A.Ş.",
-      "count": 0,
-      "position": 14,
-      "probability": 0.0
-    },
-    {
-      "club": "Galatasaray A.Ş.",
-      "count": 0,
-      "position": 15,
-      "probability": 0.0
-    },
-    {
-      "club": "Galatasaray A.Ş.",
-      "count": 0,
-      "position": 16,
-      "probability": 0.0
-    },
-    {
-      "club": "Galatasaray A.Ş.",
-      "count": 0,
-      "position": 17,
-      "probability": 0.0
-    },
-    {
-      "club": "Galatasaray A.Ş.",
-      "count": 0,
-      "position": 18,
-      "probability": 0.0
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 1,
-      "position": 1,
-      "probability": 2e-7
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 117,
-      "position": 2,
-      "probability": 0.0000234
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 2349,
-      "position": 3,
-      "probability": 0.0004698
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 10302,
-      "position": 4,
-      "probability": 0.0020604
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 28922,
-      "position": 5,
-      "probability": 0.0057844
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 53642,
-      "position": 6,
-      "probability": 0.0107284
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 82409,
-      "position": 7,
-      "probability": 0.0164818
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 115944,
-      "position": 8,
-      "probability": 0.0231888
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 153714,
-      "position": 9,
-      "probability": 0.0307428
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 197962,
-      "position": 10,
-      "probability": 0.0395924
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 248037,
-      "position": 11,
-      "probability": 0.0496074
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 307941,
-      "position": 12,
-      "probability": 0.0615882
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 378437,
-      "position": 13,
-      "probability": 0.0756874
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 463782,
-      "position": 14,
-      "probability": 0.0927564
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 565182,
-      "position": 15,
-      "probability": 0.1130364
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 689533,
-      "position": 16,
-      "probability": 0.1379066
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 829600,
-      "position": 17,
-      "probability": 0.16592
-    },
-    {
-      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
-      "count": 872126,
-      "position": 18,
-      "probability": 0.1744252
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 10,
-      "position": 1,
-      "probability": 2e-6
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 266,
-      "position": 2,
-      "probability": 0.0000532
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 4611,
-      "position": 3,
-      "probability": 0.0009222
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 19569,
-      "position": 4,
-      "probability": 0.0039138
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 52214,
-      "position": 5,
-      "probability": 0.0104428
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 92623,
-      "position": 6,
-      "probability": 0.0185246
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 135050,
-      "position": 7,
-      "probability": 0.02701
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 179918,
-      "position": 8,
-      "probability": 0.0359836
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 225392,
-      "position": 9,
-      "probability": 0.0450784
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 275065,
-      "position": 10,
-      "probability": 0.055013
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 327645,
-      "position": 11,
-      "probability": 0.065529
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 381971,
-      "position": 12,
-      "probability": 0.0763942
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 439770,
-      "position": 13,
-      "probability": 0.087954
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 500830,
-      "position": 14,
-      "probability": 0.100166
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 563276,
-      "position": 15,
-      "probability": 0.1126552
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 613933,
-      "position": 16,
-      "probability": 0.1227866
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 632202,
-      "position": 17,
-      "probability": 0.1264404
-    },
-    {
-      "club": "Gençlerbi̇rli̇ği̇",
-      "count": 555655,
-      "position": 18,
-      "probability": 0.111131
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 444,
-      "position": 1,
-      "probability": 0.0000888
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 8833,
-      "position": 2,
-      "probability": 0.0017666
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 82644,
-      "position": 3,
-      "probability": 0.0165288
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 219240,
-      "position": 4,
-      "probability": 0.043848
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 398624,
-      "position": 5,
-      "probability": 0.0797248
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 481865,
-      "position": 6,
-      "probability": 0.096373
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 501372,
-      "position": 7,
-      "probability": 0.1002744
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 493139,
-      "position": 8,
-      "probability": 0.0986278
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 469173,
-      "position": 9,
-      "probability": 0.0938346
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 438394,
-      "position": 10,
-      "probability": 0.0876788
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 401303,
-      "position": 11,
-      "probability": 0.0802606
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 361273,
-      "position": 12,
-      "probability": 0.0722546
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 317686,
-      "position": 13,
-      "probability": 0.0635372
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 269968,
-      "position": 14,
-      "probability": 0.0539936
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 220187,
-      "position": 15,
-      "probability": 0.0440374
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 167652,
-      "position": 16,
-      "probability": 0.0335304
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 111802,
-      "position": 17,
-      "probability": 0.0223604
-    },
-    {
-      "club": "Göztepe A.Ş.",
-      "count": 56401,
-      "position": 18,
-      "probability": 0.0112802
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 276,
-      "position": 1,
-      "probability": 0.0000552
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 5380,
-      "position": 2,
-      "probability": 0.001076
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 50358,
-      "position": 3,
-      "probability": 0.0100716
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 146310,
-      "position": 4,
-      "probability": 0.029262
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 289204,
-      "position": 5,
-      "probability": 0.0578408
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 381206,
-      "position": 6,
-      "probability": 0.0762412
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 427604,
-      "position": 7,
-      "probability": 0.0855208
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 447338,
-      "position": 8,
-      "probability": 0.0894676
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 449816,
-      "position": 9,
-      "probability": 0.0899632
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 443114,
-      "position": 10,
-      "probability": 0.0886228
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 429097,
-      "position": 11,
-      "probability": 0.0858194
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 407156,
-      "position": 12,
-      "probability": 0.0814312
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 377931,
-      "position": 13,
-      "probability": 0.0755862
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 341105,
-      "position": 14,
-      "probability": 0.068221
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 295447,
-      "position": 15,
-      "probability": 0.0590894
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 239996,
-      "position": 16,
-      "probability": 0.0479992
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 172801,
-      "position": 17,
-      "probability": 0.0345602
-    },
-    {
-      "club": "Kasimpaşa A.Ş.",
-      "count": 95861,
-      "position": 18,
-      "probability": 0.0191722
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 79,
-      "position": 1,
-      "probability": 0.0000158
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 2179,
-      "position": 2,
-      "probability": 0.0004358
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 25694,
-      "position": 3,
-      "probability": 0.0051388
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 87791,
-      "position": 4,
-      "probability": 0.0175582
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 199223,
-      "position": 5,
-      "probability": 0.0398446
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 298003,
-      "position": 6,
-      "probability": 0.0596006
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 370114,
-      "position": 7,
-      "probability": 0.0740228
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 420679,
-      "position": 8,
-      "probability": 0.0841358
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 453578,
-      "position": 9,
-      "probability": 0.0907156
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 471542,
-      "position": 10,
-      "probability": 0.0943084
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 473542,
-      "position": 11,
-      "probability": 0.0947084
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 464161,
-      "position": 12,
-      "probability": 0.0928322
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 438752,
-      "position": 13,
-      "probability": 0.0877504
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 400370,
-      "position": 14,
-      "probability": 0.080074
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 343688,
-      "position": 15,
-      "probability": 0.0687376
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 273200,
-      "position": 16,
-      "probability": 0.05464
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 185904,
-      "position": 17,
-      "probability": 0.0371808
-    },
-    {
-      "club": "Kocaeli̇spor",
-      "count": 91501,
-      "position": 18,
-      "probability": 0.0183002
-    },
-    {
-      "club": "Samsunspor A.Ş.",
+      "club": "Fenerbahçe A.Ş.",
       "count": 24,
-      "position": 1,
+      "position": 13,
       "probability": 4.8e-6
     },
     {
-      "club": "Samsunspor A.Ş.",
-      "count": 542,
-      "position": 2,
-      "probability": 0.0001084
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 8811,
-      "position": 3,
-      "probability": 0.0017622
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 34561,
-      "position": 4,
-      "probability": 0.0069122
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 86102,
-      "position": 5,
-      "probability": 0.0172204
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 141069,
-      "position": 6,
-      "probability": 0.0282138
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 193125,
-      "position": 7,
-      "probability": 0.038625
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 243875,
-      "position": 8,
-      "probability": 0.048775
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 289930,
-      "position": 9,
-      "probability": 0.057986
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 335303,
-      "position": 10,
-      "probability": 0.0670606
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 379056,
-      "position": 11,
-      "probability": 0.0758112
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 420641,
-      "position": 12,
-      "probability": 0.0841282
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 458502,
-      "position": 13,
-      "probability": 0.0917004
-    },
-    {
-      "club": "Samsunspor A.Ş.",
-      "count": 490941,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 9,
       "position": 14,
-      "probability": 0.0981882
+      "probability": 1.8e-6
     },
     {
-      "club": "Samsunspor A.Ş.",
-      "count": 514172,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 5,
       "position": 15,
-      "probability": 0.1028344
+      "probability": 1e-6
     },
     {
-      "club": "Samsunspor A.Ş.",
-      "count": 514281,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 2,
       "position": 16,
-      "probability": 0.1028562
+      "probability": 4e-7
     },
     {
-      "club": "Samsunspor A.Ş.",
-      "count": 487931,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 0,
       "position": 17,
-      "probability": 0.0975862
+      "probability": 0.0
     },
     {
-      "club": "Samsunspor A.Ş.",
-      "count": 401134,
+      "club": "Fenerbahçe A.Ş.",
+      "count": 0,
       "position": 18,
-      "probability": 0.0802268
+      "probability": 0.0
     },
     {
-      "club": "Trabzonspor A.Ş.",
-      "count": 100576,
+      "club": "Galatasaray A.Ş.",
+      "count": 3334710,
       "position": 1,
-      "probability": 0.0201152
+      "probability": 0.666942
     },
     {
-      "club": "Trabzonspor A.Ş.",
-      "count": 552352,
+      "club": "Galatasaray A.Ş.",
+      "count": 1365027,
       "position": 2,
-      "probability": 0.1104704
+      "probability": 0.2730054
     },
     {
-      "club": "Trabzonspor A.Ş.",
-      "count": 1788275,
+      "club": "Galatasaray A.Ş.",
+      "count": 237318,
       "position": 3,
-      "probability": 0.357655
+      "probability": 0.0474636
     },
     {
-      "club": "Trabzonspor A.Ş.",
-      "count": 1276841,
+      "club": "Galatasaray A.Ş.",
+      "count": 50715,
       "position": 4,
-      "probability": 0.2553682
+      "probability": 0.010143
     },
     {
-      "club": "Trabzonspor A.Ş.",
-      "count": 584043,
+      "club": "Galatasaray A.Ş.",
+      "count": 9259,
       "position": 5,
-      "probability": 0.1168086
+      "probability": 0.0018518
     },
     {
-      "club": "Trabzonspor A.Ş.",
-      "count": 296013,
+      "club": "Galatasaray A.Ş.",
+      "count": 2076,
       "position": 6,
-      "probability": 0.0592026
+      "probability": 0.0004152
     },
     {
-      "club": "Trabzonspor A.Ş.",
-      "count": 163251,
+      "club": "Galatasaray A.Ş.",
+      "count": 590,
       "position": 7,
-      "probability": 0.0326502
+      "probability": 0.000118
     },
     {
-      "club": "Trabzonspor A.Ş.",
-      "count": 95705,
+      "club": "Galatasaray A.Ş.",
+      "count": 210,
       "position": 8,
-      "probability": 0.019141
+      "probability": 0.000042
     },
     {
-      "club": "Trabzonspor A.Ş.",
-      "count": 57644,
+      "club": "Galatasaray A.Ş.",
+      "count": 59,
       "position": 9,
-      "probability": 0.0115288
+      "probability": 0.0000118
     },
     {
-      "club": "Trabzonspor A.Ş.",
-      "count": 35178,
+      "club": "Galatasaray A.Ş.",
+      "count": 24,
       "position": 10,
-      "probability": 0.0070356
+      "probability": 4.8e-6
     },
     {
-      "club": "Trabzonspor A.Ş.",
-      "count": 21658,
-      "position": 11,
-      "probability": 0.0043316
-    },
-    {
-      "club": "Trabzonspor A.Ş.",
-      "count": 12875,
-      "position": 12,
-      "probability": 0.002575
-    },
-    {
-      "club": "Trabzonspor A.Ş.",
-      "count": 7699,
-      "position": 13,
-      "probability": 0.0015398
-    },
-    {
-      "club": "Trabzonspor A.Ş.",
-      "count": 4309,
-      "position": 14,
-      "probability": 0.0008618
-    },
-    {
-      "club": "Trabzonspor A.Ş.",
-      "count": 2124,
-      "position": 15,
-      "probability": 0.0004248
-    },
-    {
-      "club": "Trabzonspor A.Ş.",
-      "count": 1004,
-      "position": 16,
-      "probability": 0.0002008
-    },
-    {
-      "club": "Trabzonspor A.Ş.",
-      "count": 362,
-      "position": 17,
-      "probability": 0.0000724
-    },
-    {
-      "club": "Trabzonspor A.Ş.",
-      "count": 91,
-      "position": 18,
-      "probability": 0.0000182
-    },
-    {
-      "club": "Tümosan Konyaspor",
+      "club": "Galatasaray A.Ş.",
       "count": 8,
-      "position": 1,
+      "position": 11,
       "probability": 1.6e-6
     },
     {
-      "club": "Tümosan Konyaspor",
-      "count": 186,
-      "position": 2,
-      "probability": 0.0000372
-    },
-    {
-      "club": "Tümosan Konyaspor",
-      "count": 3311,
-      "position": 3,
-      "probability": 0.0006622
-    },
-    {
-      "club": "Tümosan Konyaspor",
-      "count": 15329,
-      "position": 4,
-      "probability": 0.0030658
-    },
-    {
-      "club": "Tümosan Konyaspor",
-      "count": 42557,
-      "position": 5,
-      "probability": 0.0085114
-    },
-    {
-      "club": "Tümosan Konyaspor",
-      "count": 76750,
-      "position": 6,
-      "probability": 0.01535
-    },
-    {
-      "club": "Tümosan Konyaspor",
-      "count": 114472,
-      "position": 7,
-      "probability": 0.0228944
-    },
-    {
-      "club": "Tümosan Konyaspor",
-      "count": 154235,
-      "position": 8,
-      "probability": 0.030847
-    },
-    {
-      "club": "Tümosan Konyaspor",
-      "count": 196462,
-      "position": 9,
-      "probability": 0.0392924
-    },
-    {
-      "club": "Tümosan Konyaspor",
-      "count": 242928,
-      "position": 10,
-      "probability": 0.0485856
-    },
-    {
-      "club": "Tümosan Konyaspor",
-      "count": 294056,
-      "position": 11,
-      "probability": 0.0588112
-    },
-    {
-      "club": "Tümosan Konyaspor",
-      "count": 351227,
+      "club": "Galatasaray A.Ş.",
+      "count": 3,
       "position": 12,
-      "probability": 0.0702454
+      "probability": 6e-7
     },
     {
-      "club": "Tümosan Konyaspor",
-      "count": 412773,
+      "club": "Galatasaray A.Ş.",
+      "count": 1,
       "position": 13,
-      "probability": 0.0825546
+      "probability": 2e-7
     },
     {
-      "club": "Tümosan Konyaspor",
-      "count": 481564,
+      "club": "Galatasaray A.Ş.",
+      "count": 0,
       "position": 14,
-      "probability": 0.0963128
+      "probability": 0.0
     },
     {
-      "club": "Tümosan Konyaspor",
-      "count": 558029,
+      "club": "Galatasaray A.Ş.",
+      "count": 0,
       "position": 15,
-      "probability": 0.1116058
+      "probability": 0.0
     },
     {
-      "club": "Tümosan Konyaspor",
-      "count": 636798,
+      "club": "Galatasaray A.Ş.",
+      "count": 0,
       "position": 16,
-      "probability": 0.1273596
+      "probability": 0.0
     },
     {
-      "club": "Tümosan Konyaspor",
-      "count": 699622,
+      "club": "Galatasaray A.Ş.",
+      "count": 0,
       "position": 17,
-      "probability": 0.1399244
+      "probability": 0.0
     },
     {
-      "club": "Tümosan Konyaspor",
-      "count": 719693,
+      "club": "Galatasaray A.Ş.",
+      "count": 0,
       "position": 18,
-      "probability": 0.1439386
+      "probability": 0.0
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 65,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 2,
       "position": 1,
-      "probability": 0.000013
+      "probability": 4e-7
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 1358,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 40,
       "position": 2,
-      "probability": 0.0002716
+      "probability": 8e-6
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 18904,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 994,
       "position": 3,
-      "probability": 0.0037808
+      "probability": 0.0001988
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 63866,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 4494,
       "position": 4,
-      "probability": 0.0127732
+      "probability": 0.0008988
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 143216,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 13719,
       "position": 5,
-      "probability": 0.0286432
+      "probability": 0.0027438
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 216445,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 27443,
       "position": 6,
-      "probability": 0.043289
+      "probability": 0.0054886
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 274559,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 46529,
       "position": 7,
-      "probability": 0.0549118
+      "probability": 0.0093058
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 323659,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 71076,
       "position": 8,
-      "probability": 0.0647318
+      "probability": 0.0142152
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 364709,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 102001,
       "position": 9,
-      "probability": 0.0729418
+      "probability": 0.0204002
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 400187,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 141000,
       "position": 10,
-      "probability": 0.0800374
+      "probability": 0.0282
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 427401,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 190326,
       "position": 11,
-      "probability": 0.0854802
+      "probability": 0.0380652
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 446582,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 253940,
       "position": 12,
-      "probability": 0.0893164
+      "probability": 0.050788
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 460231,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 335198,
       "position": 13,
-      "probability": 0.0920462
+      "probability": 0.0670396
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 461484,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 443946,
       "position": 14,
-      "probability": 0.0922968
+      "probability": 0.0887892
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 445655,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 582923,
       "position": 15,
-      "probability": 0.089131
+      "probability": 0.1165846
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 406297,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 768340,
       "position": 16,
-      "probability": 0.0812594
+      "probability": 0.153668
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 334015,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 999790,
       "position": 17,
-      "probability": 0.066803
+      "probability": 0.199958
     },
     {
-      "club": "Çaykur Ri̇zespor A.Ş.",
-      "count": 211367,
+      "club": "Gazi̇antep Futbol Kulübü A.Ş.",
+      "count": 1018239,
       "position": 18,
-      "probability": 0.0422734
+      "probability": 0.2036478
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 366,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 5,
       "position": 1,
-      "probability": 0.0000732
+      "probability": 1e-6
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 6810,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 237,
       "position": 2,
-      "probability": 0.001362
+      "probability": 0.0000474
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 62164,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 4539,
       "position": 3,
-      "probability": 0.0124328
+      "probability": 0.0009078
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 175174,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 18176,
       "position": 4,
-      "probability": 0.0350348
+      "probability": 0.0036352
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 335620,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 47120,
       "position": 5,
-      "probability": 0.067124
+      "probability": 0.009424
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 424813,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 83833,
       "position": 6,
-      "probability": 0.0849626
+      "probability": 0.0167666
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 460346,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 125371,
       "position": 7,
-      "probability": 0.0920692
+      "probability": 0.0250742
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 466011,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 170504,
       "position": 8,
-      "probability": 0.0932022
+      "probability": 0.0341008
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 459471,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 218875,
       "position": 9,
-      "probability": 0.0918942
+      "probability": 0.043775
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 441675,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 272273,
       "position": 10,
-      "probability": 0.088335
+      "probability": 0.0544546
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 418727,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 329403,
       "position": 11,
-      "probability": 0.0837454
+      "probability": 0.0658806
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 386055,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 391924,
       "position": 12,
-      "probability": 0.077211
+      "probability": 0.0783848
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 352038,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 462237,
       "position": 13,
-      "probability": 0.0704076
+      "probability": 0.0924474
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 310942,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 533319,
       "position": 14,
-      "probability": 0.0621884
+      "probability": 0.1066638
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 263457,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 601942,
       "position": 15,
-      "probability": 0.0526914
+      "probability": 0.1203884
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 209480,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 645166,
       "position": 16,
-      "probability": 0.041896
+      "probability": 0.1290332
     },
     {
-      "club": "İstanbul Başakşehi̇r FK",
-      "count": 147060,
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 622995,
       "position": 17,
-      "probability": 0.029412
+      "probability": 0.124599
+    },
+    {
+      "club": "Gençlerbi̇rli̇ği̇",
+      "count": 472081,
+      "position": 18,
+      "probability": 0.0944162
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 467,
+      "position": 1,
+      "probability": 0.0000934
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 8784,
+      "position": 2,
+      "probability": 0.0017568
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 79615,
+      "position": 3,
+      "probability": 0.015923
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 208606,
+      "position": 4,
+      "probability": 0.0417212
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 372408,
+      "position": 5,
+      "probability": 0.0744816
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 455563,
+      "position": 6,
+      "probability": 0.0911126
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 485465,
+      "position": 7,
+      "probability": 0.097093
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 490994,
+      "position": 8,
+      "probability": 0.0981988
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 477514,
+      "position": 9,
+      "probability": 0.0955028
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 453927,
+      "position": 10,
+      "probability": 0.0907854
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 421146,
+      "position": 11,
+      "probability": 0.0842292
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 380919,
+      "position": 12,
+      "probability": 0.0761838
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 335327,
+      "position": 13,
+      "probability": 0.0670654
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 284810,
+      "position": 14,
+      "probability": 0.056962
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 228509,
+      "position": 15,
+      "probability": 0.0457018
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 166092,
+      "position": 16,
+      "probability": 0.0332184
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 103936,
+      "position": 17,
+      "probability": 0.0207872
+    },
+    {
+      "club": "Göztepe A.Ş.",
+      "count": 45918,
+      "position": 18,
+      "probability": 0.0091836
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 565,
+      "position": 1,
+      "probability": 0.000113
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 9549,
+      "position": 2,
+      "probability": 0.0019098
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 80034,
+      "position": 3,
+      "probability": 0.0160068
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 212682,
+      "position": 4,
+      "probability": 0.0425364
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 384013,
+      "position": 5,
+      "probability": 0.0768026
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 473950,
+      "position": 6,
+      "probability": 0.09479
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 506426,
+      "position": 7,
+      "probability": 0.1012852
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 505382,
+      "position": 8,
+      "probability": 0.1010764
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 487272,
+      "position": 9,
+      "probability": 0.0974544
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 457458,
+      "position": 10,
+      "probability": 0.0914916
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 419956,
+      "position": 11,
+      "probability": 0.0839912
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 377724,
+      "position": 12,
+      "probability": 0.0755448
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 328012,
+      "position": 13,
+      "probability": 0.0656024
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 273538,
+      "position": 14,
+      "probability": 0.0547076
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 213366,
+      "position": 15,
+      "probability": 0.0426732
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 150160,
+      "position": 16,
+      "probability": 0.030032
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 86873,
+      "position": 17,
+      "probability": 0.0173746
+    },
+    {
+      "club": "Kasimpaşa A.Ş.",
+      "count": 33040,
+      "position": 18,
+      "probability": 0.006608
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 83,
+      "position": 1,
+      "probability": 0.0000166
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 2123,
+      "position": 2,
+      "probability": 0.0004246
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 24987,
+      "position": 3,
+      "probability": 0.0049974
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 82755,
+      "position": 4,
+      "probability": 0.016551
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 184420,
+      "position": 5,
+      "probability": 0.036884
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 276111,
+      "position": 6,
+      "probability": 0.0552222
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 349362,
+      "position": 7,
+      "probability": 0.0698724
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 408802,
+      "position": 8,
+      "probability": 0.0817604
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 449979,
+      "position": 9,
+      "probability": 0.0899958
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 479514,
+      "position": 10,
+      "probability": 0.0959028
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 492974,
+      "position": 11,
+      "probability": 0.0985948
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 488137,
+      "position": 12,
+      "probability": 0.0976274
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 466065,
+      "position": 13,
+      "probability": 0.093213
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 422070,
+      "position": 14,
+      "probability": 0.084414
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 356978,
+      "position": 15,
+      "probability": 0.0713956
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 271489,
+      "position": 16,
+      "probability": 0.0542978
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 170840,
+      "position": 17,
+      "probability": 0.034168
+    },
+    {
+      "club": "Kocaeli̇spor",
+      "count": 73311,
+      "position": 18,
+      "probability": 0.0146622
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 21,
+      "position": 1,
+      "probability": 4.2e-6
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 574,
+      "position": 2,
+      "probability": 0.0001148
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 8346,
+      "position": 3,
+      "probability": 0.0016692
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 32300,
+      "position": 4,
+      "probability": 0.00646
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 78242,
+      "position": 5,
+      "probability": 0.0156484
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 128966,
+      "position": 6,
+      "probability": 0.0257932
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 180933,
+      "position": 7,
+      "probability": 0.0361866
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 231831,
+      "position": 8,
+      "probability": 0.0463662
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 283701,
+      "position": 9,
+      "probability": 0.0567402
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 334442,
+      "position": 10,
+      "probability": 0.0668884
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 385229,
+      "position": 11,
+      "probability": 0.0770458
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 436952,
+      "position": 12,
+      "probability": 0.0873904
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 482704,
+      "position": 13,
+      "probability": 0.0965408
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 521300,
+      "position": 14,
+      "probability": 0.10426
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 542145,
+      "position": 15,
+      "probability": 0.108429
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 536543,
+      "position": 16,
+      "probability": 0.1073086
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 474775,
+      "position": 17,
+      "probability": 0.094955
+    },
+    {
+      "club": "Samsunspor A.Ş.",
+      "count": 340996,
+      "position": 18,
+      "probability": 0.0681992
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 100517,
+      "position": 1,
+      "probability": 0.0201034
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 549993,
+      "position": 2,
+      "probability": 0.1099986
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 1761750,
+      "position": 3,
+      "probability": 0.35235
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 1254139,
+      "position": 4,
+      "probability": 0.2508278
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 590465,
+      "position": 5,
+      "probability": 0.118093
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 308776,
+      "position": 6,
+      "probability": 0.0617552
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 174821,
+      "position": 7,
+      "probability": 0.0349642
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 103779,
+      "position": 8,
+      "probability": 0.0207558
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 63337,
+      "position": 9,
+      "probability": 0.0126674
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 38762,
+      "position": 10,
+      "probability": 0.0077524
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 23593,
+      "position": 11,
+      "probability": 0.0047186
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 14005,
+      "position": 12,
+      "probability": 0.002801
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 7972,
+      "position": 13,
+      "probability": 0.0015944
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 4495,
+      "position": 14,
+      "probability": 0.000899
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 2236,
+      "position": 15,
+      "probability": 0.0004472
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 955,
+      "position": 16,
+      "probability": 0.000191
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 337,
+      "position": 17,
+      "probability": 0.0000674
+    },
+    {
+      "club": "Trabzonspor A.Ş.",
+      "count": 68,
+      "position": 18,
+      "probability": 0.0000136
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 9,
+      "position": 1,
+      "probability": 1.8e-6
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 161,
+      "position": 2,
+      "probability": 0.0000322
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 3221,
+      "position": 3,
+      "probability": 0.0006442
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 14025,
+      "position": 4,
+      "probability": 0.002805
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 38031,
+      "position": 5,
+      "probability": 0.0076062
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 69609,
+      "position": 6,
+      "probability": 0.0139218
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 105524,
+      "position": 7,
+      "probability": 0.0211048
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 145789,
+      "position": 8,
+      "probability": 0.0291578
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 190082,
+      "position": 9,
+      "probability": 0.0380164
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 240889,
+      "position": 10,
+      "probability": 0.0481778
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 296089,
+      "position": 11,
+      "probability": 0.0592178
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 360143,
+      "position": 12,
+      "probability": 0.0720286
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 431132,
+      "position": 13,
+      "probability": 0.0862264
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 513668,
+      "position": 14,
+      "probability": 0.1027336
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 597822,
+      "position": 15,
+      "probability": 0.1195644
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 676340,
+      "position": 16,
+      "probability": 0.135268
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 697486,
+      "position": 17,
+      "probability": 0.1394972
+    },
+    {
+      "club": "Tümosan Konyaspor",
+      "count": 619980,
+      "position": 18,
+      "probability": 0.123996
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 68,
+      "position": 1,
+      "probability": 0.0000136
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 1326,
+      "position": 2,
+      "probability": 0.0002652
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 18405,
+      "position": 3,
+      "probability": 0.003681
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 60382,
+      "position": 4,
+      "probability": 0.0120764
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 133018,
+      "position": 5,
+      "probability": 0.0266036
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 200128,
+      "position": 6,
+      "probability": 0.0400256
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 260131,
+      "position": 7,
+      "probability": 0.0520262
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 312429,
+      "position": 8,
+      "probability": 0.0624858
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 359511,
+      "position": 9,
+      "probability": 0.0719022
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 400736,
+      "position": 10,
+      "probability": 0.0801472
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 437877,
+      "position": 11,
+      "probability": 0.0875754
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 467132,
+      "position": 12,
+      "probability": 0.0934264
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 486132,
+      "position": 13,
+      "probability": 0.0972264
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 489295,
+      "position": 14,
+      "probability": 0.097859
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 470152,
+      "position": 15,
+      "probability": 0.0940304
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 414782,
+      "position": 16,
+      "probability": 0.0829564
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 315155,
+      "position": 17,
+      "probability": 0.063031
+    },
+    {
+      "club": "Çaykur Ri̇zespor A.Ş.",
+      "count": 173341,
+      "position": 18,
+      "probability": 0.0346682
     },
     {
       "club": "İstanbul Başakşehi̇r FK",
-      "count": 79791,
+      "count": 344,
+      "position": 1,
+      "probability": 0.0000688
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 6791,
+      "position": 2,
+      "probability": 0.0013582
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 60170,
+      "position": 3,
+      "probability": 0.012034
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 167040,
+      "position": 4,
+      "probability": 0.033408
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 312710,
+      "position": 5,
+      "probability": 0.062542
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 400429,
+      "position": 6,
+      "probability": 0.0800858
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 443663,
+      "position": 7,
+      "probability": 0.0887326
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 461437,
+      "position": 8,
+      "probability": 0.0922874
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 464375,
+      "position": 9,
+      "probability": 0.092875
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 454642,
+      "position": 10,
+      "probability": 0.0909284
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 435824,
+      "position": 11,
+      "probability": 0.0871648
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 408579,
+      "position": 12,
+      "probability": 0.0817158
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 373257,
+      "position": 13,
+      "probability": 0.0746514
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 326765,
+      "position": 14,
+      "probability": 0.065353
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 273970,
+      "position": 15,
+      "probability": 0.054794
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 208603,
+      "position": 16,
+      "probability": 0.0417206
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 136250,
+      "position": 17,
+      "probability": 0.02725
+    },
+    {
+      "club": "İstanbul Başakşehi̇r FK",
+      "count": 65151,
       "position": 18,
-      "probability": 0.0159582
+      "probability": 0.0130302
     }
   ],
   "publication_history": [
@@ -19781,6 +19761,29 @@
         "Tümosan Konyaspor": 1.6e-6,
         "Çaykur Ri̇zespor A.Ş.": 0.000013,
         "İstanbul Başakşehi̇r FK": 0.0000732
+      }
+    },
+    {
+      "generated_at": "2026-10-24T15:56:02.455817+00:00",
+      "probabilities": {
+        "Amed Sporti̇f Faali̇yetler": 0.0011396,
+        "Arca Çorum FK": 0.0002366,
+        "Beşi̇ktaş A.Ş.": 0.0159862,
+        "Corendon Alanyaspor": 0.000038,
+        "Erzurumspor FK": 0.0001884,
+        "Eyüpspor": 0.0,
+        "Fenerbahçe A.Ş.": 0.295053,
+        "Galatasaray A.Ş.": 0.666942,
+        "Gazi̇antep Futbol Kulübü A.Ş.": 4e-7,
+        "Gençlerbi̇rli̇ği̇": 1e-6,
+        "Göztepe A.Ş.": 0.0000934,
+        "Kasimpaşa A.Ş.": 0.000113,
+        "Kocaeli̇spor": 0.0000166,
+        "Samsunspor A.Ş.": 4.2e-6,
+        "Trabzonspor A.Ş.": 0.0201034,
+        "Tümosan Konyaspor": 1.8e-6,
+        "Çaykur Ri̇zespor A.Ş.": 0.0000136,
+        "İstanbul Başakşehi̇r FK": 0.0000688
       }
     }
   ],
