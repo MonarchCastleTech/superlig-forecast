@@ -26,8 +26,8 @@ export function MethodologyLoader() {
     <header className="methodology-masthead"><a href={import.meta.env.BASE_URL}>← Forecast</a><span>MONARCH CASTLE TECHNOLOGIES · METHODOLOGY</span></header>
     <section className="methodology-hero"><p className="eyebrow">Publication gate</p><h1>Current forecast withheld</h1><p>{withheld}</p></section>
     <article className="methodology-paper">
-      <section><span>01</span><div><h2>Model method</h2><p>The research model estimates fixture scores from historical home and away strength, applies a conservative squad-value adjustment, and simulates complete seasons. Five million paths reduce simulation noise; they do not repair missing official match results or unmatched current teams.</p></div></section>
-      <section><span>02</span><div><h2>Publication requirements</h2><p>A current-season forecast requires all 18 official clubs to match the squad source, at least one completed official fixture after the season starts, a latest match date, and fresh source snapshots. Invalid candidates are rejected before replacing the public file.</p></div></section>
+      <section><span>01</span><div><h2>Model method</h2><p>The research model estimates fixture scores from historical home and away strength and simulates complete seasons. Five million paths reduce simulation noise; they do not repair missing official match results or unmatched current teams.</p></div></section>
+      <section><span>02</span><div><h2>Publication requirements</h2><p>A current-season forecast requires all 18 official clubs, completed official fixtures after the season starts, a latest match date, and fresh source snapshots. Invalid candidates are rejected before replacing the public file.</p></div></section>
       <section><span>03</span><div><h2>Research record</h2><p>Historical backtests and the withdrawn candidate remain available in the source repository for method review. They are not current title probabilities.</p><a href="https://github.com/MonarchCastleTech/superlig-forecast/blob/main/README.md" target="_blank" rel="noreferrer">Read the full method ↗</a></div></section>
     </article>
   </main>;
@@ -56,7 +56,7 @@ export function MethodologyPage({ data }: { data: DashboardPayload }) {
       <section className="methodology-hero">
         <p className="eyebrow">Open methodology · model {data.meta.model_version}</p>
         <h1>How the Süper Lig forecast works</h1>
-        <p>Official results, current squad strength and five million simulated seasons combine into one reproducible title forecast.</p>
+        <p>Official results and five million simulated seasons combine into one reproducible title forecast.</p>
         <dl>
           <div><dt>Season paths</dt><dd>{formatInteger(data.meta.simulations)}</dd></div>
           <div><dt>Deterministic seed</dt><dd>{data.meta.seed}</dd></div>
@@ -76,7 +76,7 @@ export function MethodologyPage({ data }: { data: DashboardPayload }) {
           <p>The live forecast and this methodology use the same published model output. Four stages produce every number on the title chart.</p>
           <ol className="runtime-chain" aria-label="Forecast calculation path">
             <li><strong>Lock the table:</strong> completed official matches fix points, goals scored and goals conceded.</li>
-            <li><strong>Estimate each fixture:</strong> recent historical team strength sets the goal baseline; current aggregate squad value makes a conservative adjustment.</li>
+            <li><strong>Estimate each fixture:</strong> recent historical team strength sets the goal baseline; {data.meta.value_coefficient === 0 ? "the squad-value adjustment is disabled." : "the published squad-value coefficient adjusts the baseline."}</li>
             <li><strong>Simulate the run-in:</strong> every remaining fixture is sampled across {formatInteger(data.meta.simulations)} complete seasons.</li>
             <li><strong>Count outcomes:</strong> a club’s championship probability is its share of first-place finishes.</li>
           </ol></div>
@@ -84,9 +84,9 @@ export function MethodologyPage({ data }: { data: DashboardPayload }) {
 
         <section id="sources">
           <span>02</span><div><h2>Data and autonomous refresh</h2>
-          <p>TFF supplies official fixtures and completed scores. Current public Transfermarkt league and squad pages supply club-level squad totals. If GitHub cannot reach every squad page directly, automation validates all 18 aggregate totals from the league overview through a keyless public HTML reader, then tries a keyless CC0 structured player dataset; every route must still be current and complete.</p>
+          <p>TFF supplies official fixtures and completed scores. The model fixes completed results and estimates every remaining ordered home-and-away pairing. The matchup list is not a dated official match schedule.</p>
           <p>A GitHub Actions job runs every six hours over HTTPS. It requires all 18 clubs, reconciles match sources, runs the five-million-path forecast, applies freshness gates, and then runs Python, TypeScript, accessibility and static-build checks. A failed or stale refresh fails visibly and raises a repository alert; it cannot be reported as a successful update.</p>
-          <p>Individual player names support transfer-change reporting. The title model itself uses only each club’s aggregate squad value—never personal profiles, social data or private information.</p></div>
+          <p>{data.meta.value_coefficient === 0 ? "The current release does not use squad values in its title forecast." : "The published squad-value coefficient controls the strength adjustment."}</p></div>
         </section>
 
         <section id="model">
@@ -95,7 +95,7 @@ export function MethodologyPage({ data }: { data: DashboardPayload }) {
           <Equation>λ<sub>ij</sub> = clip(H · A<sup>home</sup><sub>i</sub> · D<sup>away</sup><sub>j</sub>, 0.2, 4.5)<br />ν<sub>ij</sub> = clip(A · A<sup>away</sup><sub>j</sub> · D<sup>home</sup><sub>i</sub>, 0.2, 4.5)</Equation>
           <p>Poisson score probabilities are corrected in the four lowest-score cells with the Dixon–Coles factor ρ = −0.05. Scores from 0 through 10 are retained and normalized.</p>
           <Equation>P(X=x,Y=y) ∝ τ<sub>ρ</sub>(x,y) · Pois(x;λ) · Pois(y;ν)</Equation>
-          <p>Squad value adjusts the expected-goal balance symmetrically. The published coefficient is δ = {data.meta.value_coefficient.toFixed(2)}.</p>
+          <p>Squad value can adjust the expected-goal balance symmetrically. The published coefficient is δ = {data.meta.value_coefficient.toFixed(2)}{data.meta.value_coefficient === 0 ? ", so this adjustment is disabled" : ""}.</p>
           <Equation>r = (V<sub>home</sub> + €1m)/(V<sub>away</sub> + €1m)<br />λ′ = clip(λ · exp(0.5δ log r), 0.2, 4.5)<br />ν′ = clip(ν / exp(0.5δ log r), 0.2, 4.5)</Equation></div>
         </section>
 

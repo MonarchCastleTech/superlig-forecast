@@ -13,8 +13,7 @@ export function Methodology({ data }: MethodologyProps) {
           <h2>How the forecast is built</h2>
         </div>
         <p>
-          Official results, current squad strength, a tested goal model and
-          five million simulated seasons.
+          Official results, a tested goal model and five million simulated seasons.
         </p>
       </div>
 
@@ -30,9 +29,8 @@ export function Methodology({ data }: MethodologyProps) {
         <article>
           <h3>Official inputs</h3>
           <p>
-            TFF completed scores and Transfermarkt aggregate squad values feed
-            the live forecast. Every accepted update must cover all 18 clubs
-            and pass source reconciliation and freshness checks.
+            TFF completed scores and historical results feed the forecast. Every
+            accepted update must cover all 18 clubs and pass source and freshness checks.
           </p>
         </article>
         <article>
@@ -53,9 +51,9 @@ export function Methodology({ data }: MethodologyProps) {
         <article>
           <h3>Squad strength</h3>
           <p>
-            Aggregate squad value supplies a fixed log-ratio strength
-            adjustment with coefficient {data.meta.value_coefficient.toFixed(2)},
-            keeping the effect deliberately conservative.
+            {data.meta.value_coefficient === 0
+              ? "The squad-value adjustment is disabled in this release; current squad values do not affect the forecast."
+              : `The model applies a squad-value log-ratio adjustment with coefficient ${data.meta.value_coefficient.toFixed(2)}.`}
           </p>
         </article>
         <article>

@@ -117,8 +117,18 @@ test("methodology explains the live calculation and autonomous safety gates", ()
   ).toBeVisible();
   expect(screen.getByRole("list", { name: "Forecast calculation path" })).toBeVisible();
   expect(screen.getByText(/five million simulated seasons/i)).toBeVisible();
-  expect(screen.getByText(/keyless CC0 structured player dataset/i)).toBeVisible();
+  expect(screen.getByText(/matchup list is not a dated official match schedule/i)).toBeVisible();
   expect(screen.getByText(/cannot be reported as a successful update/i)).toBeVisible();
   expect(screen.queryByText(/current published-run audit/i)).not.toBeInTheDocument();
   expect(screen.queryByText(/production inclusion audit/i)).not.toBeInTheDocument();
+});
+
+test("explains when the published squad-value adjustment is disabled", () => {
+  const payload = validateDashboardPayload(
+    JSON.parse(readFileSync(join(process.cwd(), "tests", "fixtures", "withdrawn-dashboard.json"), "utf8")),
+  );
+  payload.meta.value_coefficient = 0;
+  render(<MethodologyPage data={payload} />);
+  expect(screen.getByText(/current release does not use squad values/i)).toBeVisible();
+  expect(screen.getByText(/squad-value adjustment is disabled/i)).toBeVisible();
 });

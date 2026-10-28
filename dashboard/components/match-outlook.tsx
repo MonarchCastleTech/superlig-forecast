@@ -61,8 +61,9 @@ export function MatchOutlook({ fixtures }: MatchOutlookProps) {
           <h2 id="matches-heading">Most likely match outcomes</h2>
         </div>
         <p>
-          Home, draw, and away probabilities for remaining fixtures. These are
-          outcome estimates, not guarantees.
+          Home, draw, and away probabilities for unplayed home-and-away pairings.
+          The model does not publish official kickoff dates or match order; these
+          estimates are not guarantees.
         </p>
       </div>
 

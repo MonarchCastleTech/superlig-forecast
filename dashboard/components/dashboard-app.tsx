@@ -97,7 +97,7 @@ export function DashboardApp({ data }: DashboardAppProps) {
           </h1>
           <p className="hero-summary">
             Five million modelled season paths, recomputed from the latest
-            accepted match and squad-value snapshots.
+            accepted official match results and the published model inputs.
           </p>
         </div>
         <div className="hero-note">
